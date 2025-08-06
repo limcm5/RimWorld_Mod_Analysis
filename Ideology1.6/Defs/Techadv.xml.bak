@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <AbilityGroupDef>
+    <defName>MR_advcooldown</defName>
+    <cooldownTicks>120</cooldownTicks>
+  </AbilityGroupDef>
+  
+  <!--<comps>
+      <li Class="HediffCompProperties_GiveAbility">
+        <abilityDef>MR_Tech1advAbility</abilityDef>
+      </li>
+    </comps>-->
+	
+	<!-- <HediffDef>
+    <defName>MR_advHediff</defName>
+    <label>Technical advisor</label>
+    <description>This pawn is a technical advisor who came for support.</description>
+    <defaultLabelColor>(0.65,0.75,0.90)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>1</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <tendable>false</tendable>
+    <cureAllAtOnceIfCuredByItem>false</cureAllAtOnceIfCuredByItem>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+          <li Class="HediffGiver_Random"> 
+          <hediff>MR_Tech1advAdvice</hediff>
+          <mtbDays>100</mtbDays>
+          </li>
+</hediffGivers>
+      </li>
+    </stages>
+  </HediffDef>-->
+
+	
+		<AbilityDef>
+    <defName>MR_Tech1advAbility</defName>
+    <label>Expert advice</label>
+    <description>Increase the global working speed and research capacity of the clonists with the advice of their technical advisors.</description>
+    <descriptionHyperlinks>
+      <HediffDef>MR_Tech1advBuff</HediffDef>
+    </descriptionHyperlinks>
+    <jobDef>CastAbilityOnThing</jobDef>
+    <targetRequired>False</targetRequired>
+    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+    <iconPath>marulike/Apparel/hat/MR_Decipherslifecap</iconPath>
+    <warmupMoteSocialSymbol>marulike/Apparel/hat/MR_Decipherslifecap</warmupMoteSocialSymbol>
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <showPsycastEffects>False</showPsycastEffects>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <groupDef>MR_advcooldown</groupDef>
+    <hotKey>Misc12</hotKey>
+    <uiOrder>3</uiOrder>
+    <warmupStartSound>CombatCommand_Warmup</warmupStartSound>
+    <statBases>
+      <Ability_Duration>500</Ability_Duration>
+      <Ability_EffectRadius>12</Ability_EffectRadius>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>0.5</warmupTime>
+      <range>12</range>
+      <drawAimPie>False</drawAimPie>
+      <requireLineOfSight>False</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>MR_Tech1advAdvice</hediffDef>
+        <onlyBrain>True</onlyBrain>
+        <onlyApplyToSelf>True</onlyApplyToSelf>
+        <replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <HediffDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="RoleStatBuff">
+    <defName>MR_Tech1advAdvice</defName>
+    <label>technical advisor</label>
+    <description>Technical advisor.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1</maxSeverity>
+    <tendable>false</tendable>
+    <cureAllAtOnceIfCuredByItem>false</cureAllAtOnceIfCuredByItem>
+    <comps>
+      <li Class="HediffCompProperties_Immunizable">
+      <severityPerDayNotImmune>-0.06</severityPerDayNotImmune>
+      </li>
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <range>9.9</range>
+        <mote>Mote_WorkCommand</mote>
+        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetColonists>true</onlyTargetColonists>
+        </targetingParameters>
+        <hediff>MR_Tech1advBuff</hediff>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0</minSeverity>
+        <capMods>
+        </capMods>
+        <statOffsets>
+        </statOffsets>
+        <statFactors>
+          <GeneralLaborSpeed>1.25</GeneralLaborSpeed>
+          <ConstructionSpeed>1.25</ConstructionSpeed>
+          <ResearchSpeedFactor>1.25</ResearchSpeedFactor>
+        </statFactors>
+      </li>
+    </stages>
+    <isBad>false</isBad>
+  </HediffDef>
+  
+<HediffDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="RoleStatBuff">
+    <defName>MR_Tech1advBuff</defName>
+    <label>전문가의 조언</label>
+    <description>Through advice according to the situation, the colonist is achieving a dramatic increase in his working ability.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>false</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_Link">
+        <requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
+        <maxDistance>10</maxDistance>
+        <customMote>Mote_WorkCommandLinkLine</customMote>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <statFactors>
+          <GeneralLaborSpeed>1.25</GeneralLaborSpeed>
+          <ConstructionSpeed>1.25</ConstructionSpeed>
+          <ResearchSpeedFactor>1.25</ResearchSpeedFactor>
+        </statFactors>
+        <capMods>
+         <!-- <li>
+            <capacity>Moving</capacity>
+            <offset>0.20</offset>
+          </li> -->
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

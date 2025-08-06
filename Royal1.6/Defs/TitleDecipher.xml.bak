@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<TraderKindDef ParentName="Caravan_MR_Hunt">
+		<defName>Caravan_MR_Deci</defName>
+		<label>Group of scribes</label>
+		<commonality>1</commonality>
+		<tradeCurrency>Favor</tradeCurrency>
+		<faction>MRF_Hyperborea</faction>
+		<hideThingsNotWillingToTrade>True</hideThingsNotWillingToTrade>
+		<stockGenerators Inherit="False">
+			<!-- Buying -->
+			<li Class="StockGenerator_BuySingleDef">
+			  <thingDef>MR_Sarira</thingDef>
+			</li>
+			<li Class="StockGenerator_BuySingleDef">
+			  <thingDef>MR_Record</thingDef>
+			</li>
+			<li Class="StockGenerator_BuySingleDef">
+			  <thingDef>MR_Theory</thingDef>
+			</li>
+		</stockGenerators>
+	</TraderKindDef>
+	
+
+		<RoyalTitleDef Abstract="True" Name="BaseMaruTitle" >
+			<tags>
+				<li>MaruTitleD</li>
+			</tags>
+			<awardThought>GainedTitle</awardThought>
+			<lostThought>LostTitle</lostThought>
+		</RoyalTitleDef>
+
+		<RoyalTitleDef ParentName="BaseMaruTitle">
+			<defName>MRFT_Maru</defName>
+			<label>Maru</label>
+			<description>무리의 구성원으로써 인정받았다는 증표입니다.</description>
+			<seniority>500</seniority>
+			<favorCost>6</favorCost>
+			<changeHeirQuestPoints>1000</changeHeirQuestPoints>
+			<allowDignifiedMeditationFocus>False</allowDignifiedMeditationFocus>
+			<permitPointsAwarded>2</permitPointsAwarded>
+			<awardWorkerClass>RoyalTitleAwardWorker_Instant</awardWorkerClass>
+		</RoyalTitleDef>
+		
+		<RoyalTitleDef ParentName="BaseMaruTitle">
+			<defName>MRFT_Scribe</defName>
+			<label>Scribe</label>
+			<description>과거 해석물의 필사를 담당하던 중요한 직책으로 마루 사회에서 상징적인 의미를 가집니다.</description>
+			<seniority>700</seniority>
+			<favorCost>12</favorCost>
+			<changeHeirQuestPoints>1000</changeHeirQuestPoints>
+			<commonality>1</commonality>
+			<permitPointsAwarded>2</permitPointsAwarded>
+			<awardWorkerClass>RoyalTitleAwardWorker_Instant</awardWorkerClass>
+		</RoyalTitleDef>
+		
+		<RoyalTitleDef ParentName="BaseMaruTitle">
+			<defName>MRFT_Decipher</defName>
+			<label>Decipher</label>
+			<description>수많은 방법으로 사리를 해석하며 그 모든 방법에 동일한 가치를 두고 실험과 연구를 반복하는, 존경받는 마루들의 이름입니다.</description>
+			<seniority>900</seniority>
+			<favorCost>24</favorCost>
+			<minExpectation>Moderate</minExpectation>
+			<changeHeirQuestPoints>1200</changeHeirQuestPoints>
+			<recruitmentResistanceOffset>10</recruitmentResistanceOffset>
+			<commonality>1</commonality>
+			<canBeInherited>True</canBeInherited>
+			<permitPointsAwarded>2</permitPointsAwarded>
+
+			<requiredApparel>
+			<li>
+				<bodyPartGroupsMatchAny>
+				<li>Shoulders</li>
+				</bodyPartGroupsMatchAny>
+				<requiredTags>
+				<li>RoyalTier2</li>
+                <li>MR_Deciphers</li>
+				</requiredTags>
+				<allowedTags>
+				<li>Cape</li>
+				<li>PrestigeCombatGear</li>
+				<li>Psychic</li>
+				</allowedTags>
+			</li>
+			<li>
+				<bodyPartGroupsMatchAny>
+				<li>Torso</li>
+				</bodyPartGroupsMatchAny>
+				<requiredTags>
+				<li>RoyalTier2</li>
+                <li>MR_Deciphers</li>
+				</requiredTags>
+				<allowedTags>
+				<li>Cape</li>
+				<li>PrestigeCombatGear</li>
+				<li>Psychic</li>
+				</allowedTags>
+			</li>
+			<li>
+				<bodyPartGroupsMatchAny>
+				<li>UpperHead</li>
+				<li>FullHead</li>
+				</bodyPartGroupsMatchAny>
+				<requiredTags>
+				<li>RoyalTier2</li>
+                <li>MR_Deciphers</li>
+				</requiredTags>
+				<allowedTags>
+				<li>PrestigeCombatGear</li>
+				<li>Psychic</li>
+				</allowedTags>
+			</li>
+			</requiredApparel>
+
+			<bedroomRequirements>
+			<li Class="RoomRequirement_Area">
+				<area>30</area>
+			</li>
+			<li Class="RoomRequirement_TerrainWithTags">
+				<labelKey>RoomRequirementAllFloored</labelKey>
+				<tags>
+				<li>Floor</li>
+				<li>FineFloor</li>
+				</tags>
+			</li>
+			<li Class="RoomRequirement_ThingAnyOf">
+				<things>
+				<li>DoubleBed</li>
+				<li>RoyalBed</li>
+				</things>
+			</li>
+			<li Class="RoomRequirement_ThingCount">
+				<thingDef>Brazier</thingDef>
+				<count>2</count>
+			</li>
+			</bedroomRequirements>
+
+			<awardWorkerClass>RoyalTitleAwardWorker_Instant</awardWorkerClass>
+		</RoyalTitleDef>
+		
+		<RoyalTitleDef ParentName="BaseMaruTitle">
+			<defName>MRFT_Eye</defName>
+			<label>Eye</label>
+			<description>무리가 향하는 방향에 지대한 영향을 준 소수의 마루들이 갖는 이름입니다.</description>
+			<seniority>1000</seniority>
+			<favorCost>48</favorCost>
+			<minExpectation>High</minExpectation>
+			<changeHeirQuestPoints>1600</changeHeirQuestPoints>
+			<recruitmentResistanceOffset>25</recruitmentResistanceOffset>
+			<commonality>1</commonality>
+			<canBeInherited>True</canBeInherited>
+			<permitPointsAwarded>2</permitPointsAwarded>
+
+			<requiredApparel>
+			<li>
+				<bodyPartGroupsMatchAny>
+				<li>Shoulders</li>
+				</bodyPartGroupsMatchAny>
+				<requiredTags>
+				<li>RoyalTier2</li>
+				</requiredTags>
+				<allowedTags>
+                <li>MR_Deciphers</li>
+				<li>Cape</li>
+				<li>PrestigeCombatGear</li>
+				<li>Psychic</li>
+				</allowedTags>
+			</li>
+			<li>
+				<bodyPartGroupsMatchAny>
+				<li>Shoulders</li>
+				</bodyPartGroupsMatchAny>
+				<requiredTags>
+				<li>RoyalTier2</li>
+				</requiredTags>
+				<allowedTags>
+                <li>MR_Deciphers</li>
+				<li>Cape</li>
+				<li>PrestigeCombatGear</li>
+				<li>Psychic</li>
+				</allowedTags>
+			</li>
+			<li>
+				<bodyPartGroupsMatchAny>
+				<li>Torso</li>
+				</bodyPartGroupsMatchAny>
+				<requiredTags>
+				<li>RoyalTier2</li>
+				</requiredTags>
+				<allowedTags>
+                <li>MR_Deciphers</li>
+				<li>Cape</li>
+				<li>PrestigeCombatGear</li>
+				<li>Psychic</li>
+				</allowedTags>
+			</li>
+			<li>
+				<bodyPartGroupsMatchAny>
+				<li>UpperHead</li>
+				<li>FullHead</li>
+				</bodyPartGroupsMatchAny>
+				<requiredTags>
+				<li>RoyalTier2</li>
+				</requiredTags>
+				<allowedTags>
+                <li>MR_Deciphers</li>
+				<li>PrestigeCombatGear</li>
+				<li>Psychic</li>
+				</allowedTags>
+			</li>
+			</requiredApparel>
+
+			<bedroomRequirements>
+			<li Class="RoomRequirement_Area">
+				<area>35</area>
+			</li>
+			<li Class="RoomRequirement_Impressiveness">
+				<impressiveness>35</impressiveness>
+			</li>
+			<li Class="RoomRequirement_TerrainWithTags">
+				<labelKey>RoomRequirementAllFloored</labelKey>
+				<tags>
+				<li>Floor</li>
+				<li>FineFloor</li>
+				</tags>
+			</li>
+			<li Class="RoomRequirement_ThingAnyOf">
+				<things>
+				<li>DoubleBed</li>
+				<li>RoyalBed</li>
+				</things>
+			</li>
+			<li Class="RoomRequirement_Thing">
+				<thingDef>EndTable</thingDef>
+			</li>
+			<li Class="RoomRequirement_Thing">
+				<thingDef>Dresser</thingDef>
+			</li>
+			<li Class="RoomRequirement_ThingCount">
+				<thingDef>Drape</thingDef>
+				<count>2</count>
+			</li>
+			<li Class="RoomRequirement_ThingCount">
+				<thingDef>Brazier</thingDef>
+				<count>2</count>
+			</li>
+			</bedroomRequirements>
+
+			<awardWorkerClass>RoyalTitleAwardWorker_Instant</awardWorkerClass>
+		</RoyalTitleDef>
+		
+		<RoyalTitleDef ParentName="BaseMaruTitle">
+			<defName>MRFT_Moutain</defName>
+			<label>MountainRanger</label>
+			<description>영웅들의 총칭입니다.</description>
+			<seniority>1000</seniority>
+			<minExpectation>High</minExpectation>
+			<changeHeirQuestPoints>1600</changeHeirQuestPoints>
+			<recruitmentResistanceOffset>25</recruitmentResistanceOffset>
+			<commonality>1</commonality>
+			<canBeInherited>False</canBeInherited>
+			<permitPointsAwarded>2</permitPointsAwarded>
+			<awardWorkerClass>RoyalTitleAwardWorker_Instant</awardWorkerClass>
+		</RoyalTitleDef>
+
+		<RoyalTitlePermitDef>
+			<defName>MR_CallHunter</defName>
+			<label>Call Hired Hunter</label>
+			<description>Call a group of 8 Maru Hunters to aid you in battle.</description>
+			<workerClass>RoyalTitlePermitWorker_CallAid</workerClass>
+			<minTitle>MRFT_Maru</minTitle>
+			<faction>MRF_Hyperborea</faction>
+			<permitPointCost>1</permitPointCost>
+			<uiPosition>(0,0)</uiPosition>
+			<royalAid>
+				<favorCost>6</favorCost>
+				<pawnKindDef>MRP_Hunter</pawnKindDef>
+				<pawnCount>8</pawnCount>
+				<targetingRange>39.9</targetingRange>
+			</royalAid>
+			<cooldownDays>36</cooldownDays>
+		</RoyalTitlePermitDef>
+
+		<RoyalTitlePermitDef>
+			<defName>MR_Callfang</defName>
+			<label>Call Fangs</label>
+			<description>Call a group of 8 Maru fangs to aid you in battle.</description>
+			<workerClass>RoyalTitlePermitWorker_CallAid</workerClass>
+			<minTitle>MRFT_Decipher</minTitle>
+			<prerequisite>MR_CallHunter</prerequisite>
+			<faction>MRF_Hyperborea</faction>
+			<permitPointCost>1</permitPointCost>
+			<uiPosition>(1,0)</uiPosition>
+			<royalAid>
+				<favorCost>6</favorCost>
+				<pawnKindDef>MRP_fangs_A</pawnKindDef>
+				<pawnCount>10</pawnCount>
+				<targetingRange>39.9</targetingRange>
+			</royalAid>
+			<cooldownDays>60</cooldownDays>
+		</RoyalTitlePermitDef>
+		
+		
+		
+<RoyalTitlePermitDef Name="MRF_DropResourcesBase" Abstract="True">
+    <workerClass>RoyalTitlePermitWorker_DropResources</workerClass>
+    <faction>MRF_Hyperborea</faction>
+    <permitPointCost>1</permitPointCost>
+    <cooldownDays>45</cooldownDays>
+    <usableOnWorldMap>true</usableOnWorldMap>
+    <royalAid>
+      <targetingRange>39.9</targetingRange>
+    </royalAid>
+  </RoyalTitlePermitDef>
+  
+    <RoyalTitlePermitDef ParentName="MRF_DropResourcesBase">
+    <defName>MR_ComponentIndustrialDrop</defName>
+    <label>Component drop</label>
+    <description>Call for a drop of 25 ComponentIndustrial.</description>
+    <minTitle>MRFT_Scribe</minTitle>
+    <faction>MRF_Hyperborea</faction>
+    <permitPointCost>1</permitPointCost>
+    <uiPosition>(0,2)</uiPosition>
+    <royalAid>
+      <itemsToDrop>
+        <ComponentIndustrial>25</ComponentIndustrial>
+      </itemsToDrop>
+      <favorCost>6</favorCost>
+    </royalAid>
+  </RoyalTitlePermitDef>
+
+    <RoyalTitlePermitDef ParentName="MRF_DropResourcesBase">
+    <defName>MR_techPDropA</defName>
+    <label>Techprint drop</label>
+    <description>Call for a drop of 1 Bulletproof fiber Techprint.</description>
+    <minTitle>MRFT_Scribe</minTitle>
+    <faction>MRF_Hyperborea</faction>
+    <permitPointCost>1</permitPointCost>
+    <uiPosition>(0,1)</uiPosition>
+    <royalAid>
+      <itemsToDrop>
+        <Techprint_MaruRB>1</Techprint_MaruRB>
+      </itemsToDrop>
+      <favorCost>6</favorCost>
+    </royalAid>
+  </RoyalTitlePermitDef>
+
+    <RoyalTitlePermitDef ParentName="MRF_DropResourcesBase">
+    <defName>MR_techPDropB</defName>
+    <label>Techprint drop</label>
+    <description>Call for a drop of 1 Negative forcefield Techprint.</description>
+    <minTitle>MRFT_Decipher</minTitle>
+    <faction>MRF_Hyperborea</faction>
+    <permitPointCost>1</permitPointCost>
+    <uiPosition>(1,1)</uiPosition>
+    <royalAid>
+      <itemsToDrop>
+        <Techprint_MaruRC>1</Techprint_MaruRC>
+      </itemsToDrop>
+      <favorCost>9</favorCost>
+    </royalAid>
+  </RoyalTitlePermitDef>
+  
+  		<RoyalTitlePermitDef>
+			<defName>MR_CallTechadvA</defName>
+			<label>Call Technical Advisor</label>
+			<description>Call Technical Advisor to assist you for 5 days.</description>
+			<workerClass>RoyalTitlePermitWorker_CallLaborers</workerClass>
+			<minTitle>MRFT_Scribe</minTitle>
+			<faction>MRF_Hyperborea</faction>
+			<permitPointCost>1</permitPointCost>
+			<uiPosition>(0,3)</uiPosition>
+			<royalAid>
+				<favorCost>8</favorCost>
+				<pawnKindDef>MRP_Techde</pawnKindDef>
+				<pawnCount>1</pawnCount>
+				<aidDurationDays>5</aidDurationDays>
+			</royalAid>
+			<cooldownDays>60</cooldownDays>
+		</RoyalTitlePermitDef>
+		
+		<RoyalTitlePermitDef>
+			<defName>MR_CallTechadvB</defName>
+			<label>Call Technical Advisor</label>
+			<description>Call a group of 2 Technical Advisors to assist you for 5 days.</description>
+			<workerClass>RoyalTitlePermitWorker_CallLaborers</workerClass>
+			<minTitle>MRFT_Decipher</minTitle>
+			<prerequisite>MR_CallTechadvA</prerequisite>
+			<faction>MRF_Hyperborea</faction>
+			<permitPointCost>1</permitPointCost>
+			<uiPosition>(1,3)</uiPosition>
+			<royalAid>
+				<favorCost>8</favorCost>
+				<pawnKindDef>MRP_Techde</pawnKindDef>
+				<pawnCount>2</pawnCount>
+				<aidDurationDays>5</aidDurationDays>
+			</royalAid>
+			<cooldownDays>60</cooldownDays>
+		</RoyalTitlePermitDef>
+  
+      <RoyalTitlePermitDef ParentName="MRF_DropResourcesBase">
+    <defName>MR_ApprenticeJoining</defName>
+    <label>Lenses drop</label>
+    <description>Call for a drop of 1 specially crafted lenses for qualification.</description>
+    <minTitle>MRFT_Eye</minTitle>
+    <faction>MRF_Hyperborea</faction>
+    <permitPointCost>1</permitPointCost>
+    <uiPosition>(0,4)</uiPosition>
+    <royalAid>
+      <itemsToDrop>
+        <MR_rentiq>1</MR_rentiq>
+      </itemsToDrop>
+      <favorCost>6</favorCost>
+    </royalAid>
+  </RoyalTitlePermitDef>
+<!--신임장 개당 가치 133-->
+</Defs>

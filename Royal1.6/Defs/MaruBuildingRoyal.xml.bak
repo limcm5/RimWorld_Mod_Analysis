@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorkGiverDef>
+    <defName>DoBillsAnalyzerS</defName>
+    <label>Write a record at workbench</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Research</workType>
+    <priorityInType>75</priorityInType>
+    <fixedBillGiverDefs>
+      <li>MR_AnalyzerS</li>
+    </fixedBillGiverDefs>
+    <verb>work</verb>
+    <gerund>working at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+  
+  <ThingDef ParentName="BenchBase">
+    <defName>MR_AnalyzerS</defName>
+    <label>Analysis Workbench</label>
+    <description>A workbench for direct analysis.\n\nIt can contribute to the Decipher faction through various analysis tasks.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <size>(3,1)</size>
+    <costList>
+      <MR_Sarira>4</MR_Sarira>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <costStuffCount>80</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <graphicData>
+      <texPath>Things/Building/Token/MaruAnalysisbench</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2.5,2.5)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <uiIconScale>0.75</uiIconScale>
+    <castEdgeShadows>false</castEdgeShadows>
+    <staticSunShadowHeight>0.0</staticSunShadowHeight>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <statBases>
+      <MaxHitPoints>750</MaxHitPoints>
+      <WorkToBuild>7200</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <ResearchSpeedFactor>1.25</ResearchSpeedFactor>
+      <Beauty>5</Beauty>
+    </statBases>
+	    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <ResearchSpeedFactor>0.1</ResearchSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>2</maxSimultaneous>
+        <maxDistance>12</maxDistance>
+      </li>
+	  <li Class="CompProperties_Glower">
+        <glowRadius>1</glowRadius>
+        <glowColor>(73,123,138,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <!--<recipes>
+      <li>ButcherCorpseFlesh</li>
+      <li>Make_Kibble</li>
+    </recipes>-->
+	    <building>
+      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+    </building>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+    <fillPercent>0.5</fillPercent>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <hasInteractionCell>true</hasInteractionCell>
+    <designationCategory>Production</designationCategory>
+    <surfaceType>Item</surfaceType>
+    <researchPrerequisites>
+      <li>MaruRA5</li>
+    </researchPrerequisites>
+    <designationHotKey>Misc7</designationHotKey>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+  </ThingDef>
+  
+  <!--
+      </li>
+	       <li Class="marucsharp.MaruCompProperties_GiveHediffSeverity">
+        <hediff>MRH_enli</hediff>
+        <range>4.9</range>
+        <severityPerSecond>0.0001</severityPerSecond>
+        <drugExposure>false</drugExposure>
+        <allowMechs>false</allowMechs>
+      </li>-->
+	  
+	  
+    <WorkGiverDef>
+    <defName>DoBillsdyeingworkbench</defName>
+    <label>Dyeing leather at workbench</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Tailoring</workType>
+    <priorityInType>75</priorityInType>
+    <fixedBillGiverDefs>
+      <li>MR_dyeingworkbench</li>
+    </fixedBillGiverDefs>
+    <verb>work</verb>
+    <gerund>working at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+  
+  <ThingDef ParentName="BenchBase">
+    <defName>MR_dyeingworkbench</defName>
+    <label>Dyeing Table</label>
+    <description>This is a workbench for dyeing leather.\n\nYou can get the favor of a group of hunters through dyed leather.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <size>(2,1)</size>
+    <costList>
+      <Steel>10</Steel>
+    </costList>
+    <costStuffCount>80</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <graphicData>
+      <texPath>Things/Building/Token/Marudyeingworkbench</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,1.6)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <uiIconScale>0.75</uiIconScale>
+    <castEdgeShadows>false</castEdgeShadows>
+    <staticSunShadowHeight>0.0</staticSunShadowHeight>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <statBases>
+      <MaxHitPoints>750</MaxHitPoints>
+      <WorkToBuild>3600</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <ResearchSpeedFactor>1.25</ResearchSpeedFactor>
+      <Beauty>-5</Beauty>
+    </statBases>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+	<comps>
+    </comps>
+	    <building>
+      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+    <fillPercent>0.5</fillPercent>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <hasInteractionCell>true</hasInteractionCell>
+    <designationCategory>Production</designationCategory>
+    <surfaceType>Item</surfaceType>
+    <researchPrerequisites>
+      <li>MaruRA3</li>
+    </researchPrerequisites>
+    <designationHotKey>Misc7</designationHotKey>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+  </ThingDef>
+  
+ <ThingDef ParentName="BuildingBase">
+    <defName>MR_Lenticularrentiq</defName>
+    <label>Lighthouse</label>
+    <description>It is a building that proves your qualifications.\n\nAn decipher or a mountainranger may join.</description>    
+	<descriptionHyperlinks>
+      <ThingDef>MR_rentiq</ThingDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Building/Token/Marufollower</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>2</drawSize>
+    </graphicData>
+    <rotatable>true</rotatable>
+    <uiIconScale>0.85</uiIconScale>
+    <researchPrerequisites>
+      <li>MaruRB1</li>
+    </researchPrerequisites>
+    <size>(2,2)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <designationHotKey>Misc4</designationHotKey>
+    <designationCategory>Misc</designationCategory>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<tickerType>Normal</tickerType>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>3600</WorkToBuild>
+      <Mass>20</Mass>
+      <Flammability>0.5</Flammability>
+      <Beauty>10</Beauty>
+    </statBases>
+    <costList>
+      <MR_rentiq>1</MR_rentiq>
+      <Steel>25</Steel>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>10</glowRadius>
+        <glowColor>(73,123,138,0)</glowColor>
+      </li>
+	    <li Class="CompProperties_Lifespan">
+        <lifespanTicks>180000</lifespanTicks>
+      </li>
+			<li Class="MaruLighthouse.CompProperties_CountDown">
+				<compClass>MaruLighthouse.Comp_CountDown</compClass>
+				<timeLimit>50</timeLimit>
+			</li>
+			<li>
+				<compClass>MaruLighthouse.Comp_active</compClass>
+			</li>
+    </comps>
+    <placeWorkers>
+    </placeWorkers>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
+	
+	
+</Defs>

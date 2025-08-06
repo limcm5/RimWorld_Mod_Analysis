@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <XenotypeDef>
+    <defName>Xeno_Maru</defName>
+    <label>Maru</label>
+    <description>The genes of Maru, created and passed down in the distant past.</description>
+	<!--먼 옛날에 만들어져 계승된 마루의 유전자입니다.-->
+    <descriptionShort>Maru's gene.</descriptionShort>
+	<!--마루의 유전자입니다.-->
+    <iconPath>Icon/Gene/MR_XenoIcon</iconPath>
+    <inheritable>true</inheritable>
+	
+    <genes>
+      <li>Gene_Maru</li>
+      <!--<li>PsychicAbility_Dull</li>-->
+      <li>MaxTemp_SmallDecrease</li>
+      <li>MinTemp_SmallDecrease</li>
+      <li>Libido_Low</li>
+      <!--<li>Immunity_Strong</li>-->
+      <li>Aggression_DeadCalm</li>
+      <!--<li>StrongStomach</li>-->
+      <!--<li>MoveSpeed_Quick</li>-->
+      <!--<li>DarkVision</li>-->
+      <li>Unstoppable</li>
+      <li>AptitudePoor_Plants</li>
+      <li>AptitudePoor_Social</li>
+    </genes>
+  </XenotypeDef>
+  
+  <GeneDef>
+    <defName>Gene_Maru</defName>
+    <label>stupa</label>
+	<!--사리탑-->
+    <description>It is a gene containing civilization. If the human body is like a precise machine, then those who created it must be a type of human being called a master.</description>
+	<!--문명이 담긴 유전자입니다.인간의 신체가 정밀한 기계와 같다면 이들을 만든 자들은 틀림없이 장인이라고 불리는 부류의 인간들이겠지요.-->
+    <iconPath>Icon/Gene/MR_stupa</iconPath>
+    <selectionWeight>0</selectionWeight>
+    <displayOrderInCategory>-2</displayOrderInCategory>
+    <symbolPack>
+    </symbolPack>
+	<!--복잡도-->
+    <biostatCpx>-1</biostatCpx>
+	<!--대사효율-->
+    <biostatMet>1</biostatMet>
+  </GeneDef>
+  
+    <GeneDef>
+    <defName>Gene_Maru_nonfur</defName>
+    <label>Body Type: Ancestral Form</label>
+	<!--체형 : 인간의 모습-->
+    <description>A gene that causes its Maru carrier to take on a form more closely resembling their ancestors. Movement speed is slightly reduced, but they gain a minor resistance to hot weather.</description>
+	<!--소유자 마루가 보다 선조에 가까운 모습을 취하게 하는 유전자입니다. 이동속도가 조금 떨어지지만, 더운 날씨에 조금 강해집니다.-->
+    <iconPath>Icon/Gene/MR_stupa</iconPath>
+    <selectionWeight>0</selectionWeight>
+	<randomChosen>false</randomChosen>
+    <displayOrderInCategory>-2</displayOrderInCategory>
+    <symbolPack>
+    </symbolPack>
+    <statOffsets>
+        <MoveSpeed>-0.1</MoveSpeed>
+		<ComfyTemperatureMax>15</ComfyTemperatureMax>
+    </statOffsets>
+	<!--복잡도-->
+    <biostatCpx>0</biostatCpx>
+	<!--대사효율-->
+    <biostatMet>0</biostatMet>
+  </GeneDef>
+  
+  <GeneDef>
+    <defName>MR_jumplegs</defName>
+    <label>predator</label>
+	<!--포식자-->
+    <description>Carriers are born with an elastic body and can jump long distances by consciously activating their muscles.</description>
+	<!--이 유전자의 보유자는 선천적으로 탄력있는 몸을 타고나며, 의식적으로 근육을 활성화 시켜 먼 거리를 뛸 수 있습니다.-->
+    <iconPath>Icon/Gene/MR_jump</iconPath>
+    <displayCategory>Ability</displayCategory>
+    <abilities>
+      <li>MR_jump</li>
+    </abilities>
+    <descriptionHyperlinks>
+      <AbilityDef>MR_jump</AbilityDef>
+    </descriptionHyperlinks>
+    <biostatMet>-1</biostatMet>
+    <symbolPack>
+      <wholeNameSymbols>
+        <li><symbol>jumper</symbol></li>
+        <li><symbol>leaper</symbol></li>
+        <li><symbol>bouncer</symbol></li>
+      </wholeNameSymbols>
+      <prefixSymbols>
+        <li><symbol>jump</symbol></li>
+        <li><symbol>leap</symbol></li>
+        <li><symbol>vault</symbol></li>
+        <li><symbol>long</symbol></li>
+        <li><symbol>fly</symbol></li>
+        <li><symbol>hop</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+  
+	<!--체취 유전자-->
+  
+  <GeneDef>
+    <exclusionTags>
+      <li>MR_odor</li>
+    </exclusionTags>
+    <defName>MR_bodyodor_High</defName>
+    <label>Strong Body Odor</label>
+	<!--짙은 체취-->
+    <labelShortAdj>StrongBodyOdor</labelShortAdj>
+    <description>The possessor of this gene is born with a strong body odor. Not only when sweating, but even normally, they always exude a damp, musty smell, which adversely affects hunting animals sensitive to scent. Furthermore, it generally does not leave a good impression on most people.</description>
+	<!--이 유전자는-->
+    <iconPath>Icon/Gene/MR_bodyodor_high</iconPath>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <statOffsets>
+      <HuntingStealth>-0.45</HuntingStealth>
+      <PawnBeauty>-1</PawnBeauty>
+    </statOffsets>
+	<!--복잡도-->
+    <biostatCpx>1</biostatCpx>
+	<!--대사효율-->
+    <biostatMet>1</biostatMet>
+    <symbolPack>
+    </symbolPack>
+  </GeneDef>
+  
+  
+  <GeneDef>
+    <exclusionTags>
+      <li>MR_odor</li>
+    </exclusionTags>
+    <defName>MR_bodyodor_Low</defName>
+    <label>Odorless</label>
+	<!--무취-->
+    <labelShortAdj>Odorless</labelShortAdj>
+    <description>The possessor of this gene emits no body odor. This provides a significant advantage in hunting, as it prevents detection by animals sensitive to scent, regardless of wind direction.</description>
+	<!--이 유전자는-->
+    <iconPath>Icon/Gene/MR_bodyodor_low</iconPath>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <statOffsets>
+      <HuntingStealth>0.3</HuntingStealth>
+    </statOffsets>
+	<!--복잡도-->
+    <biostatCpx>1</biostatCpx>
+	<!--대사효율-->
+    <biostatMet>-1</biostatMet>
+    <symbolPack>
+    </symbolPack>
+  </GeneDef>
+  
+  <GeneDef>
+    <exclusionTags>
+      <li>MR_odor</li>
+    </exclusionTags>
+    <defName>MR_bodyodor_fragrance</defName>
+    <label>Fragrant Scent</label>
+	<!--향기-->
+    <labelShortAdj>FragrantScent</labelShortAdj>
+    <description>The possessor of this gene secretes a fragrant, psychoactive substance from their sweat glands. This substance has almost no addictive properties and has the effect of uplifting the mood of those nearby.</description>
+	<!--이 유전자는-->
+    <iconPath>Icon/Gene/MR_bodyodor_fragrance</iconPath>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <statOffsets>
+      <PawnBeauty>1</PawnBeauty>
+    </statOffsets>
+	<!--복잡도-->
+    <biostatCpx>1</biostatCpx>
+	<!--대사효율-->
+    <biostatMet>-2</biostatMet>
+    <symbolPack>
+    </symbolPack>
+  </GeneDef>
+  
+	<!--직감 유전자-->
+	
+  <GeneDef>
+    <defName>MR_Intuition</defName>
+    <label>Intuition</label>
+	<!--직감-->
+    <labelShortAdj>Intuition</labelShortAdj>
+    <description>The carrier of this gene possesses a supernatural intuition, allowing them to instinctively predict the movements of their target. They always maintain the upper hand in close combat tactics and gain significant advantages in actions like sniping.</description>
+	<!--이 유전자의 소유자는 표적의 움직임을 본능적으로 예측하는 초자연적인 직감을 발휘합니다. 근접 전투 시의 수싸움에서 항상 우위를 점하며, 저격과 같은 행동에도 큰 이점을 가집니다.-->
+    <iconPath>Icon/Gene/MR_Intuition</iconPath>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <statOffsets>
+      <ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+      <MeleeHitChance>5</MeleeHitChance>
+      <MeleeDodgeChance>15</MeleeDodgeChance>
+    </statOffsets>
+	<!--복잡도-->
+    <biostatCpx>1</biostatCpx>
+	<!--대사효율-->
+    <biostatMet>-2</biostatMet>
+    <symbolPack>
+    </symbolPack>
+  </GeneDef>
+  
+	<!--입자화 유전자-->
+  
+  <GeneDef>
+    <defName>MR_particlegene</defName>
+    <label>Particulation</label>
+	<!--입자화-->
+    <labelShortAdj>Particulation</labelShortAdj>
+    <description>The possessor of this gene can dematerialize their body into particles. Upon activation, they momentarily transcend physical limitations, moving as if they were mist, and can locally dematerialize parts of their body in response to external stimuli to avoid physical damage.\n\nWhile sharing a similar ability with the Hyperborea snowleopard, which has a common origin, the specific operating principle of particulation remains unexplained. It is currently regarded as a fruit of inductive inquiry, but this is synonymous with ‘not knowing what it is.’</description>
+	<!--이 유전자는-->
+    <iconPath>Icon/Gene/MR_particleA</iconPath>
+    <displayCategory>Archite</displayCategory>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <abilities>
+      <li>MR_Ability_particle</li>
+    </abilities>
+    <descriptionHyperlinks>
+      <AbilityDef>MR_Ability_particle</AbilityDef>
+    </descriptionHyperlinks>
+    <statOffsets>
+    </statOffsets>
+	<!--복잡도-->
+    <biostatCpx>1</biostatCpx>
+	<!--초월입자-->
+    <biostatArc>1</biostatArc>
+    <symbolPack>
+    </symbolPack>
+  </GeneDef>
+  
+  
+  <AbilityDef>
+    <defName>MR_Ability_particle</defName>
+    <label>Particulation</label>
+    <description>In response to external stimuli, the body becomes particles and momentarily escapes the limitations of the physical body.</description>
+    <iconPath>Icon/Gene/MR_particleA</iconPath>
+    <cooldownTicksRange>6000</cooldownTicksRange>
+    <stunTargetWhileCasting>false</stunTargetWhileCasting>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <warmupMote>Mote_CoagulateStencil</warmupMote>
+    <warmupEffecter>Coagulate</warmupEffecter>
+    <warmupStartSound>Coagulate_Cast</warmupStartSound>
+	
+    <jobDef>CastAbilityOnThing</jobDef>
+	
+    <displayOrder>400</displayOrder>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>maruPaticleCast.Verb_maruPaticleCast</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>1</range>
+      <warmupTime>0</warmupTime>
+      <targetParams>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetSelf>true</canTargetSelf>
+        <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetBloodfeeders>false</canTargetBloodfeeders>
+      </targetParams>
+    </verbProperties>
+    <comps>      
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef Name="MR_jump">
+    <defName>MR_jump</defName>
+    <label>predatory jump</label>
+	<!--포식 도약-->
+    <description>Jump to prey and quickly close the distance.</description>
+	<!--사냥감에게 도약하여 빠르게 거리를 좁힙니다.-->
+    <iconPath>Icon/Gene/MR_jump</iconPath>
+    <cooldownTicksRange>1200</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>MaruPredatorJump.Verb_CastAbilityMaruJump</verbClass>
+      <label>jump</label>
+      <violent>false</violent>
+      <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+      <warmupTime>0.5</warmupTime>
+      <range>9.9</range>
+      <requireLineOfSight>true</requireLineOfSight>
+      <soundCast>Longjump_Jump</soundCast>
+      <soundLanding>Longjump_Land</soundLanding>
+      <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <jobDef>CastJump</jobDef>
+    <comps>
+    </comps>
+  </AbilityDef>
+  
+    
+  <HediffDef>
+		<defName>MRH_RageHediff_Self</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>particleization</label>
+		<!--입자화-->
+		<initialSeverity>0.001</initialSeverity>
+		<labelNoun>particleization</labelNoun>
+		<!--입자화-->
+		<description>Reacts to external stimuli by dematerializing the body, momentarily transcending physical limits.</description>
+		<!--외부 자극에 반응해 몸을 입자화시키며, 순간적으로 육체의 한계를 벗어납니다.-->
+		<defaultLabelColor>(0.8,0.6,1)</defaultLabelColor>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>MR_MoteMaruRagehuman</stateEffecter>
+        <severityIndices>0~5</severityIndices>
+      </li>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.05</severityPerDay>
+        <showHoursToRecover>false</showHoursToRecover>
+      </li>
+		</comps>
+		<stages>
+			<li>
+				<!--<statOffsets>
+					<MoveSpeed>2</MoveSpeed>
+				</statOffsets>-->
+				<statFactors>
+					<MoveSpeed>2</MoveSpeed>
+					<IncomingDamageFactor>0</IncomingDamageFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	
+  <HediffDef>
+		<defName>MR_PredatorHediff</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Body Activation</label>
+		<!--포식자-->
+		<initialSeverity>0.001</initialSeverity>
+		<labelNoun>Body Activation</labelNoun>
+		<description>Temporarily transforms the body into a state optimized for hunting.</description>
+		<!---->
+		<defaultLabelColor>(0.8,0.6,1)</defaultLabelColor>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>MR_MaruAdrenaline</stateEffecter>
+        <severityIndices>0~5</severityIndices>
+      </li>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.1</severityPerDay>
+        <showHoursToRecover>false</showHoursToRecover>
+      </li>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<MoveSpeed>1</MoveSpeed>
+				</statOffsets>
+				<statFactors>
+					<MeleeDamageFactor>1.5</MeleeDamageFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<!--고성능 보완 유전자-->
+	
+  <GeneDef>
+    <defName>MR_ComplementaryGene_High</defName>
+    <label>Advanced Complementary Gene</label>
+	<!--직감-->
+    <labelShortAdj>Advanced Complementary Gene</labelShortAdj>
+    <description>A gene that intertwines with other genes to reorganize the body, allowing various metabolic processes to function more efficiently. It is also sometimes called a Tessellation implant.As with any implant, there are no immediately noticeable side effects, but it cannot be guaranteed that there are none at all.</description>
+    <iconPath>Icon/Gene/MR_ComplementaryGene_High</iconPath>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <statOffsets>
+    </statOffsets>
+	<!--복잡도-->
+    <biostatCpx>1</biostatCpx>
+	<!--대사효율-->
+    <biostatMet>2</biostatMet>
+    <symbolPack>
+    </symbolPack>
+  </GeneDef>
+  
+	<!--보완 유전자-->
+	
+  <GeneDef>
+    <defName>MR_ComplementaryGene_Low</defName>
+    <label>Complementary Gene</label>
+	<!--직감-->
+    <labelShortAdj>Complementary Gene</labelShortAdj>
+    <description>A gene that intertwines with other genes to reorganize the body, allowing various metabolic processes to function more efficiently. It is also sometimes called a Tessellation implant.As with any implant, there are no immediately noticeable side effects, but it cannot be guaranteed that there are none at all.</description>
+    <iconPath>Icon/Gene/MR_ComplementaryGene</iconPath>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <statOffsets>
+    </statOffsets>
+	<!--복잡도-->
+    <biostatCpx>2</biostatCpx>
+	<!--대사효율-->
+    <biostatMet>1</biostatMet>
+    <symbolPack>
+    </symbolPack>
+  </GeneDef>
+  
+  
+<ThoughtDef>
+  <defName>Maru_FragranceThought</defName>
+  <workerClass>MaruFragrance.ThoughtWorker_fragrance_Maru</workerClass>
+  <thoughtClass>MaruFragrance.Thought_Situational_fragranceMaru</thoughtClass>
+  <stages>
+    <li>
+      <!--비작동-->
+        <visible>false</visible>
+    </li>
+    <li>
+      <!--작동-->
+      <label>Fragrant</label>
+      <description>There’s a strangely calming scent here. …It is because of the scent, right?</description>
+      <baseMoodEffect>3</baseMoodEffect>
+    </li>
+  </stages>
+</ThoughtDef>
+  
+</Defs>

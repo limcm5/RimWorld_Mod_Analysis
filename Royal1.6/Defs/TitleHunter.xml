@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+		<TraderKindDef>
+		<defName>Caravan_MR_HuntP</defName>
+		<label>Group of Hunters</label>
+		<commonality>5</commonality>
+		<tradeCurrency>Favor</tradeCurrency>
+		<faction>MRF_HyperboreaA</faction>
+		<hideThingsNotWillingToTrade>True</hideThingsNotWillingToTrade>
+		<stockGenerators Inherit="False">
+			<!-- Buying -->
+			<li Class="StockGenerator_BuySingleDef">
+			  <thingDef>MR_dyedleather</thingDef>
+			</li>
+		</stockGenerators>
+	</TraderKindDef>
+	
+	
+		<RoyalTitleDef Abstract="True" Name="BaseMaruTitleA" >
+			<tags>
+				<li>MaruTitleH</li>
+			</tags>
+			<awardThought>GainedTitle</awardThought>
+			<lostThought>LostTitle</lostThought>
+		</RoyalTitleDef>
+
+		<RoyalTitleDef ParentName="BaseMaruTitleA">
+			<defName>MRFT_MaruA</defName>
+			<label>Maru</label>
+			<description>A token signifying that one has been recognized as a member of the pack.</description>
+			<seniority>500</seniority>
+			<favorCost>6</favorCost>
+			<changeHeirQuestPoints>1000</changeHeirQuestPoints>
+			<allowDignifiedMeditationFocus>False</allowDignifiedMeditationFocus>
+			<permitPointsAwarded>1</permitPointsAwarded>
+			<awardWorkerClass>RoyalTitleAwardWorker_Instant</awardWorkerClass>
+		</RoyalTitleDef>
+		
+		<RoyalTitleDef ParentName="BaseMaruTitleA">
+			<defName>MRFT_Shepherd</defName>
+			<label>Shepherd</label>
+			<description>A title for those who once accompanied hunters on their hunts, symbolizing a deep bond.</description>
+			<seniority>700</seniority>
+			<favorCost>12</favorCost>
+			<changeHeirQuestPoints>1000</changeHeirQuestPoints>
+			<commonality>1</commonality>
+			<permitPointsAwarded>2</permitPointsAwarded>
+			<awardWorkerClass>RoyalTitleAwardWorker_Instant</awardWorkerClass>
+		</RoyalTitleDef>
+		
+		<RoyalTitleDef ParentName="BaseMaruTitleA">
+			<defName>MRFT_Hunter</defName>
+			<label>Hunter</label>
+			<description>The name given to a Maru who has bathed in the blood of their natural enemies and possesses the strength to survive on their own.</description>
+			<seniority>900</seniority>
+			<favorCost>24</favorCost>
+			<minExpectation>Moderate</minExpectation>
+			<changeHeirQuestPoints>1200</changeHeirQuestPoints>
+			<recruitmentResistanceOffset>10</recruitmentResistanceOffset>
+			<commonality>1</commonality>
+			<canBeInherited>True</canBeInherited>
+			<permitPointsAwarded>3</permitPointsAwarded>
+
+			<requiredApparel>
+			</requiredApparel>
+			<bedroomRequirements>
+			</bedroomRequirements>
+
+			<awardWorkerClass>RoyalTitleAwardWorker_Instant</awardWorkerClass>
+		</RoyalTitleDef>
+		
+		<RoyalTitleDef ParentName="BaseMaruTitleA">
+			<defName>MRFT_claw</defName>
+			<label>claw</label>
+			<description>A name held by the few Maru who have transcended personal survival to become involved in the preservation of the pack itself.</description>
+			<seniority>1000</seniority>
+			<favorCost>48</favorCost>
+			<minExpectation>High</minExpectation>
+			<changeHeirQuestPoints>1600</changeHeirQuestPoints>
+			<recruitmentResistanceOffset>25</recruitmentResistanceOffset>
+			<commonality>1</commonality>
+			<canBeInherited>True</canBeInherited>
+			<permitPointsAwarded>2</permitPointsAwarded>
+
+			<requiredApparel>
+			</requiredApparel>
+			<bedroomRequirements>
+			</bedroomRequirements>
+
+			<awardWorkerClass>RoyalTitleAwardWorker_Instant</awardWorkerClass>
+		</RoyalTitleDef>
+		
+		<RoyalTitleDef ParentName="BaseMaruTitleA">
+			<defName>MRFT_MoutainA</defName>
+			<label>MountainRanger</label>
+			<description>A collective title for heroes.</description>
+			<seniority>1000</seniority>
+			<minExpectation>High</minExpectation>
+			<changeHeirQuestPoints>1600</changeHeirQuestPoints>
+			<recruitmentResistanceOffset>25</recruitmentResistanceOffset>
+			<commonality>1</commonality>
+			<canBeInherited>False</canBeInherited>
+			<permitPointsAwarded>2</permitPointsAwarded>
+			<awardWorkerClass>RoyalTitleAwardWorker_Instant</awardWorkerClass>
+		</RoyalTitleDef>
+
+
+		<RoyalTitlePermitDef>
+			<defName>MR_CallHunterA</defName>
+			<label>Call Hunter</label>
+			<description>Call a group of 8 Maru Hunters to aid you in battle.</description>
+			<workerClass>RoyalTitlePermitWorker_CallAid</workerClass>
+			<minTitle>MRFT_Maru</minTitle>
+			<faction>MRF_HyperboreaA</faction>
+			<permitPointCost>1</permitPointCost>
+			<uiPosition>(0.5,0)</uiPosition>
+			<royalAid>
+				<favorCost>5</favorCost>
+				<pawnKindDef>MRP_Hunter_Bio</pawnKindDef>
+				<pawnCount>8</pawnCount>
+				<targetingRange>39.9</targetingRange>
+			</royalAid>
+			<cooldownDays>36</cooldownDays>
+    <layerBlacklist>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">Orbit</li>
+    </layerBlacklist>
+		</RoyalTitlePermitDef>
+
+		<RoyalTitlePermitDef>
+			<defName>MR_CallfangM</defName>
+			<label>Call Melee Fangs</label>
+			<description>Call a group of 8 Maru fangs to aid you in battle.</description>
+			<workerClass>RoyalTitlePermitWorker_CallAid</workerClass>
+			<minTitle>MRFT_Shepherd</minTitle>
+			<prerequisite>MR_CallHunterA</prerequisite>
+			<faction>MRF_HyperboreaA</faction>
+			<permitPointCost>1</permitPointCost>
+			<uiPosition>(0,1)</uiPosition>
+			<royalAid>
+				<favorCost>5</favorCost>
+				<pawnKindDef>MRP_fangs_M_Bio</pawnKindDef>
+				<pawnCount>8</pawnCount>
+				<targetingRange>39.9</targetingRange>
+			</royalAid>
+			<cooldownDays>60</cooldownDays>
+    <layerBlacklist>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">Orbit</li>
+    </layerBlacklist>
+		</RoyalTitlePermitDef>
+		
+		
+		
+		<RoyalTitlePermitDef>
+			<defName>MR_CallfangR</defName>
+			<label>Call Ranged Fangs</label>
+			<description>Call a group of 8 Maru fangs to aid you in battle.</description>
+			<workerClass>RoyalTitlePermitWorker_CallAid</workerClass>
+			<minTitle>MRFT_Shepherd</minTitle>
+			<prerequisite>MR_CallHunterA</prerequisite>
+			<faction>MRF_HyperboreaA</faction>
+			<permitPointCost>1</permitPointCost>
+			<uiPosition>(1,1)</uiPosition>
+			<royalAid>
+				<favorCost>5</favorCost>
+				<pawnKindDef>MRP_fangs_R_Bio</pawnKindDef>
+				<pawnCount>8</pawnCount>
+				<targetingRange>39.9</targetingRange>
+			</royalAid>
+			<cooldownDays>60</cooldownDays>
+    <layerBlacklist>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">Orbit</li>
+    </layerBlacklist>
+		</RoyalTitlePermitDef>
+		
+		
+	
+		<RoyalTitlePermitDef>
+			<defName>MR_CallclawM</defName>
+			<label>Call Melee Claws</label>
+			<description>Call a group of 8 Maru Claws to aid you in battle.</description>
+			<workerClass>RoyalTitlePermitWorker_CallAid</workerClass>
+			<minTitle>MRFT_Hunter</minTitle>
+			<prerequisite>MR_CallfangM</prerequisite>
+			<faction>MRF_HyperboreaA</faction>
+			<permitPointCost>1</permitPointCost>
+			<uiPosition>(0,2)</uiPosition>
+			<royalAid>
+				<favorCost>5</favorCost>
+				<pawnKindDef>MRP_Claws_CM_Bio</pawnKindDef>
+				<pawnCount>8</pawnCount>
+				<targetingRange>39.9</targetingRange>
+			</royalAid>
+			<cooldownDays>60</cooldownDays>
+    <layerBlacklist>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">Orbit</li>
+    </layerBlacklist>
+		</RoyalTitlePermitDef>
+		
+		
+		
+		<RoyalTitlePermitDef>
+			<defName>MR_CallclawR</defName>
+			<label>Call Ranged Claws</label>
+			<description>Call a group of 8 Maru Claws to aid you in battle.</description>
+			<workerClass>RoyalTitlePermitWorker_CallAid</workerClass>
+			<minTitle>MRFT_Hunter</minTitle>
+			<prerequisite>MR_CallfangR</prerequisite>
+			<faction>MRF_HyperboreaA</faction>
+			<permitPointCost>1</permitPointCost>
+			<uiPosition>(1,2)</uiPosition>
+			<royalAid>
+				<favorCost>5</favorCost>
+				<pawnKindDef>MRP_Claws_A_Bio</pawnKindDef>
+				<pawnCount>8</pawnCount>
+				<targetingRange>39.9</targetingRange>
+			</royalAid>
+			<cooldownDays>60</cooldownDays>
+    <layerBlacklist>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">Orbit</li>
+    </layerBlacklist>
+		</RoyalTitlePermitDef>
+		
+		
+<RoyalTitlePermitDef Name="MRF_DropResourcesBaseA" Abstract="True">
+    <workerClass>RoyalTitlePermitWorker_DropResources</workerClass>
+    <faction>MRF_HyperboreaA</faction>
+    <permitPointCost>1</permitPointCost>
+    <cooldownDays>45</cooldownDays>
+    <usableOnWorldMap>true</usableOnWorldMap>
+    <royalAid>
+      <targetingRange>39.9</targetingRange>
+    </royalAid>
+  </RoyalTitlePermitDef>
+  
+    <RoyalTitlePermitDef ParentName="MRF_DropResourcesBaseA">
+    <defName>MR_PemmicanDrop</defName>
+    <label>Pemmican drop</label>
+    <description>Call for a drop of 190 Pemmican.</description>
+    <minTitle>MRFT_Shepherd</minTitle>
+    <faction>MRF_HyperboreaA</faction>
+    <permitPointCost>1</permitPointCost>
+    <uiPosition>(0,3)</uiPosition>
+    <royalAid>
+      <itemsToDrop>
+        <Pemmican>190</Pemmican>
+      </itemsToDrop>
+      <favorCost>2</favorCost>
+    </royalAid>
+  </RoyalTitlePermitDef>
+  
+    <RoyalTitlePermitDef ParentName="MRF_DropResourcesBaseA">
+    <defName>MR_whitetwigsDrop</defName>
+    <label>White twigs drop</label>
+    <description>Call for a drop of 4 white twigs.</description>
+    <minTitle>MRFT_Hunter</minTitle>
+    <faction>MRF_HyperboreaA</faction>
+    <permitPointCost>1</permitPointCost>
+    <uiPosition>(1,3)</uiPosition>
+    <royalAid>
+      <itemsToDrop>
+        <MR_whitetwigs>6</MR_whitetwigs>
+      </itemsToDrop>
+      <favorCost>9</favorCost>
+    </royalAid>
+  </RoyalTitlePermitDef>
+  
+  		<RoyalTitlePermitDef>
+			<defName>MR_CallLaborersA</defName>
+			<label>Call Laborers</label>
+			<description>Call a group of 4 laborers to assist you for 4 days.</description>
+			<workerClass>RoyalTitlePermitWorker_CallLaborers</workerClass>
+			<minTitle>MRFT_Shepherd</minTitle>
+			<faction>MRF_HyperboreaA</faction>
+			<permitPointCost>1</permitPointCost>
+			<uiPosition>(0,4)</uiPosition>
+			<royalAid>
+				<favorCost>4</favorCost>
+				<pawnKindDef>MRP_Engineer</pawnKindDef>
+				<pawnCount>4</pawnCount>
+				<aidDurationDays>4</aidDurationDays>
+			</royalAid>
+			<cooldownDays>60</cooldownDays>
+		</RoyalTitlePermitDef>
+		
+  		<RoyalTitlePermitDef>
+			<defName>MR_CallLaborersB</defName>
+			<label>Call Laborers</label>
+			<description>Call a group of 8 laborers to assist you for 4 days.</description>
+			<workerClass>RoyalTitlePermitWorker_CallLaborers</workerClass>
+			<minTitle>MRFT_Hunter</minTitle>
+			<prerequisite>MR_CallLaborersA</prerequisite>
+			<faction>MRF_HyperboreaA</faction>
+			<permitPointCost>1</permitPointCost>
+			<uiPosition>(1,4)</uiPosition>
+			<royalAid>
+				<favorCost>4</favorCost>
+				<pawnKindDef>MRP_Engineer</pawnKindDef>
+				<pawnCount>8</pawnCount>
+				<aidDurationDays>4</aidDurationDays>
+			</royalAid>
+			<cooldownDays>60</cooldownDays>
+		</RoyalTitlePermitDef>
+		
+  		<RoyalTitlePermitDef>
+			<defName>MR_CallLaborersC</defName>
+			<label>Call Laborers</label>
+			<description>Call a group of 12 laborers to assist you for 4 days.</description>
+			<workerClass>RoyalTitlePermitWorker_CallLaborers</workerClass>
+			<minTitle>MRFT_claw</minTitle>
+			<prerequisite>MR_CallLaborersB</prerequisite>
+			<faction>MRF_HyperboreaA</faction>
+			<permitPointCost>1</permitPointCost>
+			<uiPosition>(0,5)</uiPosition>
+			<royalAid>
+				<favorCost>4</favorCost>
+				<pawnKindDef>MRP_Engineer</pawnKindDef>
+				<pawnCount>12</pawnCount>
+				<aidDurationDays>4</aidDurationDays>
+			</royalAid>
+			<cooldownDays>60</cooldownDays>
+		</RoyalTitlePermitDef>
+
+
+</Defs>

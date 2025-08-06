@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> 
+
+  <ThingDef>
+		<defName>MR_GeneBox</defName>
+		<label>Gene Sculptor</label>
+		<graphicData>
+		<texPath>Things/Resource/Genebox/MR_Genebox</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<description>This is an item, refined once from culture tissue for gene sculpting, based on data obtained from Sari. Unlike its appearance, it is in a very unstable state. Using the enclosed sculpting tool, one might obtain organic matter effective for gene synthesis. Other times, something tangled up, failing to form individual genes, might emerge—but that's a matter for when it happens.\n\nEven the large animal known as the 'Hyperborea Snow Leopard' once started from here.</description>
+		<!--<descriptionHyperlinks></descriptionHyperlinks>-->
+		<thingClass>ThingWithComps</thingClass>
+		<category>Item</category>
+		<drawerType>MapMeshOnly</drawerType>
+		<techLevel>Archotech</techLevel>
+		<useHitPoints>true</useHitPoints>
+		<pathCost>14</pathCost>
+		<selectable>true</selectable>
+		<altitudeLayer>Item</altitudeLayer>
+		<tickerType>Never</tickerType>
+		<alwaysHaulable>true</alwaysHaulable>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<thingCategories>
+			<li>MR_Category_Manufactured_Bio_Gene</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Beauty>-1</Beauty>
+			<Mass>0.025</Mass>
+			<MarketValue>400</MarketValue>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+		<costList>
+			<MR_Sarira>10</MR_Sarira>
+		</costList>
+		<comps>
+				<li Class="CompProperties_Usable">
+				<useJob>TriggerObject</useJob>
+				<useLabel>Attempt gene sculpting using the Gene Sculptor.</useLabel>
+				</li>
+				<li Class="CompProperties_UseEffect">
+					<compClass>MaruRandomBox.CompUseEffect_Random_spawnthing</compClass>
+				</li>
+				<li Class="CompProperties_UseEffectDestroySelf">
+					<compClass>CompUseEffect_DestroySelf</compClass>
+				</li>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+	</ThingDef>
+	
+  <ThingDef>
+		<defName>MR_TangledGeneBox</defName>
+		<label>Complementary Gene Sculptor</label>
+		<graphicData>
+		<texPath>Things/Resource/Genebox/MR_TangledGeneBox</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<description>This is an item refined once from a genetic mass through individual property analysis. It's completely unpredictable what kind of result will emerge until it's actually completed.</description>
+		<!--<descriptionHyperlinks></descriptionHyperlinks>-->
+		<thingClass>ThingWithComps</thingClass>
+		<category>Item</category>
+		<drawerType>MapMeshOnly</drawerType>
+		<techLevel>Archotech</techLevel>
+		<useHitPoints>true</useHitPoints>
+		<pathCost>14</pathCost>
+		<selectable>true</selectable>
+		<altitudeLayer>Item</altitudeLayer>
+		<tickerType>Never</tickerType>
+		<alwaysHaulable>true</alwaysHaulable>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<thingCategories>
+			<li>MR_Category_Manufactured_Bio_Gene</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Beauty>-1</Beauty>
+			<Mass>0.025</Mass>
+			<MarketValue>400</MarketValue>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+		<costList>
+			<MR_Sarira>10</MR_Sarira>
+		</costList>
+		<comps>
+				<li Class="CompProperties_Usable">
+				<useJob>TriggerObject</useJob>
+				<useLabel>Attempt gene sculpting using the Gene Sculptor.</useLabel>
+				</li>
+				<li Class="CompProperties_UseEffect">
+					<compClass>MaruRandomBox.CompUseEffect_Random_spawnthing_Tangled</compClass>
+				</li>
+				<li Class="CompProperties_UseEffectDestroySelf">
+					<compClass>CompUseEffect_DestroySelf</compClass>
+				</li>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+	</ThingDef>
+	
+	
+  <RecipeDef>
+    <defName>Make_MR_TangledGeneBox</defName>
+    <label>Craft Complementary Gene Sculptor</label>
+    <description>Crafts a shaper designed to analyze and refine tangled gene clusters to obtain complementary genes.</description>
+    <jobString>Crafting Complementary Gene Sculptor.</jobString>
+    <workAmount>5000</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>MR_TangledGeneticMass</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>    
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>MR_CrystalFruit</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>    
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MR_TangledGeneticMass</li>
+        <li>MR_CrystalFruit</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MR_TangledGeneBox>1</MR_TangledGeneBox>
+    </products>
+    <researchPrerequisite>MaruNC</researchPrerequisite>
+    <displayPriority>1440</displayPriority>
+  </RecipeDef>
+  
+	 <ThingDef>
+		<defName>MR_GeneTransporter</defName>
+		<label>Gene Transporter (Body Type: Ancestral Form)</label>
+		<graphicData>
+		<texPath>Things/Resource/MR_GeneTransporter</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<description>A single-use device for transporting genes, especially useful for caravans lacking refrigeration. Upon activation, it yields a genepack containing the corresponding gene.</description>
+		<!--<descriptionHyperlinks></descriptionHyperlinks>-->
+		<thingClass>ThingWithComps</thingClass>
+		<category>Item</category>
+		<drawerType>MapMeshOnly</drawerType>
+		<techLevel>Archotech</techLevel>
+		<useHitPoints>true</useHitPoints>
+		<pathCost>14</pathCost>
+		<selectable>true</selectable>
+		<altitudeLayer>Item</altitudeLayer>
+		<tickerType>Never</tickerType>
+		<alwaysHaulable>true</alwaysHaulable>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<thingCategories>
+			<li>MR_Category_Manufactured_Bio_Gene</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Beauty>-1</Beauty>
+			<Mass>0.025</Mass>
+			<MarketValue>200</MarketValue>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+		<costList>
+			<MR_Sarira>10</MR_Sarira>
+		</costList>
+		<comps>
+				<li Class="CompProperties_Usable">
+				<useJob>TriggerObject</useJob>
+				<useLabel>Activate Gene Transporter</useLabel>
+				</li>
+				<li Class="MaruGenepack.CompProperties_SpawnGenepackWithSpecificGene">
+					<geneToSpawn>Gene_Maru_nonfur</geneToSpawn>
+				</li>
+				<li Class="CompProperties_UseEffectDestroySelf">
+					<compClass>CompUseEffect_DestroySelf</compClass>
+				</li>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+	</ThingDef>
+	
+</Defs>

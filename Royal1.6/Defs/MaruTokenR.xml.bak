@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="UnfinishedBase">
+    <defName>MR_unfinishedL</defName>
+    <label>unfinished dyed leather</label>
+    <description>An unfinished piece of an dyed leather.</description>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedApparel</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+      <li>Metallic</li>
+    </stuffCategories>
+    <comps>
+    </comps>
+  </ThingDef>
+  
+    <ThingDef ParentName="UnfinishedBase">
+    <defName>MR_unfinishedR</defName>
+    <label>unfinished analysis record</label>
+    <description>An unfinished piece of an analysis record.</description>
+    <graphicData>
+      <texPath>Things/Resource/MR_Unanalysisrecord</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+    </graphicData>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+      <li>Metallic</li>
+    </stuffCategories>
+    <comps>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="UnfinishedBase">
+    <defName>MR_unfinishedP</defName>
+    <label>unfinished engineering theory book</label>
+    <description>An unfinished piece of an engineering theory book.</description>
+    <graphicData>
+      <texPath>Things/Resource/MR_Unanalysisrecord</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+    </graphicData>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+      <li>Metallic</li>
+    </stuffCategories>
+    <comps>
+    </comps>
+  </ThingDef>
+  
+  <RecipeDef Name="MR_TokenletherBase" Abstract="True">
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <effectWorking>Tailor</effectWorking>
+    <soundWorking>Recipe_Tailor</soundWorking>
+    <targetCountAdjustment>1</targetCountAdjustment>
+    <recipeUsers>
+      <li>MR_dyeingworkbench</li>
+    </recipeUsers>
+  </RecipeDef>
+  
+    <RecipeDef Name="MR_TokenrecordBase" Abstract="True">
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <effectWorking>Tailor</effectWorking>
+    <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>MR_unfinishedR</unfinishedThingDef>
+    <targetCountAdjustment>1</targetCountAdjustment>
+    <recipeUsers>
+      <li>MR_AnalyzerS</li>
+    </recipeUsers>
+  </RecipeDef>
+  
+    <RecipeDef Name="MR_TokentheoryBase" Abstract="True">
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <effectWorking>Tailor</effectWorking>
+    <soundWorking>Recipe_Tailor</soundWorking>
+      <unfinishedThingDef>MR_unfinishedP</unfinishedThingDef>
+    <targetCountAdjustment>1</targetCountAdjustment>
+    <recipeUsers>
+      <li>MR_AnalyzerS</li>
+    </recipeUsers>
+  </RecipeDef>
+  <!--레시피-->
+  
+    <RecipeDef ParentName="MR_TokenletherBase">
+    <jobString>Dyeing leather.</jobString>
+    <workAmount>600</workAmount>
+    <defName>MRMake_lether</defName>
+    <label>Leather dyeing</label>
+    <description>The leather is dyed with a unique pattern on the Maru.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Leathers</li>
+          </categories>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Leathers</li>
+      </categories>
+    </fixedIngredientFilter>
+    <products>
+      <MR_dyedleather>1</MR_dyedleather>
+    </products>
+  </RecipeDef>
+  
+      <RecipeDef ParentName="MR_TokenrecordBase">
+    <jobString>Writing the Record.</jobString>
+    <workAmount>3000</workAmount>
+    <defName>MRMake_record</defName>
+    <label>Record writing</label>
+    <description>Interpret sariras and write analysis notes.</description>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>MR_Sarira</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MR_Sarira</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MR_Record>1</MR_Record>
+    </products>
+    <researchPrerequisite>MaruRD1</researchPrerequisite>
+    <skillRequirements>
+      <Intellectual>8</Intellectual>
+    </skillRequirements>
+  </RecipeDef>
+  
+    <RecipeDef ParentName="MR_TokenrecordBase">
+    <jobString>Writing the theory.</jobString>
+    <workAmount>14850</workAmount>
+    <defName>MRMake_TheoryShot</defName>
+    <label>Theory writing : Shooting</label>
+    <description>Writes a theoretical book that systematically organizes skills.</description>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+			<li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Cloth</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MR_Theory>1</MR_Theory>
+    </products>
+    <researchPrerequisite>MaruRA5</researchPrerequisite>
+    <skillRequirements>
+      <Shooting>12</Shooting>
+      <Intellectual>6</Intellectual>
+    </skillRequirements>
+  </RecipeDef>
+    
+    <RecipeDef ParentName="MR_TokenrecordBase">
+    <jobString>Writing the theory.</jobString>
+    <workAmount>14850</workAmount>
+    <defName>MRMake_TheoryConst</defName>
+    <label>Theory writing : Cooking</label>
+    <description>Writes a theoretical book that systematically organizes skills.</description>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+			<li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Cloth</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MR_Theory>1</MR_Theory>
+    </products>
+    <researchPrerequisite>MaruRA5</researchPrerequisite>
+    <skillRequirements>
+      <Cooking>12</Cooking>
+      <Intellectual>6</Intellectual>
+    </skillRequirements>
+  </RecipeDef>  
+  
+    <RecipeDef ParentName="MR_TokenrecordBase">
+    <jobString>Writing the theory.</jobString>
+    <workAmount>14850</workAmount>
+    <defName>MRMake_TheoryMake</defName>
+    <label>Theory writing : Crafting</label>
+    <description>Writes a theoretical book that systematically organizes skills.</description>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+			<li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Cloth</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MR_Theory>1</MR_Theory>
+    </products>
+    <researchPrerequisite>MaruRA5</researchPrerequisite>
+    <skillRequirements>
+      <Crafting>12</Crafting>
+      <Intellectual>6</Intellectual>
+    </skillRequirements>
+  </RecipeDef>  
+  
+    <RecipeDef ParentName="MR_TokenrecordBase">
+    <jobString>Writing the theory.</jobString>
+    <workAmount>14850</workAmount>
+    <defName>MRMake_TheoryHeal</defName>
+    <label>Theory writing : Medicine</label>
+    <description>Writes a theoretical book that systematically organizes skills.</description>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+			<li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Cloth</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MR_Theory>1</MR_Theory>
+    </products>
+    <researchPrerequisite>MaruRA5</researchPrerequisite>
+    <skillRequirements>
+      <Medicine>12</Medicine>
+      <Intellectual>6</Intellectual>
+    </skillRequirements>
+  </RecipeDef>
+</Defs>

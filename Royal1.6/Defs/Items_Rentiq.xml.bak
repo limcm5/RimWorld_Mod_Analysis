@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+ 
+	<ThingDef ParentName="ResourceBase">
+		<defName>MR_rentiq</defName>
+		<label>Blue lens</label>
+		<description>It is a mineral crafted to prove qualifications.\n\n "All information about a person who has achieved something is transmitted directly by the messenger, and this is just a token of that."\n "...but every honor has a future. So, if you hang it in an easy-to-see place, someone who looks at the same place as you will surely come.”</description>
+    <descriptionHyperlinks>
+      <ThingDef>MR_retrofittable</ThingDef>
+    </descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Resource/MR_rentiq</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<stackLimit>20</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MarketValue>600</MarketValue>
+			<MaxHitPoints>50</MaxHitPoints>
+			<Mass>0.5</Mass>
+			<Flammability>0.0</Flammability>
+		</statBases>
+		<tradeTags inherit="false">
+			<li>MaruDecipherFaction</li>
+		</tradeTags>		
+		<thingCategories>
+			<li>MR_Category_Resources</li>
+		</thingCategories>
+		<stuffProps>
+			<color>(255,255,255)</color>
+			<soundImpactStuff>BulletImpact_Metal</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+		</stuffProps>		
+	</ThingDef>	
+  
+</Defs>
