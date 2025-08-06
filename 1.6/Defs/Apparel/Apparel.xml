@@ -1,0 +1,2398 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingCategoryDef Inherit="false">
+		<defName>MRApparel</defName>
+		<label>Maru Apparel</label>
+		<parent>Apparel</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef Inherit="false">
+		<defName>MRHeadgear</defName>
+		<label>Maru Headgear</label>
+		<parent>MRApparel</parent>
+	</ThingCategoryDef>
+
+
+	<!--Apparelbase-->
+	<ThingDef Name="MR_ApparelBase" Abstract="True">
+		<recipeMaker>
+			<workSkill>Crafting</workSkill>
+		</recipeMaker>
+		<thingClass>Apparel</thingClass>
+		<category>Item</category>
+		<selectable>True</selectable>
+		<pathCost>10</pathCost>
+		<useHitPoints>True</useHitPoints>
+    <techLevel>Medieval</techLevel>
+		<graphicData>
+			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+			<drawSize>1</drawSize>
+		</graphicData>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>2</DeteriorationRate>
+			<Beauty>0</Beauty>
+		</statBases>
+		<altitudeLayer>Item</altitudeLayer>
+		<alwaysHaulable>True</alwaysHaulable>
+		<tickerType>Never</tickerType>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<apparel>
+			<tags Inherit="false">
+				<li>MR_Apparel</li>
+			</tags>
+		</apparel>
+		<!--일반작업대-->
+		
+    <thingCategories Inherit="false">
+			<li>MRApparel</li>
+		</thingCategories>
+		<colorGenerator Class="ColorGenerator_Options">
+			<options>
+				<li>
+					<weight>10</weight>
+					<only>(1,1,1,1)</only>
+				</li>
+			</options>
+		</colorGenerator>
+    <tradeTags>
+      <li>ClothingMaru</li>
+    </tradeTags>
+	</ThingDef>
+
+	<ThingDef Name="MR_ApparelBaseA" ParentName="MR_ApparelBase" Abstract="True">
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Tailor</effectWorking>
+			<soundWorking>Recipe_Tailor</soundWorking>
+			<recipeUsers>
+        <li>MR_retrofittable</li>
+			</recipeUsers>
+			<unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+		</recipeMaker>
+    <tradeTags>
+      <li>BasicClothing</li>
+    </tradeTags>
+	</ThingDef>
+
+	<ThingDef Name="MR_HatMakeableBase" ParentName="MR_ApparelBase" Abstract="True">
+		<thingCategories Inherit="False">
+			<li>MRHeadgear</li>
+		</thingCategories>    
+		<recipeMaker>
+			<recipeUsers>
+				<li>MR_retrofittable</li>
+			</recipeUsers>
+    </recipeMaker>
+    <tradeTags>
+      <li>BasicClothing</li>
+    </tradeTags>
+	
+	</ThingDef>
+
+
+	<!--Gearbase-->
+	<ThingDef Name="MR_MachineableGearBase" ParentName="MR_ApparelBase" Abstract="True">
+		<!--기계작업대-->
+		<recipeMaker>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Machining</soundWorking>
+			<recipeUsers>
+				<li>MR_retrofittable</li>
+			</recipeUsers>
+			<unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+			<defaultIngredientFilter>
+				<categories>
+					<li>Root</li>
+				</categories>
+			</defaultIngredientFilter>
+		</recipeMaker>
+    <tradeTags>
+      <li>Armor</li>
+    </tradeTags>
+	</ThingDef>
+
+    <ThingDef Name="MR_UnfinishedTechArmor" ParentName="MR_UnfinishedBase">
+    <defName>MR_UnfinishedTechArmor</defName>
+    <label>unfinished advanced armor</label>
+    <description>An unfinished piece of high-tech armor.</description>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedTechArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  
+	<ThingDef Name="MR_MachineableHeadGearBase" ParentName="MR_MachineableGearBase" Abstract="True">
+		<thingCategories Inherit="False">
+			<li>MRHeadgear</li>
+		</thingCategories>
+		<recipeMaker>
+			<unfinishedThingDef>MR_UnfinishedTechArmor</unfinishedThingDef>
+		</recipeMaker>
+	</ThingDef>
+	<!--북부의상-->
+
+
+	<!--원거리 전투복-->
+	<ThingDef ParentName="MR_MachineableGearBase">
+		<defName>MR_RangedCombatSuit</defName>
+		<description>This is a lightweight reinforcement suit that aids hunting in special situations.\n\nIt looks like a patchwork of ununderstood skills, but it's enough to chase prey.</description>
+		<label>Maru Lightweight Reinforcement Suit</label>
+		<recipeMaker>
+			<researchPrerequisite>MaruRC4</researchPrerequisite>
+		</recipeMaker>
+		<graphicData>
+			<texPath>marulike/Apparel/MR_RangedCombatSuit</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<costList>
+			<Plasteel>35</Plasteel>
+            <Uranium>10</Uranium>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<stuffCategories>
+			<li>Fabric</li>
+			<li>Leathery</li>
+		</stuffCategories>
+		<costStuffCount>100</costStuffCount>
+		<statBases>
+			<MaxHitPoints>210</MaxHitPoints>
+			<WorkToMake>22000</WorkToMake>
+			<Mass>6.5</Mass>
+			<Flammability>0.6</Flammability>
+            <ArmorRating_Sharp>0.58</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+			<Insulation_Cold>9</Insulation_Cold>
+			<Insulation_Heat>28</Insulation_Heat>
+			<EquipDelay>4</EquipDelay>
+			
+	  <StuffEffectMultiplierArmor>0.25</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.9</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.4</StuffEffectMultiplierInsulation_Heat>
+		</statBases>
+		<equippedStatOffsets>
+			<RangedWeapon_Cooldown>-0.15</RangedWeapon_Cooldown>
+			<MoveSpeed>0.2</MoveSpeed>
+		</equippedStatOffsets>
+		<apparel>
+		 <drawData>
+        <dataNorth>
+          <layer>60</layer>
+        </dataNorth>
+      </drawData>
+			<bodyPartGroups>
+				<li>Torso</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+			</bodyPartGroups>
+			<wornGraphicPath>marulike/Apparel/MR_RangedCombatSuit</wornGraphicPath>
+			<useWornGraphicMask>true</useWornGraphicMask>
+			<layers>
+				<li>OnSkin</li>
+				<li>Shell</li>
+			</layers>
+			<defaultOutfitTags>
+				<li>Worker</li>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+			<tags>
+				<li>MR_Hyperborea</li>
+				<li>MR_MountainRanger</li>
+			</tags>
+		</apparel>
+	</ThingDef>
+	
+  <ThingDef ParentName="MR_MachineableGearBase">
+    <defName>MR_MeleeCombatSuit</defName>
+    <description>Weight-enhanced clothing that assists in hunting in special situations.\n\n It looks like a primitive armor with a metal plate underneath a thick coat, but it contains experimental techniques that have not yet been fully interpreted.</description>
+    <label>Maru Heavy Reinforcement Suit</label>
+    <techLevel>Spacer</techLevel>
+    <recipeMaker>
+      <researchPrerequisite>MaruRC4</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/MR_MeleeCombatSuit</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+	  <Plasteel>20</Plasteel>
+      <Uranium>25</Uranium>
+	  <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>145</costStuffCount>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToMake>16000</WorkToMake>
+      <Mass>11.5</Mass>
+      <Flammability>0.7</Flammability>
+      <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+      <Insulation_Cold>35</Insulation_Cold>
+      <Insulation_Heat>5</Insulation_Heat>
+      <EquipDelay>4</EquipDelay>
+	 
+	  <StuffEffectMultiplierArmor>0.88</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.95</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.35</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+      <IncomingDamageFactor>-0.1</IncomingDamageFactor>
+      <MeleeDodgeChance>0.15</MeleeDodgeChance>
+	  <MoveSpeed>0.2</MoveSpeed>
+    </equippedStatOffsets>
+    <apparel>
+	 <drawData>
+        <dataNorth>
+          <layer>60</layer>
+        </dataNorth>
+      </drawData>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/Apparel/MR_MeleeCombatSuit</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>OnSkin</li>
+		<li>Shell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_MountainRanger</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <!--사냥가면-->
+  <ThingDef ParentName="MR_HatMakeableBase">
+    <defName>MR_huntingmask</defName>
+    <description>This is a mask used by hunter Maru.\n\nProvides the level of defense required for hunting and a sense of intimidation.</description>
+    <descriptionHyperlinks>
+      <ThingDef>MR_huntingmaskR</ThingDef>
+    </descriptionHyperlinks>
+    <label>Maru Hunting Mask</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRA6</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/hat/MR_huntingmask</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+      <Steel>75</Steel>
+    </costList>
+    <statBases>
+      <WorkToMake>10400</WorkToMake>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Mass>1.5</Mass>
+      <Flammability>0.6</Flammability>
+      <ArmorRating_Sharp>0.59</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.31</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.4</ArmorRating_Heat>
+      <Insulation_Cold>4</Insulation_Cold>
+      <Insulation_Heat>1</Insulation_Heat>
+      <EquipDelay>2</EquipDelay>
+	  <ToxicEnvironmentResistance>0.1</ToxicEnvironmentResistance>
+	  <StuffEffectMultiplierArmor>0.02</StuffEffectMultiplierArmor>
+    </statBases>
+    <equippedStatOffsets>
+      <AimingDelayFactor>-0.1</AimingDelayFactor>
+      <HuntingStealth>0.1</HuntingStealth>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <drawData>
+        <dataNorth>
+          <layer>-3</layer>
+        </dataNorth>
+      </drawData>
+      <wornGraphicPath>marulike/Apparel/hat/MR_huntingmask</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Hunter</li>
+        <li>MR_CHunter</li>
+      </tags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(1,1,1,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+
+  <!--개조 사냥가면-->
+  <ThingDef ParentName="MR_MachineableHeadGearBase">
+    <defName>MR_huntingmaskR</defName>
+    <description>This mask is used by Hunter Maru.\n\nIt has been modified to make the body's senses more sensitive and sharp by adjusting the valves on both sides of the barrel.</description>
+    <descriptionHyperlinks>
+      <ThingDef>MR_huntingmaskM</ThingDef>
+    </descriptionHyperlinks>
+    <label>Maru Modified Hunting Mask</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRB4</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/hat/MR_huntingmask1</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+      <MR_huntingmask>1</MR_huntingmask>
+	  <Plasteel>10</Plasteel>
+	  <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <WorkToMake>10400</WorkToMake>
+      <MaxHitPoints>180</MaxHitPoints>
+      <Mass>1.7</Mass>
+      <Flammability>0.6</Flammability>
+      <ArmorRating_Sharp>0.86</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.38</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.43</ArmorRating_Heat>
+      <Insulation_Cold>4</Insulation_Cold>
+      <Insulation_Heat>1</Insulation_Heat>
+      <EquipDelay>2</EquipDelay>
+	  <StuffEffectMultiplierArmor>0.1</StuffEffectMultiplierArmor>
+    </statBases>
+    <equippedStatOffsets>
+      <ShootingAccuracyPawn>0.05</ShootingAccuracyPawn>
+      <AimingDelayFactor>-0.1</AimingDelayFactor>
+      <HuntingStealth>0.1</HuntingStealth>
+      <ToxicEnvironmentResistance>0.5</ToxicEnvironmentResistance>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <drawData>
+        <dataNorth>
+          <layer>-3</layer>
+        </dataNorth>
+      </drawData>
+      <wornGraphicPath>marulike/Apparel/hat/MR_huntingmask1</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Hunter</li>
+      </tags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(1,1,1,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+
+  <!--산지기의 가면-->
+  <ThingDef ParentName="MR_MachineableHeadGearBase">
+    <defName>MR_huntingmaskM</defName>
+    <description>This is the mask used by Maru of the Mountain Keeper.\n\nIt has been remodeled using ancient technologies whose working principle is unknown.</description>
+    <label>Maru Mountain Ranger's Mask</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRC4</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/hat/MR_huntingmask2</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+    <MR_huntingmaskR>1</MR_huntingmaskR>
+	  <Plasteel>25</Plasteel>
+	  <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <statBases>
+      <WorkToMake>10400</WorkToMake>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Mass>1.8</Mass>
+      <Flammability>0.6</Flammability>
+      <ArmorRating_Sharp>1.08</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.53</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <Insulation_Cold>4</Insulation_Cold>
+      <Insulation_Heat>1</Insulation_Heat>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <ShootingAccuracyPawn>0.15</ShootingAccuracyPawn>
+      <AimingDelayFactor>-0.15</AimingDelayFactor>
+      <MeleeDodgeChance>0.15</MeleeDodgeChance>
+      <HuntingStealth>0.1</HuntingStealth>
+      <ToxicEnvironmentResistance>0.9</ToxicEnvironmentResistance>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <drawData>
+        <dataNorth>
+          <layer>-3</layer>
+        </dataNorth>
+      </drawData>
+      <wornGraphicPath>marulike/Apparel/hat/MR_huntingmask2</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_MountainRanger</li>
+      </tags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(1,1,1,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+
+  <!--해석가 모자-->
+  <ThingDef ParentName="MR_HatMakeableBase">
+    <defName>MR_DeciphersLC</defName>
+    <description>This is the hat worn by Deciphers on the mountain every day.\n\nIt also serves as cold protection, protection, identification, and fashion.</description>
+    <label>Deciphers Life Cap</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRA1</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/hat/MR_Decipherslifecap</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>40</costStuffCount>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToMake>5000</WorkToMake>
+      <Mass>0.8</Mass>
+      <Flammability>0.7</Flammability>
+      <ArmorRating_Heat>0.27</ArmorRating_Heat>
+      <Insulation_Cold>8.14</Insulation_Cold>
+      <Insulation_Heat>7.70</Insulation_Heat>
+      <EquipDelay>1</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0.28</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.8</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.2</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+      <MentalBreakThreshold>-0.06</MentalBreakThreshold>
+      <TradePriceImprovement>0.08</TradePriceImprovement>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/Apparel/hat/MR_Decipherslifecap</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Deciphers</li>
+        <li>Royal</li>
+        <li>RoyalTier5</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <!--두루마기-->
+  <ThingDef ParentName="MR_ApparelBaseA">
+    <defName>MR_durumagi</defName>
+    <description>This is a coat worn by Maru on a daily basis.\n\nIt acts like a windbreaker, but it is a bit thicker and more classic.</description>
+    <label>Maru Durumagi</label>
+    <techLevel>Medieval</techLevel>
+    <recipeMaker>
+      <researchPrerequisite>MaruRA3</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/MR_durumagi</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>80</costStuffCount>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToMake>10000</WorkToMake>
+      <Mass>1.3</Mass>
+      <Flammability>0.7</Flammability>
+      <Insulation_Cold>10</Insulation_Cold>
+      <EquipDelay>1.5</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0.34</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.5</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.2</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+      <NegotiationAbility>0.1</NegotiationAbility>
+      <SocialImpact>0.1</SocialImpact>
+      <MoveSpeed>-0.1</MoveSpeed>
+    </equippedStatOffsets>
+    <apparel>
+	    <drawData>
+        <dataNorth>
+          <layer>60</layer>
+        </dataNorth>
+      </drawData>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/Apparel/MR_durumagi</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <!-- 해석가 머리장식 -->
+  <ThingDef ParentName="MR_MachineableHeadGearBase">
+    <defName>MR_DeciphersHD</defName>
+    <description>This is an Decipherer's insert-type headdress.\n\nThe device inside the headdress assists concentration and provides a certain amount of defense through a force field.</description>
+    <label>Maru Deciphers Headdress</label>
+    <techLevel>Spacer</techLevel>
+    <recipeMaker>
+      <researchPrerequisite>MaruRD2</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/hat/MR_Deciphersheaddress</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+      <Steel>35</Steel>
+		<ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToMake>6000</WorkToMake>
+      <Mass>0.5</Mass>
+      <Flammability>0.7</Flammability>
+      <ArmorRating_Sharp>0.48</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.32</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.32</ArmorRating_Heat>
+      <Insulation_Cold>8</Insulation_Cold>
+      <Insulation_Heat>8</Insulation_Heat>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MentalBreakThreshold>-0.06</MentalBreakThreshold>
+      <NegotiationAbility>0.1</NegotiationAbility>
+      <SocialImpact>0.1</SocialImpact>
+      <MechBandwidth MayRequire="Ludeon.RimWorld.Biotech">14</MechBandwidth>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <drawData>
+        <dataNorth>
+          <layer>-3</layer>
+        </dataNorth>
+      </drawData>
+      <wornGraphicPath>marulike/Apparel/hat/MR_Deciphersheaddress</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Deciphers</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <!--위생외투-->
+  <ThingDef ParentName="MR_ApparelBaseA">
+    <defName>MR_sanitarycoat</defName>
+    <description>This coat is used for work that requires hygiene.\n\nThe white coat makes it easy to detect contamination, and it is possible to separate the inner fabric coated with a solvent and the white side corresponding to the outer surface. Therefore, it is easy to manage and disinfect.</description>
+    <label>Maru Sanitary Coat</label>
+    <techLevel>Medieval</techLevel>
+    <recipeMaker>
+      <researchPrerequisite>MaruRB3</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/MR_sanitarycoat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+	  <Silver>30</Silver>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>85</costStuffCount>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToMake>8000</WorkToMake>
+      <Mass>0.8</Mass>
+      <Flammability>0.7</Flammability>
+      <Insulation_Cold>5</Insulation_Cold>
+      <EquipDelay>1.5</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0.25</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.4</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.2</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+	  <MedicalTendQuality>0.1</MedicalTendQuality>
+      <MedicalSurgerySuccessChance>0.12</MedicalSurgerySuccessChance>
+    </equippedStatOffsets>
+    <apparel>
+	    <drawData>
+        <dataNorth>
+          <layer>60</layer>
+        </dataNorth>
+      </drawData>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/Apparel/MR_sanitarycoat</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Doctor</li>
+        <li>MR_Coat</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <!--방한외투-->
+  <ThingDef ParentName="MR_ApparelBaseA">
+    <defName>MR_wintercoat</defName>
+    <description>This is a thick coat to overcome the cold.\n\nIt is a structure made with reference to the fur of an animal that lived on the planet it was born in, and it is very warm and soft.</description>
+    <label>Maru Winter Coat</label>
+    <techLevel>Medieval</techLevel>
+    <recipeMaker>
+      <researchPrerequisite>MaruRA3</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/MR_wintercoat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>115</costStuffCount>
+    <statBases>
+      <MaxHitPoints>160</MaxHitPoints>
+      <WorkToMake>8000</WorkToMake>
+      <Mass>1.2</Mass>
+      <Flammability>0.7</Flammability>
+      <ArmorRating_Heat>0.31</ArmorRating_Heat>
+      <Insulation_Cold>15</Insulation_Cold>
+      <EquipDelay>1.5</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0.34</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.95</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+      <PsychicSensitivity>-0.10</PsychicSensitivity>
+    </equippedStatOffsets>
+    <apparel>
+	    <drawData>
+        <dataNorth>
+          <layer>60</layer>
+        </dataNorth>
+      </drawData>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/Apparel/MR_wintercoat</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Coat</li>
+        <li>MaruHideT</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <!--사냥외투-->
+  <ThingDef ParentName="MR_ApparelBaseA">
+    <defName>MR_HuntingCoat</defName>
+    <description>A coat for hunting.\n\nProvides additional defense, and can carry a variety of items that prevent hunting by prey.</description>
+    <label>Maru Hunting Coat</label>
+    <techLevel>Medieval</techLevel>
+    <recipeMaker>
+      <researchPrerequisite>MaruRB5</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/MR_HuntingCoat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+      <Steel>28</Steel>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>80</costStuffCount>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToMake>16000</WorkToMake>
+      <Mass>1.8</Mass>
+      <Flammability>0.7</Flammability>
+      <EquipDelay>1.5</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0.45</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.8</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.2</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+	<equippedStatOffsets>
+	  <PsychicSensitivity>-0.05</PsychicSensitivity>
+      <HuntingStealth>0.3</HuntingStealth>
+    </equippedStatOffsets>
+    <apparel>
+	    <drawData>
+        <dataNorth>
+          <layer>60</layer>
+        </dataNorth>
+      </drawData>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/Apparel/MR_HuntingCoat</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Hunter</li>
+        <li>MR_Coat</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <!--해석가 생활외투-->
+  <ThingDef ParentName="MR_ApparelBaseA">
+    <defName>MR_Decipherslifecoat</defName>
+    <description>This is the coat worn by Deciphers on a mountain top.\n\nThe Decipherer lives indoors near a geyser, which is rare among many floors, so it is thinner and shorter than other coats.</description>
+    <label>Maru Decipherer's Life Coat</label>
+    <techLevel>Medieval</techLevel>
+    <recipeMaker>
+      <researchPrerequisite>MaruRA1</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/MR_Decipherslifecoat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>80</costStuffCount>
+    <statBases>
+      <MaxHitPoints>130</MaxHitPoints>
+      <WorkToMake>6000</WorkToMake>
+      <Mass>0.8</Mass>
+      <Flammability>0.7</Flammability>
+      <EquipDelay>1.5</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0.25</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.2</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.4</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+      <MechBandwidth MayRequire="Ludeon.RimWorld.Biotech">1</MechBandwidth>
+    </equippedStatOffsets>
+    <apparel>
+	    <drawData>
+        <dataNorth>
+          <layer>60</layer>
+        </dataNorth>
+      </drawData>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/Apparel/MR_Decipherslifecoat</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Deciphers</li>
+        <li>Royal</li>
+        <li>RoyalTier5</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <!--해석가 예복-->
+  <ThingDef ParentName="MR_MachineableGearBase">
+    <defName>MR_Deciphersrobes</defName>
+    <description>This is the Decipherer's robes.\n\nThe accelerator built into the clothes lightens the body and sharpens the mind.\nThe same style has been used since the days of the first Deciphers who were the etymology of Maru, a human living on the mountain. It is being passed down.</description>
+    <label>Maru Decipherer's Robe</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRD2</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/MR_Deciphersrobes</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+    <costStuffCount>65</costStuffCount>
+    <costList>
+		<ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <statBases>
+      <MaxHitPoints>220</MaxHitPoints>
+      <WorkToMake>6000</WorkToMake>
+      <Mass>1.2</Mass>
+      <Flammability>0.7</Flammability>
+      <ArmorRating_Heat>0.68</ArmorRating_Heat>
+      <EquipDelay>1.5</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0.49</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.5</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+	<equippedStatOffsets>
+    <MentalBreakThreshold>-0.06</MentalBreakThreshold>
+    <MoveSpeed>0.2</MoveSpeed>
+      <MechBandwidth MayRequire="Ludeon.RimWorld.Biotech">12</MechBandwidth>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <wornGraphicPath>marulike/Apparel/MR_Deciphersrobes</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>OnSkin</li>
+        <li>Shell</li>
+      </layers>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Deciphers</li>
+        <li>Psychic</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <!--해석가 생활복-->
+  <ThingDef ParentName="MR_ApparelBaseA">
+    <defName>MR_Decipherslifeclothes</defName>
+    <description>A garment worn daily by Deciphers on the mountain.\n\nA neat and active garment, crafted in the style of their ancestors unearthed from the ruins.</description>
+    <label>Maru Decipherer's Life Clothes</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRA1</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/MR_Decipherslifeclothes</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>65</costStuffCount>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToMake>5000</WorkToMake>
+      <Mass>1.0</Mass>
+      <Flammability>0.7</Flammability>
+      <Insulation_Cold>5</Insulation_Cold>
+      <Insulation_Heat>5</Insulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0.25</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.4</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.3</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <wornGraphicPath>marulike/Apparel/MR_Decipherslifeclothes</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Deciphers</li>
+        <li>Royal</li>
+        <li>RoyalTier5</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+
+  <!--==========작업복==========-->
+
+  <!--요리복-->
+  <ThingDef ParentName="MR_ApparelBaseA">
+    <defName>MR_cookclothes</defName>
+    <description>Cooking clothes for hunting and cooking.\n\nIn the society of Maru in the past, only Maru, who possessed both influence and power, was qualified to touch cookware.\nEven now, some groups It is a custom that remains only as a tradition of Even so, cooking still has a great meaning for Maru.</description>
+    <label>Maru Cook Outfit</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRA3</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/MR_cookclothes</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+	  <Silver>10</Silver>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>65</costStuffCount>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToMake>8000</WorkToMake>
+      <Mass>1.1</Mass>
+      <Flammability>0.7</Flammability>
+      <Insulation_Cold>8</Insulation_Cold>
+      <EquipDelay>1.5</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0.28</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.55</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+      <CookSpeed>0.15</CookSpeed>
+	  <FoodPoisonChance>-0.2</FoodPoisonChance>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <wornGraphicPath>marulike/Apparel/MR_cookclothes</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Cook</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+
+  <!--공작복-->
+  <ThingDef ParentName="MR_ApparelBaseA">
+    <defName>MR_workclothes</defName>
+    <description>It is work clothes for various production activities.\n\nIt is easy to wear, there is no inconvenience in moving, and it is useful for carrying tools.</description>
+    <label>Maru Work Outfit</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRA0</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/MR_workclothes</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>65</costStuffCount>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToMake>8000</WorkToMake>
+      <Mass>1.1</Mass>
+      <Flammability>0.7</Flammability>
+      <EquipDelay>1.5</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0.22</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.4</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.4</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+      <ButcheryMechanoidSpeed>0.1</ButcheryMechanoidSpeed>
+      <GeneralLaborSpeed>0.17</GeneralLaborSpeed>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/Apparel/MR_workclothes</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Work</li> 
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <!--토목복-->
+  <ThingDef ParentName="MR_ApparelBaseA">
+    <defName>MR_engineeringclothes</defName>
+    <description>Work clothes for construction and mining.\n\nYou can carry various tools by hanging them on a rope connected to a hook.</description>
+    <label>Maru Engineering Outfit</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRA3</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/MR_engineeringclothes</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>65</costStuffCount>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToMake>8000</WorkToMake>
+      <Mass>1.5</Mass>
+      <Flammability>0.7</Flammability>
+      <Insulation_Heat>8</Insulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0.22</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.25</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.45</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+      <ConstructSuccessChance>0.15</ConstructSuccessChance>
+      <MiningSpeed>0.15</MiningSpeed>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/Apparel/MR_engineeringclothes</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>OnSkin</li>
+        <li>MRNeck</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Engineer</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <!--채집복-->
+  <ThingDef ParentName="MR_ApparelBaseA">
+    <defName>MR_farmclothes</defName>
+    <description>It is work clothes for quick collection and transport.\n\nThe standard outdoor activity clothes of Maru, it has an efficient structure designed not to get tired even if you go a long way.</description>
+    <label>Maru Forager's Outfit</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRA3</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/MR_farmclothes</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>75</costStuffCount>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToMake>7000</WorkToMake>
+      <Mass>1.5</Mass>
+      <Flammability>0.7</Flammability>
+      <Insulation_Cold>10</Insulation_Cold>
+      <EquipDelay>1.5</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0.28</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.6</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.2</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+      <CarryingCapacity>15</CarryingCapacity>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/Apparel/MR_farmclothes</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Starting</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <!--위생복-->
+  <ThingDef ParentName="MR_ApparelBaseA">
+    <defName>MR_sanitaryclothing</defName>
+    <description>It is work clothes used for work where hygiene is important.\n\nIt is made to fit the body slightly inconveniently, but the disinfectant coated on the outer surface of the cloth enables continuous sterilization.</description>
+    <label>Maru Sanitary Clothing</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRB3</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/MR_sanitaryclothing</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+      <Silver>21</Silver>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>65</costStuffCount>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToMake>8000</WorkToMake>
+      <Mass>1.5</Mass>
+      <Flammability>0.7</Flammability>
+      <EquipDelay>1.5</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0.22</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.4</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.4</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+      <ResearchSpeed>0.02</ResearchSpeed>
+	  <MedicalTendQuality>0.05</MedicalTendQuality>
+      <DrugSynthesisSpeed>0.12</DrugSynthesisSpeed>
+      <MedicalSurgerySuccessChance>0.08</MedicalSurgerySuccessChance>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/Apparel/MR_sanitaryclothing</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_doctor</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <!--사냥복-->
+  <ThingDef ParentName="MR_ApparelBaseA">
+    <defName>MR_huntingsuit</defName>
+    <description>This is clothing for hunting.\n\nMost hunters love it, and it functions as camouflage, protection, and cold protection.</description>
+    <label>Maru Hunting Suit</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRA6</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/MR_huntingsuit</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>85</costStuffCount>
+    <statBases>
+      <MaxHitPoints>220</MaxHitPoints>
+      <WorkToMake>7500</WorkToMake>
+      <Mass>1.5</Mass>
+      <Flammability>0.7</Flammability>
+      <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+      <Insulation_Cold>10</Insulation_Cold>
+      <EquipDelay>1.5</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0.38</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.8</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.2</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+      <HuntingStealth>0.2</HuntingStealth>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/Apparel/MR_huntingsuit</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Hunter</li>
+        <li>MR_CHunter</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+  
+  <!--npc-->
+  <!--Apparelbase-->
+  <ThingDef Name="MR_NPCApparelBase" Abstract="True">
+    <thingClass>Apparel</thingClass>
+    <category>Item</category>
+    <selectable>True</selectable>
+    <pathCost>10</pathCost>
+    <useHitPoints>True</useHitPoints>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>2</DeteriorationRate>
+      <Beauty>0</Beauty>
+    </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>True</alwaysHaulable>
+    <tickerType>Never</tickerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li>
+        <compClass>CompColorable</compClass>
+      </li>
+    </comps>
+    <apparel>
+      <tags Inherit="false">
+        <li>MR_NPCApparel</li>
+      </tags>
+    </apparel>
+    <!--일반작업대-->
+    <recipeMaker>
+    </recipeMaker>
+    <thingCategories Inherit="false">
+      <li>MRApparel</li>
+    </thingCategories>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(1,1,1,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+
+  <ThingDef Name="MR_NPCHatMakeableBase" ParentName="MR_NPCApparelBase" Abstract="True">
+    <thingCategories Inherit="False">
+      <li>MRHeadgear</li>
+    </thingCategories>
+  </ThingDef>
+  
+  
+  <!--상인의 모자-->
+  <ThingDef ParentName="MR_HatMakeableBase">
+    <defName>MR_thermalhat</defName>
+    <description>This is the hat of wandering merchants who carry goods through ice and snow.\n\nBecause Maru merchants are mainly active in extreme cold areas, they always wear thick hats and clothes to explore the snowy fields.</description>
+    <label>Maru Caravan hat</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRA3</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/ApparelP/icon/MR_thermalhat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>65</costStuffCount>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToMake>5000</WorkToMake>
+      <Mass>1.0</Mass>
+      <Flammability>0.7</Flammability>
+      <EquipDelay>1</EquipDelay>
+      <Insulation_Cold>15</Insulation_Cold>
+	  
+	  <StuffEffectMultiplierArmor>0.26</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.9</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+      <MentalBreakThreshold>-0.06</MentalBreakThreshold>
+      <TradePriceImprovement>0.08</TradePriceImprovement>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/ApparelP/MR_thermalhat</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Merchant</li>
+        <li>MaruHideE</li>
+        <li>MaruHideH</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <!--상인의 옷-->
+
+  <ThingDef ParentName="MR_ApparelBaseA">
+    <defName>MR_merchantsclothes</defName>
+    <description>These are the clothes of wandering merchants who carry goods through ice and snow.\n\nBecause Maru merchants are mainly active in extreme cold areas, they always wear thick hats and clothes to explore the snowy fields.</description>
+    <label>Maru Caravan Clothes</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRA3</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/ApparelP/icon/MR_merchantsclothes</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>65</costStuffCount>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToMake>8000</WorkToMake>
+      <Mass>1.5</Mass>
+      <Flammability>0.7</Flammability>
+      <Insulation_Cold>15</Insulation_Cold>
+      <EquipDelay>1.5</EquipDelay>
+	  <StuffEffectMultiplierArmor>0.26</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.9</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+      <ConstructSuccessChance>0.15</ConstructSuccessChance>
+      <GeneralLaborSpeed>0.1</GeneralLaborSpeed>
+      <TradePriceImprovement>0.02</TradePriceImprovement>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/ApparelP/MR_merchantsclothes</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Merchant</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+  
+  <!--악사복-->
+  <ThingDef ParentName="MR_ApparelBaseA">
+    <defName>MR_Musicianclo</defName>
+    <description>It is the robe of the musicians for the performance.</description>
+    <label>Maru Musician Outfit</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRA3</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/npc/MR_musician</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+	  <Silver>10</Silver>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>65</costStuffCount>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToMake>8000</WorkToMake>
+      <Mass>1.1</Mass>
+      <Flammability>0.7</Flammability>
+      <Insulation_Cold>8</Insulation_Cold>
+      <EquipDelay>1.5</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0.28</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.55</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+		<NegotiationAbility>0.2</NegotiationAbility> <!--외교 영향력-->
+	    <SocialImpact>0.2</SocialImpact>
+		<TradePriceImprovement>0.02</TradePriceImprovement>
+      <PsychicSensitivityOffset MayRequire="Ludeon.RimWorld.Royalty">0.25</PsychicSensitivityOffset>
+      <PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Royalty">0.05</PsychicEntropyRecoveryRate>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <wornGraphicPath>marulike/Apparel/npc/MR_musician</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Musician</li>
+        <li>Royal</li>
+        <li>RoyalTier5</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+  
+  
+  <!--악사의 모자-->
+  <ThingDef ParentName="MR_HatMakeableBase">
+    <defName>MR_Musicianhat</defName>
+    <description>It is a hat for the ceremonies of musicians for a performance.</description>
+    <label>Maru Musician hat</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRA3</researchPrerequisite>
+			<recipeUsers>
+				<li>MR_retrofittable</li>
+			</recipeUsers>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/Apparel/hat/MR_gis</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>65</costStuffCount>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToMake>5000</WorkToMake>
+      <Mass>1.0</Mass>
+      <Flammability>0.7</Flammability>
+      <EquipDelay>1</EquipDelay>
+      <Insulation_Cold>15</Insulation_Cold>
+	  
+	  <StuffEffectMultiplierArmor>0.26</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.9</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+		<NegotiationAbility>0.2</NegotiationAbility> <!--외교 영향력-->
+	    <SocialImpact>0.2</SocialImpact>
+		<TradePriceImprovement>0.02</TradePriceImprovement>
+      <PsychicSensitivityOffset MayRequire="Ludeon.RimWorld.Royalty">0.25</PsychicSensitivityOffset>
+      <PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Royalty">0.05</PsychicEntropyRecoveryRate>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/Apparel/hat/MR_gis</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Musician</li>
+        <li>MaruHideE</li>
+        <li>Royal</li>
+        <li>RoyalTier5</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+  
+  <!--악사 외투-->
+  <ThingDef ParentName="MR_ApparelBaseA">
+    <defName>MR_Musiciancoat</defName>
+    <description>It is the robe of the musicians for the performance.</description>
+    <label>Maru Musician's Coat</label>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>marulike/Apparel/npc/MR_musicianT</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>80</costStuffCount>
+    <statBases>
+      <MaxHitPoints>130</MaxHitPoints>
+      <WorkToMake>6000</WorkToMake>
+      <Mass>0.8</Mass>
+      <Flammability>0.7</Flammability>
+      <EquipDelay>1.5</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0.25</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.2</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.4</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+		<equippedStatOffsets>
+		<NegotiationAbility>0.2</NegotiationAbility> <!--외교 영향력-->
+	    <SocialImpact>0.2</SocialImpact>
+		<TradePriceImprovement>0.02</TradePriceImprovement>
+      <PsychicSensitivityOffset MayRequire="Ludeon.RimWorld.Royalty">0.25</PsychicSensitivityOffset>
+      <PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Royalty">0.05</PsychicEntropyRecoveryRate>
+		</equippedStatOffsets>
+    <apparel>
+	    <drawData>
+        <dataNorth>
+          <layer>60</layer>
+        </dataNorth>
+      </drawData>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/Apparel/npc/MR_musicianT</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Musician</li>
+        <li>MaruHideT</li>
+        <li>Royal</li>
+        <li>RoyalTier5</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+
+  <!--놀이꾼의 옷-->
+  <ThingDef ParentName="MR_ApparelBaseA">
+    <defName>MR_GadaboutClo</defName>
+    <description>A Clown's uniform made for combat.\nThe armor is traditionally constructed with metal plates fastened to the inside of the fabric, and mobility aids allow the wearer to move around without discomfort under heavy weight.</description>
+    <label>Maru Clown Outfit</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRB6</researchPrerequisite>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/ApparelP/icon/MR_GadaboutClo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+      <Cloth>40</Cloth>
+	  <Plasteel>10</Plasteel>
+	  <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+	<stuffCategories>
+      <li>Metallic</li>
+	</stuffCategories>
+	<costStuffCount>130</costStuffCount>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToMake>18000</WorkToMake>
+      <Mass>1.1</Mass>
+      <Flammability>0.7</Flammability>
+      <EquipDelay>1.5</EquipDelay>
+	<ArmorRating_Sharp>0.90</ArmorRating_Sharp>
+	<ArmorRating_Blunt>0.30</ArmorRating_Blunt>
+    <ArmorRating_Heat>0.50</ArmorRating_Heat>
+	  <Insulation_Cold>26</Insulation_Cold>
+      <Insulation_Heat>6</Insulation_Heat>
+	  <StuffEffectMultiplierArmor>0.1</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.1</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <wornGraphicPath>marulike/ApparelP/MR_GadaboutClo</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>Middle</li>
+        <li>OnSkin</li>
+      </layers>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>Gadabout</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+  
+  
+  <!--놀이꾼의 모자-->
+  <ThingDef ParentName="MR_HatMakeableBase">
+    <defName>MR_Gadabouthat</defName>
+    <description>A hat made for the cadre of a itinerant troupe.\nIt is surprisingly protective given its simple appearance and is a symbol of majesty in its own right.</description>
+    <label>Maru Clown hat</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRB6</researchPrerequisite>
+			<recipeUsers>
+				<li>MR_retrofittable</li>
+			</recipeUsers>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/ApparelP/icon/MR_Gadabouthat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+      <Cloth>40</Cloth>
+	  <Plasteel>10</Plasteel>
+    </costList>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToMake>5000</WorkToMake>
+      <Mass>1.0</Mass>
+      <Flammability>0.7</Flammability>
+      <EquipDelay>1</EquipDelay>
+	<ArmorRating_Sharp>0.70</ArmorRating_Sharp>
+	<ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+    <ArmorRating_Heat>0.40</ArmorRating_Heat>
+	  <Insulation_Cold>4</Insulation_Cold>
+      <Insulation_Heat>1</Insulation_Heat>
+	  <StuffEffectMultiplierInsulation_Cold>0.9</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+		<NegotiationAbility>0.2</NegotiationAbility> <!--외교 영향력-->
+	    <SocialImpact>0.2</SocialImpact>
+		<TradePriceImprovement>0.2</TradePriceImprovement>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/ApparelP/MR_Gadabouthat</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Gadabout</li>
+        <li>MaruHideE</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+  
+  <!--놀이꾼의 투구-->
+  <ThingDef ParentName="MR_HatMakeableBase">
+    <defName>MR_Gadabouthel</defName>
+    <description>A clown's helm made for battle.\nIt is traditionally constructed with metal plates fastened to the inside of the fabric and a shield on top, providing both neck and face protection.</description>
+    <label>Maru Clown helmet</label>
+   <recipeMaker>
+      <researchPrerequisite>MaruRB6</researchPrerequisite>
+			<recipeUsers>
+				<li>MR_retrofittable</li>
+			</recipeUsers>
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/ApparelP/icon/MR_Gadabouthel</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+	  <Plasteel>10</Plasteel>
+    </costList>
+	<stuffCategories>
+      <li>Metallic</li>
+	</stuffCategories>
+	<costStuffCount>65</costStuffCount>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToMake>5000</WorkToMake>
+      <Mass>1.0</Mass>
+      <Flammability>0.7</Flammability>
+      <EquipDelay>1</EquipDelay>
+	<ArmorRating_Sharp>0.50</ArmorRating_Sharp>
+	<ArmorRating_Blunt>0.50</ArmorRating_Blunt>
+    <ArmorRating_Heat>0.50</ArmorRating_Heat>
+	  <StuffEffectMultiplierArmor>0.40</StuffEffectMultiplierArmor>
+	  <Insulation_Cold>4</Insulation_Cold>
+      <Insulation_Heat>1</Insulation_Heat>
+	  </statBases>
+    <equippedStatOffsets>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>UpperHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/ApparelP/MR_Gadabouthel</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Gadabout</li>
+        <li>MaruHideE</li>
+        <li>MaruHideH</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+  
+  
+  <!--놀이꾼의 외투-->
+  <ThingDef ParentName="MR_ApparelBaseA">
+    <defName>MR_GadaboutCoa</defName>
+    <description>A clown's uniform made for combat.\nThis armor is traditionally constructed with metal plates fastened to the inside of the fabric.</description>
+    <label>Maru Clown's Coat</label>
+    <recipeMaker>
+      <researchPrerequisite>MaruRB6</researchPrerequisite>
+    </recipeMaker>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>marulike/ApparelP/icon/MR_GadaboutCoa</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+      <Cloth>40</Cloth>
+	  <Plasteel>10</Plasteel>
+    </costList>
+	<stuffCategories>
+      <li>Metallic</li>
+	</stuffCategories>
+	<costStuffCount>70</costStuffCount>
+    <statBases>
+      <MaxHitPoints>130</MaxHitPoints>
+      <WorkToMake>16000</WorkToMake>
+      <Mass>0.8</Mass>
+      <Flammability>0.7</Flammability>
+      <EquipDelay>1.5</EquipDelay>
+	<ArmorRating_Sharp>0.50</ArmorRating_Sharp>
+	<ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+    <ArmorRating_Heat>0.50</ArmorRating_Heat>
+	  <Insulation_Cold>14</Insulation_Cold>
+      <Insulation_Heat>4</Insulation_Heat>
+	  <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.1</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+   </statBases>
+		<equippedStatOffsets>
+		</equippedStatOffsets>
+    <apparel>
+	    <drawData>
+        <dataNorth>
+          <layer>60</layer>
+        </dataNorth>
+      </drawData>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/ApparelP/MR_GadaboutCoa</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>MR_Gadabout</li>
+        <li>MaruHideT</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+
+  <!--내복-->
+  <ThingDef ParentName="MR_ApparelBase">
+    <defName>MR_Innerwear</defName>
+    <description>.</description>
+    <label>Maru Innerwear</label>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>marulike/ApparelP/icon/MR_Inner</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+    <tradeability>None</tradeability>
+	<costStuffCount>15</costStuffCount>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToMake>1000</WorkToMake>
+      <Mass>0.8</Mass>
+      <Flammability>0.7</Flammability>
+      <EquipDelay>1.5</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+		<equippedStatOffsets>
+		</equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/ApparelP/MR_Inner</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>MRNeck</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Inner</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+
+  <!-- 계승자의 머리장식 -->
+  <ThingDef ParentName="MR_ApparelBaseASD">
+    <defName>MR_successorhat</defName>
+    <description>test</description>
+    <label>Maru successorhat</label>
+    <techLevel>Spacer</techLevel>
+    <recipeMaker>
+      <!--<researchPrerequisite>MaruNB</researchPrerequisite>-->
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/ApparelP/icon/MR_successorhat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+      <Steel>35</Steel>
+		<ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToMake>6000</WorkToMake>
+      <Mass>0.5</Mass>
+      <Flammability>0.7</Flammability>
+      <ArmorRating_Sharp>0.48</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.32</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.32</ArmorRating_Heat>
+      <Insulation_Cold>8</Insulation_Cold>
+      <Insulation_Heat>8</Insulation_Heat>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MentalBreakThreshold>-0.06</MentalBreakThreshold>
+      <NegotiationAbility>0.1</NegotiationAbility>
+      <SocialImpact>0.1</SocialImpact>
+      <MechBandwidth MayRequire="Ludeon.RimWorld.Biotech">14</MechBandwidth>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <drawData>
+        <dataNorth>
+          <layer>-3</layer>
+        </dataNorth>
+      </drawData>
+      <wornGraphicPath>marulike/ApparelP/MR_successorhat</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+  
+  
+  <!--계승자의 외투-->
+  <ThingDef ParentName="MR_ApparelBaseAQ">
+    <defName>MR_successorcoat</defName>
+    <description>test</description>
+    <label>Maru successorcoat</label>
+    <techLevel>Medieval</techLevel>
+    <recipeMaker>
+      <!--<researchPrerequisite>MaruNB</researchPrerequisite>-->
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/ApparelP/icon/MR_successorcoat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>80</costStuffCount>
+    <statBases>
+      <MaxHitPoints>130</MaxHitPoints>
+      <WorkToMake>6000</WorkToMake>
+      <Mass>0.8</Mass>
+      <Flammability>0.7</Flammability>
+      <EquipDelay>1.5</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0.25</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.2</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.4</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+      <MechBandwidth MayRequire="Ludeon.RimWorld.Biotech">1</MechBandwidth>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+      </bodyPartGroups>
+      <wornGraphicPath>marulike/ApparelP/MR_successorcoat</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>Royal</li>
+        <li>RoyalTier5</li>
+      </tags>
+	    <drawData>
+        <dataNorth>
+          <layer>60</layer>
+        </dataNorth>
+      </drawData>
+    </apparel>
+  </ThingDef>
+
+
+  <!--계승자의 정복-->
+  <ThingDef ParentName="MR_ApparelBaseAQ">
+    <defName>MR_successorclothes</defName>
+    <description>test</description>
+    <label>Maru successorclothes</label>
+    <recipeMaker>
+      <!--<researchPrerequisite>MaruNB</researchPrerequisite>-->
+    </recipeMaker>
+    <graphicData>
+      <texPath>marulike/ApparelP/icon/MR_successorclothes</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+    </costList>
+	<stuffCategories>
+		<li>Fabric</li>
+		<li>Leathery</li>
+	</stuffCategories>
+	<costStuffCount>65</costStuffCount>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToMake>5000</WorkToMake>
+      <Mass>1.0</Mass>
+      <Flammability>0.7</Flammability>
+      <Insulation_Cold>5</Insulation_Cold>
+      <Insulation_Heat>5</Insulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+	  
+	  <StuffEffectMultiplierArmor>0.25</StuffEffectMultiplierArmor>
+	  <StuffEffectMultiplierInsulation_Cold>0.4</StuffEffectMultiplierInsulation_Cold>
+	  <StuffEffectMultiplierInsulation_Heat>0.3</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <defaultOutfitTags>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <wornGraphicPath>marulike/ApparelP/MR_successorclothes</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
+      <tags Inherit="false">
+        <li>MR_Hyperborea</li>
+        <li>Royal</li>
+        <li>RoyalTier5</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+
+	<!--Apparelbase-->
+	<ThingDef Name="MR_ApparelBaseQ" Abstract="True">
+		<recipeMaker>
+			<workSkill>Crafting</workSkill>
+		</recipeMaker>
+		<thingClass>Apparel</thingClass>
+		<category>Item</category>
+		<selectable>True</selectable>
+		<pathCost>10</pathCost>
+		<useHitPoints>True</useHitPoints>
+    <techLevel>Medieval</techLevel>
+		<graphicData>
+			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+			<drawSize>1</drawSize>
+		</graphicData>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>2</DeteriorationRate>
+			<Beauty>0</Beauty>
+		</statBases>
+		<altitudeLayer>Item</altitudeLayer>
+		<alwaysHaulable>True</alwaysHaulable>
+		<tickerType>Never</tickerType>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<apparel>
+			<tags Inherit="false">
+				<li>MR_Apparel</li>
+			</tags>
+		</apparel>
+		<!--일반작업대-->
+		
+    <thingCategories Inherit="false">
+			<li>MRApparel</li>
+		</thingCategories>
+		<colorGenerator Class="ColorGenerator_Options">
+			<options>
+				<li>
+					<weight>10</weight>
+					<only>(1,1,1,1)</only>
+				</li>
+			</options>
+		</colorGenerator>
+	</ThingDef>
+
+	<ThingDef Name="MR_ApparelBaseAQ" ParentName="MR_ApparelBaseQ" Abstract="True">
+	</ThingDef>
+
+	<!--Apparelbase-->
+	<ThingDef Name="MR_ApparelBaseASD" Abstract="True">
+		<recipeMaker>
+			<workSkill>Crafting</workSkill>
+		</recipeMaker>
+		<thingClass>Apparel</thingClass>
+		<category>Item</category>
+		<selectable>True</selectable>
+		<pathCost>10</pathCost>
+		<useHitPoints>True</useHitPoints>
+    <techLevel>Medieval</techLevel>
+		<graphicData>
+			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+			<drawSize>1</drawSize>
+		</graphicData>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>2</DeteriorationRate>
+			<Beauty>0</Beauty>
+		</statBases>
+		<altitudeLayer>Item</altitudeLayer>
+		<alwaysHaulable>True</alwaysHaulable>
+		<tickerType>Never</tickerType>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<apparel>
+			<tags Inherit="false">
+				<li>MR_Apparel</li>
+			</tags>
+		</apparel>
+		<!--일반작업대-->
+		
+    <thingCategories Inherit="false">
+			<li>MRApparel</li>
+		</thingCategories>
+		<colorGenerator Class="ColorGenerator_Options">
+			<options>
+				<li>
+					<weight>10</weight>
+					<only>(1,1,1,1)</only>
+				</li>
+			</options>
+		</colorGenerator>
+	</ThingDef>
+
+</Defs>

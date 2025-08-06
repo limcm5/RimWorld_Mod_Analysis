@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- 긍정적 변이 -->
+  <HediffDef>
+    <defName>Hediff_Symbiotic_leggood</defName>
+    <label>Hamstring Reinforcement</label>
+    <description>This mutation was caused by a Mutation Inducer.</description>
+    <hediffClass>HediffWithComps</hediffClass> <!-- 일반 헤디프 -->
+    <defaultLabelColor>(0.8, 1.0, 0.8)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity> <!-- 단일 단계 변이 -->
+    <comps>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.2</offset>
+           <!-- <setMax>0.2</setMax> -->
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>Hediff_Symbiotic_armgood</defName>
+    <label>Peripheral Acuity</label>
+    <description>This mutation was caused by a Mutation Inducer.</description>
+    <hediffClass>HediffWithComps</hediffClass> <!-- 일반 헤디프 -->
+    <defaultLabelColor>(0.8, 1.0, 0.8)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity> <!-- 단일 단계 변이 -->
+    <comps>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeHitChance>2</MeleeHitChance> <!-- 근접 명중 -->
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>Hediff_Symbiotic_spinegood</defName>
+    <label>Neural Network Enhancement</label>
+    <description>This mutation was caused by a Mutation Inducer.</description>
+    <hediffClass>HediffWithComps</hediffClass> <!-- 일반 헤디프 -->
+    <defaultLabelColor>(0.8, 1.0, 0.8)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity> <!-- 단일 단계 변이 -->
+    <comps>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeDodgeChance>8</MeleeDodgeChance>
+          <ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>Hediff_Symbiotic_heartgood</defName>
+    <label>Cardiac Filter</label>
+    <description>This mutation was caused by a Mutation Inducer.</description>
+    <hediffClass>HediffWithComps</hediffClass> <!-- 일반 헤디프 -->
+    <defaultLabelColor>(0.8, 1.0, 0.8)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity> <!-- 단일 단계 변이 -->
+    <comps>
+    </comps>
+    <stages>
+      <li>
+			<totalBleedFactor>0.8</totalBleedFactor>
+        <capMods>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.1</offset>
+           <!-- <setMax>0.2</setMax> -->
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+ 
+  <HediffDef>
+    <defName>Hediff_Symbiotic_eyegood</defName>
+    <label>Hypervision</label>
+    <description>This mutation was caused by a Mutation Inducer.</description>
+    <hediffClass>HediffWithComps</hediffClass> <!-- 일반 헤디프 -->
+    <defaultLabelColor>(0.8, 1.0, 0.8)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity> <!-- 단일 단계 변이 -->
+    <comps>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.17</offset>
+           <!-- <setMax>0.2</setMax> -->
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>Hediff_Symbiotic_braingood</defName>
+    <label>Conscious Perception</label>
+    <description>This mutation was caused by a Mutation Inducer.</description>
+    <hediffClass>HediffWithComps</hediffClass> <!-- 일반 헤디프 -->
+    <defaultLabelColor>(0.8, 1.0, 0.8)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity> <!-- 단일 단계 변이 -->
+    <comps>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.5</painFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.20</offset>
+           <!-- <setMax>0.2</setMax> -->
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <!-- 부정적 변이 -->
+  <HediffDef>
+    <defName>Hediff_Symbiotic_legbad</defName>
+    <label>Tissue Simplification</label>
+    <description>This mutation was caused by a Mutation Inducer.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.8, 0.8)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <comps>
+    </comps>
+    <stages>
+      <li>
+        <hungerRateFactorOffset>-0.1</hungerRateFactorOffset>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.10</offset>
+           <!-- <setMax>0.2</setMax> -->
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>Hediff_Symbiotic_armbad</defName>
+    <label>Tissue Simplification</label>
+    <description>This mutation was caused by a Mutation Inducer.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.8, 0.8)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <comps>
+    </comps>
+    <stages>
+      <li>
+        <hungerRateFactorOffset>-0.1</hungerRateFactorOffset>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.10</offset>
+           <!-- <setMax>0.2</setMax> -->
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>Hediff_Symbiotic_spinebad</defName>
+    <label>Partial Neural Inhibition</label>
+    <description>This mutation was caused by a Mutation Inducer.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.8, 0.8)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <comps>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.8</painFactor>
+        <hungerRateFactorOffset>-0.1</hungerRateFactorOffset>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.10</offset>
+           <!-- <setMax>0.2</setMax> -->
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>Hediff_Symbiotic_heartbad</defName>
+    <label>Slowed Heartbeat</label>
+    <description>This mutation was caused by a Mutation Inducer.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.8, 0.8)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <comps>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.10</offset>
+           <!-- <setMax>0.2</setMax> -->
+          </li>
+        </capMods>
+        <statOffsets>
+          <ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>Hediff_Symbiotic_eyebad</defName>
+    <label>Optic Nerve Acceleration</label>
+    <description>This mutation was caused by a Mutation Inducer.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.8, 1.0, 0.8)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+      <comps>
+        <li Class="HediffCompProperties_GiveAbility">
+          <abilityDefs>
+            <li>MR_OpticNerveAcceleration</li>
+          </abilityDefs>
+        </li>
+      </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>-0.10</offset>
+           <!-- <setMax>0.2</setMax> -->
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>Hediff_Symbiotic_brainbad</defName>
+    <label>Working Memory Auxiliary</label>
+    <description>This mutation was caused by a Mutation Inducer.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.8, 1.0, 0.8)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <comps>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+            <WorkSpeedGlobal>0.5</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <AbilityGroupDef>
+    <defName>MR_Group_OpticNerveAcceleration</defName>
+    <cooldownTicks>30000</cooldownTicks>
+    <sendMessageOnCooldownComplete>false</sendMessageOnCooldownComplete>
+  </AbilityGroupDef>
+  
+<AbilityDef>
+    <defName>MR_OpticNerveAcceleration</defName>
+    <label>Optic Nerve Acceleration</label>
+    <description>Instantly accelerates optic nerve activity to maximize visual information processing speed.</description>
+    <jobDef>CastAbilityOnThing</jobDef>
+    <groupDef>MR_Group_OpticNerveAcceleration</groupDef>
+    <targetRequired>False</targetRequired>
+    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+    <iconPath>Icon/Gene/MR_Eye</iconPath>
+    <stunTargetWhileCasting>False</stunTargetWhileCasting>
+    <showPsycastEffects>False</showPsycastEffects>
+    <displayGizmoWhileUndrafted>False</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>True</disableGizmoWhileUndrafted>
+    <hotKey>Misc12</hotKey>
+    <uiOrder>3</uiOrder>
+    <warmupStartSound>MR_EnergyShield_Reset</warmupStartSound>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <statBases>
+      <Ability_Duration>1000</Ability_Duration>
+      <Ability_EffectRadius>0.9</Ability_EffectRadius>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>0.1</warmupTime>
+      <range>0.9</range>
+      <drawAimPie>False</drawAimPie>
+      <requireLineOfSight>False</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>Hediff_MR_OpticNerveAcceleration</hediffDef>
+        <onlyBrain>True</onlyBrain>
+        <onlyApplyToSelf>True</onlyApplyToSelf>
+        <replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+   <HediffDef ParentName="ImplantHediffBase">
+    <defName>Hediff_MR_OpticNerveAcceleration</defName>
+   <label>Optic Nerve Acceleration</label>
+    <description>Instantly accelerates optic nerve activity to maximize visual information processing speed.</description>
+  <!-- <spawnThingOnRemoved>YourMod_SymbioticRemnants</spawnThingOnRemoved> --> <!-- 제거 시 나올 잔해물 -->
+    <defaultLabelColor>(1.0, 1.0, 1.0)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <initialSeverity>0.01</initialSeverity> <!-- 초기 이식 시 동화율 -->
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0.01</minSeverity>
+         <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.60</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+</Defs>

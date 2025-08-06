@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	
+			
+			<Operation Class="PatchOperationFindMod">
+			<mods>
+				<li>Royalty</li>
+			</mods>
+			<match Class="PatchOperationSequence">
+			<!--<success>Always</success>-->
+				<operations>
+				<!-- Guests -->
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/QuestScriptDef[defName="Util_ChooseRandomQuestLodgerKind"]/root[@Class="QuestNode_Sequence"]/nodes/li[@Class="QuestNode_IsSet"]/node[@Class="QuestNode_GetRandomPawnKindForFaction"]/choices</xpath>
+						<value>
+							<li>
+								<factionDef>MRF_Hyperborea</factionDef>
+								<pawnKinds>									
+								<li>MRP_Engineer</li>
+									<li>MRP_Hunter</li>
+									<li>MRP_Caravan</li>
+								</pawnKinds>
+							</li>
+							<li>
+								<factionDef>MRF_HyperboreaA</factionDef>
+								<pawnKinds>									
+								<li>MRP_Engineer</li>
+									<li>MRP_Hunter</li>
+									<li>MRP_Caravan</li>
+								</pawnKinds>
+							</li>
+							<li>
+								<factionDef>MRF_HyperboreaB</factionDef>
+								<pawnKinds>									
+								<li>MRP_Engineer</li>
+									<li>MRP_Hunter</li>
+									<li>MRP_Caravan</li>
+								</pawnKinds>
+							</li>
+						</value>
+					</li>
+					<!-- Mercenaries -->
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/QuestScriptDef[defName="Util_ChooseRandomQuestHelperKind"]/root[@Class="QuestNode_Sequence"]/nodes/li[@Class="QuestNode_GetRandomPawnKindForFaction"]/choices</xpath>
+						<value>
+							<li>
+								<factionDef>MRF_Hyperborea</factionDef>
+								<pawnKinds>				
+									<li>MRP_Hunter_Bio</li>
+									<li>MRP_fangs_A_Bio</li>
+									<li>MRP_Claws_CM_Bio</li>
+									<li>MRP_Claws_C_Bio</li>
+								</pawnKinds>
+							</li>
+							<li>
+								<factionDef>MRF_HyperboreaA</factionDef>
+								<pawnKinds>				
+									<li>MRP_Hunter_Bio</li>
+									<li>MRP_fangs_A_Bio</li>
+									<li>MRP_Claws_A_Bio</li>
+									<li>MRP_Claws_C_Bio</li>
+								</pawnKinds>
+							</li>
+							<li>
+								<factionDef>MRF_HyperboreaB</factionDef>
+								<pawnKinds>				
+									<li>MRP_Hunter_Bio</li>
+									<li>MRP_fangs_A_Bio</li>
+									<li>MRP_Claws_A_Bio</li>
+									<li>MRP_Claws_C_Bio</li>
+								</pawnKinds>
+							</li>
+						</value>
+					</li>
+
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/FactionDef[defName="MRF_Hyperborea"]</xpath>
+						<value>
+							<royalTitleTags>
+								<li>MaruTitleD</li>
+							</royalTitleTags>
+							<royalTitleInheritanceWorkerClass>RoyalTitleInheritanceWorker</royalTitleInheritanceWorkerClass>
+							<royalTitleInheritanceRelations>
+								<li>Child</li>
+								<li>Grandchild</li>
+								<li>GreatGrandchild</li>
+								<li>NephewOrNiece</li>
+								<li>Spouse</li>
+								<li>Sibling</li>
+								<li>HalfSibling</li>
+								<li>Cousin</li>
+								<li>Parent</li>
+								<li>UncleOrAunt</li>
+							</royalTitleInheritanceRelations>
+							<royalFavorLabel>Testimonial</royalFavorLabel>
+							<royalFavorIconPath>Icon/MR_Icon</royalFavorIconPath>
+							<caravanTraderKinds>
+								<li>Caravan_MR_Deci</li>
+							</caravanTraderKinds>
+						</value>
+					</li>
+
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/FactionDef[defName="MRF_HyperboreaA"]</xpath>
+						<value>
+							<royalTitleTags>
+								<li>MaruTitleH</li>
+							</royalTitleTags>
+							<royalTitleInheritanceWorkerClass>RoyalTitleInheritanceWorker</royalTitleInheritanceWorkerClass>
+							<royalTitleInheritanceRelations>
+								<li>Child</li>
+								<li>Grandchild</li>
+								<li>GreatGrandchild</li>
+								<li>NephewOrNiece</li>
+								<li>Spouse</li>
+								<li>Sibling</li>
+								<li>HalfSibling</li>
+								<li>Cousin</li>
+								<li>Parent</li>
+								<li>UncleOrAunt</li>
+							</royalTitleInheritanceRelations>
+							<royalFavorLabel>Token</royalFavorLabel>
+							<royalFavorIconPath>Icon/MR_Icon</royalFavorIconPath>
+							<caravanTraderKinds>
+								<li>Caravan_MR_HuntP</li>
+							</caravanTraderKinds>
+						</value>
+					</li>
+					
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/PawnKindDef[defName="MRP_MountainRanger"]</xpath>
+						<value>
+							<minTitleRequired>MRFT_Moutain</minTitleRequired>
+						</value>
+					</li>
+
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/PawnKindDef[defName="MRP_Claws_CM"]</xpath>
+						<value>
+							<royalTitleChance>0.25</royalTitleChance>
+							<titleSelectOne>
+								<li>MRFT_Hunter</li>
+							<li>MRFT_claw</li>
+							</titleSelectOne>
+						</value>
+					</li>
+
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/PawnKindDef[defName="MRP_Claws_A"]</xpath>
+						<value>
+							<royalTitleChance>0.25</royalTitleChance>
+							<titleSelectOne>
+								<li>MRFT_Hunter</li>
+							<li>MRFT_claw</li>
+							</titleSelectOne>
+						</value>
+					</li>
+
+
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/PawnKindDef[defName="MRP_Claws_C"]</xpath>
+						<value>
+							<royalTitleChance>0.25</royalTitleChance>
+							<titleSelectOne>
+								<li>MRFT_Hunter</li>
+							<li>MRFT_claw</li>
+							</titleSelectOne>
+						</value>
+					</li>
+
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/PawnKindDef[defName="MRP_Deciphers"]</xpath>
+						<value>
+							<royalTitleChance>0.2</royalTitleChance>
+							<titleSelectOne>
+                                <li>MRFT_Scribe</li>
+								<li>MRFT_Decipher</li>
+							</titleSelectOne>
+						</value>
+					</li>
+
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/PawnKindDef[defName="MRP_Hunter"]</xpath>
+						<value>
+							<royalTitleChance>0.2</royalTitleChance>
+							<titleSelectOne>
+                                <li>MRFT_Shepherd</li>
+								<li>MRFT_Hunter</li>
+							</titleSelectOne>
+						</value>
+					</li>
+					
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/PawnKindDef[defName="MRP_fangs_A"]</xpath>
+						<value>
+							<royalTitleChance>0.2</royalTitleChance>
+							<titleSelectOne>
+                                <li>MRFT_Shepherd</li>
+								<li>MRFT_Hunter</li>
+							</titleSelectOne>
+						</value>
+					</li>
+
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/PawnKindDef[defName="MRP_fangs_M"]</xpath>
+						<value>
+							<royalTitleChance>0.2</royalTitleChance>
+							<titleSelectOne>
+                                <li>MRFT_Shepherd</li>
+								<li>MRFT_Hunter</li>
+							</titleSelectOne>
+						</value>
+					</li>
+
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/PawnKindDef[defName="MRP_fangs_RWH"]</xpath>
+						<value>
+							<royalTitleChance>0.2</royalTitleChance>
+							<titleSelectOne>
+                                <li>MRFT_Shepherd</li>
+								<li>MRFT_Hunter</li>
+							</titleSelectOne>
+						</value>
+					</li>
+
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/PawnKindDef[defName="MRP_fangs_R"]</xpath>
+						<value>
+							<royalTitleChance>0.2</royalTitleChance>
+							<titleSelectOne>
+                                <li>MRFT_Shepherd</li>
+								<li>MRFT_Hunter</li>
+							</titleSelectOne>
+						</value>
+					</li>
+					
+				</operations>
+			</match>
+			</Operation>
+			
+			    <Operation Class="PatchOperationFindMod">
+        <mods>
+				<li>Royalty</li>
+        </mods>
+		<match Class="PatchOperationSequence">
+			<!--<success>Always</success>-->
+			<operations>
+			<li Class="PatchOperationTest">
+					<xpath>Defs/ThingDef[defName="MR_ResearchBench"]/comps</xpath>
+				</li>
+        <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName="MR_ResearchBench"]/comps</xpath>
+            <value>
+				<comps>
+					<li Class="CompProperties_AffectedByFacilities">
+						<linkableFacilities>
+									<li>MR_LenticularAnalyzer</li>
+									<li>MR_BiometricAnalyzer</li>
+									<li>MR_SubAnalyzer</li>
+									<li>MR_AnalyzerS</li>
+									<li>MR_SimAnalyzerA</li>
+									<li>MR_SimAnalyzerB</li>
+						</linkableFacilities>
+					</li>
+					<li Class="CompProperties_Glower">
+						<glowRadius>15</glowRadius>
+						<glowColor>(175,175,255,0)</glowColor>
+					</li>
+				</comps>
+            </value>
+			</li>
+			</operations>
+        </match>
+    </Operation>
+		
+		<Operation Class="PatchOperationFindMod">
+			<mods>
+				<li>Royalty</li>
+			</mods>
+			<match Class="PatchOperationSequence">
+			<!--<success>Always</success>-->
+			<operations>
+				<li Class="PatchOperationTest">
+					<xpath>Defs/FactionDef[defName="Empire"]/permanentEnemyToEveryoneExcept</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/FactionDef[defName="Empire"]/permanentEnemyToEveryoneExcept</xpath>
+					<value>
+						<li>MRF_Hyperborea</li>
+						<li>MRF_HyperboreaA</li>
+						<li>MRF_HyperboreaB</li>
+					</value>
+				</li>
+			</operations>
+			</match>
+		</Operation>
+		
+		<!--장비-->
+	
+
+</Patch>

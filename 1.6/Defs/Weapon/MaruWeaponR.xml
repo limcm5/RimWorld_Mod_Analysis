@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef Name="MR_WeaponModsBase" Abstract="True">
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+    <targetCountAdjustment>1</targetCountAdjustment>
+    <recipeUsers>
+      <li>MR_Rebuildtable</li>
+    </recipeUsers>
+  </RecipeDef>
+  
+  <!--푸주칼-->
+  
+    <RecipeDef ParentName="MR_WeaponModsBase">
+    <jobString>Disassembling and reassembling weapon mods.</jobString>
+    <workAmount>500</workAmount>
+    <defName>MRMake_CAOtoCBO</defName>
+    <label>Cleaver rebuild (Hardening->Cutting)</label>
+    <description>Modify the direction of mods by reusing mods already attached to the weapon as much as possible.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MR_C_AO</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>      
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>MR_Sarira</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MR_C_AO</li>
+        <li>MR_Sarira</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MR_C_BO>1</MR_C_BO>
+    </products>
+  </RecipeDef>
+  
+      <RecipeDef ParentName="MR_WeaponModsBase">
+    <jobString>Disassembling and reassembling weapon mods.</jobString>
+    <workAmount>500</workAmount>
+    <defName>MRMake_CBOtoCAO</defName>
+    <label>Cleaver rebuild (Cutting->Hardening)</label>
+    <description>Modify the direction of mods by reusing mods already attached to the weapon as much as possible.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MR_C_BO</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>      
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>MR_Sarira</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MR_C_BO</li>
+        <li>MR_Sarira</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MR_C_AO>1</MR_C_AO>
+    </products>
+  </RecipeDef>
+  
+    <!--손도끼-->
+  
+    <RecipeDef ParentName="MR_WeaponModsBase">
+    <jobString>Disassembling and reassembling weapon mods.</jobString>
+    <workAmount>600</workAmount>
+    <defName>MRMake_HAAOtoHABO</defName>
+    <label>Hand axe rebuild (Delay->Tracking)</label>
+    <description>Modify the direction of mods by reusing mods already attached to the weapon as much as possible.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MR_HA_AO</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>      
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>MR_Sarira</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MR_HA_AO</li>
+        <li>MR_Sarira</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MR_HA_BO>1</MR_HA_BO>
+    </products>
+  </RecipeDef>
+    
+    <RecipeDef ParentName="MR_WeaponModsBase">
+    <jobString>Disassembling and reassembling weapon mods.</jobString>
+    <workAmount>600</workAmount>
+    <defName>MRMake_HABOtoHAAO</defName>
+    <label>Hand axe rebuild (Tracking->Delay)</label>
+    <description>Modify the direction of mods by reusing mods already attached to the weapon as much as possible.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MR_HA_BO</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>      
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>MR_Sarira</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MR_HA_BO</li>
+        <li>MR_Sarira</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MR_HA_AO>1</MR_HA_AO>
+    </products>
+  </RecipeDef>
+  
+      <!--작살-->
+  
+    <RecipeDef ParentName="MR_WeaponModsBase">
+    <jobString>Disassembling and reassembling weapon mods.</jobString>
+    <workAmount>700</workAmount>
+    <defName>MRMake_WHAOtoWHBO</defName>
+    <label>Whaling Harpoon rebuild (Improvement->Internal Anti-Gravity)</label>
+    <description>Modify the direction of mods by reusing mods already attached to the weapon as much as possible.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MR_WH_AO</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>      
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>MR_Sarira</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MR_WH_AO</li>
+        <li>MR_Sarira</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MR_WH_BO>1</MR_WH_BO>
+    </products>
+  </RecipeDef>
+    
+    <RecipeDef ParentName="MR_WeaponModsBase">
+    <jobString>Disassembling and reassembling weapon mods.</jobString>
+    <workAmount>700</workAmount>
+    <defName>MRMake_WHBOtoWHAO</defName>
+    <label>Whaling Harpoon rebuild  (Internal Anti-Gravity->Improvement)</label>
+    <description>Modify the direction of mods by reusing mods already attached to the weapon as much as possible.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MR_WH_BO</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>      
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>MR_Sarira</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MR_WH_BO</li>
+        <li>MR_Sarira</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MR_WH_AO>1</MR_WH_AO>
+    </products>
+  </RecipeDef>
+  
+        <!--대궁-->
+  
+    <RecipeDef ParentName="MR_WeaponModsBase">
+    <jobString>Disassembling and reassembling weapon mods.</jobString>
+    <workAmount>1000</workAmount>
+    <defName>MRMake_CPBAOtoCPBBO</defName>
+    <label>Compound Bow rebuild (High Mass->Explosive)</label>
+    <description>Modify the direction of mods by reusing mods already attached to the weapon as much as possible.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MR_CPB_AO</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>MR_Sarira</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MR_CPB_AO</li>
+        <li>MR_Sarira</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MR_CPB_BO>1</MR_CPB_BO>
+    </products>
+  </RecipeDef>
+  
+    <RecipeDef ParentName="MR_WeaponModsBase">
+    <jobString>Disassembling and reassembling weapon mods.</jobString>
+    <workAmount>1000</workAmount>
+    <defName>MRMake_CPBBOtoCPBAO</defName>
+    <label>Compound Bow rebuild (Explosive->High Mass)</label>
+    <description>Modify the direction of mods by reusing mods already attached to the weapon as much as possible.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MR_CPB_BO</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>MR_Sarira</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MR_CPB_BO</li>
+        <li>MR_Sarira</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MR_CPB_AO>1</MR_CPB_AO>
+    </products>
+  </RecipeDef>
+  
+</Defs>

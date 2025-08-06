@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Bases -->
+
+  <HeadTypeDef ParentName="AverageBase" Name="MR_HeadtypeBase" Abstract="True">
+  </HeadTypeDef>
+  
+  <HeadTypeDef ParentName="MR_HeadtypeBase" Name="MR_FemaleHeadtypeBase" Abstract="True">
+	<gender>Female</gender>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="MR_FemaleHeadtypeBase">
+    <defName>MRhead_one</defName>
+    <graphicPath>marulike/Heads/MRhead_1</graphicPath>
+  </HeadTypeDef>
+  
+  <HeadTypeDef ParentName="MR_FemaleHeadtypeBase">
+    <defName>MRhead_two</defName>
+    <graphicPath>marulike/Heads/MRhead_2</graphicPath>
+  </HeadTypeDef>
+  
+  <HeadTypeDef ParentName="MR_FemaleHeadtypeBase">
+    <defName>MRhead_three</defName>
+    <graphicPath>marulike/Heads/MRhead_3</graphicPath>
+  </HeadTypeDef>
+  
+  <HeadTypeDef ParentName="MR_FemaleHeadtypeBase">
+    <defName>MRhead_four</defName>
+    <graphicPath>marulike/Heads/MRhead_4</graphicPath>
+  </HeadTypeDef>
+  
+  <HeadTypeDef ParentName="MR_FemaleHeadtypeBase">
+    <defName>MRhead_five</defName>
+    <graphicPath>marulike/Heads/MRhead_5</graphicPath>
+  </HeadTypeDef>
+  
+  <HeadTypeDef ParentName="MR_FemaleHeadtypeBase">
+    <defName>MRhead_six</defName>
+    <graphicPath>marulike/Heads/MRhead_6</graphicPath>
+  </HeadTypeDef>
+</Defs>

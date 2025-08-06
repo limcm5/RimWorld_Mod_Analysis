@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Bases -->
+
+  <HeadTypeDef ParentName="AverageBase" Name="MR_HeadtypeBase" Abstract="True">
+  </HeadTypeDef>
+  
+  <HeadTypeDef ParentName="MR_HeadtypeBase" Name="MR_FemaleHeadtypeBase" Abstract="True">
+	<gender>Female</gender>
+  </HeadTypeDef>
+
+  <HeadTypeDef ParentName="MR_FemaleHeadtypeBase">
+    <defName>MRhead_one</defName>
+    <graphicPath>Things/Inv/MR_Invisible</graphicPath>
+  </HeadTypeDef>
+  
+  <HeadTypeDef ParentName="MR_FemaleHeadtypeBase">
+    <defName>MRhead_two</defName>
+    <graphicPath>Things/Inv/MR_Invisible</graphicPath>
+  </HeadTypeDef>
+  
+  <HeadTypeDef ParentName="MR_FemaleHeadtypeBase">
+    <defName>MRhead_three</defName>
+    <graphicPath>Things/Inv/MR_Invisible</graphicPath>
+  </HeadTypeDef>
+  
+  <HeadTypeDef ParentName="MR_FemaleHeadtypeBase">
+    <defName>MRhead_four</defName>
+    <graphicPath>Things/Inv/MR_Invisible</graphicPath>
+  </HeadTypeDef>
+  
+  <HeadTypeDef ParentName="MR_FemaleHeadtypeBase">
+    <defName>MRhead_five</defName>
+    <graphicPath>Things/Inv/MR_Invisible</graphicPath>
+  </HeadTypeDef>
+  
+  <HeadTypeDef ParentName="MR_FemaleHeadtypeBase">
+    <defName>MRhead_six</defName>
+    <graphicPath>Things/Inv/MR_Invisible</graphicPath>
+  </HeadTypeDef>
+</Defs>

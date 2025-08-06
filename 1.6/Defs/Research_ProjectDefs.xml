@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ResearchProjectTagDef>
+		<defName>MaruStart</defName>
+	</ResearchProjectTagDef>
+
+	<ResearchTabDef>
+		<defName>Maru_technology</defName>
+		<label>Maru Technology of Hyperborea</label>
+	</ResearchTabDef>
+
+	<ResearchProjectDef>
+		<defName>MaruRA7</defName>
+		<label>Hunting Food</label>
+		<description>Research to develop food for use during hunting.</description>
+		<tab>Maru_technology</tab>
+		<baseCost>400</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tags>
+      <li>MaruStart</li>
+        </tags>
+		<prerequisites>
+      <li>MaruRA6</li>
+      <li>Pemmican</li>
+		</prerequisites>
+		<requiredResearchFacilities>
+		</requiredResearchFacilities>
+		<researchViewX>2</researchViewX>
+		<researchViewY>5</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>MaruRA1</defName>
+		<label>Basic analysis research</label>
+		<description>Study the basic understanding of sarira and how to apply it.</description>
+		<tab>Maru_technology</tab>
+		<baseCost>800</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tags>
+      <li>MaruStart</li>
+        </tags>
+		<prerequisites>
+		</prerequisites>
+		<requiredResearchFacilities>
+		</requiredResearchFacilities>
+		<researchViewX>0</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>MaruRA2</defName>
+		<label>special forging</label>
+		<description>It is a unique type of forging method that imitates advanced technology with improvised equipment.</description>
+		<tab>Maru_technology</tab>
+		<baseCost>800</baseCost>
+		<techLevel>Medieval</techLevel>
+		<tags>
+      <li>MaruStart</li>
+        </tags>
+		<prerequisites>
+      <li>Smithing</li>
+		</prerequisites>
+		<requiredResearchFacilities>
+		</requiredResearchFacilities>
+		<researchViewX>0</researchViewX>
+		<researchViewY>3</researchViewY>
+	</ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MaruRA3</defName>
+    <label>Hyperborea Clothing</label>
+    <description>It is a study of various clothing developed for hunting and survival in the polar regions.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>800</baseCost>
+    <techLevel>Medieval</techLevel>
+		<tags>
+      <li>MaruStart</li>
+        </tags>
+    <prerequisites>
+      <li>ComplexClothing</li>
+    </prerequisites>
+    <requiredResearchFacilities>
+    </requiredResearchFacilities>
+    <researchViewX>0</researchViewX>
+    <researchViewY>4</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>MaruRA6</defName>
+    <label>Hunting basics</label>
+    <description>Begin the full-scale study of hunting methods.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>400</baseCost>
+    <techLevel>Medieval</techLevel>
+		<tags>
+      <li>MaruStart</li>
+        </tags>
+    <prerequisites>
+      <li>MaruRA2</li>
+      <li>MaruRA3</li>
+    </prerequisites>
+    <requiredResearchFacilities>
+    </requiredResearchFacilities>
+    <researchViewX>1</researchViewX>
+    <researchViewY>4</researchViewY>
+  </ResearchProjectDef>
+  
+    <ResearchProjectDef>
+    <defName>MaruRA0</defName>
+    <label>Basic research system</label>
+    <description>This is a study to create a basic research system. As one philosopher said, in order to build a new strong castle, it is most important to properly lay the foundation there.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>500</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>Machining</li>
+    </prerequisites>
+    <requiredResearchFacilities>
+    </requiredResearchFacilities>
+    <researchViewX>0</researchViewX>
+    <researchViewY>2</researchViewY>
+  </ResearchProjectDef>
+
+    <ResearchProjectDef>
+    <defName>MaruRA5</defName>
+    <label>Writing a theory</label>
+    <description>It is a study on how to systematically and efficiently record a newly discovered understanding of engineering.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>MaruRA0</li>
+    </prerequisites>
+    <requiredResearchFacilities>
+    </requiredResearchFacilities>
+    <researchViewX>1</researchViewX>
+    <researchViewY>3</researchViewY>
+  </ResearchProjectDef>
+  
+	<ResearchProjectDef>
+		<defName>MaruRB1</defName>
+		<label>Basic Analyzer Research</label>
+		<description>Research the device to analyze the sarira.</description>
+		<tab>Maru_technology</tab>
+		<baseCost>1500</baseCost>
+		<techLevel>Industrial</techLevel>
+		<prerequisites>
+			<li>MaruRA1</li>
+      <li>MaruRA2</li>
+      <li>MaruRA3</li>
+		</prerequisites>
+		<requiredResearchFacilities>
+		</requiredResearchFacilities>
+		<researchViewX>1</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MaruRB2</defName>
+    <label>anti-gravity analysis</label>
+    <description>Interpret the expression method of anti-gravity technology and study how to use it.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>900</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+    </prerequisites>
+    <requiredResearchBuilding>MR_ResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MR_LenticularAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>2</researchViewX>
+    <researchViewY>1</researchViewY>
+  </ResearchProjectDef>
+
+   <ResearchProjectDef>
+    <defName>MaruRB3</defName>
+    <label>Textile Engineering Analysis</label>
+    <description>Interpret information on the textile engineering of ancestors and study methods of reproduction.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>800</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+    </prerequisites>
+    <requiredResearchBuilding>MR_ResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MR_LenticularAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>2</researchViewX>
+    <researchViewY>2</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>MaruRB5</defName>
+    <label>Developing hunting tools</label>
+    <description>There are many ways to hunt, and the more tools a hunter has, the better. This is the study of tools.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>400</baseCost>
+    <techLevel>Industrial</techLevel>
+		<tags>
+        </tags>
+    <prerequisites>
+      <li>MaruRA6</li>
+      <li>MaruRB3</li>
+    </prerequisites>
+    <requiredResearchFacilities>
+    </requiredResearchFacilities>
+    <researchViewX>3</researchViewX>
+    <researchViewY>4</researchViewY>
+  </ResearchProjectDef>
+  
+    <ResearchProjectDef>
+    <defName>MaruRB</defName>
+    <label>Applied Research - Bulletproof Fiber</label>
+    <description>Cross-analyzing existing results and researching new applications.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>FlakArmor</li>
+    </prerequisites>
+    <requiredResearchBuilding>MR_ResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MR_LenticularAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>3</researchViewX>
+    <researchViewY>5</researchViewY>
+  </ResearchProjectDef>
+  
+    <ResearchProjectDef>
+    <defName>MaruRB6</defName>
+    <label>Improving Armor</label>
+    <description>The biggest difference between hunting and fighting is the presence or absence of armor. Unlike hunting, where the risk of being attacked can be drastically reduced by simply knowing the animal's ecology, fighting between humans can easily allow even the weakest individual to kill someone much stronger than them with the slightest hint of subtlety. This is a study in combat.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>MaruRB</li>
+      <li>PlateArmor</li>
+      <li>MaruRB5</li>
+    </prerequisites>
+    <requiredResearchFacilities>
+    </requiredResearchFacilities>
+    <researchViewX>4</researchViewX>
+    <researchViewY>4</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MaruRD1</defName>
+    <label>record analyzer</label>
+    <description>They study new interpretation methods using a combination of the techniques they have analyzed so far.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>1000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+    </prerequisites>
+    <requiredResearchBuilding>MR_ResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MR_BiometricAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>3</researchViewX>
+    <researchViewY>2</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MaruRD2</defName>
+    <label>mental resonance</label>
+    <description>It is a study of the resonance of the mind and external devices. The term forging one's spirit will no longer remain in an abstract meaning.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>800</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+			<li>MaruRD1</li>
+    </prerequisites>
+    <requiredResearchBuilding>MR_ResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MR_BiometricAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>4</researchViewX>
+    <researchViewY>2</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>MaruRB4</defName>
+    <label>Breath Interpretation</label>
+    <description>Interprets information about 'breath', a gas containing an active ingredient inside the surface.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+    </prerequisites>
+    <requiredResearchBuilding>MR_ResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MR_LenticularAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>2</researchViewX>
+    <researchViewY>3</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MaruRC1</defName>
+    <label>advanced analyzer</label>
+    <description>Analysis and tuning of the continuity and singularity of the information analyzed so far has been completed.\nWe are conducting research to create the next level of analyzer by applying this information.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>2500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>MaruRB2</li>
+      <li>MaruRB3</li>
+      <li>MaruRB4</li>
+    </prerequisites>
+    <requiredResearchBuilding>MR_ResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MR_LenticularAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>3</researchViewX>
+    <researchViewY>1</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MaruRC2</defName>
+    <label>Crystal Resonance Analysis</label>
+    <description>Analyze information about self-resonant and proliferating crystals and study their applications.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>4500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+    </prerequisites>
+    <requiredResearchBuilding>MR_ResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MR_BiometricAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>5</researchViewX>
+    <researchViewY>1</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MaruRC3</defName>
+    <label>Accelerator analysis</label>
+    <description>We analyze information on accelerators, which were mainly used in ships of our ancestors, and study how to reproduce them.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>4500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+    </prerequisites>
+    <requiredResearchBuilding>MR_ResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MR_BiometricAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>5</researchViewX>
+    <researchViewY>2</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MaruRC4</defName>
+    <label>Anti-gravity deep analysis</label>
+    <description>Discover and analyze more engraved information about anti-gravity technology.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>4500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+    </prerequisites>
+    <requiredResearchBuilding>MR_ResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MR_BiometricAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>5</researchViewX>
+    <researchViewY>3</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MaruRC5</defName>
+    <label>Directional Interference Analysis</label>
+    <description>Analyzes information on directional interference technology, which was mainly used to transmit and receive information from ancestors, and researches applications.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>4500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+    </prerequisites>
+    <requiredResearchBuilding>MR_ResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MR_BiometricAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>5</researchViewX>
+    <researchViewY>4</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MaruRC</defName>
+    <label>Applied research - negative field</label>
+    <description>We cross-analyze existing results and study new applications.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>5500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>MaruRC4</li>
+      <li>MaruRC5</li>
+    </prerequisites>
+		 <techprintCount>2</techprintCount>
+    <techprintCommonality>2</techprintCommonality>
+    <techprintMarketValue>1200</techprintMarketValue>
+    <heldByFactionCategoryTags>
+      <li>MRF_Hyperborea</li>
+    </heldByFactionCategoryTags>
+    <requiredResearchBuilding>MR_ResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MR_LenticularAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>6</researchViewX>
+    <researchViewY>3.5</researchViewY>
+  </ResearchProjectDef>
+  
+  
+    <ResearchProjectDef>
+    <defName>MaruNA</defName>
+    <label>Hyperborea String Instrument</label>
+    <description>The favorite instrument of Maru musicians.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>800</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>ComplexFurniture</li>
+    </prerequisites>
+	 <techprintCount>1</techprintCount>
+    <techprintCommonality>1</techprintCommonality>
+    <techprintMarketValue>400</techprintMarketValue>
+    <heldByFactionCategoryTags>
+      <li>MRF_Hyperborea</li>
+    </heldByFactionCategoryTags>
+    <requiredResearchFacilities>
+    </requiredResearchFacilities>
+    <researchViewX>0</researchViewX>
+    <researchViewY>5</researchViewY>
+  </ResearchProjectDef>
+  
+    <!--<ResearchProjectDef>
+    <defName>MaruNB</defName>
+    <label>후계자 정복</label>
+    <description>.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>1200</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>MaruNA</li>
+    </prerequisites>
+	 <techprintCount>1</techprintCount>
+    <techprintCommonality>1</techprintCommonality>
+    <techprintMarketValue>1100</techprintMarketValue>
+    <heldByFactionCategoryTags>
+      <li>MRF_Hyperborea</li>
+    </heldByFactionCategoryTags>
+    <requiredResearchFacilities>
+    </requiredResearchFacilities>
+    <researchViewX>1</researchViewX>
+    <researchViewY>5</researchViewY>
+  </ResearchProjectDef>-->
+  
+  
+  <ResearchProjectDef>
+    <defName>MaruNC</defName>
+    <label>Organic Matter Analysis</label>
+    <description>Begin more direct research into the information on organic matter contained in Sarira, and the design of life itself.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>MaruRB4</li>
+    </prerequisites>
+    <requiredResearchBuilding>MR_ResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MR_LenticularAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>3</researchViewX>
+    <researchViewY>3</researchViewY>
+	    <generalRules>
+      <rulesStrings>
+        <li>subject->organic matter analysis</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>MaruND</defName>
+    <label>Foundation Implants</label>
+    <description>Advanced research on the application of external implants that assimilate into the recipient's body to enhance physical abilities.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>3000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>MaruNC</li>
+    </prerequisites>
+    <requiredResearchBuilding>MR_ResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MR_BiometricAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>4</researchViewX>
+    <researchViewY>3</researchViewY>
+  </ResearchProjectDef>
+  
+    
+    <ResearchProjectDef>
+    <defName>MaruRA4</defName>
+    <label>Gigantic Ballista</label>
+    <description>A study into immense, mechanical ballistae. Allows for the construction of special defenses that use unique harpoons as ammunition.</description>
+    <tab>Maru_technology</tab>
+    <baseCost>800</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>BlowbackOperation</li>
+      <li>MaruRB</li>
+    </prerequisites>
+    <requiredResearchFacilities>
+    </requiredResearchFacilities>
+    <researchViewX>4</researchViewX>
+    <researchViewY>5</researchViewY>
+  </ResearchProjectDef>
+  
+    <ThingDef ParentName="BookBase">
+    <defName>MR_Schematic</defName>
+    <label>schematic</label>
+    <description>A book which describes technology and methods for using it. Reading schematics can help unlock new technologies.</description>
+    <graphicData>
+      <texPath>Things/Item/Book/Schematic/Schematic</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Book/Schematic/Schematic</uiIconPath>
+    <statBases>
+      <MarketValue>150</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Book">
+        <nameMaker>MR_Namer_Schematic</nameMaker>
+        <descriptionMaker>MR_Description_Schematic</descriptionMaker>
+        <ageYearsRange>100~200</ageYearsRange>
+        <openGraphic>
+          <texPath>Things/Item/Book/Schematic/Schematic_Open</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>0.7</drawSize>
+        </openGraphic>
+        <verticalGraphic>
+          <texPath>Things/Item/Book/Schematic/Schematic_Vertical</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <addTopAltitudeBias>true</addTopAltitudeBias>
+        </verticalGraphic>
+        <doers>
+          <li Class="BookOutcomeProperties_GainResearch">
+            
+            <!-- 이 책의 효과를 받을 수 있는 연구 프로젝트를 '포함' 목록으로 한정 -->
+			<include>
+              <MaruNC />
+            </include>
+          </li>
+        </doers>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <RulePackDef>
+    <defName>MR_Namer_Schematic</defName>
+    <include>
+      <li>ArtNameUtility</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <!-- General -->
+        <li>title->Letters on [subject_primary]</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  
+   <RulePackDef>
+    <defName>MR_Description_Schematic</defName>
+    <include>
+      <li>ArtDescriptionUtility_Global</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+
+        <li>desc->"......So, I'm sure you've all heard it at least once. The incubators currently in use are also widely known by the slang term 'Placenta.' And the shock I received when I was told about an apparatus of the same name, 'Placenta,' in a frontier household during this recent exchange meeting, stems from that very fact. They were extracting the literal 'placenta' of some animal to use as a cultivation device when handling genetic material. Aside from that fact, its principles, structure, and method of use were almost identical to the incubators we use today. Should this be considered a sort of parallel discovery? Perhaps our organic research technology also originated in the same way. The slang term 'Placenta' might be the remaining evidence of that. The excitement still hasn't worn off. This place is a continuous series of new discoveries, day after day. Once this exchange meeting is over, I can't wait to tell you all in person what I couldn't fully convey in this letter.\n\nP.S.: I managed to obtain a piece of the placenta tissue by asking the folks here! Don't you think it might help in materializing the design for that Gene Sculptor I mentioned before?"</li>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

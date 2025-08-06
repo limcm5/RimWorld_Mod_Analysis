@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RulePackDef>
+		<defName>NamerFactionMaru</defName>
+
+		<rulePack>
+			<rulesStrings>
+				<li>r_name->The school of A'umbro</li>
+				<li>r_name->The school of B'doya</li>
+				<li>r_name->The school of C'tito</li>
+				<li>r_name->The school of D'cratos</li>
+				<li>r_name->The school of E'philio</li>
+				<li>r_name->The school of F'Beruo</li>
+				<li>r_name->The school of G'sholtio</li>
+				<li>r_name->The school of H'duwi</li>
+				<li>r_name->The school of Ir'dolia</li>
+				<li>r_name->The school of J'zargo</li>
+				<li>r_name->The school of K'lipe</li>
+				<li>r_name->The school of Li'epoka</li>
+				<li>r_name->The school of M'yuli</li>
+				<li>r_name->The school of N'elko</li>
+				<li>r_name->The school of O'dudan</li>
+				<li>r_name->The school of P'sliak</li>
+				<li>r_name->The school of Q'pue</li>
+				<li>r_name->The school of R'shai</li>
+				<li>r_name->The school of Si'tolia</li>
+				<li>r_name->The school of T'condor</li>
+				<li>r_name->The school of U'sira</li>
+				<li>r_name->The school of V'san</li>
+				<li>r_name->The school of W'yek</li>
+				<li>r_name->The school of X'soran</li>
+				<li>r_name->The school of Y'shtola</li>
+				<li>r_name->The school of Z'sarb</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+
+
+	<RulePackDef>
+		<defName>NamerFactionMaruA</defName>
+
+		<rulePack>
+			<rulesStrings>
+				<li>r_name->The pride of A'umbro</li>
+				<li>r_name->The pride of B'doya</li>
+				<li>r_name->The pride of C'tito</li>
+				<li>r_name->The pride of D'cratos</li>
+				<li>r_name->The pride of E'philio</li>
+				<li>r_name->The pride of F'Beruo</li>
+				<li>r_name->The pride of G'sholtio</li>
+				<li>r_name->The pride of H'duwi</li>
+				<li>r_name->The pride of Ir'dolia</li>
+				<li>r_name->The pride of J'zargo</li>
+				<li>r_name->The pride of K'lipe</li>
+				<li>r_name->The pride of Li'epoka</li>
+				<li>r_name->The pride of M'yuli</li>
+				<li>r_name->The pride of N'elko</li>
+				<li>r_name->The pride of O'dudan</li>
+				<li>r_name->The pride of P'sliak</li>
+				<li>r_name->The pride of Q'pue</li>
+				<li>r_name->The pride of R'shai</li>
+				<li>r_name->The pride of Si'tolia</li>
+				<li>r_name->The pride of T'condor</li>
+				<li>r_name->The pride of U'sira</li>
+				<li>r_name->The pride of V'san</li>
+				<li>r_name->The pride of W'yek</li>
+				<li>r_name->The pride of X'soran</li>
+				<li>r_name->The pride of Y'shtola</li>
+				<li>r_name->The pride of Z'sarb</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+  
+  
+	<RulePackDef>
+		<defName>NamerFactionMaruB</defName>
+
+		<rulePack>
+			<rulesStrings>
+				<li>r_name->The distorter of A'umbro</li>
+				<li>r_name->The distorter of B'doya</li>
+				<li>r_name->The distorter of C'tito</li>
+				<li>r_name->The distorter of D'cratos</li>
+				<li>r_name->The distorter of E'philio</li>
+				<li>r_name->The distorter of F'Beruo</li>
+				<li>r_name->The distorter of G'sholtio</li>
+				<li>r_name->The distorter of H'duwi</li>
+				<li>r_name->The distorter of Ir'dolia</li>
+				<li>r_name->The distorter of J'zargo</li>
+				<li>r_name->The distorter of K'lipe</li>
+				<li>r_name->The distorter of Li'epoka</li>
+				<li>r_name->The distorter of M'yuli</li>
+				<li>r_name->The distorter of N'elko</li>
+				<li>r_name->The distorter of O'dudan</li>
+				<li>r_name->The distorter of P'sliak</li>
+				<li>r_name->The distorter of Q'pue</li>
+				<li>r_name->The distorter of R'shai</li>
+				<li>r_name->The distorter of Si'tolia</li>
+				<li>r_name->The distorter of T'condor</li>
+				<li>r_name->The distorter of U'sira</li>
+				<li>r_name->The distorter of V'san</li>
+				<li>r_name->The distorter of W'yek</li>
+				<li>r_name->The distorter of X'soran</li>
+				<li>r_name->The distorter of Y'shtola</li>
+				<li>r_name->The distorter of Z'sarb</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+	<!-- ~의 왜곡자 -->
+	
+	<RulePackDef>
+		<defName>NamerSettlementMaru</defName>
+			<rulePack>
+				<rulesStrings>
+
+					<li>r_name(p=12)->[townname_wordgen]</li>
+					<li>r_name(p=4)->[townname_combo]</li>
+					<li>r_name->[townname_near]</li>
+		
+					<li>topicalnoun->[Vegetable]</li>
+					<li>topicalnoun->[Game]</li>
+					<li>topicalnoun->[BodyPart]</li>
+
+					<li>townname_combo->[topicalnoun] [TerrainFeature] [MRhall]</li>
+					<li>townname_combo->[topicalnoun] [Community] [MRhall]</li>
+					<li>townname_combo->[topicalnoun]'s [TerrainFeature] [MRhall]</li>
+					<li>townname_combo->[topicalnoun]'s [Community] [MRhall]</li>
+					<li>townname_combo(p=2)->[concept_positive]'s [TerrainFeature] [MRhall]</li>
+					<li>townname_combo(p=2)->[concept_positive] [TerrainFeature] [MRhall]</li>
+					<li>townname_combo(p=2)->[concept_positive] [Community] [MRhall]</li>
+					<li>townname_combo(p=3)->[Character]'s [TerrainFeature] [MRhall]</li>
+					<li>townname_combo(p=3)->[Character]'s [Community] [MRhall]</li>
+
+					<li>townname_near->[nearnameinitial]-at-the-[TerrainFeature] [MRhall]</li>
+					<li>townname_near->[nearnameinitial]-by-the-[TerrainFeature] [MRhall]</li>
+					<li>townname_near->[nearnameinitial]-on-the-[TerrainFeature] [MRhall]</li>
+					<li>nearnameinitial->[townname_wordgen]</li>
+					<li>nearnameinitial->[Community]</li>
+
+					<li>townname_wordgen(p=2)->[SylE][SylE] [MRhall]</li>
+					<li>townname_wordgen(p=2)->[SylE][SylE][SylE] [MRhall]</li>
+					<li>townname_wordgen(p=2)->[SylE] [MRhall]</li>
+					<li>townname_wordgen(p=2)->[SylE][SylE] [MRhall]</li>
+					<li>townname_wordgen->[TerrainFeature] [MRhall]</li>
+					<li>townname_wordgen->[topicalnoun] [MRhall]</li>
+					<li>MRhall->Research hall</li>
+				</rulesStrings>
+				<rulesFiles>
+					<li>townname_fixed->Names/OutlanderTown</li>
+					<li>concept_positive->Words/Nouns/Concepts_Positive</li>
+				</rulesFiles>
+			</rulePack>
+	</RulePackDef>
+	
+	<RulePackDef>
+		<defName>NamerSettlementMaruA</defName>
+			<rulePack>
+				<rulesStrings>
+
+					<li>r_name(p=12)->[townname_wordgen]</li>
+					<li>r_name(p=4)->[townname_combo]</li>
+					<li>r_name->[townname_near]</li>
+		
+					<li>topicalnoun->[Vegetable]</li>
+					<li>topicalnoun->[Game]</li>
+					<li>topicalnoun->[BodyPart]</li>
+
+					<li>townname_combo->[topicalnoun] [TerrainFeature] [MRhallA]</li>
+					<li>townname_combo->[topicalnoun] [Community] [MRhallA]</li>
+					<li>townname_combo->[topicalnoun]'s [TerrainFeature] [MRhallA]</li>
+					<li>townname_combo->[topicalnoun]'s [Community] [MRhallA]</li>
+					<li>townname_combo(p=2)->[concept_positive]'s [TerrainFeature] [MRhallA]</li>
+					<li>townname_combo(p=2)->[concept_positive] [TerrainFeature] [MRhallA]</li>
+					<li>townname_combo(p=2)->[concept_positive] [Community] [MRhallA]</li>
+					<li>townname_combo(p=3)->[Character]'s [TerrainFeature] [MRhallA]</li>
+					<li>townname_combo(p=3)->[Character]'s [Community] [MRhallA]</li>
+
+					<li>townname_near->[nearnameinitial]-at-the-[TerrainFeature] [MRhallA]</li>
+					<li>townname_near->[nearnameinitial]-by-the-[TerrainFeature] [MRhallA]</li>
+					<li>townname_near->[nearnameinitial]-on-the-[TerrainFeature] [MRhallA]</li>
+					<li>nearnameinitial->[townname_wordgen]</li>
+					<li>nearnameinitial->[Community]</li>
+
+					<li>townname_wordgen(p=2)->[SylE][SylE] [MRhallA]</li>
+					<li>townname_wordgen(p=2)->[SylE][SylE][SylE] [MRhallA]</li>
+					<li>townname_wordgen(p=2)->[SylE] [MRhallA]</li>
+					<li>townname_wordgen(p=2)->[SylE][SylE] [MRhallA]</li>
+					<li>townname_wordgen->[TerrainFeature] [MRhallA]</li>
+					<li>townname_wordgen->[topicalnoun] [MRhallA]</li>
+					<li>MRhallA->Gathering hub</li>
+				</rulesStrings>
+				<rulesFiles>
+					<li>townname_fixed->Names/OutlanderTown</li>
+					<li>concept_positive->Words/Nouns/Concepts_Positive</li>
+				</rulesFiles>
+			</rulePack>
+	</RulePackDef>
+	
+	<RulePackDef>
+		<defName>NamerSettlementMaruB</defName>
+			<rulePack>
+				<rulesStrings>
+
+					<li>r_name->[townname_combo]</li>
+					<li>townname_combo->[TerrainFeature][MRhallB]</li>
+					<li>MRhallB->Gang</li>
+				</rulesStrings>
+				<rulesFiles>
+					<li>townname_fixed->Names/OutlanderTown</li>
+					<li>concept_positive->Words/Nouns/Concepts_Positive</li>
+				</rulesFiles>
+			</rulePack>
+	</RulePackDef>
+	
+	<!--놀이패 20
+	1걸립패牌 Gang
+	2화천패
+	3마당패
+	4사당패
+	5역천패
+	6연어패
+	7파천패
+	8청광패
+	9청명패
+	10청성패
+	-->
+	
+</Defs>

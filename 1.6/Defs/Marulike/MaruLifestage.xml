@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!--라이프스테이지-->
+  
+  <LifeStageDef>
+    <defName>MR_HumanlikeAdult</defName>
+    <label>adult</label>    
+	<silhouetteGraphicData>
+      <texPath>Things/Pawn/Humanlike/Silhouettes/Silhouette_HumanAdult</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </silhouetteGraphicData>
+    <workerClass MayRequire="Ludeon.RimWorld.Biotech">MaruLifeStageWorker.LifeStageWorker_MaruAdult</workerClass>
+    <visible>false</visible>
+    <reproductive>true</reproductive>
+    <sittingOffset>0.18</sittingOffset>
+	<bodyDrawOffset>(0, 0, 0.12)</bodyDrawOffset>
+  </LifeStageDef>
+  
+
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+
+	<LifeStageDef ParentName="HumanlikeAdolescent">
+		<defName>MR_HumanlikeBaby</defName>
+		<label>baby</label>  
+		<silhouetteGraphicData>
+      <texPath>Things/Pawn/Humanlike/Silhouettes/Silhouette_HumanBaby</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </silhouetteGraphicData>
+		<bodySizeFactor>0.16</bodySizeFactor>
+		<bodyWidth>0.6</bodyWidth>
+		<headSizeFactor>0.4</headSizeFactor>
+		<bodyDrawOffset>(0, 0, 0.0)</bodyDrawOffset>
+		<voxPitch>0</voxPitch>
+		<eyeSizeFactor>0.35</eyeSizeFactor>
+		<foodMaxFactor>0.625</foodMaxFactor> <!-- bodySizeFactor * foodMaxFactor = maxFood = 0.125 -->
+		<hungerRateFactor>0.125</hungerRateFactor> <!-- consumes 2x maxFood per day -->
+		<healthScaleFactor>0.2</healthScaleFactor>
+		<marketValueFactor>0.5</marketValueFactor>
+		<meleeDamageFactor>0.5</meleeDamageFactor>
+		<developmentalStage>Baby</developmentalStage>
+		<fallAsleepMaxThresholdOverride>.60</fallAsleepMaxThresholdOverride>
+		<naturalWakeThresholdOverride>1.0</naturalWakeThresholdOverride>
+		<alwaysDowned>true</alwaysDowned>
+		<claimable>true</claimable>
+		<involuntarySleepIsNegativeEvent>false</involuntarySleepIsNegativeEvent> <!-- Babies just fall asleep randomly and they're cool with it. -->
+		<thinkTreeMainOverride MayRequire="Ludeon.RimWorld.Biotech">HumanlikeBaby</thinkTreeMainOverride>
+		<thinkTreeConstantOverride MayRequire="Ludeon.RimWorld.Biotech">HumanlikeBabyConstant</thinkTreeConstantOverride>
+		<canDoRandomMentalBreaks>false</canDoRandomMentalBreaks> <!-- Babies have crying/giggling fits instead of mental breaks. -->
+		<canSleepWhileHeld>true</canSleepWhileHeld>
+		<canVoluntarilySleep>false</canVoluntarilySleep> <!-- Babies fall asleep randomly when they're tired. -->
+		<canSleepWhenStarving>false</canSleepWhenStarving>
+		<canInitiateSocialInteraction>false</canInitiateSocialInteraction>
+		<customMoodTipString>Mood represents how happy or stressed someone is. Babies with low mood are more likely to cry, while babies with a high mood are more likely to giggle.</customMoodTipString>
+		<statFactors>
+		  <MoveSpeed>0.2</MoveSpeed>
+		</statFactors>
+		<statOffsets>
+		  <ComfyTemperatureMin>-46</ComfyTemperatureMin><!--should map to -30C-->
+		  <ComfyTemperatureMax>4</ComfyTemperatureMax><!--should map to 30C-->
+		</statOffsets>
+		<involuntarySleepMTBDaysFromRest>
+		  <points>
+			<li>(.00, 0)</li>
+			<li>(.01, .01)</li>
+			<li>(.15, .166)</li>
+			<li>(.30, 1)</li>
+			<li>(.59, 10)</li>
+			<li>(.60, Infinity)</li>
+		  </points>
+		</involuntarySleepMTBDaysFromRest>
+	</LifeStageDef>
+	
+	<LifeStageDef ParentName="LifeStageHumanlikeChild">
+		<defName>MR_HumanlikeChild</defName>
+		<silhouetteGraphicData>
+      <texPath>Things/Pawn/Humanlike/Silhouettes/Silhouette_HumanChild</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </silhouetteGraphicData>
+		<bodySizeFactor>0.62</bodySizeFactor>
+		<bodyWidth>1.15</bodyWidth>
+		<headSizeFactor>0.8</headSizeFactor>
+		<bodyDrawOffset>(0, 0, 0.0)</bodyDrawOffset>
+	</LifeStageDef>
+	
+	<LifeStageDef ParentName="HumanlikeAdolescent">
+		<defName>MR_HumanlikeTeenager</defName>
+		 <silhouetteGraphicData>
+      <texPath>Things/Pawn/Humanlike/Silhouettes/Silhouette_HumanChild</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </silhouetteGraphicData>
+		<label>teenager</label>
+    <workerClass MayRequire="Ludeon.RimWorld.Biotech">MaruLifeStageWorker.LifeStageWorker_MaruTeenager</workerClass>
+    <adjective>teenage</adjective>
+    <reproductive>true</reproductive>
+    <healthScaleFactor>0.90</healthScaleFactor>
+    <foodMaxFactor>1.25</foodMaxFactor> <!-- bodySizeFactor * foodMaxFactor = maxFood = 1.0 -->
+    <meleeDamageFactor>0.75</meleeDamageFactor>
+    <equipmentDrawDistanceFactor>0.65</equipmentDrawDistanceFactor>
+    <sittingOffset>0.23</sittingOffset>
+		<bodySizeFactor>0.7</bodySizeFactor>
+		<bodyWidth>1.35</bodyWidth>
+		<headSizeFactor>0.92</headSizeFactor>
+		<bodyDrawOffset>(0, 0, 0.1)</bodyDrawOffset>
+    <statFactors>
+      <MoveSpeed>0.95</MoveSpeed>
+    </statFactors>
+	</LifeStageDef>
+</Defs>

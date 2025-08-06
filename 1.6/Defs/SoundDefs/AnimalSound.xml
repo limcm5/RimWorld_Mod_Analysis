@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>Pawn_HPBSnowleopard_Angry</defName>
+    <context>MapOnly</context>
+    <maxVoices>2</maxVoices>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>leopardAngry</clipPath>
+          </li>
+        </grains>
+        <volumeRange>55~55</volumeRange>
+        <pitchRange>0.7~0.75</pitchRange>
+        <distRange>0~70</distRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_HPBSnowleopard_Injured</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>leopardInjured</clipPath>
+          </li>
+        </grains>
+        <volumeRange>57~57</volumeRange>
+        <pitchRange>0.7~0.75</pitchRange>
+        <distRange>0~70</distRange>
+        <repeatMode>NeverTwice</repeatMode>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Pawn_HPBSnowleopard_Death</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>leopardDeath</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50~50</volumeRange>
+        <pitchRange>0.7~0.75</pitchRange>
+        <distRange>0~70</distRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>Pawn_HPBSnowleopard_Call</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>leopardCall</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50~50</volumeRange>
+        <pitchRange>0.7~0.75</pitchRange>
+        <distRange>0~70</distRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+</Defs>

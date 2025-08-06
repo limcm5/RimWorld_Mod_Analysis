@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod"><!-- 마루 -->
+        <mods>
+			<li>Biotech</li>
+            <li>2817638066</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+            <xpath>/Defs/ScenarioDef[defName = "MR_Scenario"]/scenario/parts</xpath>
+			<value>
+				<parts>
+
+        <!-- Config pages -->
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_Xenotypes" >
+					<def>ConfigurePawnsXenotypes</def>
+					<pawnChoiceCount>1</pawnChoiceCount>
+					<overrideKinds>
+						<li>
+							<xenotype>Xeno_Maru</xenotype>
+							<pawnKind>Maru_Colonist</pawnKind>
+						</li>
+					</overrideKinds>
+					<xenotypeCounts>
+						<li>
+							<xenotype>Xeno_Maru</xenotype>
+							<count>1</count>
+							<allowedDevelopmentalStages>Adult</allowedDevelopmentalStages>
+						</li>
+					</xenotypeCounts>
+				</li>
+
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>Arrived earlier than expected. She will be here soon.</text>
+          <textKey>GameStartDialog</textKey>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+        
+        <!-- Player starting stuff spawn method-->
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+					<def>PlayerPawnsArriveMethod</def>
+				</li>
+
+        <!-- Player starting things -->
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>800</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MealSurvivalPack</thingDef>
+          <count>35</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineIndustrial</thingDef>
+          <count>20</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentIndustrial</thingDef>
+          <count>30</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MR_HA_O</thingDef>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MR_Decipherslifeclothes</thingDef>
+		  <stuff>Cloth</stuff>
+        </li>
+		<li Class="ScenPart_StartingAnimal">
+			<def>StartingAnimal</def>
+			<animalKind>MR_HPBsnowleopard</animalKind>
+			<count>1</count>
+			<bondToRandomPlayerPawnChance>1</bondToRandomPlayerPawnChance>
+		</li>
+       <li Class="ScenPart_StartingThing_Defined">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>MR_thurible</thingDef>
+          <count>1</count>
+        </li>
+        <!-- Scatter some things near player start -->
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>Steel</thingDef>
+          <count>300</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>300</count>
+        </li>
+
+        <!-- Scatter some things anywhere -->
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>Steel</thingDef>
+          <count>800</count>
+        </li>
+
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MR_Sarira</thingDef>
+          <count>2</count>
+        </li>
+		
+        <li Class="ScenPart_CreateIncident">
+          <def>CreateIncident</def>
+          <incident>WandererJoin_CHunter_Scenario</incident>
+			<minDays>2</minDays>
+			<maxDays>3</maxDays>
+			<repeat>False</repeat>
+			<occurTick>150000</occurTick>
+        </li>
+
+				</parts>
+			</value>
+        </match>
+	</Operation>
+</Patch>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>Defs/WorkGiverDef[defName="DoBillsFabricationBench"]/fixedBillGiverDefs</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/WorkGiverDef[defName="DoBillsFabricationBench"]/fixedBillGiverDefs</xpath>
+				<value>
+					<li>MR_retrofittable</li>
+					<li>MR_Geneworkbench</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	
+	<!--아한대림-->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>Defs/BiomeDef[defName="BorealForest"]/allowedPackAnimals</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/BiomeDef[defName="BorealForest"]/allowedPackAnimals</xpath>
+				<value>
+					<li>MR_HPBsnowleopard</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+	<!--툰드라-->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>Defs/BiomeDef[defName="Tundra"]/allowedPackAnimals</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/BiomeDef[defName="Tundra"]/allowedPackAnimals</xpath>
+				<value>
+					<li>MR_HPBsnowleopard</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+	<!--추운 늪지-->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>Defs/BiomeDef[defName="ColdBog"]/allowedPackAnimals</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/BiomeDef[defName="ColdBog"]/allowedPackAnimals</xpath>
+				<value>
+					<li>MR_HPBsnowleopard</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+	<!--빙상-->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>Defs/BiomeDef[defName="IceSheet"]/allowedPackAnimals</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/BiomeDef[defName="IceSheet"]/allowedPackAnimals</xpath>
+				<value>
+					<li>MR_HPBsnowleopard</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+	<!--해빙-->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>Defs/BiomeDef[defName="SeaIce"]/allowedPackAnimals</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/BiomeDef[defName="SeaIce"]/allowedPackAnimals</xpath>
+				<value>
+					<li>MR_HPBsnowleopard</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+		<!--온대림-->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>Defs/BiomeDef[defName="TemperateForest"]/allowedPackAnimals</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/BiomeDef[defName="TemperateForest"]/allowedPackAnimals</xpath>
+				<value>
+					<li>MR_HPBsnowleopard</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+		<!--온대늪-->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>Defs/BiomeDef[defName="TemperateSwamp"]/allowedPackAnimals</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/BiomeDef[defName="TemperateSwamp"]/allowedPackAnimals</xpath>
+				<value>
+					<li>MR_HPBsnowleopard</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+		<!--레시피-->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>Defs/ThingDef[defName="FueledStove"]/recipes</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="FueledStove"]/recipes</xpath>
+				<value>
+					<li>Make_Huntfood</li>
+					<li>Make_HuntfoodBulk</li>
+					<li>Make_HuntfoodA</li>
+					<li>Make_HuntfoodBulkA</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+			<!--레시피-->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>Defs/ThingDef[defName="ElectricStove"]/recipes</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="ElectricStove"]/recipes</xpath>
+				<value>
+					<li>Make_Huntfood</li>
+					<li>Make_HuntfoodBulk</li>
+					<li>Make_HuntfoodA</li>
+					<li>Make_HuntfoodBulkA</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

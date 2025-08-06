@@ -1,0 +1,641 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef>
+    <defName>MR_Joyless</defName>
+    <label>얌</label>
+    <description>꼬리물어버리기</description>
+    <defaultLabelColor>(0.65,0.75,0.90)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <tendable>false</tendable>
+    <cureAllAtOnceIfCuredByItem>false</cureAllAtOnceIfCuredByItem>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <label>1</label>
+        <becomeVisible>false</becomeVisible>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  
+   <HediffDef>
+    <defName>MR_tailbiting</defName>
+    <label>얌</label>
+    <description>으추추</description>
+    <defaultLabelColor>(0.8, 0.8, 1)</defaultLabelColor>
+    <taleOnVisible>HypothermiaRevealed</taleOnVisible>
+    <stages>
+       <li>
+        <label>shivering</label>
+        <becomeVisible>false</becomeVisible>
+      </li>
+      <li>
+        <label>shivering</label>
+        <becomeVisible>false</becomeVisible>
+        <minSeverity>0.04</minSeverity>
+      </li>
+      <li>
+        <label>minor</label>
+        <becomeVisible>false</becomeVisible>
+        <minSeverity>0.2</minSeverity>
+      </li>
+      <li>
+        <label>serious</label>
+        <becomeVisible>false</becomeVisible>
+        <minSeverity>0.35</minSeverity>
+      </li>
+      <li>
+        <label>extreme</label>
+        <becomeVisible>false</becomeVisible>
+        <minSeverity>0.62</minSeverity>
+      </li>
+    </stages>
+  </HediffDef>
+  
+	<!--죽음-->
+   <HediffDef>
+    <defName>MR_Die</defName>
+    <label>괴사</label>
+    <description>호기심이 고양이를 죽이는 법.</description>
+    <defaultLabelColor>(1,1,1)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>1</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <lethalSeverity>1</lethalSeverity>
+    <tendable>false</tendable>
+    <cureAllAtOnceIfCuredByItem>false</cureAllAtOnceIfCuredByItem>
+    <isBad>true</isBad>
+    <stages>
+      <li>
+        <label>Die</label>
+        <becomeVisible>false</becomeVisible>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  
+  
+  
+   <HediffDef>
+    <defName>MR_huntingHediff</defName>
+    <label>Hunting Proficiency</label>
+    <description>A general term for the skills and senses honed through repeated hunts.</description>
+    <defaultLabelColor>(1, 1, 1)</defaultLabelColor>  
+    <hediffClass>HediffWithComps</hediffClass>
+	<initialSeverity>0</initialSeverity> 
+    <isBad>false</isBad>
+    <stages>
+       <li>
+        <label>Ⅰ</label>
+        <statOffsets>
+          <MeleeDodgeChance>1</MeleeDodgeChance> <!-- 근접 회피 -->
+          <ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+		  <HuntingStealth>0.05</HuntingStealth>
+          <!--<AimingDelayFactor>-0.1</AimingDelayFactor>-->
+        </statOffsets>
+      </li>
+      <li>
+        <label>Ⅱ</label>
+        <minSeverity>0.11</minSeverity>
+        <statOffsets>
+          <MeleeDodgeChance>2</MeleeDodgeChance> <!-- 근접 회피 -->
+          <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+		  <HuntingStealth>0.1</HuntingStealth>
+        </statOffsets>
+      </li>
+      <li>
+        <label>Ⅲ</label>
+        <minSeverity>0.21</minSeverity>
+        <statOffsets>
+          <MeleeDodgeChance>3</MeleeDodgeChance> <!-- 근접 회피 -->
+          <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+		  <HuntingStealth>0.15</HuntingStealth>
+        </statOffsets>
+      </li>
+      <li>
+        <label>Ⅳ</label>
+        <minSeverity>0.31</minSeverity>
+        <statOffsets>
+          <MeleeDodgeChance>4</MeleeDodgeChance> <!-- 근접 회피 -->
+          <ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+		  <HuntingStealth>0.2</HuntingStealth>
+        </statOffsets>
+      </li>
+      <li>
+        <label>Ⅴ</label>
+        <minSeverity>0.41</minSeverity>
+        <statOffsets>
+          <MeleeDodgeChance>5</MeleeDodgeChance> <!-- 근접 회피 -->
+          <ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+		  <HuntingStealth>0.25</HuntingStealth>
+        </statOffsets>
+      </li>
+      <li>
+        <label>Ⅵ</label>
+        <minSeverity>0.51</minSeverity>
+        <statOffsets>
+          <MeleeDodgeChance>6</MeleeDodgeChance> <!-- 근접 회피 -->
+          <ShootingAccuracyPawn>6</ShootingAccuracyPawn>
+		  <HuntingStealth>0.3</HuntingStealth>
+        </statOffsets>
+      </li>
+      <li>
+        <label>Ⅶ</label>
+        <minSeverity>0.61</minSeverity>
+        <statOffsets>
+          <MeleeDodgeChance>7</MeleeDodgeChance> <!-- 근접 회피 -->
+          <ShootingAccuracyPawn>7</ShootingAccuracyPawn>
+		  <HuntingStealth>0.35</HuntingStealth>
+        </statOffsets>
+      </li>
+      <li>
+        <label>Ⅷ</label>
+        <minSeverity>0.71</minSeverity>
+        <statOffsets>
+          <MeleeDodgeChance>8</MeleeDodgeChance> <!-- 근접 회피 -->
+          <ShootingAccuracyPawn>8</ShootingAccuracyPawn>
+		  <HuntingStealth>0.4</HuntingStealth>
+        </statOffsets>
+      </li>
+      <li>
+        <label>Ⅸ</label>
+        <minSeverity>0.81</minSeverity>
+        <statOffsets>
+          <MeleeDodgeChance>9</MeleeDodgeChance> <!-- 근접 회피 -->
+          <ShootingAccuracyPawn>9</ShootingAccuracyPawn>
+		  <HuntingStealth>0.45</HuntingStealth>
+        </statOffsets>
+      </li>
+      <li>
+        <label>Ⅹ </label>
+        <minSeverity>0.91</minSeverity>
+        <statOffsets>
+          <MeleeDodgeChance>10</MeleeDodgeChance> <!-- 근접 회피 -->
+          <ShootingAccuracyPawn>10</ShootingAccuracyPawn>
+		  <HuntingStealth>0.5</HuntingStealth>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <AbilityGroupDef>
+    <defName>MR_Group_readytohunt</defName>
+    <cooldownTicks>60000</cooldownTicks>
+    <sendMessageOnCooldownComplete>false</sendMessageOnCooldownComplete>
+  </AbilityGroupDef>
+  
+  <AbilityDef>
+    <defName>MR_HuntAbility</defName>
+    <label>Commence Hunt</label>
+    <description>Drastically heightens the body's senses in preparation for a major hunt.</description>
+    <jobDef>CastAbilityOnThing</jobDef>
+    <groupDef>MR_Group_readytohunt</groupDef>
+    <targetRequired>False</targetRequired>
+    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+    <iconPath>Things/Weapons/Mote/MR_HuntingSkill</iconPath>
+    <stunTargetWhileCasting>False</stunTargetWhileCasting>
+    <showPsycastEffects>False</showPsycastEffects>
+    <displayGizmoWhileUndrafted>False</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>True</disableGizmoWhileUndrafted>
+    <hotKey>Misc12</hotKey>
+    <uiOrder>3</uiOrder>
+    <warmupStartSound>MR_Readytohuntsound</warmupStartSound>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <statBases>
+      <Ability_Duration>1000</Ability_Duration>
+      <Ability_EffectRadius>0.9</Ability_EffectRadius>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>0.1</warmupTime>
+      <range>0.9</range>
+      <drawAimPie>False</drawAimPie>
+      <requireLineOfSight>False</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>Hediff_MR_Readytohunt</hediffDef>
+        <onlyBrain>false</onlyBrain>
+        <onlyApplyToSelf>True</onlyApplyToSelf>
+        <replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+   <HediffDef>
+    <defName>Hediff_MR_Readytohunt</defName>
+    <label>Commence Hunt</label>
+    <description>Drastically heightens the body's senses in preparation for a major hunt.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+  <!-- <spawnThingOnRemoved>YourMod_SymbioticRemnants</spawnThingOnRemoved> --> <!-- 제거 시 나올 잔해물 -->
+    <defaultLabelColor>(1.0, 1.0, 1.0)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <initialSeverity>0.01</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.05</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>MR_ReadytohuntEffecter</stateEffecter>
+        <severityIndices>0~5</severityIndices>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0.01</minSeverity>
+         <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.50</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.50</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  
+  <EffecterDef>
+    <defName>MR_ReadytohuntEffecter</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>MR_ReadytohuntRing</fleckDef>
+        <spawnLocType>OnTarget</spawnLocType>
+        <burstCount>1</burstCount>
+        <color>(0, 0, 0, .75)</color>
+        <positionRadius>0</positionRadius>
+        <positionRadiusMin>0</positionRadiusMin>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <angle>0~0</angle>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+      </li>
+    </children>
+  </EffecterDef>
+  
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>MR_ReadytohuntRing</defName>
+    <altitudeLayer>LowPlant</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>.5</solidTime>
+    <fadeOutTime>.5</fadeOutTime>
+    <scalers>
+      <li>
+        <curve>
+          <points>
+            <li>(0,0)</li>
+            <li>(0.04,0.0784)</li>
+            <li>(0.08,0.1536)</li>
+            <li>(0.12,0.2256)</li>
+            <li>(0.16,0.2944)</li>
+            <li>(0.2,0.36)</li>
+            <li>(0.24,0.4224)</li>
+            <li>(0.28,0.4816)</li>
+            <li>(0.32,0.5376)</li>
+            <li>(0.36,0.5904)</li>
+            <li>(0.3999999,0.6399999)</li>
+            <li>(0.4399999,0.6863999)</li>
+            <li>(0.4799999,0.7296)</li>
+            <li>(0.5199999,0.7695999)</li>
+            <li>(0.5599999,0.8063999)</li>
+            <li>(0.6,0.84)</li>
+            <li>(0.64,0.8704)</li>
+            <li>(0.68,0.8975999)</li>
+            <li>(0.72,0.9216)</li>
+            <li>(0.7600001,0.9424001)</li>
+            <li>(0.8000001,0.96)</li>
+            <li>(0.8400001,0.9744)</li>
+            <li>(0.8800001,0.9856001)</li>
+            <li>(0.9200001,0.9936001)</li>
+            <li>(0.9600002,0.9984)</li>
+            <li>(1,1)</li>
+          </points>
+        </curve>
+        <scaleAmt>1.5</scaleAmt>
+        <scaleTime>2</scaleTime>
+      </li>
+    </scalers>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>0.05</_distortionIntensity>
+        <_brightnessMultiplier>2.15</_brightnessMultiplier>
+        <_noiseIntensity>1</_noiseIntensity>
+        <_ageToNoiseRatio>10</_ageToNoiseRatio>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+    <useAttachLink>True</useAttachLink>
+  </FleckDef>
+	<!--침로의석판-->
+  <!--<HediffDef>
+		<defName>MRH_slateofpath</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>SlateOfPath</label>
+		<initialSeverity>0.001</initialSeverity>
+		<description>test</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+      <li Class="MaruPsychic.HediffCompProperties_Maruhadiff_searchtrait">
+        <detecttraitDef>Maru_WarpedConstitution</detecttraitDef>
+        <hediffDefDie>MR_Die</hediffDefDie>
+        <hediffDefFireA>MRH_Wildfire</hediffDefFireA>
+        <hediffDefFireB>MRH_WildfireA</hediffDefFireB>
+        <hediffDefinheritBard>MRH_inheritanceBards</hediffDefinheritBard>
+        <hediffDefBardA>MRH_Bards</hediffDefBardA>
+        <hediffDefBardB>MRH_BardsA</hediffDefBardB>
+        <hediffDefinheritPuppet>MRH_inheritancePuppeteer</hediffDefinheritPuppet>
+        <hediffDefPuppetA>MRH_Puppeteer</hediffDefPuppetA>
+        <hediffDefPuppetB>MRH_PuppeteerA</hediffDefPuppetB>
+        <nowhediffDef>MRH_slateofpath</nowhediffDef>
+		<SlateDef>MR_Slateofpath</SlateDef>
+      </li>
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>false</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>-->
+	
+	<!--천불-->		
+	<!--계산-->
+	  <!--<HediffDef>
+		<defName>MRH_Distortion</defName>
+		<hediffClass>MaruWildfire.Hediff_Distortion</hediffClass>
+		<label>test</label>
+		<defaultLabelColor>(1,1,1)</defaultLabelColor>
+		<initialSeverity>0.001</initialSeverity>
+		<description>test</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>false</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>-->
+		<!--1단계-->
+	  <!--<HediffDef>
+		<defName>MRH_Wildfire</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Wildfire(1)</label>
+    <defaultLabelColor>(1,0.8,0.4)</defaultLabelColor>
+		<initialSeverity>0.001</initialSeverity>
+		<description>test</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>true</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>-->
+		<!--2단계-->
+		  <!--<HediffDef>
+		<defName>MRH_WildfireA</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Wildfire(2)</label>
+    <defaultLabelColor>(1,0.8,0.4)</defaultLabelColor>
+		<initialSeverity>0.001</initialSeverity>
+		<description>test</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>true</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>	-->
+	<!--3단계-->
+		<!--  <HediffDef>
+		<defName>MRH_WildfireB</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Wildfire(3)</label>
+    <defaultLabelColor>(1,0.8,0.4)</defaultLabelColor>
+		<initialSeverity>0.001</initialSeverity>
+		<description>test</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>true</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>	-->
+	<!--4단계-->
+		<!--  <HediffDef>
+		<defName>MRH_WildfireC</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Wildfire(4)</label>
+    <defaultLabelColor>(1,0.8,0.4)</defaultLabelColor>
+		<initialSeverity>0.001</initialSeverity>
+		<description>test</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>true</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>-->
+		<!--5단계-->
+		<!--  <HediffDef>
+		<defName>MRH_WildfireD</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Wildfire(5)</label>
+    <defaultLabelColor>(1,0.8,0.4)</defaultLabelColor>
+		<initialSeverity>0.001</initialSeverity>
+		<description>test</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>true</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>-->
+			<!--6단계-->
+		<!--  <HediffDef>
+		<defName>MRH_WildfireE</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Wildfire(6)</label>
+    <defaultLabelColor>(1,0.8,0.4)</defaultLabelColor>
+		<initialSeverity>0.001</initialSeverity>
+		<description>test</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>true</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>-->
+		<!--악사의 전승-->
+	 <!-- <HediffDef>
+		<defName>MRH_inheritanceBards</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>The Heritage of the Bards</label>
+    <defaultLabelColor>(1,1,1)</defaultLabelColor>
+		<initialSeverity>0.001</initialSeverity>
+		<description>test</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>true</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>-->
+	
+	<!--인형사의 전승-->
+	 <!-- <HediffDef>
+		<defName>MRH_inheritancePuppeteer</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>The Heritage of the Puppeteer</label>
+    <defaultLabelColor>(1,1,1)</defaultLabelColor>
+		<initialSeverity>0.001</initialSeverity>
+		<description>test</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>true</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>-->
+	
+		<!--악사, 풍물-->
+		<!--1단계-->
+	  <!--<HediffDef>
+		<defName>MRH_Bards</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Pungmul(1)</label>
+    <defaultLabelColor>(1,0.8,0.4)</defaultLabelColor>
+		<initialSeverity>0.001</initialSeverity>
+		<description>test</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>true</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>-->
+		<!--2단계-->
+		<!--  <HediffDef>
+		<defName>MRH_BardsA</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Pungmul(2)</label>
+    <defaultLabelColor>(1,0.8,0.4)</defaultLabelColor>
+		<initialSeverity>0.001</initialSeverity>
+		<description>test</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>true</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>-->
+			<!--인형사, 덜미-->
+		<!--1단계-->
+	<!--  <HediffDef>
+		<defName>MRH_Puppeteer</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Deolmi(1)</label>
+    <defaultLabelColor>(1,0.8,0.4)</defaultLabelColor>
+		<initialSeverity>0.001</initialSeverity>
+		<description>test</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>true</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>-->
+		<!--2단계-->
+		<!--  <HediffDef>
+		<defName>MRH_PuppeteerA</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Deolmi(2)</label>
+    <defaultLabelColor>(1,0.8,0.4)</defaultLabelColor>
+		<initialSeverity>0.001</initialSeverity>
+		<description>test</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>true</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>-->
+</Defs>

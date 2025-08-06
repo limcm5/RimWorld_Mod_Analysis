@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<AlienRace.ThingDef_AlienRace ParentName="BasePawn" Name="MR_PawnBase" Abstract="True">
+		<thingClass>Pawn</thingClass>
+		<category>Pawn</category>
+		<selectable>true</selectable>
+		<tickerType>Normal</tickerType>
+		<altitudeLayer>Pawn</altitudeLayer>
+		<useHitPoints>false</useHitPoints>
+		<hasTooltip>true</hasTooltip>
+		<soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+    <butcherProducts>
+    </butcherProducts>
+		<statBases>
+			<Mass>55</Mass>
+		</statBases>
+		<comps>
+			<li>
+				<compClass>CompAttachBase</compClass>
+			</li>
+		</comps>
+		<race>
+			<renderTree>MR_Humanlike</renderTree>
+			<canBecomeShambler>false</canBecomeShambler>
+			<bloodDef>Filth_Blood</bloodDef>
+		</race>
+		<drawGUIOverlay>true</drawGUIOverlay>
+	</AlienRace.ThingDef_AlienRace>
+</Defs>

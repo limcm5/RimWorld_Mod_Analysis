@@ -1,0 +1,1531 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <AlienRace.ThingDef_AlienRace ParentName="MR_PawnBase"  Name="MaruBase">
+    <defName>Maru</defName>
+    <label>Maru</label>
+    <description>A race that lives on the ruins of an unknown civilization. Also called Far North or Yeti, they live in a small society over a wide radius.</description>
+    <descriptionHyperlinks>
+      <ThingDef>MR_Sarira</ThingDef>
+    </descriptionHyperlinks>
+    <alienRace>
+		<generalSettings>
+		
+	  		<growthAges MayRequire="Ludeon.RimWorld.Biotech">
+					<!--<li>3</li>-->
+					<li>7</li>
+					<li>10</li>
+					<li>13</li>
+				</growthAges>
+			<maleGenderProbability>0.0000001</maleGenderProbability>
+			<immuneToAge>false</immuneToAge>
+      <humanRecipeImport>true</humanRecipeImport>
+      <canLayDown>true</canLayDown>
+			<maxDamageForSocialfight>6</maxDamageForSocialfight>
+      <immuneToXenophobia>false</immuneToXenophobia>
+      <factionRelations>
+        <li>
+          <factions>
+            <li>MRF_Hyperborea</li>
+          </factions>
+          <goodwill>
+            <min>100</min>
+            <max>100</max>
+          </goodwill>
+        </li>
+      </factionRelations>
+      <forcedRaceTraitEntries>
+      <li>
+        <defName>Maru_flameworship</defName>
+        <chance>100</chance>
+      </li>
+      <li>
+        <defName>MRT_Bodytrait</defName>
+        <chance>20</chance>
+      </li>
+      <li>
+        <defName>MRT_Mentaltrait</defName>
+        <chance>5</chance>
+      </li>
+      <li>
+        <defName>MRT_Eartrait</defName>
+        <chance>5</chance>
+      </li>
+      <li>
+        <defName>MRT_Eyetrait</defName>
+        <chance>5</chance>
+      </li>
+      <!--<li>
+        <defName>Maru_WarpedConstitution</defName>
+        <chance>3</chance>
+      </li>-->
+     </forcedRaceTraitEntries>
+      <disallowedTraits>
+        <li>
+          <defName Degree="-1">SpeedOffset</defName>
+        </li>
+        <li>
+          <defName>CreepyBreathing</defName>
+        </li>
+        <li>
+          <defName>BodyPurist</defName>
+        </li>
+      </disallowedTraits>
+
+      <chemicalSettings></chemicalSettings>
+
+<!--=파트제네레이터==========================================================================================-->
+      <alienPartGenerator>
+		<borderScale>1</borderScale>
+        <atlasScale>4</atlasScale>
+        <headTypes>
+          <li>MRhead_one</li>
+          <li>MRhead_two</li>
+          <li>MRhead_three</li>
+          <li>MRhead_four</li>
+          <li>MRhead_five</li>
+          <li>MRhead_six</li>
+        </headTypes>
+        <bodyTypes>
+            <li>Female</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Baby</li><!-- test -->
+  					<li MayRequire="Ludeon.RimWorld.Biotech">Child</li><!-- test -->
+  					<li MayRequire="Ludeon.RimWorld.Biotech">MR_teenager</li><!-- test -->
+        </bodyTypes>
+        <headOffset>(-0.07, -0.06)</headOffset>
+       <!--<useGenderedHeads>false</useGenderedHeads>
+        <useGenderedBodies>false</useGenderedBodies>-->
+        <!-- 신체 드로잉 크기 -->
+        <customDrawSize>(1.0, 1.0)</customDrawSize>
+        <customHeadDrawSize>(1.0, 1.0)</customHeadDrawSize>
+        <customPortraitDrawSize>(1.0, 1.0)</customPortraitDrawSize>
+        <!--스킨컬러-->
+
+        				<colorChannels>
+					<li>
+						<name>skin</name>
+						<first Class="ColorGenerator_Options">
+							<options>
+                <li>
+                  <weight>10</weight>
+                  <only>(255,255,255)</only>
+                </li>
+							</options>
+						</first>				
+					</li>
+        <!--헤어컬러-->
+					<li>
+						<name>hair</name>
+						<first Class="ColorGenerator_Options">
+							<options>
+            <!-- 1 -->
+            <!--<li>
+              <weight>1</weight>
+              <min>(0.1,0.1,0.1)</min>
+              <max>(0.1,0.1,0.1)</max>
+            </li>-->
+            <!-- 2 -->
+            <li>
+              <weight>30</weight>
+              <min>(1.0,1.0,1.0)</min>
+              <max>(1.0,1.0,1.0)</max>
+            </li>
+                
+							</options>
+						</first>
+					</li>
+				</colorChannels>
+
+
+        <!-- 신체 부착물 -->
+            <bodyAddons>
+              <!-- 꼬리 -->
+              <li>		
+					<extendedGraphics>
+							<Age For="MR_HumanlikeBaby">marulike/Tails/MRTail</Age>
+							<Age For="MR_HumanlikeChild">marulike/Tails/MRTail</Age>
+							<Age For="MR_HumanlikeTeenager">
+							<path>marulike/Tails/MRTail</path>
+							<extendedGraphics>
+								<Hediff For="MR_tailbiting">marulike/Tails/bite/MRTailbitD</Hediff>
+								<Hediff For="MR_Joyless">marulike/Tails/bite/MRTailbitD</Hediff> 
+							</extendedGraphics>
+							</Age>	
+							<Age For="MR_HumanlikeAdult">
+							<path>marulike/Tails/MRTail</path>
+							<extendedGraphics>
+								<Hediff For="MR_tailbiting">marulike/Tails/bite/MRTailbitD</Hediff>
+								<Hediff For="MR_Joyless">marulike/Tails/bite/MRTailbitD</Hediff> 
+							</extendedGraphics>
+							</Age>
+					</extendedGraphics>
+					<conditions>
+						<BodyPart>
+							<bodyPart>MR_BigTail</bodyPart>
+							<bodyPartLabel>tail</bodyPartLabel>
+						</BodyPart>
+						<Apparel>
+							<hiddenUnderApparelTag>
+								<li>MaruHideT</li>
+							</hiddenUnderApparelTag>
+						</Apparel>
+							<Posture>
+								<drawnStanding>true</drawnStanding>
+								<drawnInBed>false</drawnInBed>
+							</Posture>
+					</conditions>
+                <drawSize>1</drawSize>
+				<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+                <path>marulike/Tails/MRTail</path>
+                <inFrontOfBody>false</inFrontOfBody>
+                <colorChannel>base</colorChannel>
+                <defaultOffset>Tail</defaultOffset>
+               <shaderType>CutoutComplex</shaderType>
+				<!--오프셋-->	
+                <offsets>
+                  <south>
+                      <offset>(-0.418,0.221)</offset>
+						<bodyTypes>
+							<Child MayRequire="Ludeon.RimWorld.Biotech">(0.0,0.05)</Child>
+							<Baby MayRequire="Ludeon.RimWorld.Biotech">(0.0,0.0)</Baby>
+						</bodyTypes>
+                  </south>
+                  <north>
+                      <offset>(0.003,0.536)</offset>
+						<layerOffset>-0.22</layerOffset>
+						<bodyTypes>
+							<Child MayRequire="Ludeon.RimWorld.Biotech">(0.0,0.05)</Child>
+							<Baby MayRequire="Ludeon.RimWorld.Biotech">(0.0,0.0)</Baby>
+						</bodyTypes>
+                  </north>
+                  <east>
+                      <offset>(-0.434,0.212)</offset>
+						<bodyTypes>
+							<Child MayRequire="Ludeon.RimWorld.Biotech">(0.015,0.08)</Child>
+							<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.01,0.03)</Baby>
+						</bodyTypes>
+                  </east>
+                </offsets>
+              </li>
+
+             <li>	
+				<extendedGraphics>
+							<Age For="MR_HumanlikeBaby">Things/Inv/MR_Invisible</Age>
+							<Age For="MR_HumanlikeChild">Things/Inv/MR_Invisible</Age>
+							<Age For="MR_HumanlikeTeenager">
+							<path>Things/Inv/MR_Invisible</path>
+							<extendedGraphics>
+								<Hediff For="MR_tailbiting">marulike/Tails/bite/MRTailbitU</Hediff>
+								<Hediff For="MR_Joyless">marulike/Tails/bite/MRTailbitU</Hediff> 
+							</extendedGraphics>
+							</Age>	
+							<Age For="MR_HumanlikeAdult">
+							<path>Things/Inv/MR_Invisible</path>
+							<extendedGraphics>
+								<Hediff For="MR_tailbiting">marulike/Tails/bite/MRTailbitU</Hediff>
+								<Hediff For="MR_Joyless">marulike/Tails/bite/MRTailbitU</Hediff> 
+							</extendedGraphics>
+							</Age>
+					</extendedGraphics>
+					<conditions>
+						<BodyPart>
+							<bodyPart>MR_BigTail</bodyPart>
+							<bodyPartLabel>tail</bodyPartLabel>
+						</BodyPart>
+						<Apparel>
+							<hiddenUnderApparelTag>
+								<li>MaruHideT</li>
+							</hiddenUnderApparelTag>
+						</Apparel>
+							<Posture>
+								<drawnStanding>true</drawnStanding>
+								<drawnInBed>false</drawnInBed>
+							</Posture>
+					</conditions>
+                <path>Things/Inv/MR_Invisible</path>
+                <inFrontOfBody>true</inFrontOfBody>
+                <colorChannel>base</colorChannel>
+                <drawSize>1</drawSize>
+                <angle>0</angle>
+				<alignWithHead>true</alignWithHead>
+				<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+                <defaultOffset>Tail</defaultOffset>
+                <shaderType>CutoutComplex</shaderType>
+				<!--오프셋-->
+                <offsets>
+                  <south>
+                      <offset>(-0.418,-0.06)</offset>
+						<bodyTypes>
+							<Child MayRequire="Ludeon.RimWorld.Biotech">(0.0,0.12)</Child>
+							<Baby MayRequire="Ludeon.RimWorld.Biotech">(0.0,0.0)</Baby>
+						</bodyTypes>
+                  </south>
+                  <north>
+                      <offset>(0.003,0.536)</offset>
+						<bodyTypes>
+							<Child MayRequire="Ludeon.RimWorld.Biotech">(0.0,0.0)</Child>
+							<Baby MayRequire="Ludeon.RimWorld.Biotech">(0.0,0.0)</Baby>
+						</bodyTypes>
+                  </north>
+                  <east>
+                      <offset>(-0.41,-0.074)</offset>
+						<bodyTypes>
+							<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.016,0.138)</Child>
+							<Baby MayRequire="Ludeon.RimWorld.Biotech">(0.0,0.0)</Baby>
+						</bodyTypes>
+                  </east>
+                </offsets>
+              </li>
+
+              <!--왼쪽귀-->
+              <li>
+					<conditions>
+						<BodyPart>
+							<bodyPart>Ear</bodyPart>
+							<bodyPartLabel>left ear</bodyPartLabel>
+						</BodyPart>
+						<Apparel>
+							<hiddenUnderApparelTag>
+								<li>MaruHideE</li>
+							</hiddenUnderApparelTag>
+						</Apparel>
+					</conditions>
+						<extendedGraphics>
+							<Hediff MayRequire="Ludeon.RimWorld.Anomaly" For="Ghoul">marulike/Ghoul/ear/MRleftEar</Hediff>
+						</extendedGraphics>
+                <path>marulike/Ear/MRleftEar</path>
+                <inFrontOfBody>true</inFrontOfBody>
+                <colorChannel>base</colorChannel>
+                <drawSize>1</drawSize>
+                <angle>0</angle>
+				<alignWithHead>true</alignWithHead>
+				<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+                <defaultOffset>Tail</defaultOffset>
+                <shaderType>CutoutComplex</shaderType>
+                <offsets>
+                  <south>
+					<layerOffset>1</layerOffset>
+                      <offset>(-0.421,0.25)</offset>
+						<bodyTypes>
+							<Child MayRequire="Ludeon.RimWorld.Biotech">(0.003,-0.0)</Child>
+							<Baby MayRequire="Ludeon.RimWorld.Biotech">(0.003,-0.015)</Baby>
+						</bodyTypes>
+                  </south>
+                  <north>
+					<layerOffset>-1</layerOffset>
+                      <offset>(0.0,0.605)</offset>
+						<bodyTypes>
+							<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.003,-0.0)</Child>
+							<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.003,-0.015)</Baby>
+						</bodyTypes>
+                  </north>
+                  <east>
+					<layerOffset>1</layerOffset>
+                      <offset>(-0.4474,0.25)</offset>
+						<bodyTypes>
+							<Child MayRequire="Ludeon.RimWorld.Biotech">(0.0035,-0.0)</Child>
+							<Baby MayRequire="Ludeon.RimWorld.Biotech">(0.028,0.0015)</Baby>
+						</bodyTypes>
+                  </east>
+                </offsets>
+              </li>
+              <!--오른쪽귀-->
+              <li>
+					<conditions>
+						<BodyPart>
+							<bodyPart>Ear</bodyPart>
+							<bodyPartLabel>right ear</bodyPartLabel>
+						</BodyPart>
+						<Apparel>
+							<hiddenUnderApparelTag>
+								<li>MaruHideE</li>
+							</hiddenUnderApparelTag>
+						</Apparel>
+					</conditions>
+						<extendedGraphics>
+							<Hediff MayRequire="Ludeon.RimWorld.Anomaly" For="Ghoul">marulike/Ghoul/ear/MRrightEar</Hediff>
+						</extendedGraphics>
+                <path>marulike/Ear/MRrightEar</path>
+                <inFrontOfBody>true</inFrontOfBody>
+                <colorChannel>base</colorChannel>
+                <drawSize>1</drawSize>
+                <angle>0</angle>
+				<alignWithHead>true</alignWithHead>
+				<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+                <defaultOffset>Tail</defaultOffset> 
+                <shaderType>CutoutComplex</shaderType>
+                <offsets>
+                  <south>
+					<layerOffset>1</layerOffset>
+                      <offset>(-0.421,0.25)</offset>
+						<bodyTypes>
+							<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.003,-0.0)</Child>
+							<Baby MayRequire="Ludeon.RimWorld.Biotech">(-0.003,-0.015)</Baby>
+						</bodyTypes>
+                  </south>
+                  <north>
+					<layerOffset>-1</layerOffset>
+                      <offset>(-0.0,0.605)</offset>
+						<bodyTypes>
+							<Child MayRequire="Ludeon.RimWorld.Biotech">(0.003,-0.0)</Child>
+							<Baby MayRequire="Ludeon.RimWorld.Biotech">(0.003,-0.015)</Baby>
+						</bodyTypes>
+                  </north>
+                  <east>
+					<layerOffset>1</layerOffset>
+                    <!--<bodyTypes><Female>(-0.4474,0.506)</Female></bodyTypes>-->
+                      <offset>(-0.4474,0.25)</offset>
+						<bodyTypes>
+							<Child MayRequire="Ludeon.RimWorld.Biotech">(0.0035,-0.0)</Child>
+							<Baby MayRequire="Ludeon.RimWorld.Biotech">(0.028,0.0015)</Baby>
+						</bodyTypes>
+                  </east>
+                </offsets>
+              </li>
+			  
+			  	<li> <!--헤어윗레이어-->
+						<path>marulike/Hairs/addon/MRHair</path>
+						<conditions>
+							<BodyPart>
+								<bodyPart>Head</bodyPart>
+							</BodyPart>
+							<Apparel>
+								<hiddenUnderApparelTag>
+									<li>MaruHideH</li>
+								</hiddenUnderApparelTag>
+							</Apparel>
+						</conditions>
+						<extendedGraphics>
+							<Hediff MayRequire="Ludeon.RimWorld.Anomaly" For="Ghoul">marulike/Ghoul/hair/addon/MRHair</Hediff>
+						</extendedGraphics>
+						<inFrontOfBody>true</inFrontOfBody>
+						<colorChannel>base</colorChannel>
+						<drawSize>1</drawSize>
+						<angle>0</angle>
+						<defaultOffset>Tail</defaultOffset>
+						<shaderType>Cutout</shaderType>
+						<offsets>
+							<south>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(0,0)</Child>
+								</bodyTypes>
+								<offset>(-0.42,0.22)</offset>
+								<layerOffset>-0.2736</layerOffset>
+							</south>
+							
+							<north>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(0,0.01)</Child>
+								</bodyTypes>
+								<offset>(0,0.55)</offset>
+								<layerOffset>-0.325</layerOffset>
+							</north>
+							
+							<east>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.01,-0.002)</Child>
+								</bodyTypes>
+								<offset>(-0.42,0.22)</offset>
+								<layerOffset>-0.2736</layerOffset>
+							</east>
+							
+							<west>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.01,-0.002)</Child>
+								</bodyTypes>
+								<offset>(-0.42,0.22)</offset>
+								<layerOffset>-0.2736</layerOffset>
+							</west>
+						</offsets>
+						<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+						<alignWithHead>true</alignWithHead>
+					</li>
+					
+			  	<li> <!--헤어뒷레이어-->
+						<path>marulike/Hairs/addonB/MRHairB</path>
+						<conditions>
+							<BodyPart>
+								<bodyPart>Head</bodyPart>
+							</BodyPart>
+						<Posture>
+								<drawnStanding>true</drawnStanding>
+								<drawnInBed>false</drawnInBed>
+							</Posture>
+							<Apparel>
+								<hiddenUnderApparelTag>
+									<li>MaruHideH</li>
+								</hiddenUnderApparelTag>
+							</Apparel>
+						</conditions>
+						<!--<extendedGraphics>
+							<Hediff MayRequire="Ludeon.RimWorld.Anomaly" For="Ghoul">marulike/Ghoul/hair/MRHairB_1</Hediff>
+						</extendedGraphics>-->
+						<inFrontOfBody>true</inFrontOfBody>
+						<colorChannel>base</colorChannel>
+						<drawSize>1</drawSize>
+						<angle>0</angle>
+						<defaultOffset>Tail</defaultOffset>
+						<shaderType>Cutout</shaderType>
+						<linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
+						<offsets>
+							<south>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(0,0)</Child>
+								</bodyTypes>
+								<offset>(-0.42,0.22)</offset>
+								<layerOffset>-1.273</layerOffset>
+							</south>
+							
+							<north>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(0,0.01)</Child>
+								</bodyTypes>
+								<offset>(0,0.55)</offset>
+								<layerOffset>-0.13</layerOffset>
+							</north>
+							
+							<east>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.01,-0.002)</Child>
+								</bodyTypes>
+								<offset>(-0.42,0.22)</offset>
+								<layerOffset>-1.273</layerOffset>
+							</east>
+							
+							<west>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.01,-0.002)</Child>
+								</bodyTypes>
+								<offset>(-0.42,0.22)</offset>
+								<layerOffset>-1.273</layerOffset>
+							</west>
+						</offsets>
+						<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+						<alignWithHead>true</alignWithHead>
+					</li>
+					
+					  <!--헤어옆레이어-->
+             <li>
+						<path>marulike/Hairs/addonC/MRHairB</path>
+				<extendedGraphics>
+					</extendedGraphics>
+					<conditions>
+						<BodyPart>
+							<bodyPart>Head</bodyPart>
+							<bodyPartLabel>Head</bodyPartLabel>
+						</BodyPart>
+							<Apparel>
+								<hiddenUnderApparelTag>
+									<li>MaruHideH</li>
+								</hiddenUnderApparelTag>
+							</Apparel>
+					</conditions>
+               <inFrontOfBody>true</inFrontOfBody>
+						<colorChannel>base</colorChannel>
+						<drawSize>1</drawSize>
+						<angle>0</angle>
+						<defaultOffset>Tail</defaultOffset>
+						<shaderType>Cutout</shaderType>
+						<linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
+						<offsets>
+							<south>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(0,0)</Child>
+								</bodyTypes>
+								<offset>(-0.42,0.22)</offset>
+								<layerOffset>-1.273</layerOffset>
+							</south>
+							
+							<north>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(0,0.01)</Child>
+								</bodyTypes>
+								<offset>(0,0.55)</offset>
+								<layerOffset>-0.13</layerOffset>
+							</north>
+							
+							<east>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.01,-0.002)</Child>
+								</bodyTypes>
+								<offset>(-0.42,0.22)</offset>
+								<layerOffset>-1.273</layerOffset>
+							</east>
+							
+							<west>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.01,-0.002)</Child>
+								</bodyTypes>
+								<offset>(-0.42,0.22)</offset>
+								<layerOffset>-1.273</layerOffset>
+							</west>
+						</offsets>
+						<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+						<alignWithHead>true</alignWithHead>
+              </li>
+			  
+			  <li> <!--머리-->
+						<path>marulike/Heads/Female_MRhead</path>
+						<conditions>
+							<BodyPart>
+								<bodyPart>Head</bodyPart>
+							</BodyPart>
+							<Apparel>
+								<hiddenUnderApparelTag>
+								</hiddenUnderApparelTag>
+							</Apparel>
+						</conditions>
+						<extendedGraphics>
+							<Hediff MayRequire="Ludeon.RimWorld.Anomaly" For="Ghoul">marulike/Ghoul/head/Female_MRhead</Hediff>
+						</extendedGraphics>
+						<inFrontOfBody>true</inFrontOfBody>
+						<colorChannel>base</colorChannel>
+						<drawSize>1</drawSize>
+						<angle>0</angle>
+						<defaultOffset>Tail</defaultOffset>
+						<shaderType>Cutout</shaderType>
+						<offsets>
+							<south>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(0,0)</Child>
+								</bodyTypes>
+								<offset>(-0.42,0.22)</offset>
+								<layerOffset>-0.274</layerOffset>
+							</south>
+							
+							<north>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(0,0.01)</Child>
+								</bodyTypes>
+								<offset>(0,0.55)</offset>
+								<layerOffset>-0.324</layerOffset>
+							</north>
+							
+							<east>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.01,-0.002)</Child>
+								</bodyTypes>
+								<offset>(-0.42,0.22)</offset>
+								<layerOffset>-0.274</layerOffset>
+							</east>
+							
+							<west>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.01,-0.002)</Child>
+								</bodyTypes>
+								<offset>(-0.42,0.22)</offset>
+								<layerOffset>-0.274</layerOffset>
+							</west>
+						</offsets>
+						<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+						<alignWithHead>true</alignWithHead>
+					</li>
+					
+					<li> <!--눈-->
+						<path>Things/Inv/MR_Invisible</path>
+							<extendedGraphics>
+								<Hediff For="Hediff_MR_Readytohunt">marulike/Heads/eyeblight/Female_MReye</Hediff>
+							</extendedGraphics>
+						<conditions>
+							<BodyPart>
+								<bodyPart>Head</bodyPart>
+							</BodyPart>
+						</conditions>
+						<linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
+						<inFrontOfBody>true</inFrontOfBody>
+						<colorChannel>base</colorChannel>
+						<drawSize>1</drawSize>
+						<angle>0</angle>
+						<defaultOffset>Tail</defaultOffset>
+						<shaderType>TransparentPostLight</shaderType>
+						<offsets>
+							<south>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(0,0)</Child>
+								</bodyTypes>
+								<offset>(-0.42,0.22)</offset>
+								<layerOffset>-0.2739</layerOffset>
+							</south>
+							
+							<north>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(0,0.01)</Child>
+								</bodyTypes>
+								<offset>(0,0.55)</offset>
+								<layerOffset>-0.3249</layerOffset>
+							</north>
+							
+							<east>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.01,-0.002)</Child>
+								</bodyTypes>
+								<offset>(-0.42,0.22)</offset>
+								<layerOffset>-0.2739</layerOffset>
+							</east>
+							
+							<west>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.01,-0.002)</Child>
+								</bodyTypes>
+								<offset>(-0.42,0.22)</offset>
+								<layerOffset>-0.2739</layerOffset>
+							</west>
+						</offsets>
+						<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+						<alignWithHead>true</alignWithHead>
+					</li>
+					
+					<li> <!--헬맷애드온-->
+						<path>marulike/ApparelP/Helmet/MR_SpaceheadA</path>
+						<conditions>
+							<BodyPart>
+								<bodyPart>Head</bodyPart>
+							</BodyPart>
+							<Apparel>
+								<hiddenUnderApparelTag>
+								</hiddenUnderApparelTag>
+							</Apparel>
+							<ApparelDef>
+								<apparel>MR_Apparel_VacsuitHelmet</apparel>
+							</ApparelDef>
+						</conditions>
+						<linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
+						<extendedGraphics>
+						</extendedGraphics>
+						<inFrontOfBody>true</inFrontOfBody>
+						<colorChannel>base</colorChannel>
+						<drawSize>1</drawSize>
+						<angle>0</angle>
+						<defaultOffset>Tail</defaultOffset>
+						<shaderType>Cutout</shaderType>
+						<offsets>
+							<south>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(0,0)</Child>
+								</bodyTypes>
+								<offset>(-0.42,0.22)</offset>
+								<layerOffset>-0.2736</layerOffset>
+							</south>
+							
+							<north>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(0,0.01)</Child>
+								</bodyTypes>
+								<offset>(0,0.55)</offset>
+								<layerOffset>-0.325</layerOffset>
+							</north>
+							
+							<east>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.01,-0.002)</Child>
+								</bodyTypes>
+								<offset>(-0.42,0.22)</offset>
+								<layerOffset>-0.2736</layerOffset>
+							</east>
+							
+							<west>
+								<bodyTypes>
+									<Child MayRequire="Ludeon.RimWorld.Biotech">(-0.01,-0.002)</Child>
+								</bodyTypes>
+								<offset>(-0.42,0.22)</offset>
+								<layerOffset>-0.2736</layerOffset>
+							</west>
+						</offsets>
+						<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+						<alignWithHead>true</alignWithHead>
+					</li>
+        </bodyAddons>
+		  </alienPartGenerator>
+      
+    </generalSettings>  
+      
+<!--텍스처경로-->
+        <graphicPaths>
+                <head>
+				<path>Things/Inv/MR_Invisible</path>
+					<extendedGraphics>
+					</extendedGraphics>
+				</head>
+                <body>
+				<path>marulike/Bodies/</path>
+				<extendedGraphics>
+							<Age For="MR_HumanlikeBaby">
+								<path>marulike/Bodies/Naked_Baby</path>			
+								<extendedGraphics>
+									<Gene MayRequire="Ludeon.RimWorld.Biotech" For="Gene_Maru_nonfur">marulike/Bodies/Naked_BabyN</Gene>
+								</extendedGraphics>
+							</Age>
+							<Age For="MR_HumanlikeChild">
+								<path>marulike/Bodies/Naked_Child</path>
+								<extendedGraphics>
+									<Gene MayRequire="Ludeon.RimWorld.Biotech" For="Gene_Maru_nonfur">marulike/Bodies/Naked_ChildN</Gene>
+									<Hediff MayRequire="Ludeon.RimWorld.Anomaly" For="Ghoul">marulike/Ghoul/Body/Naked_Baby</Hediff>
+								</extendedGraphics>
+							</Age>
+							<Age For="MR_HumanlikeTeenager">
+								<path>marulike/Bodies/Naked_Teenager</path>
+								<extendedGraphics>
+									<Gene MayRequire="Ludeon.RimWorld.Biotech" For="Gene_Maru_nonfur">marulike/Bodies/Naked_TeenagerN</Gene>
+									<Hediff MayRequire="Ludeon.RimWorld.Anomaly" For="Ghoul">marulike/Ghoul/Body/Naked_Teenager</Hediff>
+								</extendedGraphics>
+							</Age>
+							<Age For="MR_HumanlikeAdult">
+								<path>marulike/Bodies/Naked_Female</path>
+								<extendedGraphics>
+									<Gene MayRequire="Ludeon.RimWorld.Biotech" For="Gene_Maru_nonfur">marulike/Bodies/Naked_FemaleN</Gene>
+									<Hediff MayRequire="Ludeon.RimWorld.Anomaly" For="Ghoul">marulike/Ghoul/Body/Naked_Female</Hediff>
+								</extendedGraphics>
+							</Age>
+						</extendedGraphics>
+				</body>
+                <skeleton>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</skeleton>
+					<stump>Things/Inv/MR_Invisible</stump>
+					<swaddle>
+						<path>marulike/ApparelP/MR_podeA</path>
+						<extendedGraphics>
+						<shaderType>CutoutComplex</shaderType>
+						</extendedGraphics>
+						<!-- Extension Graphics here -->
+					</swaddle>
+        <skinShader>Cutout</skinShader>
+				<!--의류설정-->
+					<apparel>
+						<individualPaths>
+						</individualPaths>
+						<bodyTypeFallback>Thin</bodyTypeFallback>
+					</apparel>
+        </graphicPaths>
+      
+        <styleSettings>
+				<li>
+					<key>HairDef</key>
+					<value>
+						<hasStyle>false</hasStyle>
+					</value>
+				</li>
+				<li>
+					<key>BeardDef</key>
+					<value>
+						<hasStyle>false</hasStyle>
+					</value>
+				</li>
+				<li>
+					<key>TattooDef</key>
+					<value>
+						<hasStyle>false</hasStyle>
+					</value>
+				</li>
+			</styleSettings>
+
+      <relationSettings>
+
+      </relationSettings>
+      
+      <thoughtSettings>
+    <replacerList>
+	</replacerList>
+	<cannotReceiveThoughts>
+	<li>SoakingWet</li>
+	<li>DeadMansApparel</li>
+	</cannotReceiveThoughts>
+	<restrictedThoughts>
+	<li>MR_SoakingWet</li>
+	<li>MR_DeadMansApparel</li>
+	</restrictedThoughts>
+      </thoughtSettings>
+      
+      
+<!--=============================================================================================================================-->
+      <raceRestriction>
+        <onlyUseRaceRestrictedApparel>false</onlyUseRaceRestrictedApparel>
+            <apparelList>
+              <li>MR_RangedCombatSuit</li>
+              <li>MR_MeleeCombatSuit</li>
+              <li>MR_huntingmask</li>
+              <li>MR_huntingmaskR</li>
+              <li>MR_huntingmaskM</li>
+              <li>MR_DeciphersLC</li>
+              <li>MR_durumagi</li>
+              <li>MR_DeciphersHD</li>
+              <li>MR_sanitarycoat</li>
+              <li>MR_wintercoat</li>
+              <li>MR_HuntingCoat</li>
+              <li>MR_Decipherslifecoat</li>
+              <li>MR_Deciphersrobes</li>
+              <li>MR_Decipherslifeclothes</li>
+              <li>MR_cookclothes</li>
+              <li>MR_workclothes</li>
+              <li>MR_engineeringclothes</li>
+              <li>MR_farmclothes</li>
+              <li>MR_sanitaryclothing</li>
+              <li>MR_huntingsuit</li>
+              <li>MR_merchantsclothes</li>
+              <li>MR_thermalhat</li>
+              <li>MR_EBF</li>
+              <li>MR_NFG</li>
+			  <li>MR_Apparel_Trap</li>
+			  <li>MR_Apparel_TrapA</li>
+			  <li>MR_Musicianclo</li>
+			  <li>MR_Musicianhat</li>
+			  <li>MR_Musiciancoat</li>
+			  <li>MR_GadaboutClo</li>
+			  <li>MR_Gadabouthat</li>
+			  <li>MR_Gadabouthel</li>
+			  <li>MR_GadaboutCoa</li>
+			  <li>MR_Innerwear</li>
+			  <li>MR_successorclothes</li>
+			  <li>MR_successorcoat</li>
+			  <li>MR_successorhat</li>
+			  <li>MR_Apparel_VacsuitHelmet</li>
+			  <li>MR_Apparel_Vacsuit</li>
+			  <li>MR_ChildAPP_Vacsuit</li>
+			  <li>MR_controldevice</li>
+            </apparelList>
+			    <whiteApparelList>
+		    	</whiteApparelList>
+            <buildingList>
+            </buildingList>
+            	<weaponList>
+				</weaponList>
+				<!--<whiteGeneList>
+				</whiteGeneList>
+		<onlyHaveRaceRestrictedGenes>true</onlyHaveRaceRestrictedGenes>
+		<geneList>
+		</geneList>
+		
+		
+		<blackGeneList>
+			<li>UnwantedGene</li>
+			<li>AnotherUnwantedGene</li>
+		</blackGeneList>
+
+-->		
+				<geneList>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Gene_Maru_nonfur</li>
+				</geneList>
+				
+				<blackEndoCategories MayRequire="Ludeon.RimWorld.Biotech">
+					<li MayRequire="Ludeon.RimWorld.Biotech">Melanin</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">HairColor</li>
+					
+					<li MayRequire="Ludeon.RimWorld.Biotech">BodyType</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Ears</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Nose</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Voice</li>
+					
+					<li MayRequire="Ludeon.RimWorld.Biotech">Headbone</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Head</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Jaw</li>
+				</blackEndoCategories>
+				
+				<blackGeneList MayRequire="Ludeon.RimWorld.Biotech">
+					<li MayRequire="Ludeon.RimWorld.Biotech">Furskin</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Brow_Heavy</li>
+				</blackGeneList>
+				
+				<blackGeneTags MayRequire="Ludeon.RimWorld.Biotech">
+					<li MayRequire="Ludeon.RimWorld.Biotech">EyeColor</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Tail</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">BeardStyle</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Fur</li>
+				</blackGeneTags>
+				
+				<xenotypeList MayRequire="Ludeon.RimWorld.Biotech">
+					<li MayRequire="Ludeon.RimWorld.Biotech">Xeno_Maru</li>
+				</xenotypeList>
+				
+				<!-- <whiteXenotypeList>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Xeno_Maru</li>
+				</whiteXenotypeList> -->
+				
+				<blackXenotypeList>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Dirtmole</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Genie</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Hussar</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Sanguophage</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Neanderthal</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Pigskin</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Impid</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Waster</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Yttakin</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Highmate</li>
+				</blackXenotypeList>
+				
+				<onlyUseRaceRestrictedXenotypes>false</onlyUseRaceRestrictedXenotypes><!-- asd -->
+				
+        </raceRestriction>
+	</alienRace>
+<!--=============================================================================================================================-->
+    <statBases>
+	<!--기본-->
+	  <RoyalFavorValue MayRequire="Ludeon.RimWorld.Royalty">3</RoyalFavorValue>
+      <MarketValue>2200</MarketValue>
+      <Flammability>0.5</Flammability>
+      <MoveSpeed>5.0</MoveSpeed>
+	  <MentalBreakThreshold>0.35</MentalBreakThreshold>
+      <ComfyTemperatureMax>20</ComfyTemperatureMax>
+      <ComfyTemperatureMin>-1</ComfyTemperatureMin>
+	  <ImmunityGainSpeed>1.0</ImmunityGainSpeed>
+	  <CarryingCapacity>75</CarryingCapacity>
+	  <MeatAmount>60</MeatAmount>
+      <LeatherAmount>50</LeatherAmount>
+      <Mass>55</Mass>
+	  <PainShockThreshold>0.8</PainShockThreshold>
+    <PsychicSensitivity>1.0</PsychicSensitivity>
+  <!-- 전투 -->
+      <MeleeDodgeChance>1.2</MeleeDodgeChance>
+      <MeleeHitChance>1</MeleeHitChance>
+      <AimingDelayFactor>1.0</AimingDelayFactor>
+      <ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+	<!--사교-->
+	  <SellPriceFactor>1.0</SellPriceFactor> <!--폰 가치-->
+	  <NegotiationAbility>0.9</NegotiationAbility> <!--외교 영향력-->
+		<TradePriceImprovement>0.9</TradePriceImprovement><!--거래 가격 개선-->
+	  <SocialImpact>0.9</SocialImpact> <!--사회적 영향력-->
+	<!--제작-->
+	  <ButcheryMechanoidEfficiency>1.0</ButcheryMechanoidEfficiency> <!--메카노이드 분해 효율-->
+	  <ButcheryMechanoidSpeed>1.0</ButcheryMechanoidSpeed> <!--메카노이드 분해 속도-->
+	  <SmeltingSpeed>1.0</SmeltingSpeed> <!--금속 제련 속도-->
+      <!--<SmithingSpeed>0.9</SmithingSpeed>--> <!--제련 속도-->
+	  <GeneralLaborSpeed>1.0</GeneralLaborSpeed> <!--재단 속도-->
+	<!--조리-->
+	  <ButcheryFleshEfficiency>1.0</ButcheryFleshEfficiency> <!--도축 효율-->
+	  <ButcheryFleshSpeed>1.0</ButcheryFleshSpeed> <!--도축 속도-->
+	  <FoodPoisonChance>1.0</FoodPoisonChance> <!--식중독 확률-->
+	  <CookSpeed>1.0</CookSpeed> <!--조리 속도-->
+	<!--수면-->
+	  <RestRateMultiplier>0.9</RestRateMultiplier>
+	<!--재배-->
+	  <PlantWorkSpeed>0.8</PlantWorkSpeed>
+  <!--의학및연구-->
+    <ResearchSpeed>1.0</ResearchSpeed>  <!--연구 속도-->
+    <MedicalTendQuality>1.0</MedicalTendQuality>
+    <DrugSynthesisSpeed>1.0</DrugSynthesisSpeed>
+    <MedicalSurgerySuccessChance>1.0</MedicalSurgerySuccessChance>
+  <!--채굴-->
+   	<MiningSpeed>1.0</MiningSpeed>
+		<MiningYield>1.0</MiningYield>
+      <!--상단속도-->
+        <!--<CaravanRidingSpeedFactor>1.3</CaravanRidingSpeedFactor>-->
+      <!--사냥 반격률-->
+        <HuntingStealth>1.1</HuntingStealth>
+		<!--전용초능력
+	<MR_Distortion>0</MR_Distortion>
+	<MR_DistortionRefpoint>0</MR_DistortionRefpoint>
+	<MR_DistortionLimit>0</MR_DistortionLimit>
+	<MR_DistortionLevels>0</MR_DistortionLevels>-->
+
+
+    </statBases>
+<!--==맨손전투===================================================================================================================-->
+    <tools>
+      <li>
+        <label>left claws</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>4</power>
+        <cooldownTime>1.1</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>5</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>right claws</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>4</power>
+        <cooldownTime>1.1</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>5</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>Teeth</label>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>6</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Bite</def>
+              <amount>15</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+        <chanceFactor>0.4</chanceFactor>
+      </li>
+    </tools>
+<!--=============================================================================================================================-->
+    
+	<race>
+			<canBecomeShambler>false</canBecomeShambler>
+			<bloodDef>Filth_Blood</bloodDef>
+      <thinkTreeMain>Humanlike</thinkTreeMain>
+			<!--  -->
+      <thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
+			<!--  -->
+			<renderTree>Humanlike</renderTree>
+			<!--  -->
+      <intelligence>Humanlike</intelligence>
+      <makesFootprints>true</makesFootprints>
+      <lifeExpectancy>120</lifeExpectancy>
+      <leatherDef>Leather_Human</leatherDef>
+      <nameCategory>HumanStandard</nameCategory>
+      <hasGenders>true</hasGenders>
+	    <body>Maru</body>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>0.9</baseHealthScale>
+      <foodType>OmnivoreHuman</foodType>
+      <gestationPeriodDays>30</gestationPeriodDays>
+       <litterSizeCurve>
+				<points>
+          <li>(0.5, 0)</li>
+					<li>(1, 1.00)</li>
+					<li>(2, 0.14)</li>
+					<li>(3, 0.03)</li>
+					<li>(4, 0.01)</li>
+          <li>(5, 0)</li>
+				</points>
+      </litterSizeCurve>
+			
+      <lifeStageAges>
+	  	<li>
+					<def>HumanlikeBaby</def>
+					<minAge>0</minAge>
+				</li>
+				<li>
+					<def>MR_HumanlikeBaby</def>
+					<minAge>0.00000001</minAge>
+				</li>
+				<li>
+					<def>HumanlikeChild</def>
+					<minAge>2.99999999</minAge>
+				</li>
+				<li>
+					<def>MR_HumanlikeChild</def>
+					<minAge>3</minAge>
+				</li>
+				<li>
+					<def>MR_HumanlikeTeenager</def>
+					<minAge>13</minAge>
+				</li>
+        <li>
+          <def>HumanlikeAdult</def>
+          <minAge>17.99999999</minAge>
+        </li>
+				<li>
+					<def>MR_HumanlikeAdult</def>
+					<minAge>18</minAge>
+				</li>
+      </lifeStageAges>
+	  		<lifeStageWorkSettings MayRequire="Ludeon.RimWorld.Biotech">
+				<Firefighter>7</Firefighter>
+				<Patient>0</Patient>
+				<Doctor>7</Doctor>
+				<PatientBedRest>0</PatientBedRest>
+				<Childcare MayRequire="Ludeon.RimWorld.Biotech">0</Childcare>
+				<BasicWorker>3</BasicWorker>
+				<Warden>10</Warden>
+				<Handling>7</Handling>
+				<Cooking>7</Cooking>
+				<Hunting>7</Hunting>
+				<Construction>10</Construction>
+				<Growing>7</Growing>
+				<Mining>7</Mining>
+				<PlantCutting>7</PlantCutting>
+				<Smithing>13</Smithing>
+				<Tailoring>7</Tailoring>
+				<Art>10</Art>
+				<Crafting>7</Crafting>
+				<Hauling>3</Hauling>
+				<Cleaning>3</Cleaning>
+				<Research>13</Research>
+			</lifeStageWorkSettings>
+      <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+      <specialShadowData>
+        <volume>(0.3, 0.8, 0.4)</volume>
+        <offset>(0,0,-0.3)</offset>
+      </specialShadowData>
+      <ageGenerationCurve>
+        <points>
+	<li MayRequire="Ludeon.RimWorld.Biotech">(0,0)</li>
+    <li MayRequire="Ludeon.RimWorld.Biotech">(0.001,43)</li>
+    <li MayRequire="Ludeon.RimWorld.Biotech">(8,86)</li>
+    <li MayRequire="Ludeon.RimWorld.Biotech">(12.5,118)</li>  <!-- Exclude 12.5-13 years to avoid spawning pawns who are very close to becoming adults -->  
+    <li MayRequire="Ludeon.RimWorld.Biotech">(12.51,0)</li>  
+    <li MayRequire="Ludeon.RimWorld.Biotech">(13,0)</li>      
+    <li MayRequire="Ludeon.RimWorld.Biotech">(13.001,122)</li><!-- End exclude -->
+    <li MayRequire="Ludeon.RimWorld.Biotech">(13.999,130)</li>
+    <li>(14,0)</li>
+    <li MayRequire="Ludeon.RimWorld.Biotech">(14.001,130)</li>
+    <li>(16,100)</li>
+    <li>(22,100)</li>
+    <li>(30,30)</li>
+    <li>(50,1)</li>
+    <li>(60,0)</li>
+    <li>(80,0)</li>
+    <li>(100,0)</li>
+        </points>
+      </ageGenerationCurve>
+      <hediffGiverSets>
+        <li>OrganicStandard</li>
+        <li>MR_standard</li>
+        <li>Human</li>
+      </hediffGiverSets>
+			<fleshType>Maru_FleshType</fleshType>
+    </race>
+    	<!--=============================================================================================================================-->
+		<comps>
+			<li Class="MaruSpawner.CompProperties_Spawner">
+				<thingToSpawn>MR_Sarira</thingToSpawn>
+				<spawnCount>1</spawnCount>
+				<spawnIntervalRange><min>180000</min><max>200000</max></spawnIntervalRange>
+				<writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
+				<showMessageIfOwned>false</showMessageIfOwned>
+			</li>
+			
+	<li Class="MaruRace.CompProperties_HuntingImpulse">
+        <!-- 사냥 대상을 처치했을때 사냥 점수 보정 -->
+        <huntingTargetBonusMultiplier>10.0</huntingTargetBonusMultiplier>
+
+        <!-- 사냥 대상을 처치하지 못했을때 대상이 변경되는 주기 (tick) -->
+       <forceRefreshTicks>900000</forceRefreshTicks>
+
+        <!-- 최대 달성가능한 사냥 레벨 -->
+       <maxHuntingLevel>10</maxHuntingLevel>
+
+        <!-- 사냥 레벨 요구 경험치 (레벨 순서대로) -->
+       <requiredHuntingPointByHuntingLevel>
+          <li>500</li>
+          <li>1000</li>
+          <li>1000</li>
+          <li>2000</li>
+          <li>2000</li>
+          <li>3000</li>
+          <li>4000</li>
+          <li>5000</li>
+          <li>6000</li>
+          <li>7000</li>
+          <li>10000</li>
+        </requiredHuntingPointByHuntingLevel>
+
+        <!-- CombatPower값에 따른 점수 보정 -->
+        <huntingPointByCombatPower>
+          <points>
+            <li>(0, 0)</li>
+            <li>(50, 25)</li>
+            <li>(100, 50)</li>
+            <li>(200, 100)</li>
+            <li>(300, 200)</li>
+            <li>(400, 400)</li>
+            <li>(500, 800)</li>
+          </points>
+        </huntingPointByCombatPower>
+
+        <!-- LifeStage의 BodySize 편차에 따른 점수 보정 -->
+       <huntingPointMultiplierByBodySize>
+          <points>
+            <li>(0, 0.1)</li>
+            <li>(0.5, 0.7)</li>
+            <li>(1, 1)</li>
+            <li>(1.5, 1.8)</li>
+          </points>
+        </huntingPointMultiplierByBodySize>
+
+        <!-- 레벨 달성에 따른 영감 발생 가중치 -->
+        <inspirationInfos>
+          <li>
+            <inspirationDef>Frenzy_Work</inspirationDef>
+            <weightCurve>
+              <points>
+                <li>(0, 0)</li>
+                <li>(2.999, 0)</li>
+                <li>(3, 100)</li>
+                <li>(10, 100)</li>
+              </points>
+            </weightCurve>
+          </li>
+          <li>
+            <inspirationDef>Frenzy_Go</inspirationDef>
+            <weightCurve>
+              <points>
+                <li>(0, 100)</li>
+                <li>(10, 100)</li>
+              </points>
+            </weightCurve>
+          </li>
+          <li>
+            <inspirationDef>Frenzy_Shoot</inspirationDef>
+            <weightCurve>
+              <points>
+                <li>(0, 100)</li>
+                <li>(10, 100)</li>
+              </points>
+            </weightCurve>
+          </li>
+          <li>
+            <inspirationDef>Inspired_Trade</inspirationDef>
+            <weightCurve>
+              <points>
+                <li>(0, 100)</li>
+                <li>(10, 100)</li>
+              </points>
+            </weightCurve>
+          </li>
+          <li>
+            <inspirationDef>Inspired_Recruitment</inspirationDef>
+            <weightCurve>
+              <points>
+                <li>(0, 100)</li>
+                <li>(10, 100)</li>
+              </points>
+            </weightCurve>
+          </li>
+          <li>
+            <inspirationDef>Inspired_Taming</inspirationDef>
+            <weightCurve>
+              <points>
+                <li>(0, 0)</li>
+                <li>(2.999, 0)</li>
+                <li>(3, 100)</li>
+                <li>(10, 100)</li>
+              </points>
+            </weightCurve>
+          </li>
+          <li>
+            <inspirationDef>Inspired_Surgery</inspirationDef>
+            <weightCurve>
+              <points>
+                <li>(0, 0)</li>
+                <li>(2.999, 0)</li>
+                <li>(3, 100)</li>
+                <li>(10, 100)</li>
+              </points>
+            </weightCurve>
+          </li>
+          <li>
+            <inspirationDef>Inspired_Creativity</inspirationDef>
+            <weightCurve>
+              <points>
+                <li>(0, 0)</li>
+                <li>(4.999, 0)</li>
+                <li>(5, 100)</li>
+                <li>(10, 100)</li>
+              </points>
+            </weightCurve>
+          </li>
+        </inspirationInfos>
+
+        <!-- 현재 바이옴의 인접 바이옴의 생물이 선택되기 위한 최소 레벨 -->
+       <minimumHuntingLevelForAnimalSelectionNearBiomes>3</minimumHuntingLevelForAnimalSelectionNearBiomes>
+
+        <!-- 현재 바이옴 밖의 생물이 선택되기 위한 최소 레벨 -->
+       <minimumHuntingLevelForAnimalSelectionFarBiomes>5</minimumHuntingLevelForAnimalSelectionFarBiomes>
+
+        <!-- 현재 바이옴의 생물 선택 가중치 -->
+       <animalSelectionWeightInCurrentBiome>120</animalSelectionWeightInCurrentBiome>
+
+        <!-- 인접 바이옴의 생물 선택 가중치 -->
+    <animalSelectionWeightInNearBiome>80</animalSelectionWeightInNearBiome>
+
+        <!-- 멀리있는 바이옴의 생물 선택 가중치 -->
+       <animalSelectionWeightInFarBiome>40</animalSelectionWeightInFarBiome>
+
+        <!-- 사냥 레벨에 따른 생물 선택 가중치 -->
+        <specialAnimalSelectionWeights>
+          <li>
+            <thingDef>Thrumbo</thingDef>
+            <weightByHuntingLevel>
+              <points>
+                <li>(0, 0)</li>
+                <li>(2.999, 0)</li>
+                <li>(3, 40)</li>
+                <li>(4.999, 40)</li>
+                <li>(5, 220)</li>
+                <li>(9.999, 440)</li>
+              </points>
+            </weightByHuntingLevel>
+          </li>
+        </specialAnimalSelectionWeights>
+
+        <!-- 선택 가능한 생물이 없을때 선택되는 대상 -->
+        <fallbackAnimal>Thrumbo</fallbackAnimal>
+		
+		<huntingProwessHediff>MR_huntingHediff</huntingProwessHediff>
+		<masterAbilityDef>MR_HuntAbility</masterAbilityDef>
+      </li>
+	  
+	  
+	<!-- <li Class="MaruWildfire.CompProperties_DistortionDisplay"></li>-->
+	  
+		</comps>
+<!--=============================================================================================================================-->
+    <recipes>
+				<li>ExciseCarcinoma</li>
+				<li>AdministerMechSerumHealer</li>
+				<li>RemoveBodyPart</li>
+				<li>Euthanize</li>
+				<li>Anesthetize</li>
+				<li>CureScaria</li>
+				<!--<li>Install_SymbioticInfectionBase</li>
+				<li>Install_LandCoralBase</li>-->
+				
+				<li MayRequire="Ludeon.RimWorld.Royalty">CureBloodRot</li>
+				<li MayRequire="Ludeon.RimWorld.Royalty">CureAbasia</li>
+				
+				<li MayRequire="Ludeon.RimWorld.Biotech">Vasectomy</li>
+				<li MayRequire="Ludeon.RimWorld.Biotech">ReverseVasectomy</li>
+				<li MayRequire="Ludeon.RimWorld.Biotech">TubalLigation</li>
+				<li MayRequire="Ludeon.RimWorld.Biotech">ExtractOvum</li>
+				<li MayRequire="Ludeon.RimWorld.Biotech">ExtractHemogenPack</li>
+				<li MayRequire="Ludeon.RimWorld.Biotech">BloodTransfusion</li>
+				<li MayRequire="Ludeon.RimWorld.Biotech">ImplantXenogerm</li>
+				<li MayRequire="Ludeon.RimWorld.Biotech">ImplantIUD</li>
+				<li MayRequire="Ludeon.RimWorld.Biotech">RemoveIUD</li>
+				<li MayRequire="Ludeon.RimWorld.Biotech">TerminatePregnancy</li>
+    </recipes>
+	<damageMultipliers>
+      <!--<li>
+        <damageDef>MRD_veteranshooterarrow</damageDef>
+        <multiplier>0</multiplier>
+      </li>-->
+    </damageMultipliers>
+</AlienRace.ThingDef_AlienRace>
+
+  <FleshTypeDef>
+    <defName>Maru_FleshType</defName>
+		<isOrganic>true</isOrganic>
+    <corpseCategory>CorpsesAnimal</corpseCategory>
+    <damageEffecter>Damage_HitFlesh</damageEffecter>
+    <genericWounds>
+      <li>
+        <texture>Things/Pawn/Wounds/WoundFleshA</texture>
+      </li>
+      <li>
+        <texture>Things/Pawn/Wounds/WoundFleshB</texture>
+      </li>
+      <li>
+        <texture>Things/Pawn/Wounds/WoundFleshC</texture>
+      </li>
+    </genericWounds>
+    <bandagedWounds>
+      <li>
+        <texture>Things/Pawn/Wounds/BandagedA</texture>
+      </li>
+      <li>
+        <texture>Things/Pawn/Wounds/BandagedB</texture>
+      </li>
+      <li>
+        <texture>Things/Pawn/Wounds/BandagedC</texture>
+      </li>
+    </bandagedWounds>
+    <hediffWounds>
+      <li  MayRequire="Ludeon.RimWorld.Ideology">
+        <hediff>Scarification</hediff>
+        <wounds>
+          <li>
+            <texture>Things/Pawn/Wounds/ScarificationA</texture>
+            <tintWithSkinColor>true</tintWithSkinColor>
+            <displayOverApparel>false</displayOverApparel>
+            <displayPermanent>false</displayPermanent>
+          </li>
+          <li>
+            <texture>Things/Pawn/Wounds/ScarificationB</texture>
+            <tintWithSkinColor>true</tintWithSkinColor>
+            <displayOverApparel>false</displayOverApparel>
+            <displayPermanent>false</displayPermanent>
+          </li>
+          <li>
+            <texture>Things/Pawn/Wounds/ScarificationC</texture>
+            <tintWithSkinColor>true</tintWithSkinColor>
+            <displayOverApparel>false</displayOverApparel>
+            <displayPermanent>false</displayPermanent>
+          </li>
+        </wounds>
+      </li>
+      <li>
+        <hediff>MissingBodyPart</hediff>
+        <wounds>
+          <li>
+            <textureSouth>Things/Pawn/Wounds/MissingEye_Scar_south</textureSouth>
+            <textureNorth>Things/Pawn/Wounds/MissingEye_Scar_south</textureNorth>
+            <textureEast>Things/Pawn/Wounds/MissingEye_Scar_east</textureEast>
+            <textureWest>Things/Pawn/Wounds/MissingEye_Scar_east</textureWest>
+            <flipWest>true</flipWest>
+            <onlyOnPart>Eye</onlyOnPart>
+            <flipOnWoundAnchorTag>LeftEye</flipOnWoundAnchorTag>
+            <flipOnRotation>South</flipOnRotation>
+            <tintWithSkinColor>true</tintWithSkinColor>
+            <missingBodyPartFresh>false</missingBodyPartFresh>
+					<drawOffsetSouth>(0.07, 0, 0)</drawOffsetSouth>
+					<drawOffsetEastWest>(0.03, 0, 0.)</drawOffsetEastWest>
+            <scale>0.7</scale>
+          </li>
+          <li>
+            <textureSouth>Things/Pawn/Wounds/MissingEye_Fresh</textureSouth>
+            <textureNorth>Things/Pawn/Wounds/MissingEye_Fresh</textureNorth>
+            <textureEast>Things/Pawn/Wounds/MissingEye_Fresh</textureEast>
+            <textureWest>Things/Pawn/Wounds/MissingEye_Fresh</textureWest>
+            <flipWest>true</flipWest>
+            <onlyOnPart>Eye</onlyOnPart>
+            <flipOnWoundAnchorTag>LeftEye</flipOnWoundAnchorTag>
+            <flipOnRotation>South</flipOnRotation>
+            <missingBodyPartFresh>true</missingBodyPartFresh>
+					<drawOffsetSouth>(0.07, 0, 0)</drawOffsetSouth>
+					<drawOffsetEastWest>(0.03, 0, 0.)</drawOffsetEastWest>
+            <scale>0.7</scale>
+          </li>
+        </wounds>
+      </li>
+      <!--<li>
+        <hediff>BionicEye</hediff>
+        <wounds>
+          <li>
+            <textureSouth>Things/Pawn/Wounds/BionicEye_south</textureSouth>
+            <textureNorth>Things/Pawn/Wounds/BionicEye_south</textureNorth>
+            <textureEast>Things/Pawn/Wounds/BionicEye_east</textureEast>
+            <textureWest>Things/Pawn/Wounds/BionicEye_east</textureWest>
+            <flipWest>true</flipWest>
+            <flipOnWoundAnchorTag>LeftEye</flipOnWoundAnchorTag>
+            <flipOnRotation>South</flipOnRotation>
+            <scale>0.85</scale>
+          </li>
+        </wounds>
+      </li>
+      <li>
+        <hediff>ArchotechEye</hediff>
+        <wounds>
+          <li>
+            <textureSouth>Things/Pawn/Wounds/ArchotechEye_south</textureSouth>
+            <textureNorth>Things/Pawn/Wounds/ArchotechEye_south</textureNorth>
+            <textureEast>Things/Pawn/Wounds/ArchotechEye_east</textureEast>
+            <textureWest>Things/Pawn/Wounds/ArchotechEye_east</textureWest>
+            <flipWest>true</flipWest>
+            <flipOnWoundAnchorTag>LeftEye</flipOnWoundAnchorTag>
+            <flipOnRotation>South</flipOnRotation>
+            <scale>0.85</scale>
+          </li>
+        </wounds>
+      </li>-->
+    </hediffWounds>
+  </FleshTypeDef>
+  
+</Defs>

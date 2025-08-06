@@ -1,0 +1,1120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="ResourceBase">
+		<defName>MR_Sarira</defName>
+		<label>Sarira</label>
+		<description>It is a marble that is naturally generated from the bodies of Maru and contains the skills of their ancestors.\n\nThe technology engraved on the sarira differs depending on the individual, and each has a special interpretation method depending on the type of technology to be read.\n This difficult interpretation method and information delivery method possessed by decipherer Maru, who want to study it, naturally gathered together.</description>
+    <descriptionHyperlinks>
+      <ThingDef>MR_retrofittable</ThingDef>
+      <ThingDef>MR_LenticularAnalyzer</ThingDef>
+      <ThingDef>MR_BiometricAnalyzer</ThingDef>
+      <ThingDef>MR_SimAnalyzerA</ThingDef>
+    </descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Resource/MaruSarira</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<stackLimit>20</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+           <RoyalFavorValue>0.166</RoyalFavorValue>
+			<MaxHitPoints>50</MaxHitPoints>
+			<MarketValue>21</MarketValue>
+			<Mass>0.5</Mass>
+			<Flammability>0.0</Flammability>
+		</statBases>
+		<tradeTags inherit="false">
+			<li>MaruDecipherFaction</li>
+		</tradeTags>		
+		<thingCategories>
+			<li>MR_Category_Resources</li>
+		</thingCategories>
+		<stuffProps>
+			<color>(255,255,255)</color>
+			<soundImpactBullet>BulletImpact_Metal</soundImpactBullet>
+			<soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+		</stuffProps>		
+	</ThingDef>	
+	
+		<ThingDef ParentName="ResourceBase">
+		<defName>MR_dyedleather</defName>
+		<label>dyed leather</label>
+		<description>This is camouflage leather dyed by Maru to imitate their own patterns.\n\nIt takes a lot of effort to make, but in some Maru societies, ironically, it often symbolizes practicality.</description>
+    <descriptionHyperlinks>
+    </descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Resource/MR_lether</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<stackLimit>20</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+           <RoyalFavorValue>0.166</RoyalFavorValue>
+			<MaxHitPoints>50</MaxHitPoints>
+			<MarketValue>21</MarketValue>
+			<Mass>0.5</Mass>
+			<Flammability>0.0</Flammability>
+		</statBases>
+		<tradeTags inherit="false">
+			<li>MaruHunterFaction</li>
+		</tradeTags>		
+		<thingCategories>
+			<li>MR_Category_Manufactured</li>
+		</thingCategories>
+		<stuffProps>
+			<color>(255,255,255)</color>
+			<soundImpactBullet>BulletImpact_Metal</soundImpactBullet>
+			<soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+		</stuffProps>		
+	</ThingDef>	
+	
+	<ThingDef ParentName="ResourceBase">
+		<defName>MR_Record</defName>
+		<label>analysis record</label>
+		<description>This is an analysis record of technologies that have already been analyzed once.\n\nUpdating and recording these technologies not only helps in the classification and storage of numerous relics that have diversity like fingerprints, but also sometimes restores existing technologies. There are even completely new interpretations of it.</description>
+    <descriptionHyperlinks>
+    </descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Resource/MR_record</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<stackLimit>20</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MarketValue>31</MarketValue>
+           <RoyalFavorValue>0.25</RoyalFavorValue>
+			<MaxHitPoints>50</MaxHitPoints>
+			<Mass>0.5</Mass>
+			<Flammability>0.0</Flammability>
+		</statBases>
+		<tradeTags inherit="false">
+			<li>MaruDecipherFaction</li>
+		</tradeTags>		
+		<thingCategories>
+			<li>MR_Category_Manufactured</li>
+		</thingCategories>
+		<stuffProps>
+			<color>(255,255,255)</color>
+			<soundImpactBullet>BulletImpact_Metal</soundImpactBullet>
+			<soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+		</stuffProps>		
+	</ThingDef>	
+	
+	<ThingDef ParentName="ResourceBase">
+		<defName>MR_Theory</defName>
+		<label>technical exchange book</label>
+		<description>It is a document that systematically organizes the skills that have been honed.</description>
+    <descriptionHyperlinks>
+    </descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Resource/MR_Theory</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<stackLimit>20</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MarketValue>25</MarketValue>
+           <RoyalFavorValue>0.125</RoyalFavorValue>
+			<MaxHitPoints>50</MaxHitPoints>
+			<Mass>0.5</Mass>
+			<Flammability>0.0</Flammability>
+		</statBases>
+		<tradeTags inherit="false">
+			<li>MaruDecipherFaction</li>
+		</tradeTags>		
+		<thingCategories>
+			<li>MR_Category_Manufactured</li>
+		</thingCategories>
+		<stuffProps>
+			<color>(255,255,255)</color>
+			<soundImpactBullet>BulletImpact_Metal</soundImpactBullet>
+			<soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+		</stuffProps>		
+	</ThingDef>	
+	
+	<ThingDef ParentName="ResourceBase">
+		<defName>MR_whitetwigs</defName>
+		<label>white twigs</label>
+		<description>It is a tree branch that has been refined by a special method.\n Smoke particles generated during combustion condense and freeze moisture in the atmosphere to create artificial noctilucent clouds.</description>
+    <descriptionHyperlinks>
+      <!--<ThingDef>MR_Turretbeacon</ThingDef>-->
+    </descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Resource/MR_whitest</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<stackLimit>20</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MarketValue>200</MarketValue>
+			<MaxHitPoints>50</MaxHitPoints>
+			<Mass>0.5</Mass>
+			<Flammability>0.0</Flammability>
+		</statBases>
+		<tradeTags inherit="false">
+			<li>MaruHunterFaction</li>
+		</tradeTags>		
+		<thingCategories>
+			<li>MR_Category_Resources</li>
+		</thingCategories>
+		<stuffProps>
+			<color>(255,255,255)</color>
+			<soundImpactBullet>BulletImpact_Metal</soundImpactBullet>
+			<soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+		</stuffProps>		
+	</ThingDef>
+	
+	<ThingDef ParentName="ResourceBase">
+		<defName>MR_thurible_item</defName>
+		<label>Maru Censer</label>
+		<description>A cylinder that emits a subtle glow.\nIt contains a portion of an artifact called incense, which reacts with the activated sari inside the Interpreter to emit a more beautifully shaped glow.\n\nIt continues to produce a small amount of energy without any fuel, though not enough to be of any practical use, so it is customary to give a small portion to a new Dechiper as they set out on their path to independence.</description>
+		<descriptionHyperlinks>
+			<ThingDef>MR_thurible</ThingDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Building/Production/MR_thurible_item</texPath>
+			<drawSize>1</drawSize>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0</MarketValue>
+			<Mass>1</Mass>
+		</statBases>
+        <relicChance>1</relicChance>
+		<comps>
+		<li Class="CompProperties_Styleable"></li>
+		</comps>
+		<thingCategories>
+			<li>MR_Category_Resources</li>
+		</thingCategories>
+		<tradeability>None</tradeability>
+	</ThingDef>
+
+  <!--사냥식량-->
+	<ThingDef ParentName="DrugBase">
+    <defName>MR_huntfood</defName>
+    <label>Hunting food</label>
+    <description>It is a food made by finely grinding several ingredients, steaming them with herbs, drying them, and shaping them into pills.\n\nIt is favored by many hunters because it is easy to eat and carry, and helps keep them nourished and alert during long days and nights of hunting.\n\nIt is commonly known to contain dried grains and salt, but hunters often vary the recipe depending on their tastes and circumstances.</description>
+		<descriptionHyperlinks>
+      <ThingDef>MR_huntfoodA</ThingDef>
+    </descriptionHyperlinks>
+    <tradeability>Sellable</tradeability>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Resource/MR_Huntfood</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <!--<graphicClass>Graphic_StackCount</graphicClass>-->
+    </graphicData>
+    <statBases>
+      <MarketValue>15</MarketValue> 
+      <Mass>0.1</Mass>
+      <DeteriorationRate>4</DeteriorationRate>
+      <Nutrition>1</Nutrition>
+    </statBases>
+    <techLevel>Neolithic</techLevel>
+    <ingestible>
+      <ingestSound>Meal_Eat</ingestSound>
+      <baseIngestTicks>60</baseIngestTicks>
+      <chairSearchRadius>4</chairSearchRadius>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <preferability>DesperateOnly</preferability>
+      <tasteThought>AteNutrientPasteMeal</tasteThought>
+      <foodType>Meal</foodType>
+      <nurseable>true</nurseable>
+      <canAutoSelectAsFoodForCaravan>true</canAutoSelectAsFoodForCaravan>
+      <outcomeDoers>
+	   <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.2</offset>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>70</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+      <li Class="CompProperties_Ingredients">
+        <noIngredientsFoodKind>NonMeat</noIngredientsFoodKind>
+      </li>
+      <li Class="CompProperties_FoodPoisonable" />
+    </comps>
+    <allowedArchonexusCount>20</allowedArchonexusCount>
+  </ThingDef>
+  
+   <!--사냥식량-->
+	<ThingDef ParentName="DrugBase">
+    <defName>MR_huntfoodA</defName>
+    <label>Hunting food dough</label>
+    <description>It is a dough made by finely grinding various ingredients. It is used as an ingredient in Hunting food, and the mix of ingredients varies depending on the hunter's preference.</description>
+	<descriptionHyperlinks>
+      <ThingDef>MR_huntfood</ThingDef>
+    </descriptionHyperlinks>
+    <tradeability>Sellable</tradeability>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Resource/MR_HuntfoodA</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <!--<graphicClass>Graphic_StackCount</graphicClass>-->
+    </graphicData>
+    <statBases>
+      <MarketValue>15</MarketValue> 
+      <Mass>0.1</Mass>
+      <DeteriorationRate>4</DeteriorationRate>
+      <Nutrition>1</Nutrition>
+    </statBases>
+    <techLevel>Neolithic</techLevel>
+    <ingestible>
+      <ingestSound>Meal_Eat</ingestSound>
+      <baseIngestTicks>60</baseIngestTicks>
+      <chairSearchRadius>4</chairSearchRadius>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <preferability>DesperateOnly</preferability>
+      <tasteThought>AteNutrientPasteMeal</tasteThought>
+      <foodType>Meal</foodType>
+      <nurseable>true</nurseable>
+      <canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+      <outcomeDoers>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>70</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+      <li Class="CompProperties_Ingredients">
+        <noIngredientsFoodKind>NonMeat</noIngredientsFoodKind>
+      </li>
+    </comps>
+    <allowedArchonexusCount>20</allowedArchonexusCount>
+  </ThingDef>
+  
+  <RecipeDef>
+    <defName>Make_Huntfood</defName>
+    <label>make Hunting food</label>
+    <description>It's a very efficient food that is both nutritionally compact and functional. The only downside is that it tastes awful.</description>
+    <jobString>Making Hunting food.</jobString>
+    <workAmount>500</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>MR_huntfoodA</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>    
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineHerbal</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>    
+    </ingredients>
+    <products>
+      <MR_huntfood>4</MR_huntfood>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <disallowedCategories>
+        <li>AnimalProductRaw</li>
+      </disallowedCategories>
+      <specialFiltersToDisallow>
+        <li>AllowPlantFood</li>
+      </specialFiltersToDisallow>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <disallowedThingDefs>
+        <li>Meat_Human</li>
+        <li>Meat_Megaspider</li>
+        <li MayRequire="Ludeon.RimWorld.Anomaly">Meat_Twisted</li>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
+    <workSkill>Cooking</workSkill>
+    <researchPrerequisite>MaruRA7</researchPrerequisite>
+    <displayPriority>1440</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>Make_HuntfoodBulk</defName>
+    <label>make Hunting food x4</label>
+    <description>It's a very efficient food that is both nutritionally compact and functional. The only downside is that it tastes awful.</description>
+    <jobString>Making bulk Hunting food.</jobString>
+    <workAmount>2000</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>MR_huntfoodA</li>
+          </thingDefs>
+        </filter>
+        <count>16</count>
+      </li>    
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineHerbal</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>    
+    </ingredients>
+    <products>
+      <MR_huntfood>16</MR_huntfood>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <disallowedCategories>
+        <li>AnimalProductRaw</li>
+      </disallowedCategories>
+      <specialFiltersToDisallow>
+        <li>AllowPlantFood</li>
+      </specialFiltersToDisallow>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <disallowedThingDefs>
+        <li>Meat_Human</li>
+        <li>Meat_Megaspider</li>
+        <li MayRequire="Ludeon.RimWorld.Anomaly">Meat_Twisted</li>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
+    <workSkill>Cooking</workSkill>
+    <researchPrerequisite>MaruRA7</researchPrerequisite>
+    <displayPriority>1440</displayPriority>
+  </RecipeDef>
+
+  
+  <RecipeDef>
+    <defName>Make_HuntfoodA</defName>
+    <label>make Hunting food dough</label>
+    <description>Gather various ingredients, grind them finely and knead them. This is the preparatory work to make a Hunting food.</description>
+    <jobString>Making Hunting food dough.</jobString>
+    <workAmount>200</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+          </categories>
+        </filter>
+        <count>3</count>
+      </li>   
+    </ingredients>
+    <products>
+      <MR_huntfoodA>4</MR_huntfoodA>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <disallowedCategories>
+        <li>AnimalProductRaw</li>
+      </disallowedCategories>
+      <specialFiltersToDisallow>
+        <li>AllowPlantFood</li>
+      </specialFiltersToDisallow>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <disallowedThingDefs>
+        <li>Meat_Human</li>
+        <li>Meat_Megaspider</li>
+        <li MayRequire="Ludeon.RimWorld.Anomaly">Meat_Twisted</li>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
+    <workSkill>Cooking</workSkill>
+    <researchPrerequisite>MaruRA7</researchPrerequisite>
+    <displayPriority>1440</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>Make_HuntfoodBulkA</defName>
+    <label>make Hunting food dough x4</label>
+    <description>Gather various ingredients, grind them finely and knead them. This is the preparatory work to make a Hunting food.</description>
+    <jobString>Making bulk Hunting food dough.</jobString>
+    <workAmount>800</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+          </categories>
+        </filter>
+        <count>12</count>
+      </li>
+    </ingredients>
+    <products>
+      <MR_huntfoodA>16</MR_huntfoodA>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <disallowedCategories>
+        <li>AnimalProductRaw</li>
+      </disallowedCategories>
+      <specialFiltersToDisallow>
+        <li>AllowPlantFood</li>
+      </specialFiltersToDisallow>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <disallowedThingDefs>
+        <li>Meat_Human</li>
+        <li>Meat_Megaspider</li>
+        <li MayRequire="Ludeon.RimWorld.Anomaly">Meat_Twisted</li>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
+    <workSkill>Cooking</workSkill>
+    <researchPrerequisite>MaruRA7</researchPrerequisite>
+    <displayPriority>1440</displayPriority>
+  </RecipeDef>
+
+
+  
+		<ThingDef ParentName="ResourceBase">
+		<defName>MR_trapbullet</defName>
+		<label>mechanical trap bundle</label>
+		<description>A more complex iron trap.\n\nCarry it on a hook and use it when the time is right.</description>
+    <descriptionHyperlinks>
+    </descriptionHyperlinks>
+		<graphicData>
+			  <texPath>Things/Trap/MR_Trap_M</texPath>
+				<graphicClass>Graphic_Single</graphicClass>
+				<drawSize>0.8</drawSize>
+		</graphicData>
+		<stackLimit>20</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<MarketValue>60</MarketValue>
+			<Mass>0.5</Mass>
+			<Flammability>0.0</Flammability>
+		</statBases>
+		<tradeTags inherit="false">
+			<li>MaruHunterFaction</li>
+		</tradeTags>		
+		<thingCategories>
+			<li>MR_Category_Manufactured</li>
+		</thingCategories>
+		<stuffProps>
+			<color>(255,255,255)</color>
+			<soundImpactBullet>BulletImpact_Metal</soundImpactBullet>
+			<soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+		</stuffProps>		
+	</ThingDef>	
+	
+	  <RecipeDef ParentName="MR_WeaponModsBase">
+    <workAmount>1200</workAmount>
+    <defName>MRMake_Mtrap</defName>
+    <label>Making Mechanical Trap Bundle</label>
+    <description>Make a Mechanical Trap Bundle to hang on a hook.</description>
+    <jobString>Making a mechanical trap bundle.</jobString>
+      <recipeUsers>
+      <li>MR_retrofittable</li>
+    </recipeUsers>
+	<researchPrerequisite Inherit="False">MaruRB5</researchPrerequisite>
+    <ingredients> 
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MR_trapbullet>1</MR_trapbullet>
+    </products>
+  </RecipeDef>
+  
+  <!--침로의 석판-->
+  <!--<ThingDef>
+		<defName>MR_Slateofpath</defName>
+		<label>Slate of path</label>
+		<graphicData>
+		<texPath>Things/Resource/MR_StoneplateA</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<description>This is a slate that records only the extremely distorted information among the interpretations of sarira. Those who have inherited the method to decipher the slate understand the fragmented knowledge of the twisted transcendent realm, thereby creating distortions in reality as well.\n\n The title of "successor of the slate" originally referred to those who feed on this distortion and has become an object of contempt for many interpreters.\n\n "The slate, once its task is completed, shatters on its own. Those who read it with the wrong deciphering method also perish along with it. If the former is a process to protect the uniqueness of information, the latter is a method to prevent the distortion of information. Isn’t it ridiculous that there exists a degree within distortion? Heh, truly a clown... it’s hard to find anyone more fitting than this for the origin of our itinerant troupe."</description>
+		<descriptionHyperlinks><HediffDef>PsychicAmplifier</HediffDef></descriptionHyperlinks>
+		<thingClass>ThingWithComps</thingClass>
+		<category>Item</category>
+		<drawerType>MapMeshOnly</drawerType>
+		<techLevel>Archotech</techLevel>
+		<useHitPoints>true</useHitPoints>
+		<pathCost>14</pathCost>
+		<selectable>true</selectable>
+		<altitudeLayer>Item</altitudeLayer>
+		<tickerType>Never</tickerType>
+		<alwaysHaulable>true</alwaysHaulable>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<thingCategories>
+			<li>MR_Category_Resources</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Beauty>-1</Beauty>
+			<Mass>0.025</Mass>
+			<MarketValue>2600</MarketValue>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+		<costList>
+			<MR_Sarira>10</MR_Sarira>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Usable">
+				<compClass>CompUsableImplant</compClass>
+				<useJob>UseItem</useJob>
+				<useLabel>Use</useLabel>
+			</li>
+			<li Class="CompProperties_UseEffectInstallImplant">
+				<hediffDef>MRH_slateofpath</hediffDef>
+				<bodyPart>Torso</bodyPart>
+			</li>
+			<li Class="CompProperties_UseEffectDestroySelf">
+				<compClass>CompUseEffect_DestroySelf</compClass>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+		<recipeMaker>
+		</recipeMaker>
+	</ThingDef>-->
+	
+	  <!--견습 사냥꾼 명패-->
+  <ThingDef>
+		<defName>MR_Nameplate_apprentice</defName>
+		<label>Apprentice Hunter’s Nameplate</label>
+		<graphicData>
+		<texPath>Things/Resource/MR_nameplateA</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<description>This nameplate bears the name of an Apprentice Hunter under contract with the caravan.Using the enclosed signaling device will have the hunter immediately head to your settlement. However, if your goodwill with the Hunter Faction is not amicable, they will be reluctant to visit.\n\nThe nameplate itself is merely a token of the contract and has no other function. The enclosed signaling device also has a limited effective range; managing these nameplates and brokering the hunter’s timely arrival at the right place depends entirely on the caravan’s capabilities.</description>
+		<!--<descriptionHyperlinks></descriptionHyperlinks>-->
+		<thingClass>ThingWithComps</thingClass>
+		<category>Item</category>
+		<drawerType>MapMeshOnly</drawerType>
+		<techLevel>Archotech</techLevel>
+		<useHitPoints>true</useHitPoints>
+		<pathCost>14</pathCost>
+		<selectable>true</selectable>
+		<altitudeLayer>Item</altitudeLayer>
+		<tickerType>Never</tickerType>
+		<alwaysHaulable>true</alwaysHaulable>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<thingCategories>
+			<li>MR_Category_Resources_Nameplate</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Beauty>-1</Beauty>
+			<Mass>0.2</Mass>
+			<MarketValue>1000</MarketValue>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+		<costList>
+			<MR_Sarira>10</MR_Sarira>
+		</costList>
+		<comps>
+				<li Class="MaruNameplateGoodwillRequirement.CompProperties_FactionGoodwillCheck">
+				<useJob>TriggerObject</useJob>
+				<useLabel>Activates the signaling device that came with the nameplate.</useLabel>
+				<targetFactionDefName>MRF_HyperboreaA</targetFactionDefName>
+				<requiredGoodwill>0</requiredGoodwill> <!-- 0 (중립 이상), 75 (동맹) -->
+				<disabledReasonKey>MRF_Hyperborea_LowGoodwillMessage</disabledReasonKey>
+				</li>
+				<li Class="CompProperties_UseEffect">
+					<compClass>MaruNameplate.CompUseEffect_DoIncident</compClass>
+				</li>
+				<li Class="CompProperties_UseEffectDestroySelf">
+					<compClass>CompUseEffect_DestroySelf</compClass>
+				</li>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+		<recipeMaker>
+		</recipeMaker>
+	</ThingDef>
+	
+	  <!--숙련 사냥꾼 명패-->
+  <ThingDef>
+		<defName>MR_Nameplate_Skilled</defName>
+		<label>Skilled Hunter’s Nameplate</label>
+		<graphicData>
+		<texPath>Things/Resource/MR_nameplateB</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<description>This nameplate bears the name of a Skilled Hunter under contract with the caravan.Using the enclosed signaling device will have the hunter immediately head to your settlement. However, if your goodwill with the Hunter Faction is not amicable, they will be reluctant to visit.\n\nThe nameplate itself is merely a token of the contract and has no other function. The enclosed signaling device also has a limited effective range; managing these nameplates and brokering the hunter’s timely arrival at the right place depends entirely on the caravan’s capabilities.</description>
+		<!--<descriptionHyperlinks></descriptionHyperlinks>-->
+		<thingClass>ThingWithComps</thingClass>
+		<category>Item</category>
+		<drawerType>MapMeshOnly</drawerType>
+		<techLevel>Archotech</techLevel>
+		<useHitPoints>true</useHitPoints>
+		<pathCost>14</pathCost>
+		<selectable>true</selectable>
+		<altitudeLayer>Item</altitudeLayer>
+		<tickerType>Never</tickerType>
+		<alwaysHaulable>true</alwaysHaulable>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<thingCategories>
+			<li>MR_Category_Resources_Nameplate</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Beauty>-1</Beauty>
+			<Mass>0.2</Mass>
+			<MarketValue>1500</MarketValue>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+		<costList>
+			<MR_Sarira>10</MR_Sarira>
+		</costList>
+		<comps>
+				<li Class="MaruNameplateGoodwillRequirement.CompProperties_FactionGoodwillCheck">
+				<useJob>TriggerObject</useJob>
+				<useLabel>Activates the signaling device that came with the nameplate.</useLabel>
+				<targetFactionDefName>MRF_HyperboreaA</targetFactionDefName>
+				<requiredGoodwill>0</requiredGoodwill> <!-- 0 (중립 이상), 75 (동맹) -->
+				<disabledReasonKey>MRF_Hyperborea_LowGoodwillMessage</disabledReasonKey>
+				</li>
+				<li Class="CompProperties_UseEffect">
+					<compClass>MaruNameplate.CompUseEffect_DoIncidentB</compClass>
+				</li>
+				<li Class="CompProperties_UseEffectDestroySelf">
+					<compClass>CompUseEffect_DestroySelf</compClass>
+				</li>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+		<recipeMaker>
+		</recipeMaker>
+	</ThingDef>	  
+	
+	<!--전문 사냥꾼 명패-->
+  <ThingDef>
+		<defName>MR_Nameplate_Expert</defName>
+		<label>Expert Hunter’s Nameplate</label>
+		<graphicData>
+		<texPath>Things/Resource/MR_nameplateC</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<description>This nameplate bears the name of an Expert Hunter under contract with the caravan.Using the enclosed signaling device will have the hunter immediately head to your settlement. However, if your goodwill with the Hunter Faction is not amicable, they will be reluctant to visit.\n\nThe nameplate itself is merely a token of the contract and has no other function. The enclosed signaling device also has a limited effective range; managing these nameplates and brokering the hunter’s timely arrival at the right place depends entirely on the caravan’s capabilities.</description>
+		<!--<descriptionHyperlinks></descriptionHyperlinks>-->
+		<thingClass>ThingWithComps</thingClass>
+		<category>Item</category>
+		<drawerType>MapMeshOnly</drawerType>
+		<techLevel>Archotech</techLevel>
+		<useHitPoints>true</useHitPoints>
+		<pathCost>14</pathCost>
+		<selectable>true</selectable>
+		<altitudeLayer>Item</altitudeLayer>
+		<tickerType>Never</tickerType>
+		<alwaysHaulable>true</alwaysHaulable>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<thingCategories>
+			<li>MR_Category_Resources_Nameplate</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Beauty>-1</Beauty>
+			<Mass>0.2</Mass>
+			<MarketValue>2000</MarketValue>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+		<costList>
+			<MR_Sarira>10</MR_Sarira>
+		</costList>
+		<comps>
+				<li Class="MaruNameplateGoodwillRequirement.CompProperties_FactionGoodwillCheck">
+				<useJob>TriggerObject</useJob>
+				<useLabel>Activates the signaling device that came with the nameplate.</useLabel>
+				<targetFactionDefName>MRF_HyperboreaA</targetFactionDefName>
+				<requiredGoodwill>0</requiredGoodwill> <!-- 0 (중립 이상), 75 (동맹) -->
+				<disabledReasonKey>MRF_Hyperborea_LowGoodwillMessage</disabledReasonKey>
+				</li>
+				<li Class="CompProperties_UseEffect">
+					<compClass>MaruNameplate.CompUseEffect_DoIncidentC</compClass>
+				</li>
+				<li Class="CompProperties_UseEffectDestroySelf">
+					<compClass>CompUseEffect_DestroySelf</compClass>
+				</li>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+		<recipeMaker>
+		</recipeMaker>
+	</ThingDef>
+	
+	
+	
+	<ThingDef ParentName="ResourceBase">
+		<defName>MR_TangledGeneticMass</defName>
+		<label>Tangled Genetic Mass</label>
+		<description>An unstable mass of entangled matter that failed to form individual genes. While it may appear to be a useless organic lump, it seems that by analyzing the properties of the assimilated genetic mass and processing it once, a complementary gene that enhances the stability and efficiency of existing genes could be created, albeit probabilistically.</description>
+		<altitudeLayer>Item</altitudeLayer>
+		<selectable>true</selectable>
+    <descriptionHyperlinks>
+      <!--<ThingDef>MR_retrofittable</ThingDef>-->
+    </descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Resource/Genebox/MR_TangledGeneticMass</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<stackLimit>20</stackLimit>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<MarketValue>40</MarketValue>
+			<Mass>0.5</Mass>
+			<Flammability>0.0</Flammability>
+		</statBases>
+		<tradeTags inherit="false">
+			<li>MaruDecipherFaction</li>
+		</tradeTags>		
+		<thingCategories>
+			<li>MR_Category_Manufactured_Bio_Gene</li>
+		</thingCategories>
+		<stuffProps>
+			<color>(255,255,255)</color>
+			<soundImpactBullet>BulletImpact_Metal</soundImpactBullet>
+			<soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+		</stuffProps>		
+	</ThingDef>	
+	
+	 <ThingDef ParentName="ResourceBase">
+    <defName>MR_CrystalFruit</defName> 
+    <label>Crystal Fruit</label>
+    <description>A fruit in which the 'Breath' component of the geyser is condensed. This component acts as an activator for all sorts of organic processes, and thus is treated as precious despite its seemingly endless supply.\n\nThe shining fruit is often used as a symbol of infertility, and also as a metaphor for perfection.</description>
+    <graphicData>
+      <texPath>Things/Resource/MaruCrystalFruit</texPath> 
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Standard_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>75</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MarketValue>25</MarketValue>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>0.1</Mass>
+      <Flammability>0.2</Flammability>
+      <DeteriorationRate>2</DeteriorationRate>
+      <!-- <Nutrition>0.1</Nutrition>-->
+    </statBases>
+    <thingCategories>
+      <li>MR_Category_Manufactured_Bio</li> <!-- 혹은 Items, PlantFoodRaw 등 적절한 카테고리 -->
+    </thingCategories>
+    <!-- <ingestible> 
+      <foodType>VegetableOrFruit</foodType>
+      <preferability>RawBad</preferability>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>RawVegetable_Eat</ingestSound>
+    </ingestible> -->
+  </ThingDef>
+  
+  
+  <ThingDef Abstract="True" Name="MR_TurretAmmoBase" ParentName="ResourceBase">
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <tickerType>Normal</tickerType>
+    <stackLimit>25</stackLimit>
+    <techLevel>Industrial</techLevel>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Mass>1.25</Mass>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>1.5</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>MR_TurretAmmo</li>
+    </thingCategories>
+    <tradeTags>
+      <li>MR_TurretAmmo</li>
+    </tradeTags>
+      <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <effectWorking>Cook</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <workAmount>800</workAmount>
+      <targetCountAdjustment>5</targetCountAdjustment>
+      <workSkill>Crafting</workSkill>
+      <recipeUsers>
+        <li>MR_retrofittable</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <displayPriority>100</displayPriority>
+    </recipeMaker>
+  </ThingDef>
+  
+  <ThingDef ParentName="MR_TurretAmmoBase">
+      <defName>MR_TurretammoA</defName>
+    <label>Piercing Harpoon Bolt</label>
+    <description>A massive harpoon bolt. It pierces through all enemies in its path, with its damage decreasing the farther it travels from the launch point. Simple, but devastating.</description>
+    <possessionCount>1</possessionCount>
+    <statBases>
+      <MarketValue>90</MarketValue>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/Turret/MR_turretammoA</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectileWhenLoaded>MR_Turret_projectileA</projectileWhenLoaded>
+    <costList>
+      <Steel>52</Steel>
+    </costList>
+      <recipeMaker>
+      <researchPrerequisite>MaruRA4</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>MR_Turret_projectileA</defName>
+    <label>Piercing Harpoon Bolt</label>
+    <graphicData>
+      <texPath>Things/Building/Turret/MR_turretprojectile</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+      <drawSize>3.215</drawSize>
+    </graphicData>
+    <thingClass>MaruFreikugel.Projectile_Penetrating</thingClass>
+    <projectile>
+	<damageDef>MR_WArrow</damageDef>
+      <damageAmountBase>80</damageAmountBase> <!-- 발사 지점에서의 최대 데미지 -->
+      <speed>100</speed>
+      <stoppingPower>10</stoppingPower>
+    </projectile>
+	<modExtensions>
+      <li Class="MaruFreikugel.ProjectileExtension_Penetrating">
+        <damageFalloffPerCell>1.3</damageFalloffPerCell> <!-- 1칸 이동할 때마다 데미지 감소 -->
+        <graceTicks>5</graceTicks> <!-- 1칸 이동할 때마다 데미지 감소 -->
+		 <explosionRadius>0.9</explosionRadius>      <!-- 0이면 폭발 안함 -->
+        <soundExplode>MortarBomb_Explode</soundExplode>
+        <decalMoteDef>MR_Mote_PenetratingBolt_Stuck</decalMoteDef>
+        <decalSize>3.215</decalSize>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  
+  <ThingDef ParentName="MR_TurretAmmoBase">
+    <defName>MR_TurretammoB</defName>
+    <label>Abductor Harpoon Bolt</label>
+    <description>A harpoon bolt attached to a sturdy wire. On impact, it pulls the target to the turret’s location. Effective for neutralizing dangerous enemies in advance.</description>
+    <possessionCount>1</possessionCount>
+    <statBases>
+      <MarketValue>120</MarketValue>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/Turret/MR_turretammoB</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectileWhenLoaded>MaruBulletExecutionerChainTurret</projectileWhenLoaded>
+    <costList>
+      <Steel>68</Steel>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>MaruRA4</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  
+  
+ <!--작살 끌어오기-->
+
+  <PawnKnockback_maru.DamageKnockbackDef>
+	<anchorRopeToLaunchPosition>true</anchorRopeToLaunchPosition>
+    <!--당기는 중심축 발사지점에 고정하기-->
+    <bulletTipDef>MaruBulletExecutionerChainTurret</bulletTipDef>
+    <!--이거 쓰는 총알 데프-->
+    <noKnockbackIfDeflected>false</noKnockbackIfDeflected>
+    <!--true일시 갑옷같은것 떄문에 데미지가 0으로 최종 계산 될시 땡기거나 넉백하지 않고 틩겨내기-->
+
+    <pullInstead>true</pullInstead>
+    <!--true로 할시 넉백대신 작살처럼 땡겨온다...!-->
+    <pullToNearbySpotInstead>true</pullToNearbySpotInstead>
+    <!--true로 할시 밑에 있는 knockbackRadiusMin/Max와 상관없이 쏜사람의 옆으로 당기게됨-->
+    <knockbackSpeedMultiplier>0.1</knockbackSpeedMultiplier>
+    <!--넉백시 얼마나 빠른지 곱셈-->
+    <knockbackHeightMultiplier>0</knockbackHeightMultiplier>
+    <!--넉백시 얼마나 위로 뜨는지 곱셈-->
+    <knockbackRadiusMin>0</knockbackRadiusMin>
+    <!--넉백 최대/최소 범위-->
+    <knockbackRadiusMax>10</knockbackRadiusMax>
+
+    <landingDamage>Stun</landingDamage>
+    <!--이거 비워놓을시 착지 데미지 없음-->
+    <landingDamageAmount>1.0</landingDamageAmount>
+    <!--넉백맞은후 공중에 떠서 착지시 데미지-->
+
+    <useHarpoonGraphic>true</useHarpoonGraphic>
+    <harpoonUseHarpoonUnitInstead>true</harpoonUseHarpoonUnitInstead>
+    <harpoonUnit>0.5</harpoonUnit>
+    <harpoonSineZAmp>1</harpoonSineZAmp>
+    <harpoonSineSpeed>0.2</harpoonSineSpeed>
+    <harpoonSegements>40</harpoonSegements>
+
+    <graphicDataHarpoonRope>
+      <texPath>Things/Weapons/MRHarpoonTurret_Rope</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>Transparent</shaderType>
+    </graphicDataHarpoonRope>
+
+    <flyerToApply>MR_KnockbackFlyerDef</flyerToApply>
+    <!--thingClass PawnKnockback.PawnKnockback 외 의 값을간진 flyer를 넣을수 있지만, 그떈 위의 설정이 반영이 안됨-->
+    <emptyFlyerToApply>MR_EmptyPullFlyerDef</emptyFlyerToApply>
+    <!--아무것도 못 맟췄을시 적용, 단 제대로 작동하려면 총알에 comp를 달아야함-->
+
+    <defName>MR_TurretChainDamageDef</defName>
+    <label>knockback damage</label>
+    <workerClass>PawnKnockback_maru.DamageWorker_Knockback</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been shot to death by an harpoon.</deathMessage>
+    <hediff>Cut</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>MR_RopeSound</impactSoundType>
+    <armorCategory>Blunt</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+
+    <defaultDamage>18</defaultDamage>
+  </PawnKnockback_maru.DamageKnockbackDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>MaruBulletExecutionerChainTurret</defName>
+    <label>Abductor Harpoon Bolt</label>
+    <thingClass>PawnKnockback_maru.Bullet_Harpoon</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Turret/MR_turretprojectileB</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>MR_TurretChainDamageDef</damageDef>
+      <damageAmountBase>30</damageAmountBase>
+      <armorPenetrationBase>1</armorPenetrationBase>
+      <speed>80</speed>
+    </projectile>
+    <comps>
+      <li Class="PawnKnockback_maru.CompProperties_HarpoonAttributes">
+        <damageKnockbackDef>MR_TurretChainDamageDef</damageKnockbackDef>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  
+      <ThingCategoryDef>
+      <defName>MR_Category_Manufactured</defName>
+      <label>maru manufactured</label>
+      <parent>Manufactured</parent>
+    <iconPath>Things/Resource/MR_lether</iconPath>
+    </ThingCategoryDef>
+	
+      <ThingCategoryDef>
+      <defName>MR_Category_Manufactured_Bio</defName>
+      <label>maru biologics</label>
+      <parent>MR_Category_Manufactured</parent>
+    <iconPath>Things/Resource/MaruCrystalFruit/MaruCrystalFruit_a</iconPath>
+    </ThingCategoryDef>
+	
+      <ThingCategoryDef>
+      <defName>MR_Category_Manufactured_Bio_Base</defName>
+      <label>maru cultured</label>
+      <parent>MR_Category_Manufactured_Bio</parent>
+    <iconPath>Things/Resource/MR_SymbioticInfectionBase</iconPath>
+    </ThingCategoryDef>
+	
+      <ThingCategoryDef>
+      <defName>MR_Category_Manufactured_Bio_Drug</defName>
+      <label>maru drugs</label>
+      <parent>MR_Category_Manufactured_Bio</parent>
+    <iconPath>Things/Resource/MR_MutationInducer</iconPath>
+    </ThingCategoryDef>
+	
+      <ThingCategoryDef>
+      <defName>MR_Category_Manufactured_Bio_Gene</defName>
+      <label>maru genics</label>
+      <parent>MR_Category_Manufactured_Bio</parent>
+    <iconPath>Things/Resource/MR_GeneTransporter</iconPath>
+    </ThingCategoryDef>
+	
+      <ThingCategoryDef>
+      <defName>MR_Category_Resources</defName>
+      <label>maru items</label>
+      <parent>Items</parent>
+    <iconPath>Things/Resource/MaruSarira/MaruSarira_a</iconPath>
+    </ThingCategoryDef>
+  
+      <ThingCategoryDef>
+      <defName>MR_Category_Resources_Nameplate</defName>
+      <label>maru nameplate</label>
+      <parent>MR_Category_Resources</parent>
+    <iconPath>Things/Resource/MR_nameplateA</iconPath>
+    </ThingCategoryDef>
+  
+    <ThingCategoryDef>
+      <defName>MR_TurretAmmo</defName>
+      <label>Harpoon Bolt</label>
+      <parent>Manufactured</parent>
+      <iconPath>UI/Icons/ThingCategories/MortarShells</iconPath>
+    </ThingCategoryDef>
+	
+</Defs>

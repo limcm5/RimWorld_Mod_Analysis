@@ -1,0 +1,1038 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="BenchBase">
+    <defName>MR_retrofittable</defName>
+    <label>Retrofit Table</label>
+    <description>This is a remodeling workbench for experimentally applying various techniques discovered through relics.\n\nIt looks like a pile of rubbish on the surface, but it has everything you need.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Production/MaruWorkbenchB</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3.5,1.5)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <staticSunShadowHeight>0.0</staticSunShadowHeight>
+    <costList>
+      <Steel>150</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <MR_Sarira>4</MR_Sarira>
+    </costList>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <statBases>
+      <WorkToBuild>3000</WorkToBuild>
+      <MaxHitPoints>180</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Cleanliness>-2</Cleanliness>
+    </statBases>
+    <size>(3,1)</size>
+    <designationCategory>Production</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <surfaceType>Item</surfaceType>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <recipes>
+    </recipes>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <comps>
+      <!--<li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(53,103,118,0)</glowColor>
+      </li>-->
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <building>
+      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+    </building>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+      <li>MaruRA2</li>
+    </researchPrerequisites>
+    <designationHotKey>Misc7</designationHotKey>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>MR_LenticularAnalyzer</defName>
+    <label>Lenticular Analyzer</label>
+    <description>This is a lens analyzer made for precise analysis.\n\nPrecisely crafted glass to guide the direction of light disrupts the light wave, creating a unique pattern on the surface of the lens.</description>
+    <graphicData>
+      <texPath>Things/Building/Analyzer/MR_LenticularAnalyzer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.46875</drawSize>
+    </graphicData>
+    <rotatable>true</rotatable>
+    <uiIconScale>0.85</uiIconScale>
+    <researchPrerequisites>
+      <li>MaruRB1</li>
+    </researchPrerequisites>
+    <size>(2,2)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <designationHotKey>Misc4</designationHotKey>
+    <designationCategory>Misc</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>10000</WorkToBuild>
+      <Mass>60</Mass>
+      <Flammability>0.5</Flammability>
+      <Beauty>15</Beauty>
+    </statBases>
+    <costList>
+      <MR_Sarira>8</MR_Sarira>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <Gold>5</Gold>
+      <Steel>45</Steel>
+    </costList>
+    <building>
+      <buildingTags>
+        <li>MaruResearch</li>
+      </buildingTags>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(73,123,138,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <ResearchSpeedFactor>0.08</ResearchSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>6</maxDistance>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>MR_SubAnalyzer</defName>
+    <label>Auxiliary Analyzer</label>
+    <description>This is an auxiliary analyzer made for more diverse and quick analysis.\n\nIt is specialized in helping other analyzers research rather than suggesting a new direction.</description>
+    <graphicData>
+      <texPath>Things/Building/Analyzer/MR_SubAnalyzer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <rotatable>true</rotatable>
+    <uiIconScale>0.85</uiIconScale>
+    <researchPrerequisites>
+      <li>MaruRA1</li>
+    </researchPrerequisites>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <designationHotKey>Misc4</designationHotKey>
+    <designationCategory>Misc</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>3600</WorkToBuild>
+      <Mass>30</Mass>
+      <Flammability>0.5</Flammability>
+      <Beauty>30</Beauty>
+    </statBases>
+    <costList>
+      <MR_Sarira>4</MR_Sarira>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <Steel>60</Steel>
+    </costList>
+    <building>
+      <buildingTags>
+        <li>MaruResearch</li>
+      </buildingTags>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(73,123,138,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <ResearchSpeedFactor>0.08</ResearchSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>10</maxSimultaneous>
+        <maxDistance>8</maxDistance>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <constructionSkillPrerequisite>2</constructionSkillPrerequisite>
+  </ThingDef>
+  
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>MR_BiometricAnalyzer</defName>
+    <label>Bio-Analyzer</label>
+    <description>It is a biological analyzer made for precise analysis.\n\nVarious biological parts move organically in a huge cylinder, enabling more diverse analysis.</description>
+    <graphicData>
+      <texPath>Things/Building/Analyzer/MR_BiometricAnalyzer</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>2.46875</drawSize>
+    </graphicData>
+    <rotatable>true</rotatable>
+    <uiIconScale>0.85</uiIconScale>
+    <researchPrerequisites>
+      <li>MaruRC1</li>
+    </researchPrerequisites>
+    <size>(2,2)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <designationHotKey>Misc4</designationHotKey>
+    <designationCategory>Misc</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>25000</WorkToBuild>
+      <Mass>60</Mass>
+      <Flammability>0.5</Flammability>
+      <Beauty>50</Beauty>
+    </statBases>
+    <costList>
+      <MR_Sarira>16</MR_Sarira>
+      <ComponentSpacer>4</ComponentSpacer>
+      <Gold>15</Gold>
+      <Steel>45</Steel>
+    </costList>
+    <building>
+      <buildingTags>
+        <li>MaruResearch</li>
+      </buildingTags>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(73,123,138,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>250</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <ResearchSpeedFactor>0.1</ResearchSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>6</maxDistance>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
+  
+  <!--재조립-->
+  
+  <WorkGiverDef>
+    <defName>DoBillsRebuildTable</defName>
+    <label>Renovating things at workbench</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Smithing</workType>
+    <priorityInType>75</priorityInType>
+    <fixedBillGiverDefs>
+      <li>MR_Rebuildtable</li>
+    </fixedBillGiverDefs>
+    <verb>work</verb>
+    <gerund>working at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+  
+ <ThingDef ParentName="BenchBase">
+    <defName>MR_Rebuildtable</defName>
+    <label>Weapon Rebuild Workbench</label>
+    <description>A table for reassembling modular weapons.\n\nIt has all the necessary functions for sophisticated work.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Production/MaruRebench</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2.7,2.5)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <costList>
+      <Steel>300</Steel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+      <MR_Sarira>3</MR_Sarira>
+    </costList>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <statBases>
+      <WorkToBuild>5000</WorkToBuild>
+      <MaxHitPoints>180</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Cleanliness>-2</Cleanliness>
+    </statBases>
+    <size>(3,1)</size>
+    <!--<designationCategory>Production</designationCategory>-->
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <surfaceType>Item</surfaceType>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <recipes>
+    </recipes>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <building>
+      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+    </building>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+    </researchPrerequisites>
+    <designationHotKey>Misc7</designationHotKey>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+  </ThingDef>
+  
+ <!-- <ThingDef Name="MaruBenchBase" ParentName="BuildingBase" Abstract="True">
+    <canOverlapZones>false</canOverlapZones>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <statBases>
+      <Mass>20</Mass>
+    </statBases>
+    <interactionCellIcon>DiningChair</interactionCellIcon>
+    <comps>
+      <li Class="CompProperties_ReportWorkSpeed">
+        <workSpeedStat>WorkTableWorkSpeedFactor</workSpeedStat>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ReportWorkSpeedPenalties</li>
+    </placeWorkers>
+    <building>
+    </building>
+  </ThingDef>-->
+  
+  <ThingDef ParentName="BenchBase">
+    <defName>MR_ResearchBench</defName>
+    <label>Research Tree</label>
+    <description>It is a beautiful research bench with numerous cables intertwined to form a tree. Numerous analyzers required for research can be connected and managed in an integrated manner.</description>
+    <thingClass>Building_ResearchBench</thingClass>
+	<thingCategories Inherit="false">
+    <li>BuildingsMisc</li>
+    </thingCategories>
+    <size>(3,3)</size>
+    <costList>
+      <Steel>80</Steel>
+      <MR_Sarira>4</MR_Sarira>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <costStuffCount>100</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <graphicData>
+      <texPath>Things/Building/Production/MaruReaserchTree</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(9,9)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <uiIconScale>0.75</uiIconScale>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <altitudeLayer>Pawn</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <statBases>
+      <MaxHitPoints>750</MaxHitPoints>
+      <WorkToBuild>18000</WorkToBuild>
+      <Mass>800</Mass>
+      <Flammability>1.0</Flammability>
+      <ResearchSpeedFactor>1.25</ResearchSpeedFactor>
+      <Beauty>30</Beauty>
+    </statBases>
+	    <comps>
+      <li Class="CompProperties_ReportWorkSpeed">
+        <workSpeedStat>ResearchSpeedFactor</workSpeedStat>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+		  <li>MR_LenticularAnalyzer</li>
+	  	  <li>MR_BiometricAnalyzer</li>
+		  <li>MR_SubAnalyzer</li>
+		  <li>MR_SimAnalyzerA</li>
+		  <li>MR_SimAnalyzerB</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>15</glowRadius>
+        <glowColor>(175,175,255,0)</glowColor>
+      </li>
+    </comps>
+	 <building>
+      <buildingTags>
+        <li>MaruResearch</li>
+		<li>ResearchBench</li>
+		<!--<paintable>true</paintable>-->
+      </buildingTags>
+      <paintable>true</paintable>
+      <workTableRoomRole>Laboratory</workTableRoomRole>
+      <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+      <li>PlaceWorker_DrawLinesToBookcasesInRoom</li>
+    </placeWorkers>
+    <fillPercent>0.5</fillPercent>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <uiOrder>2610</uiOrder>
+    <designationHotKey>Misc4</designationHotKey>
+    <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+    <hasInteractionCell>true</hasInteractionCell>
+    <designationCategory>Production</designationCategory>
+    <surfaceType>Item</surfaceType>
+    <researchPrerequisites>
+      <li>MaruRA1</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  
+  <!--<ThingDef ParentName="BuildingBase" Name="Wall">
+    <defName>MR_LethWall</defName>
+    <label>leather wall</label>
+    <description>.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/Atlas/MRWall</texPath>
+      <graphicClass>Graphic_Appearances</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags>
+        <li>Wall</li>
+        <li>Rock</li>
+      </linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop>
+        <edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft>
+        <edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Atlas/MRWall/MRWall_Atlas_Bricks</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Planks</appearance>
+        <iconPath>Things/Building/Atlas/MRWall/MRWall_Atlas_Bricks</iconPath>
+      </li>
+      <li>
+        <appearance>Bricks</appearance>
+        <iconPath>Things/Building/Atlas/MRWall/MRWall_Atlas_Bricks</iconPath>
+      </li>
+    </uiIconPathsStuff>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>135</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <MeditationFocusStrength>0.22</MeditationFocusStrength>
+    </statBases>
+    <costStuffCount>5</costStuffCount>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <useStuffTerrainAffordance>true</useStuffTerrainAffordance>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded> 
+    <holdsRoof>true</holdsRoof>
+    <designationCategory>Structure</designationCategory>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <fertility>0</fertility>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <building>
+      <isInert>true</isInert>
+      <isPlaceOverableWall>true</isPlaceOverableWall>
+      <ai_chillDestination>false</ai_chillDestination>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+      <relatedBuildCommands>
+        <li>Door</li>
+        <li>Autodoor</li>
+      </relatedBuildCommands>
+    </building>
+    <comps>
+      <li Class="CompProperties_MeditationFocus">
+        <statDef>MeditationFocusStrength</statDef>
+        <focusTypes>
+          <li>Minimal</li>
+        </focusTypes>
+      </li>
+    </comps>
+    <damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>2</multiplier>
+      </li>
+      <li>
+        <damageDef>Thump</damageDef>
+        <multiplier>2</multiplier>
+      </li>
+    </damageMultipliers>
+    <designationHotKey>Misc3</designationHotKey>
+  </ThingDef>-->
+  
+  
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>MR_thurible</defName>
+    <label>Maru Censer</label>
+    <description>A cylinder that emits a subtle glow.\nIt contains a portion of an artifact called incense, which reacts with the activated sari inside the Interpreter to emit a more beautifully shaped glow.\n\nIt continues to produce a small amount of energy without any fuel, though not enough to be of any practical use, so it is customary to give a small portion to a new Dechiper as they set out on their path to independence.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/MR_thurible</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawRotated>false</drawRotated>
+      <allowFlip>false</allowFlip>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <rotatable>true</rotatable>
+    <uiIconScale>0.85</uiIconScale>
+    <tickerType>Normal</tickerType>
+    <researchPrerequisites>
+    </researchPrerequisites>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <designationHotKey>Misc4</designationHotKey>
+    <designationCategory>Misc</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>3600</WorkToBuild>
+      <Mass>30</Mass>
+      <Flammability>0.5</Flammability>
+      <Beauty>30</Beauty>
+      <MeditationFocusStrength>0.0</MeditationFocusStrength>
+    </statBases>
+    <costList>
+      <MR_thurible_item>1</MR_thurible_item>
+    </costList>
+    <building>
+      <buildingTags>
+        <li>Maruthurible</li>
+      </buildingTags>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <comps>
+	  <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-200</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+        <soundAmbientProducingPower>ChemfuelFiredGenerator_Ambience</soundAmbientProducingPower>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <heatPerSecond>6</heatPerSecond>
+        <heatPushMaxTemperature>10</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>10</glowRadius>
+        <glowColor>(173,223,238,0)</glowColor>
+      </li>
+	     <li Class="CompProperties_MeditationFocus">
+        <statDef>MeditationFocusStrength</statDef>
+        <focusTypes><li>Flame</li></focusTypes>
+        <offsets>
+          <li Class="FocusStrengthOffset_Lit">
+            <offset>0.18</offset>
+          </li>
+          <li Class="FocusStrengthOffset_BuildingDefsLit">
+            <defs>
+              <li>MR_ResearchBench</li>
+              <li>MR_LenticularAnalyzer</li>
+              <li>MR_BiometricAnalyzer</li>
+              <li>MR_SubAnalyzer</li>
+            </defs>
+            <offsetPerBuilding>0.02</offsetPerBuilding>
+            <radius>12.9</radius>
+            <maxBuildings>13</maxBuildings>
+            <explanationKey>MeditationFocusPerFlame</explanationKey>
+            <explanationKeyAbstract>MeditationFocusPerFlameAbstract</explanationKeyAbstract>
+          </li>
+        </offsets>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_Heater</li>
+      <li>PlaceWorker_MeditationOffsetBuildingsNear</li>
+    </placeWorkers>
+  </ThingDef>
+  
+  
+  <ThingDef ParentName="BenchBase">
+    <defName>MR_Geneworkbench</defName>
+    <label>Incubator</label>
+    <description>This is a research and crafting station created primarily for work related to organic matter, specifically the interpretation and application of Sari. It is mainly used for implant cultivation and genetic research using Sari data, and the research materials obtained through it are also treated as highly valuable.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Production/MaruGeneworkbench</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(5.6,5.6)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <staticSunShadowHeight>0.0</staticSunShadowHeight>
+    <costList>
+      <Steel>150</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <MR_Sarira>4</MR_Sarira>
+    </costList>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <statBases>
+      <WorkToBuild>3000</WorkToBuild>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <Cleanliness>-2</Cleanliness>
+    </statBases>
+    <size>(3,2)</size>
+    <designationCategory>Production</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <surfaceType>Item</surfaceType>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <recipes>
+	<li MayRequire="Ludeon.RimWorld.Biotech">Make_MR_TangledGeneBox</li>
+    </recipes>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <building>
+      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+    </building>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+      <li>MaruNC</li>
+    </researchPrerequisites>
+    <designationHotKey>Misc7</designationHotKey>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+  </ThingDef>
+  
+  
+  <!-- <ThingDef ParentName="BuildingBase">
+    <defName>MR_CultivationPond</defName>
+    <label>Crystalvine Cultivation Pond</label>
+    <description>A hydroponic pond for cultivating Crystalvines.\n\nIt maintains an environment similar to that of a lower geyser, supplying additional nutrient solutions to promote the Crystalvine's growth. Furthermore, its interior is connected to the lower geyser, providing a stable foundation for the vines to root securely.</description>
+    <thingClass>Building</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Production/MR_CrystalvineSeedbedB</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4,4)</drawSize>
+      <shadowData>
+        <volume>(3.03,0.5,2.25)</volume>
+        <offset>(0,0,-0.25)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.3,0,5.4,6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <fillPercent>1</fillPercent>
+    <blockLight>false</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToBuild>12000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Beauty>-30</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(4,4)</size>
+    <costList>
+      <Steel>340</Steel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(53,103,118,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <rotatable>false</rotatable>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <uiOrder>2110</uiOrder>
+    <placeWorkers>
+      <li>PlaceWorker_OnSteamGeyser</li>
+    </placeWorkers>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <constructEffect>ConstructMetal</constructEffect>
+    <designationHotKey>Misc6</designationHotKey>
+    <researchPrerequisites><li>GeothermalPower</li></researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef> -->
+  
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>MR_CultivationPond</defName>
+    <label>Crystalvine Cultivation Pond</label>
+    <description>A hydroponic pond for cultivating Crystalvines.\n\nIt maintains an environment similar to that of a lower geyser, supplying additional nutrient solutions to promote the Crystalvine's growth. Furthermore, its interior is connected to the lower geyser, providing a stable foundation for the vines to root securely.</description>
+    <descriptionHyperlinks>
+      <ThingDef>MR_Crystalvine</ThingDef>
+    </descriptionHyperlinks>
+	<thingClass>maruCrystalvineCultivationPond.Building_CrystalvinePond</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Production/CrystalvinePond_Stage0</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(8,8)</drawSize>
+      <shadowData>
+        <volume>(3.03,0.5,2.25)</volume>
+        <offset>(0,0,-0.25)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.3,0,5.4,6)</rect>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability>
+    <pathCost>130</pathCost>
+    <constructEffect>ConstructMetal</constructEffect>
+    <fillPercent>0.70</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <statBases>
+      <WorkToBuild>2800</WorkToBuild>
+      <MaxHitPoints>1800</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <Cleanliness>-3</Cleanliness>
+    </statBases>
+    <size>(4,4)</size>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <costList>
+      <Steel>250</Steel>
+      <ComponentIndustrial>10</ComponentIndustrial>
+    </costList>
+    <fertility>2.8</fertility>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <tickerType>Long</tickerType>
+    <comps>    
+	  <li Class="maruCrystalvineCultivationPond.CompProperties_CrystalvineGrowth">
+        <growthPerDay>0.2</growthPerDay> <!-- 하루 성장률 10% -->
+        <fruitCondensePerDay>0.2</fruitCondensePerDay> <!-- 하루 열매 응축률 20% -->
+        <fruitYield>10</fruitYield> <!-- 수확 시 열매 개수 -->
+        <fruitDef>MR_CrystalFruit</fruitDef> <!-- 결정 열매 ThingDef 이름 -->
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(53,103,118,50)</glowColor>
+      </li>
+      <li Class="CompProperties_AmbientSound">
+        <sound>GeothermalPlant_Ambience</sound>
+        <disabledOnUnpowered>true</disabledOnUnpowered>
+      </li>
+    </comps>
+    <researchPrerequisites>
+      <li>MaruRB4</li>
+    </researchPrerequisites>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Production</designationCategory>
+    <placeWorkers>
+      <li>PlaceWorker_OnSteamGeyser</li>
+    </placeWorkers>
+  </ThingDef>
+  
+    <JobDef>
+    <defName>maruHarvestCrystalvineFromPond</defName>
+    <driverClass>maruCrystalvineCultivationPond.JobDriver_HarvestCrystalvinePond</driverClass>
+    <reportString>Harvesting crystal fruit from the crystalvine cultivation pond.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+ 
+  <WorkGiverDef>
+    <defName>maruHarvestCrystalvinePond</defName>
+    <label>Harvest crystalvine</label>
+    <giverClass>maruCrystalvineCultivationPond.WorkGiver_HarvestCrystalvinePond</giverClass>
+    <workType>Growing</workType> 
+    <priorityInType>90</priorityInType> 
+    <verb>Harvest</verb>
+    <gerund>Harvesting</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <ThingDef ParentName="ResourceBase"> 
+    <defName>MR_Crystalvine</defName>
+    <label>Crystalvine</label>
+    <description>A vine created to favor the environment inside geysers. It grows by drawing sustenance from the heat-laden geyser waters, and the parts above the water intertwine to take on a tree-like form.\n\nOnce the Crystalvine extends its roots into a geyser and begins to grow, it periodically bears fruit on its exposed parts that resemble shining crystals. This is a byproduct of the ‘Breath’ component from the lower geyser, absorbed along with heat during the vine’s caloric intake, allowing a raw substance in gaseous form to be utilized more stably and usefully.\n\nAs long as the vine is connected to the geyser, it remains active semi-permanently and requires no separate maintenance. It is a product of interpretation and a product of chance, simultaneously exhibiting the pride and ignorance of the interpreter.</description>	
+	<statBases>
+			<MarketValue>0</MarketValue>
+			<Mass>1</Mass>
+		</statBases>
+  </ThingDef>
+
+
+<ThingDef ParentName="BuildingBase">
+    <defName>MR_SimAnalyzerA</defName>
+    <label>Simulation Device: Hi-tech Research Bench</label>
+    <description>A virtual simulation device for deductive experiments. This module extends the capabilities of the Research Tree, allowing it to function as a Hi-tech Research Bench.</description>
+    <graphicData>
+      <texPath>Things/Building/Analyzer/MR_SimAnalyzer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <rotatable>true</rotatable>
+    <uiIconScale>0.85</uiIconScale>
+    <researchPrerequisites>
+      <li>MicroelectronicsBasics</li>
+    </researchPrerequisites>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <designationHotKey>Misc4</designationHotKey>
+    <designationCategory>Misc</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>3600</WorkToBuild>
+      <Mass>30</Mass>
+      <Flammability>0.5</Flammability>
+      <Beauty>30</Beauty>
+    </statBases>
+    <costList>
+      <MR_Sarira>8</MR_Sarira>
+      <ComponentIndustrial>12</ComponentIndustrial>
+      <Steel>80</Steel>
+    </costList>
+    <building>
+      <buildingTags>
+        <li>MaruResearch</li>
+      </buildingTags>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(53,103,118,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <ResearchSpeedFactor>0.08</ResearchSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>8</maxDistance>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+  </ThingDef>
+  
+
+<ThingDef ParentName="BuildingBase">
+    <defName>MR_SimAnalyzerB</defName>
+    <label>Simulation Device: Multi-analyzer</label>
+    <description>A virtual simulation device for deductive experiments. This module extends the capabilities of the Research Tree, allowing it to function as a Multi-analyzer.</description>
+    <graphicData>
+      <texPath>Things/Building/Analyzer/MR_SimAnalyzer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <rotatable>true</rotatable>
+    <uiIconScale>0.85</uiIconScale>
+    <researchPrerequisites>
+      <li>MultiAnalyzer</li>
+    </researchPrerequisites>
+    <size>(1,1)</size>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <designationHotKey>Misc4</designationHotKey>
+    <designationCategory>Misc</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>3600</WorkToBuild>
+      <Mass>30</Mass>
+      <Flammability>0.5</Flammability>
+      <Beauty>30</Beauty>
+    </statBases>
+    <costList>
+      <MR_Sarira>8</MR_Sarira>
+      <Steel>20</Steel>
+      <Plasteel>50</Plasteel>
+      <Gold>20</Gold>
+      <ComponentIndustrial>10</ComponentIndustrial>
+    </costList>
+    <building>
+      <buildingTags>
+        <li>MaruResearch</li>
+      </buildingTags>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(53,103,118,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <ResearchSpeedFactor>0.08</ResearchSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>8</maxDistance>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
+  
+  
+  <JobDef>
+    <defName>MR_AnalyzeOnBigBench</defName>
+    <driverClass>MaruSimAnalyzer.JobDriver_AnalyzeOnBigBench</driverClass>
+    <reportString>analyzing TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+  
+</Defs>

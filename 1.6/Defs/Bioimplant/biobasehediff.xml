@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+ <HediffDef ParentName="ImplantHediffBase">
+    <defName>Hediff_SymbioticInfectionBase</defName>
+    <label>Symbiotic Organism Infection</label>
+    <description>A standard implant, adjusted through Sari’s knowledge. Microscopic symbiotic organisms infect the entire body, beginning to alter physical capabilities.\n\nThe assimilation rate gradually increases over time, affecting the body accordingly.</description>
+<!-- <spawnThingOnRemoved>YourMod_SymbioticRemnants</spawnThingOnRemoved> --> <!-- 제거 시 나올 잔해물 -->
+    <defaultLabelColor>(0.7, 1.0, 0.7)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <initialSeverity>0.01</initialSeverity> <!-- 초기 이식 시 동화율 -->
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>0.064</severityPerDay>
+      </li>
+    <!-- 
+      <li Class="YourModNamespace.HediffCompProperties_BaseImplantTracker"/> // 필요하다면 동화율 외 추가 정보 추적용
+     -->
+    </comps>
+    <stages>
+      <li>
+        <label>Ⅰ</label>
+        <minSeverity>0.01</minSeverity>
+        <hungerRateFactorOffset>0.5</hungerRateFactorOffset>
+        <statOffsets>
+          <MoveSpeed>0.1</MoveSpeed> <!-- 이동속도 +0.1c/s (예시) -->
+          <MaxNutrition>0.5</MaxNutrition> 
+        </statOffsets>
+      </li>
+      <li>
+        <label>Ⅱ</label>
+        <minSeverity>0.5</minSeverity> <!-- 예시 동화율 -->
+        <hungerRateFactorOffset>1.0</hungerRateFactorOffset>
+        <statOffsets>
+          <MoveSpeed>0.2</MoveSpeed>
+          <MeleeDodgeChance>0.1</MeleeDodgeChance>
+          <MaxNutrition>1</MaxNutrition> 
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.1</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>Full Assimilation</label>
+        <minSeverity>0.999</minSeverity> <!-- 예시 동화율 -->
+        <hungerRateFactorOffset>1.5</hungerRateFactorOffset>
+        <statOffsets>
+          <MoveSpeed>0.3</MoveSpeed>
+          <MeleeDodgeChance>0.3</MeleeDodgeChance>
+          <MaxNutrition>1.5</MaxNutrition> 
+        </statOffsets>
+         <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.10</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.10</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>Hediff_CrystalMutationBase</defName>
+    <label>결정 변이</label>
+    <description>.</description>
+<!-- <spawnThingOnRemoved>YourMod_SymbioticRemnants</spawnThingOnRemoved> --> <!-- 제거 시 나올 잔해물 -->
+    <defaultLabelColor>(0.7, 1.0, 0.7)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <initialSeverity>0.01</initialSeverity> <!-- 초기 이식 시 동화율 -->
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>0.064</severityPerDay>
+      </li>
+    <!-- 
+      <li Class="YourModNamespace.HediffCompProperties_BaseImplantTracker"/> // 필요하다면 동화율 외 추가 정보 추적용
+     -->
+    </comps>
+    <stages>
+      <li>
+        <label>Ⅰ</label>
+        <minSeverity>0.01</minSeverity>
+        <statOffsets>
+          <MoveSpeed>0.1</MoveSpeed> <!-- 이동속도 +0.1c/s (예시) -->
+        </statOffsets>
+      </li>
+      <li>
+        <label>Ⅱ</label>
+        <minSeverity>0.5</minSeverity> <!-- 예시 동화율 -->
+        <statOffsets>
+          <MoveSpeed>0.2</MoveSpeed>
+          <MeleeDodgeChance>0.1</MeleeDodgeChance> <!-- 근접 회피 +10% -->
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.05</offset> <!-- 시력 +5% -->
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>완전동화</label>
+        <minSeverity>0.999</minSeverity> <!-- 예시 동화율 -->
+        <statOffsets>
+          <MoveSpeed>0.3</MoveSpeed>
+          <MeleeDodgeChance>0.15</MeleeDodgeChance>
+        </statOffsets>
+         <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.10</offset> <!-- 시력 +10% -->
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.10</offset> <!-- 조작 +10% -->
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- 육지 산호 기반 이식체 (변이 활성제 사용 불가 예시) HediffDef -->
+  <HediffDef>
+    <defName>Hediff_LandCoralBase</defName>
+    <label>Land Coral</label>
+    <description>A stable implant, adjusted through Sari’s knowledge. Land coral lives symbiotically within the body, enhancing environmental adaptability and overall bodily homeostasis.\n\nIts assimilation rate increases more slowly, and it has a significant impact on the body. Furthermore, it does not react to mutation inducers.</description>
+    <defaultLabelColor>(0.6, 0.8, 1.0)</defaultLabelColor>
+    <hediffClass>HediffWithComps</hediffClass>
+    <priceImpact>true</priceImpact>
+    <countsAsAddedPartOrImplant>true</countsAsAddedPartOrImplant>
+<!-- <allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn> -->
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <minSeverity>0.001</minSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    <initialSeverity>0.01</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>0.016</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>Ⅰ</label>
+        <minSeverity>0.01</minSeverity>
+        <hungerRateFactorOffset>0.1</hungerRateFactorOffset>
+        <statOffsets>
+          <ImmunityGainSpeed>0.1</ImmunityGainSpeed> <!-- 항체생성 +10% -->
+          <MaxNutrition>0.1</MaxNutrition> 
+        </statOffsets>
+      </li>
+      <li>
+        <label>Ⅱ</label>
+        <minSeverity>0.16</minSeverity>
+        <hungerRateFactorOffset>0.4</hungerRateFactorOffset>
+        <statOffsets>
+          <ImmunityGainSpeed>0.1</ImmunityGainSpeed> <!-- 항체생성 +10% -->
+          <ComfyTemperatureMin>-5</ComfyTemperatureMin>
+          <ComfyTemperatureMax>5</ComfyTemperatureMax>
+          <MaxNutrition>0.4</MaxNutrition> 
+        </statOffsets>
+      </li>
+      <li>
+        <label>Ⅲ</label>
+        <minSeverity>0.32</minSeverity>
+        <hungerRateFactorOffset>0.7</hungerRateFactorOffset>
+        <statOffsets>
+          <ImmunityGainSpeed>0.15</ImmunityGainSpeed> <!-- 항체생성 +10% -->
+          <ComfyTemperatureMin>-5</ComfyTemperatureMin>
+          <ComfyTemperatureMax>10</ComfyTemperatureMax>
+          <MaxNutrition>0.7</MaxNutrition> 
+        </statOffsets>
+      </li>
+      <li>
+        <label>Ⅳ</label>
+        <minSeverity>0.48</minSeverity>
+        <hungerRateFactorOffset>1.0</hungerRateFactorOffset>
+        <statOffsets>
+          <ImmunityGainSpeed>0.15</ImmunityGainSpeed> <!-- 항체생성 +10% -->
+          <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+          <ComfyTemperatureMax>10</ComfyTemperatureMax>
+          <MaxNutrition>1</MaxNutrition> 
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.1</offset> <!-- 의식 +10% -->
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>Ⅴ</label>
+        <minSeverity>0.64</minSeverity>
+        <hungerRateFactorOffset>1.4</hungerRateFactorOffset>
+        <statOffsets>
+          <ImmunityGainSpeed>0.2</ImmunityGainSpeed> <!-- 항체생성 +10% -->
+          <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+          <ComfyTemperatureMax>15</ComfyTemperatureMax>
+          <MaxNutrition>1.4</MaxNutrition> 
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.1</offset> <!-- 의식 +10% -->
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>Ⅵ</label>
+        <minSeverity>0.8</minSeverity>
+        <hungerRateFactorOffset>1.8</hungerRateFactorOffset>
+        <statOffsets>
+          <ImmunityGainSpeed>0.2</ImmunityGainSpeed> <!-- 항체생성 +10% -->
+          <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+          <ComfyTemperatureMax>15</ComfyTemperatureMax>
+          <MaxNutrition>1.8</MaxNutrition> 
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset> <!-- 의식 +15% -->
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>Full Assimilation</label>
+        <minSeverity>0.96</minSeverity>
+        <hungerRateFactorOffset>2.0</hungerRateFactorOffset>
+        <statOffsets>
+          <ImmunityGainSpeed>0.2</ImmunityGainSpeed>
+          <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+          <ComfyTemperatureMax>20</ComfyTemperatureMax>
+          <MaxNutrition>2</MaxNutrition> 
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset> <!-- 의식 +15% -->
+          </li>
+        </capMods>
+		<hediffGivers>
+        <li Class="HediffGiver_Random">
+          <hediff>Hediff_LandCoral_Reword</hediff> <!-- 부여할 헤디프 DefName -->
+          <mtbDays>1.0</mtbDays>             <!-- 평균 1일마다 발생 시도 -->
+        </li>
+      </hediffGivers>
+		  <makeImmuneTo>
+            <li>MuscleParasites</li>
+            <li>GutWorms</li>
+          </makeImmuneTo>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>Hediff_LandCoral_Reword</defName>
+    <label>Land Coral Bloom</label>
+    <description>This body has achieved perfect assimilation with the land coral. Now, should any wound be sustained, symbiotic algae will maintain the body’s homeostasis, slowly mending and fully restoring the affected area.</description>
+    <hediffClass>HediffWithComps</hediffClass> <!-- 일반 헤디프 -->
+    <defaultLabelColor>(0.8, 1.0, 0.4)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity> <!-- 단일 단계 변이 -->
+    <comps>
+      <li Class="HediffCompProperties_HealPermanentWounds" />
+    </comps>
+    <stages>
+      <li>
+			<statOffsets>
+			<InjuryHealingFactor>2</InjuryHealingFactor>
+			</statOffsets>
+        <capMods>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>0.10</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+</Defs>

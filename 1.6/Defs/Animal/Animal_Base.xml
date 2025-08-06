@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<ThingDef ParentName="AnimalThingBase">
+    <defName>MR_HPBsnowleopard</defName>
+    <label>hyperborea snowleopard</label>
+    <description>A creature restored through the interpretation of Sari.\n\nAs a ‘created’ lifeform, much like the Maru, it possesses both superior intelligence and physical capabilities, making it a companion to many Maru.\n\nAdditionally, this creature is born with the ability to dematerialize its body into particles in response to external stimuli. Any Decipherer who uncovers the principles behind this mechanism would surely be called a Mountain Keeper.</description>
+    <statBases>
+      <MoveSpeed>5.5</MoveSpeed>
+      <MarketValue>450</MarketValue>
+      <ComfyTemperatureMin>-65</ComfyTemperatureMin>
+      <ComfyTemperatureMax>35</ComfyTemperatureMax>
+      <FilthRate>4</FilthRate>
+      <CaravanRidingSpeedFactor>1.2</CaravanRidingSpeedFactor>
+      <Wildness>0.9</Wildness>
+    </statBases>
+    <uiIconScale>1.35</uiIconScale>
+    <comps>
+      <!--<li Class="CompProperties_Shearable">
+        <woolDef>WoolMuffalo</woolDef>
+        <shearIntervalDays>15</shearIntervalDays>
+        <woolAmount>120</woolAmount>
+      </li>-->
+			<!--<li Class="CompProperties_TurretGun">
+				<turretDef>MR_HPBsnowleopard_Turret</turretDef>
+				<angleOffset>0</angleOffset>
+			</li>-->
+			<li Class="MaruAnimalRage.CompProperties_Leopardrage">
+				<!--맞았을때 적용할 헤디프-->
+				<hediffDef>MRH_RageHediff</hediffDef>
+				<!--지속시간-->
+				<DurationTime>800</DurationTime>
+				<!--쿨타임-->
+				<cooldown>2500</cooldown>
+				<!--맞았을때 띵 소환할지-->
+				<SpawnCheak>false</SpawnCheak>
+				<!--맞았을때 소환할 띵-->
+				<thingToSpawn>MR_MaruRageSpawn</thingToSpawn>
+				<!--띵에 소환자 팩션 할당할지-->
+				<inheritFaction>false</inheritFaction>
+				<!--특정 체력 이상일때 발동 안하기-->
+				<rageEndHealthPercent>false</rageEndHealthPercent>
+				<!--발동 안하는 체력 값-->
+				<rageEndHealthPercentThreshold>0.98</rageEndHealthPercentThreshold>
+			</li>
+    </comps>
+    <race>
+		<canBecomeShambler>false</canBecomeShambler>
+      <herdAnimal>false</herdAnimal>
+		<predator>true</predator>
+      <body>QuadrupedAnimalWithPawsAndTail</body>
+      <maxPreyBodySize>1.0</maxPreyBodySize>
+      <baseBodySize>2.5</baseBodySize>
+      <baseHealthScale>2</baseHealthScale>
+      <baseHungerRate>0.7</baseHungerRate>
+      <foodType>CarnivoreAnimal, OvivoreAnimal</foodType>
+      <leatherDef>Leather_Panthera</leatherDef>
+      <gestationPeriodDays>6.66</gestationPeriodDays>
+      <trainability>Advanced</trainability>
+      <specialTrainables>
+        <li MayRequire="Ludeon.RimWorld.Odyssey">AttackTarget</li>
+      </specialTrainables>
+      <packAnimal>true</packAnimal>
+      <lifeExpectancy>30</lifeExpectancy>
+      <manhunterOnTameFailChance>0.10</manhunterOnTameFailChance>
+      <manhunterOnDamageChance>0.80</manhunterOnDamageChance>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_HPBSnowleopard_Injured</soundWounded>
+          <soundDeath>Pawn_HPBSnowleopard_Death</soundDeath>
+          <soundAngry>Pawn_HPBSnowleopard_Angry</soundAngry>
+          <!--<soundCall>Pawn_HPBSnowleopard_Call</soundCall>-->
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.25</minAge>
+          <soundWounded>Pawn_HPBSnowleopard_Injured</soundWounded>
+          <soundDeath>Pawn_HPBSnowleopard_Death</soundDeath>
+          <soundAngry>Pawn_HPBSnowleopard_Angry</soundAngry>
+           <!--<soundCall>Pawn_HPBSnowleopard_Call</soundCall>-->
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.3333</minAge>
+          <soundWounded>Pawn_HPBSnowleopard_Injured</soundWounded>
+          <soundDeath>Pawn_HPBSnowleopard_Death</soundDeath>
+          <soundAngry>Pawn_HPBSnowleopard_Angry</soundAngry>
+           <!--<soundCall>Pawn_HPBSnowleopard_Call</soundCall>-->
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.05)</li>
+        <li>(0.285, 0, 0.02)</li>
+        <li>(0.0, 0, -0.12)</li>
+        <li>(-0.285, 0, 0.02)</li>
+      </headPosPerRotation>
+      <thinkTreeConstant>MR_AnimalConstant_snowleopard</thinkTreeConstant>
+    </race>
+    <tradeTags>
+      <li>HPBsnowleopard</li>
+    </tradeTags>
+    <tools>
+      <li>
+        <label>left claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>2.1</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>12</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>right claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>2.1</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>12</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>17</power>
+        <cooldownTime>2.2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.7</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>12</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  
+	<!--<ThingDef ParentName="BaseWeaponTurret">
+		<defName>MR_HPBsnowleopard_Turret</defName>
+		<label>snowleopard Turret</label>
+		<description>Test</description>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<graphicData>
+			<texPath>Things/Inv/MR_Invisible</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawOffset>(0,0,-0.2)</drawOffset>
+		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<recipeMaker Inherit="false">
+        </recipeMaker>
+		<weaponTags>
+			<li>ammo_none</li>
+		</weaponTags>
+		<statBases>
+			<Mass>4.5</Mass>
+			<AccuracyTouch>1</AccuracyTouch>
+			<AccuracyShort>1</AccuracyShort>
+			<AccuracyMedium>1</AccuracyMedium>
+			<AccuracyLong>1</AccuracyLong>
+			<RangedWeapon_DamageMultiplier>0.5</RangedWeapon_DamageMultiplier>
+			<JumpRange>8.9</JumpRange>
+			<RangedWeapon_Cooldown>4.8</RangedWeapon_Cooldown>
+		</statBases>
+		<equippedAngleOffset>45</equippedAngleOffset>
+		<costList>
+			<MR_whitetwigs>1</MR_whitetwigs>
+		</costList>
+        <verbs>
+			  <li>
+        <verbClass>Verb_Jump</verbClass>
+        <label>jump</label>
+				<minRange>8</minRange>
+				<range>8.9</range>
+        <commandIcon>Things/Weapons/Mote/MR_jump</commandIcon>
+        <violent>false</violent>
+        <hasStandardCommand>true</hasStandardCommand>
+        <onlyManualCast>false</onlyManualCast>
+        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+        <warmupTime>0.3</warmupTime>
+        <requireLineOfSight>true</requireLineOfSight>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetPawns>true</canTargetPawns>
+          <canTargetBuildings>false</canTargetBuildings>
+        </targetParams>
+			</li>
+	  	</verbs>
+	</ThingDef>-->
+  
+        <!--<warmupEffecter>JumpWarmupEffect</warmupEffecter>
+        <flightEffecterDef>JumpFlightEffect</flightEffecterDef>-->
+		
+  <PawnKindDef Name="MR_HPBsnowleopard" ParentName="BigCatKindBase">
+    <defName>MR_HPBsnowleopard</defName>
+    <label>hyperborea snowleopard</label>
+    <race>MR_HPBsnowleopard</race>
+		<isFighter>true</isFighter>
+    <combatPower>130</combatPower>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Animal/HPBsnow</texPath>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.3, 0.3)</volume>
+            <offset>(0,0,-0.2)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Animal/Dessicated_HPBsnow</texPath>
+          <drawSize>1.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Animal/HPBsnow</texPath>
+          <drawSize>2.25</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.45, 0.45)</volume>
+            <offset>(0,0,-0.25)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Animal/Dessicated_HPBsnow</texPath>
+          <drawSize>2.25</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Animal/HPBsnow</texPath>
+          <drawSize>3</drawSize>
+          <shadowData>
+            <volume>(0.8, 0.6, 0.6)</volume>
+            <offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Animal/Dessicated_HPBsnow</texPath>
+          <drawSize>3</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <!--띵크트리-->
+  
+ <ThinkTreeDef>
+    <defName>MR_AnimalConstant_snowleopard</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- Despawned -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Despawned</treeDef>
+        </li>
+			
+        <li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
+          <subNodes>
+            <!-- Flee enemies, tornados, meteorites, etc. -->
+            <li Class="JobGiver_AnimalFlee" />
+            <!-- Join auto joinable caravan -->
+            <li Class="ThinkNode_Subtree">
+              <treeDef>JoinAutoJoinableCaravan</treeDef>
+            </li>
+          </subNodes>
+        </li>
+
+        <li Class="ThinkNode_ConditionalCanDoLordJobNow">
+          <subNodes>
+            <!-- Lord directives -->
+            <li Class="ThinkNode_Subtree">
+              <treeDef>LordDutyConstant</treeDef>
+            </li>
+          </subNodes>
+        </li>
+		
+			
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+  
+  <HediffDef>
+		<defName>MRH_RageHediff</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>particleization</label>
+		<!--입자화-->
+		<initialSeverity>0.001</initialSeverity>
+		<labelNoun>particleization</labelNoun>
+		<!--입자화-->
+		<description>In response to external stimuli, the body becomes particles and momentarily escapes the limitations of the physical body.</description>
+		<!--외부 자극에 반응해 몸을 입자화시켜 순간적으로 육체의 한계를 벗어납니다-->
+		<defaultLabelColor>(0.7,0.3,0.3)</defaultLabelColor>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>MR_MoteMaruRage</stateEffecter>
+        <severityIndices>0~5</severityIndices>
+      </li>
+		</comps>
+		<stages>
+			<li>
+				<statFactors>
+                <MoveSpeed>3</MoveSpeed>
+                <MeleeCooldownFactor>2</MeleeCooldownFactor>
+				<IncomingDamageFactor>0</IncomingDamageFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_MaruRage</defName>
+    <graphicData>
+      <texPath>Things/Weapons/Mote/MR_rage4</texPath>
+      <shaderType>Mote</shaderType>
+    </graphicData>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+    <fadeInTime>0.02</fadeInTime>
+    <solidTime>0.03</solidTime>
+    <fadeOutTime>0.5</fadeOutTime>
+      <rotateTowardsTarget>true</rotateTowardsTarget>
+    </mote>
+  </ThingDef>
+
+  <EffecterDef>
+    <defName>MR_MoteMaruRage</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>Mote_MaruRage</moteDef>
+        <scale>0.8~1.5</scale>
+        <ticksBetweenMotes>10</ticksBetweenMotes>
+        <positionLerpFactor>0.35</positionLerpFactor>
+        <positionRadius>0.5</positionRadius>
+      </li>
+      <!--<li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>Mote_MaruTrap</moteDef>
+      </li>-->
+    </children>
+  </EffecterDef>
+  
+	<ThingDef ParentName="MR_SuicideBase">
+		<defName>MR_MaruRageSpawn</defName>
+		<label>MR_MaruRageSpawn</label>
+		<graphicData>
+			<texPath>Things/Inv/MR_Invisible</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<color>(1, 1, 1)</color>
+			<drawSize>2</drawSize>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_MoteEmitter">
+				<mote>Mote_MaruRageSpawn</mote>
+				<maintain>True</maintain>
+				<saveKeysPrefix>glow</saveKeysPrefix>
+			</li>
+			<li Class="CompProperties_Lifespan">
+				<lifespanTicks>5</lifespanTicks>
+			</li>
+		</comps>
+	</ThingDef>
+	
+  <ThingDef ParentName="MaruMotebase">
+    <defName>Mote_MaruRageSpawn</defName>
+    <graphicData>
+      <texPath>Things/Weapons/Mote/MR_rages</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <drawSize>1</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <solidTime>0.1</solidTime>
+      <fadeInTime>0.01</fadeInTime>
+      <fadeOutTime>0.1</fadeOutTime>
+			<growthRate>30.0</growthRate>
+    </mote>
+  </ThingDef>
+  
+  <!--마루 입자화 어빌리티 이펙터 -->
+  
+  
+  <EffecterDef>
+    <defName>MR_MoteMaruRagehuman</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>Mote_MaruRage</moteDef>
+        <scale>0.8~1.5</scale>
+        <ticksBetweenMotes>10</ticksBetweenMotes>
+        <positionLerpFactor>0.35</positionLerpFactor>
+        <positionRadius>0.5</positionRadius>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>MR_sound_Paticlestart</soundDef>
+        <spawnLocType>BetweenPositions</spawnLocType>
+      </li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>MR_Fleck_MaruAdrenalinesmallDust</fleckDef>
+				<scale>3</scale>
+				<burstCount>1</burstCount>
+				<spawnLocType>BetweenPositions</spawnLocType>
+				<absoluteAngle>false</absoluteAngle>
+				<positionRadius>0</positionRadius>
+				<positionRadiusMin>0</positionRadiusMin>
+				<angle>0~360</angle>
+				<speed>0</speed>
+				<rotation>0</rotation>
+				<fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+			</li>
+			 <li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>MR_Fleck_waveRing</fleckDef>
+				<spawnLocType>BetweenPositions</spawnLocType>
+				<burstCount>1</burstCount>
+				<color>(0, 0, 0, .75)</color>
+				<positionRadius>0</positionRadius>
+				<positionRadiusMin>0</positionRadiusMin>
+				<scale>0.5</scale>
+				<rotation>0</rotation>
+				<rotationRate>0</rotationRate>
+				<angle>0~0</angle>
+				<speed>0</speed>
+				<attachToSpawnThing>true</attachToSpawnThing>
+			</li>
+      <!--<li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>Mote_MaruTrap</moteDef>
+      </li>-->
+    </children>
+  </EffecterDef>
+  
+  
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>MR_Fleck_MarupaticleDust</defName>
+		<fadeInTime>0</fadeInTime>
+		<solidTime>0.5</solidTime>
+		<fadeOutTime>1</fadeOutTime>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<growthRate>1</growthRate>
+		<graphicData>
+			<texPath>Things/Weapons/Mote/MR_smoke</texPath>
+			<shaderType>Transparent</shaderType>
+			<drawSize>1</drawSize>
+			<renderQueue>3200</renderQueue>
+		</graphicData>
+	</FleckDef>
+  
+  <!--마루 포식자 모드-->
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_MaruAdrenaline</defName>
+    <graphicData>
+      <texPath>Things/Weapons/Mote/MR_Adrenaline</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+    <fadeInTime>0.02</fadeInTime>
+    <solidTime>0.03</solidTime>
+    <fadeOutTime>0.5</fadeOutTime>
+      <rotateTowardsTarget>true</rotateTowardsTarget>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_MaruAdrenalinesmall</defName>
+    <graphicData>
+      <texPath>Things/Weapons/Mote/MR_AdrenalineSmall</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+    <fadeInTime>0.02</fadeInTime>
+    <solidTime>0.03</solidTime>
+    <fadeOutTime>0.4</fadeOutTime>
+      <rotateTowardsTarget>true</rotateTowardsTarget>
+    </mote>
+  </ThingDef>
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_MaruAdrenalinesmallB</defName>
+    <graphicData>
+      <texPath>Things/Weapons/Mote/MR_AdrenalineSmallC</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+    <fadeInTime>0.02</fadeInTime>
+    <solidTime>0.03</solidTime>
+    <fadeOutTime>0.4</fadeOutTime>
+      <rotateTowardsTarget>true</rotateTowardsTarget>
+    </mote>
+  </ThingDef>
+  
+    <!--마루 포식자 입자 플렉-->
+  
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>MR_Fleck_MaruAdrenalinesmallDust</defName>
+		<fadeInTime>0</fadeInTime>
+		<solidTime>0.2</solidTime>
+		<fadeOutTime>0.3</fadeOutTime>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<growthRate>1</growthRate>
+		<graphicData>
+			<texPath>Things/Mote/DustPuff</texPath>
+			<shaderType>Transparent</shaderType>
+			<drawSize>1</drawSize>
+			<renderQueue>3200</renderQueue>
+		</graphicData>
+	</FleckDef>
+	
+	<!--<FleckDef ParentName="FleckBase_Thrown">
+		<defName>MR_Fleck_MaruAdrenalinesmall</defName>
+		<fadeInTime>0</fadeInTime>
+		<solidTime>0.4</solidTime>
+		<fadeOutTime>0.6</fadeOutTime>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<growthRate>1</growthRate>
+		<graphicData>
+			<texPath>Things/Weapons/Mote/MR_AdrenalineSmall</texPath>
+			<shaderType>MoteGlow</shaderType>
+			<drawSize>1</drawSize>
+			<renderQueue>3200</renderQueue>
+		</graphicData>
+	</FleckDef>-->
+	
+	<FleckDef ParentName="FleckBase_Thrown">
+    <defName>MR_Fleck_waveRing</defName>
+    <altitudeLayer>LowPlant</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>.5</solidTime>
+    <fadeOutTime>.5</fadeOutTime>
+    <scalers>
+      <li>
+        <curve>
+          <points>
+            <li>(0,0)</li>
+            <li>(0.04,0.0784)</li>
+            <li>(0.08,0.1536)</li>
+            <li>(0.12,0.2256)</li>
+            <li>(0.16,0.2944)</li>
+            <li>(0.2,0.36)</li>
+            <li>(0.24,0.4224)</li>
+            <li>(0.28,0.4816)</li>
+            <li>(0.32,0.5376)</li>
+            <li>(0.36,0.5904)</li>
+            <li>(0.3999999,0.6399999)</li>
+            <li>(0.4399999,0.6863999)</li>
+            <li>(0.4799999,0.7296)</li>
+            <li>(0.5199999,0.7695999)</li>
+            <li>(0.5599999,0.8063999)</li>
+            <li>(0.6,0.84)</li>
+            <li>(0.64,0.8704)</li>
+            <li>(0.68,0.8975999)</li>
+            <li>(0.72,0.9216)</li>
+            <li>(0.7600001,0.9424001)</li>
+            <li>(0.8000001,0.96)</li>
+            <li>(0.8400001,0.9744)</li>
+            <li>(0.8800001,0.9856001)</li>
+            <li>(0.9200001,0.9936001)</li>
+            <li>(0.9600002,0.9984)</li>
+            <li>(1,1)</li>
+          </points>
+        </curve>
+        <scaleAmt>1.5</scaleAmt>
+        <scaleTime>2</scaleTime>
+      </li>
+    </scalers>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderType>MoteLargeDistortionWave</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+        <_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+        <_distortionIntensity>0.05</_distortionIntensity>
+        <_brightnessMultiplier>2.15</_brightnessMultiplier>
+        <_noiseIntensity>1</_noiseIntensity>
+        <_ageToNoiseRatio>10</_ageToNoiseRatio>
+      </shaderParameters>
+      <drawSize>10.0</drawSize>
+    </graphicData>
+    <useAttachLink>True</useAttachLink>
+  </FleckDef>
+  
+  
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>MR_Fleck_Ring</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>.5</fadeOutTime>
+    <growthRate>3</growthRate>
+    <useAttachLink>True</useAttachLink>
+    <graphicData>
+      <texPath>Things/Mote/RadiationDistortion_A</texPath>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <shaderType>MoteMultiplyAddCircular</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/RadiationDistortion_A</_DistortionTex>
+        <_texAScale>0.5</_texAScale>
+        <_Color2>(1, 0, 0, 1)</_Color2>
+        <_texBScale>2</_texBScale>
+        <_texAScrollSpeed>0</_texAScrollSpeed>
+        <_texBScrollSpeed>-0.4</_texBScrollSpeed>
+        <_Intensity>1</_Intensity>
+        <_InnerFadeAmount>0</_InnerFadeAmount>
+        <_DistortionIntensity>1</_DistortionIntensity>
+        <_TexAScaleDivisorPerProgress>0</_TexAScaleDivisorPerProgress>
+      </shaderParameters>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+  </FleckDef>
+	
+    <!--마루 포식자 이펙터-->
+	
+  <EffecterDef>
+    <defName>MR_MaruAdrenaline</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>Mote_MaruAdrenaline</moteDef>
+        <scale>0.4~0.6</scale>
+        <ticksBetweenMotes>20</ticksBetweenMotes>
+        <positionLerpFactor>0.35</positionLerpFactor>
+        <positionRadius>0.4</positionRadius>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>Mote_MaruAdrenalinesmall</moteDef>
+        <scale>0.6~0.8</scale>
+        <ticksBetweenMotes>5</ticksBetweenMotes>
+        <positionLerpFactor>0.35</positionLerpFactor>
+        <positionRadius>0.4</positionRadius>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>Mote_MaruAdrenalinesmallB</moteDef>
+        <scale>0.6~0.8</scale>
+        <ticksBetweenMotes>5</ticksBetweenMotes>
+        <positionLerpFactor>0.35</positionLerpFactor>
+        <positionRadius>0.4</positionRadius>
+      </li>
+			<!--<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>MR_Fleck_MaruAdrenalinesmallDust</fleckDef>
+				<scale>1</scale>
+				<burstCount>5~10</burstCount>
+				<spawnLocType>BetweenPositions</spawnLocType>
+				<absoluteAngle>false</absoluteAngle>
+				<positionRadius>0.1</positionRadius>
+				<positionRadiusMin>0</positionRadiusMin>
+				<angle>0~360</angle>
+				<speed>3</speed>
+				<rotation>0~360</rotation>
+				<fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+			</li>-->
+			     <li>
+					<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+					<scale>.1</scale>
+					<positionRadius>0</positionRadius>
+					<fleckDef>MR_Fleck_Ring</fleckDef>
+					<speed>0</speed>
+					<angle>0</angle>
+					<rotation>0</rotation>
+					<spawnLocType>BetweenPositions</spawnLocType>
+					<attachToSpawnThing>true</attachToSpawnThing>
+					<absoluteAngle>True</absoluteAngle>
+				</li>
+			
+			 <!--<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>MR_Fleck_waveRing</fleckDef>
+				<spawnLocType>BetweenPositions</spawnLocType>
+				<burstCount>1</burstCount>
+				<color>(0, 0, 0, .75)</color>
+				<positionRadius>0</positionRadius>
+				<positionRadiusMin>0</positionRadiusMin>
+				<scale>1</scale>
+				<rotation>0</rotation>
+				<rotationRate>0</rotationRate>
+				<angle>0~0</angle>
+				<speed>0</speed>
+				<attachToSpawnThing>true</attachToSpawnThing>
+			</li>-->
+       <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>MR_sound_predatorjump</soundDef>
+        <spawnLocType>BetweenPositions</spawnLocType>
+      </li>
+      <!--<li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>Mote_MaruTrap</moteDef>
+      </li>-->
+    </children>
+  </EffecterDef>
+ 
+</Defs>

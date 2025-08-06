@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+ <ThingDef ParentName="ArmorMachineableBase">
+    <defName>MR_EBF</defName>
+    <label>External bulletproof fibers</label>
+    <description>It is a transparent bulletproof fiber that is applied over clothes. Movement becomes a bit uncomfortable, but you can get a decent level of defense.</description>
+    <techLevel>Spacer</techLevel>
+    <recipeMaker>
+      <researchPrerequisite>MaruRB</researchPrerequisite>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+			<recipeUsers>
+				<li>MR_retrofittable</li>
+			</recipeUsers>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/ace/MR_aceA</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.90</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToMake>15000</WorkToMake>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Mass>4</Mass>
+      <Flammability>0.6</Flammability>
+      <ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.32</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.32</ArmorRating_Heat>
+      <Insulation_Cold>1</Insulation_Cold>
+      <EquipDelay>5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.12</MoveSpeed>
+    </equippedStatOffsets>
+    <thingCategories Inherit="false">
+    <li>MRApparel</li>
+    </thingCategories>
+    <costList>
+      <Cloth>50</Cloth>
+      <Steel>50</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/ace/MR_In</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <tags>
+        <li>IndustrialMilitaryBasic</li>
+		<li>MR_EBF</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+  </ThingDef>
+
+
+ <ThingDef ParentName="ArmorMachineableBase">
+    <defName>MR_NFG</defName>
+    <label>Negative field generator</label>
+    <description>A negative force field generator worn over it. It does a great job as a piece of armor without having to add thick plates or leather to it, without impeding movement.</description>
+    <techLevel>Spacer</techLevel>
+	 <thingClass>Apparel</thingClass>
+    <tickerType>Normal</tickerType>
+    <recipeMaker>
+      <researchPrerequisite>MaruRC</researchPrerequisite>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+			<recipeUsers>
+				<li>MR_retrofittable</li>
+			</recipeUsers>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/ace/MR_aceB</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.90</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToMake>25000</WorkToMake>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Mass>4</Mass>
+      <Flammability>0.6</Flammability>
+      <ArmorRating_Sharp>1.00</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.35</ArmorRating_Heat>
+      <Insulation_Cold>90</Insulation_Cold>
+      <Insulation_Heat>15</Insulation_Heat>
+      <EnergyShieldRechargeRate>0.9</EnergyShieldRechargeRate>
+      <EnergyShieldEnergyMax>0.01</EnergyShieldEnergyMax>
+      <EquipDelay>5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Odyssey">1</ToxicEnvironmentResistance>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
+    </equippedStatOffsets>
+    <thingCategories Inherit="false">
+    <li>MRApparel</li>
+    </thingCategories>
+    <costList>
+	  <Plasteel>35</Plasteel>
+      <Uranium>10</Uranium>
+      <ComponentIndustrial>10</ComponentIndustrial>
+	  <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="MaruNegative.CompProperties_MaruShield">
+	  <startingTicksToReset>900</startingTicksToReset>
+      <blocksRangedWeapons>false</blocksRangedWeapons>
+	  <!--Things/Shield/MR_ShieldGraphic-->
+	  <!--피격시사운드-->
+	  <AbsorbedDamageSound>EnergyShield_AbsorbDamage</AbsorbedDamageSound>
+	  <!--피격시입자-->
+	  <AbsorbedDamageFleck>ExplosionFlash</AbsorbedDamageFleck>
+	  <!--리셋사운드-->
+	  <ResetSound>MR_EnergyShield_Reset</ResetSound>
+	  <!--파괴시입자-->
+	  <BreakFleck>ExplosionFlash</BreakFleck>
+	  <!--파괴시이펙터-->
+	  <BreakEffecter>MR_Shield_Break</BreakEffecter>
+	  <!--작동중헤디프-->
+	  <AddhediffDef>MRH_ShieldHediff</AddhediffDef>
+	  <!--파괴시헤디프-->
+	  <shieldBreakHediffdef>MRH_ShieldHediffB</shieldBreakHediffdef>
+	  <!--파괴시헤디프 작동시간-->
+	  <DurationTime>90</DurationTime>
+	  <maxDrawSize>1.8</maxDrawSize>
+	  </li>
+    </comps>
+    <allowedArchonexusCount>1</allowedArchonexusCount>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <careIfWornByCorpse>true</careIfWornByCorpse>
+      <careIfDamaged>false</careIfDamaged>
+      <bodyPartGroups>
+        <li>FullHead</li>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+		<li>Arms</li>
+		<li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/ace/MR_In</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <tags>
+		<li>MR_EBF</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+  </ThingDef>
+
+
+
+  <HediffDef>
+		<defName>MRH_ShieldHediff</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Forward force field</label> <!--순방향 역장-->
+		<defaultLabelColor>(0.7,0.3,0.3)</defaultLabelColor>
+		<labelNoun>Forward force field</labelNoun> <!--순방향 역장-->
+		<initialSeverity>0.001</initialSeverity>
+		<description>The kinetic energy of the projectile is rearranged through a concentrated force field to increase shooting stability.</description> <!--응집된 역장을 통해 투사체의 운동에너지를 재배열해 사격 정확도를 상승시킵니다.-->
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+		</comps>
+		<stages>
+			<li>
+				<!--<becomeVisible>false</becomeVisible>-->
+				<statOffsets>
+          <ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+  <HediffDef>
+		<defName>MRH_ShieldHediffB</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>아야</label>
+		<initialSeverity>0.001</initialSeverity>
+		<description>test</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>MR_MoteMaruBreakShield</stateEffecter>
+        <severityIndices>0~5</severityIndices>
+      </li>
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<statFactors>
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+                <MoveSpeed>3</MoveSpeed>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>

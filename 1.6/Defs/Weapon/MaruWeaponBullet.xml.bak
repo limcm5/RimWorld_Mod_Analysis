@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--손도끼 던지기-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>MR_HandaxeO_Thrown</defName>
+    <label>Hand Axe</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_HA_O_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>RangedStab</damageDef>
+      <damageAmountBase>20</damageAmountBase>
+      <stoppingPower>2.5</stoppingPower>
+      <speed>30</speed>
+    </projectile>
+  </ThingDef>
+  
+  <!--지연 손도끼 던지기-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>MR_HandaxeAO_Thrown</defName>
+    <label>Hand Axe</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_HA_AO_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>RangedStab</damageDef>
+      <damageAmountBase>20</damageAmountBase>
+      <stoppingPower>3</stoppingPower>
+      <speed>30</speed>
+    </projectile>
+  </ThingDef>
+  
+  <!--투척 손도끼 던지기-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>MR_HandaxeAT_Thrown</defName>
+    <label>Hand Axe</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_HA_AT_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>RangedStab</damageDef>
+      <damageAmountBase>25</damageAmountBase>
+      <stoppingPower>3</stoppingPower>
+      <speed>30</speed>
+    </projectile>
+  </ThingDef>
+  
+  <!--추적 손도끼 던지기-->
+
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>MR_HandaxeBO_Thrown</defName>
+    <label>Hand Axe</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_HA_BO_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>RangedStab</damageDef>
+      <damageAmountBase>30</damageAmountBase>
+      <stoppingPower>2.5</stoppingPower>
+      <speed>30</speed>
+    </projectile>
+  </ThingDef>
+
+  <!--복합궁 화살-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>Arrow_GreatO</defName>
+    <label>great arrow</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_CPB_O_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>MR_Arrow</damageDef>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <damageAmountBase>17</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>49</speed>
+      <flyOverhead>false</flyOverhead>
+      <arcHeightFactor>0.70</arcHeightFactor>
+      <shadowSize>0.4</shadowSize>
+    </projectile>
+  </ThingDef>
+  
+  <!--복합궁 화살2-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>Arrow_GreatOT</defName>
+    <label>great arrow</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_CPB_O_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>MR_ArrowB</damageDef>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <damageAmountBase>20</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>44</speed>
+      <explosionRadius>0.9</explosionRadius>
+      <flyOverhead>true</flyOverhead>
+      <arcHeightFactor>1.0</arcHeightFactor>
+      <shadowSize>0.7</shadowSize>
+    </projectile>
+  </ThingDef>
+  
+  <!--복합궁 고질량 화살-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>Arrow_GreatAO</defName>
+    <label>great arrow</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_CPB_AO_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.1</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>MR_WArrow</damageDef>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <damageAmountBase>20</damageAmountBase>
+      <stoppingPower>3</stoppingPower>
+      <speed>52</speed>
+      <flyOverhead>false</flyOverhead>
+      <arcHeightFactor>0.70</arcHeightFactor>
+      <shadowSize>0.4</shadowSize>
+    </projectile>
+  </ThingDef>
+  
+  <!--복합궁 고질량 화살2-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>Arrow_GreatAOT</defName>
+    <label>great arrow</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_CPB_AO_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.1</drawSize>
+    </graphicData>
+     <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>MR_WArrowB</damageDef>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <damageAmountBase>25</damageAmountBase>
+      <stoppingPower>3</stoppingPower>
+      <speed>52</speed>
+      <explosionRadius>0.9</explosionRadius>
+      <flyOverhead>false</flyOverhead>
+      <arcHeightFactor>1.00</arcHeightFactor>
+      <shadowSize>0.7</shadowSize>
+    </projectile>
+  </ThingDef>
+  
+    <!--복합궁 아지랑이 저격 화살-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>Arrow_PulseSnipe</defName>
+    <label>Pulse arrow</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_CPB_AT_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.1</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>MR_PSArrow</damageDef>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <damageAmountBase>20</damageAmountBase>
+      <stoppingPower>6</stoppingPower>
+      <armorPenetrationBase>0.9</armorPenetrationBase>
+      <speed>55</speed>
+      <flyOverhead>false</flyOverhead>
+      <arcHeightFactor>0.70</arcHeightFactor>
+      <shadowSize>0.4</shadowSize>
+    </projectile>
+  </ThingDef>
+  
+  <!--복합궁 펄스 화살-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>Arrow_Pulse</defName>
+    <label>Pulse arrow</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_CPB_AT_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.1</drawSize>
+    </graphicData>
+    <thingClass>TorgueMaru.Projectile_Torgue_Rocket</thingClass>
+    <projectile Class="TorgueMaru.TorgueProjectileProps">
+      <speed>55</speed>
+      <flyOverhead>true</flyOverhead>
+      <damageDef>MR_Pulse_a</damageDef>
+      <damageAmountBase>12</damageAmountBase>
+      <armorPenetrationBase>0.4</armorPenetrationBase>
+      <explosionRadius>0.9</explosionRadius>
+      <subProjectile>MR_Pulse_sub</subProjectile>
+      <clusterCount>15</clusterCount>
+      <clusterRadius>12</clusterRadius>
+      <arcHeightFactor>1.00</arcHeightFactor>
+      <shadowSize>0.7</shadowSize>
+    </projectile>
+  </ThingDef>
+  
+  <!--복합궁 펄스 보조 화살-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>MR_Pulse_sub</defName>
+    <label>Pulse arrow</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_CPB_AT_shotT</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <speed>35</speed>
+      <damageDef>MR_Pulse_aT</damageDef>
+      <damageAmountBase>5</damageAmountBase>
+      <armorPenetrationBase>0.4</armorPenetrationBase>
+      <stoppingPower>3</stoppingPower>
+      <explosionRadius>1.5</explosionRadius>
+      <explosionDelay>1</explosionDelay>
+      <flyOverhead>false</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <arcHeightFactor>0.70</arcHeightFactor>
+      <shadowSize>0.4</shadowSize>
+    </projectile>
+  </ThingDef>
+  
+  <!--복합궁 폭발 화살-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>Arrow_GreatBO</defName>
+    <label>Explosive arrow</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_CPB_BO_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>MRSE_Bomb</damageDef>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <damageAmountBase>20</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>45</speed>
+      <explosionRadius>1</explosionRadius>
+      <flyOverhead>True</flyOverhead>
+      <arcHeightFactor>1.00</arcHeightFactor>
+      <shadowSize>0.7</shadowSize>
+    </projectile>
+  </ThingDef>
+    
+  <!--복합궁 폭발 화살2-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>Arrow_GreatBOT</defName>
+    <label>Explosive arrow</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_CPB_BO_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>MRSE_Bomb</damageDef>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <damageAmountBase>9</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>45</speed>
+      <explosionRadius>1</explosionRadius>
+      <flyOverhead>false</flyOverhead>
+      <arcHeightFactor>0.70</arcHeightFactor>
+      <shadowSize>0.4</shadowSize>
+    </projectile>
+  </ThingDef>
+  <!--복합궁 추진 화살-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>Arrow_GreatBT</defName>
+    <label>Explosive arrow</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_CPB_BT_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.3</drawSize>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>MRSE_PBomb</damageDef>
+      <damageAmountBase>28</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>62</speed>
+      <explosionRadius>2.8</explosionRadius>
+      <flyOverhead>True</flyOverhead>
+      <arcHeightFactor>1.0</arcHeightFactor>
+      <shadowSize>0.7</shadowSize>
+    </projectile>
+  </ThingDef>
+  
+<!--복합궁 추진 화살2-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>Arrow_GreatBTT</defName>
+    <label>Explosive arrow</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_CPB_BT_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.3</drawSize>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>MRSE_PBomb</damageDef>
+      <damageAmountBase>8</damageAmountBase>
+      <armorPenetrationBase>0.3</armorPenetrationBase>
+      <stoppingPower>1.5</stoppingPower>
+      <speed>62</speed>
+      <explosionRadius>2.8</explosionRadius>
+      <flyOverhead>false</flyOverhead>
+      <arcHeightFactor>0.70</arcHeightFactor>
+      <shadowSize>0.4</shadowSize>
+    </projectile>
+  </ThingDef>
+
+  <!--작살-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>MR_WhalingHarpoon_Thrown</defName>
+    <label>Whaling Harpoon</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_WH_O_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.6</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>MR_RangedStab</damageDef>
+      <damageAmountBase>15</damageAmountBase>
+      <stoppingPower>2.5</stoppingPower>
+      <speed>30</speed>
+    </projectile>
+  </ThingDef>
+  
+  <!--작살 개량-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>MR_WhalingHarpoonAO_Thrown</defName>
+    <label>Whaling Harpoon</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_WH_AO_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.6</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>MR_RangedStab</damageDef>
+      <damageAmountBase>21</damageAmountBase>
+      <stoppingPower>2.5</stoppingPower>
+      <speed>30</speed>
+    </projectile>
+  </ThingDef>
+  
+  <!--작살 끌어오기-->
+
+  <PawnKnockback.DamageKnockbackDef>
+    <bulletTipDef>MaruBulletExecutionerChain</bulletTipDef>
+    <!--이거 쓰는 총알 데프-->
+    <noKnockbackIfDeflected>false</noKnockbackIfDeflected>
+    <!--true일시 갑옷같은것 떄문에 데미지가 0으로 최종 계산 될시 땡기거나 넉백하지 않고 틩겨내기-->
+
+    <pullInstead>true</pullInstead>
+    <!--true로 할시 넉백대신 작살처럼 땡겨온다...!-->
+    <pullToNearbySpotInstead>true</pullToNearbySpotInstead>
+    <!--true로 할시 밑에 있는 knockbackRadiusMin/Max와 상관없이 쏜사람의 옆으로 당기게됨-->
+    <knockbackSpeedMultiplier>1</knockbackSpeedMultiplier>
+    <!--넉백시 얼마나 빠른지 곱셈-->
+    <knockbackHeightMultiplier>0</knockbackHeightMultiplier>
+    <!--넉백시 얼마나 위로 뜨는지 곱셈-->
+    <knockbackRadiusMin>6.0</knockbackRadiusMin>
+    <!--넉백 최대/최소 범위-->
+    <knockbackRadiusMax>6.0</knockbackRadiusMax>
+
+    <landingDamage>Stun</landingDamage>
+    <!--이거 비워놓을시 착지 데미지 없음-->
+    <landingDamageAmount>5.0</landingDamageAmount>
+    <!--넉백맞은후 공중에 떠서 착지시 데미지-->
+
+    <useHarpoonGraphic>true</useHarpoonGraphic>
+    <harpoonUseHarpoonUnitInstead>true</harpoonUseHarpoonUnitInstead>
+    <harpoonUnit>0.5</harpoonUnit>
+    <harpoonSineZAmp>1</harpoonSineZAmp>
+    <harpoonSineSpeed>0.2</harpoonSineSpeed>
+    <harpoonSegements>40</harpoonSegements>
+
+    <graphicDataHarpoonRope>
+      <texPath>Things/Weapons/MRHarpoon_Rope</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicDataHarpoonRope>
+
+    <flyerToApply>MR_KnockbackFlyerDef</flyerToApply>
+    <!--thingClass PawnKnockback.PawnKnockback 외 의 값을간진 flyer를 넣을수 있지만, 그떈 위의 설정이 반영이 안됨-->
+    <emptyFlyerToApply>MR_EmptyPullFlyerDef</emptyFlyerToApply>
+    <!--아무것도 못 맟췄을시 적용, 단 제대로 작동하려면 총알에 comp를 달아야함-->
+
+    <defName>MR_ChainDamageDef</defName>
+    <label>knockback damage</label>
+    <workerClass>PawnKnockback.DamageWorker_Knockback</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been shot to death by an harpoon.</deathMessage>
+    <hediff>Cut</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>MR_RopeSound</impactSoundType>
+    <armorCategory>Blunt</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+
+    <defaultDamage>18</defaultDamage>
+  </PawnKnockback.DamageKnockbackDef>
+
+  <ThingDef ParentName="PawnFlyerBase">
+    <defName>MR_KnockbackFlyerDef</defName>
+    <thingClass>PawnKnockback.PawnKnockback</thingClass>
+    <pawnFlyer>
+      <flightDurationMin>6.2</flightDurationMin>
+      <flightSpeed>9.5</flightSpeed>
+      <!--<flightEffecterDef>JumpFlightEffect</flightEffecterDef>-->
+      <soundLanding>MarubowSE_W</soundLanding>
+    </pawnFlyer>
+  </ThingDef>
+
+  <ThingDef ParentName="PawnFlyerBase">
+    <defName>MR_EmptyPullFlyerDef</defName>
+    <thingClass>PawnKnockback.PawnEmptyFlyer</thingClass>
+    <pawnFlyer>
+      <flightDurationMin>2</flightDurationMin>
+      <flightSpeed>12</flightSpeed>
+      <soundLanding>MarubowSE_W</soundLanding>
+    </pawnFlyer>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>MaruBulletExecutionerChain</defName>
+    <label>harpoon rope</label>
+    <thingClass>PawnKnockback.Bullet_Harpoon</thingClass>
+    <graphicData>
+      <texPath>Things/Weapons/MR_WH_AT_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.6</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>MR_ChainDamageDef</damageDef>
+      <damageAmountBase>15</damageAmountBase>
+      <armorPenetrationBase>1</armorPenetrationBase>
+      <speed>80</speed>
+    </projectile>
+    <comps>
+      <li Class="PawnKnockback.CompProperties_HarpoonAttributes">
+        <damageKnockbackDef>MR_ChainDamageDef</damageKnockbackDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+ <!--작살 무중력-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>MR_WhalingHarpoonBO_Thrown</defName>
+    <label>Whaling Harpoon</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_WH_AO_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.6</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>MR_RangedStab</damageDef>
+      <damageAmountBase>9</damageAmountBase>
+      <stoppingPower>3</stoppingPower>
+      <speed>30</speed>
+    </projectile>
+  </ThingDef>
+
+  <!--작살 반중력-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>MR_WhalingHarpoonBT_Thrown</defName>
+    <label>Whaling Harpoon</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_WH_BT_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.6</drawSize>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>MR_AGBomb</damageDef>
+      <damageAmountBase>3</damageAmountBase>
+      <stoppingPower>3</stoppingPower>
+      <speed>30</speed>
+      <explosionRadius>3.4</explosionRadius>
+      <flyOverhead>False</flyOverhead>
+    </projectile>
+  </ThingDef>
+  
+  <!--작살 반중력2-->
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>MR_WhalingHarpoonBTT_Thrown</defName>
+    <label>Whaling Harpoon</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_WH_BT_shot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.6</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>MR_RangedStab</damageDef>
+      <damageAmountBase>18</damageAmountBase>
+      <stoppingPower>3</stoppingPower>
+      <speed>30</speed>
+    </projectile>
+  </ThingDef>
+  
+  <!--Cleaver Smoke Bullet-->
+   <ThingDef ParentName="BaseBullet">
+    <defName>MR_Bullet_Smoke</defName>
+    <label>smoke shell</label>
+    <graphicData>
+      <texPath>Things/Weapons/MR_CBT_Bullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <speed>40</speed>
+      <damageDef>Smoke</damageDef>
+      <!-- Use default damage from explosion def -->
+      <explosionRadius>2.4</explosionRadius>
+      <postExplosionGasType>BlindSmoke</postExplosionGasType>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+      <arcHeightFactor>0.2</arcHeightFactor>
+      <shadowSize>0.6</shadowSize>
+    </projectile>
+  </ThingDef>
+  
+  <!--Arrow-->
+  
+    <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_beaconarrowB</defName>
+    <label>Great arrow</label>
+    <graphicData>
+      <texPath>Things/Inv/MR_Invisible</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <speed>9999</speed>
+      <damageDef>MRD_veteranshooterarrowA</damageDef>
+      <!-- Use default damage from explosion def -->
+      <explosionRadius>0.9</explosionRadius>
+      <preExplosionSpawnThingDef>MR_SKYIncoming_Ready</preExplosionSpawnThingDef>
+      <preExplosionSpawnChance>1.0</preExplosionSpawnChance>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+      <flyOverhead>True</flyOverhead>
+    </projectile>
+  </ThingDef>
+  
+</Defs>

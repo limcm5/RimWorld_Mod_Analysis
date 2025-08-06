@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<StatDef Name="MR_extradamage">
+		<defName>MR_extradamage</defName>
+		<label>Additional Damage</label>
+		<description>Additional damage not displayed in the calculation formula.</description>
+		<formatString>{0}</formatString>
+		<category>Weapon_Ranged</category>
+		<defaultBaseValue>0</defaultBaseValue>
+		<minValue>0</minValue>
+		<hideAtValue>0</hideAtValue>
+		<maxValue>1000</maxValue>
+		<toStringStyle>FloatOne</toStringStyle>
+		<showIfUndefined>false</showIfUndefined>
+		<displayPriorityInCategory>5499</displayPriorityInCategory>
+	</StatDef>
+	
+	<StatDef ParentName="MR_extradamage">
+		<defName>MR_extradamage_Melee</defName>
+		<category>Weapon_Melee</category>
+	</StatDef>
+</Defs>

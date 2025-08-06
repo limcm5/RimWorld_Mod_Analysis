@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+   <HediffGiverSetDef>
+    <defName>MR_standard</defName>
+    <hediffGivers>
+	
+      <!-- 재미 떨어지면 꼬리 물기 -->
+	  <li Class="MaruJoyTail.HediffGiver_MaruJoy">
+        <hediff>MR_Joyless</hediff>
+      </li>
+	  
+      <!-- Environmental -->
+      <li Class="HediffGiver_Hypothermia">
+        <hediff>MR_tailbiting</hediff>
+        <partsToAffect>
+          <li>MR_BigTail</li>
+        </partsToAffect>
+      </li>
+		<!--<li Class="HediffGiver_Birthday">
+		 <hediff>MaruAgeHediff</hediff>
+			<ageFractionChanceCurve>
+				<points>
+					<li>(0, 1)</li>
+				</points>
+			</ageFractionChanceCurve>
+		</li>-->
+    </hediffGivers>
+  </HediffGiverSetDef>
+ 
+</Defs>

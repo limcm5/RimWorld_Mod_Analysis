@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <TraitDef>
+    <defName>Maru_flameworship</defName>
+    <commonality>0.001</commonality>
+    <degreeDatas>
+      <li>
+        <label>Flame Worship</label>
+        <description>{PAWN_nameDef} is the Maru. They feel the warmth, remind themselves that they are alive, and clear their minds.</description>
+        <allowedMeditationFocusTypes>
+		<li>Flame</li>
+		</allowedMeditationFocusTypes>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+ <TraitDef>
+<defName>MRT_Eyetrait</defName>
+<commonality>0.001</commonality>
+    <degreeDatas>
+      <li>
+        <label>sharp eye</label>
+        <description>Any object, event, or technology has cause and effect.\n{PAWN_nameDef} is very skilled at identifying and learning such causal relationships.</description>
+        <statOffsets>
+          <GlobalLearningFactor>0.25</GlobalLearningFactor>
+          <SellPriceFactor>0.2</SellPriceFactor>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+</TraitDef>
+
+ <TraitDef>
+<defName>MRT_Bodytrait</defName>
+<commonality>0.001</commonality>
+    <degreeDatas>
+      <li>
+        <label>flexible</label>
+        <description>{PAWN_nameDef}'s body is naturally flexible.\nStronger and more flexible than others, it has a significant advantage in hunting.</description>
+         <statOffsets>
+          <MeleeDodgeChance>10</MeleeDodgeChance>
+          <MoveSpeed>0.2</MoveSpeed>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+</TraitDef>
+
+ <TraitDef>
+<defName>MRT_Mentaltrait</defName>
+<commonality>0.001</commonality>
+    <degreeDatas>
+      <li>
+        <label>self-righteousness</label>
+        <description>{PAWN_nameDef} believes that he is right.\nThe firm belief has a positive effect on {PAWN_possessive} will, just like {PAWN_possessive} piety, but he also tends to ignore the opinions of others.</description>
+         <statOffsets>
+          <MentalBreakThreshold>-0.09</MentalBreakThreshold>
+          <WorkSpeedGlobal>0.1</WorkSpeedGlobal>
+          <CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">-0.5</CertaintyLossFactor>
+        </statOffsets>      
+          <socialFightChanceFactor>2</socialFightChanceFactor>
+     </li>
+    </degreeDatas>
+</TraitDef>
+
+ <TraitDef>    
+<defName>MRT_Mountaintrait</defName>
+<commonality>0.001</commonality>
+    <degreeDatas>
+      <li>
+        <label>leadership</label>
+        <description>A person with strong leadership always influences those around them, either positively or negatively.\nNo one knows what path such a person will choose or what kind of life he will lead. But one thing is certain, {PAWN_pronoun} won't be an ordinary person who comes and goes into the world without anyone knowing. /n/n{PAWN_nameDef} was born with that gift.</description>
+         <statOffsets>
+          <MentalBreakThreshold>-1.0</MentalBreakThreshold>
+        </statOffsets>      
+      </li>
+    </degreeDatas>
+</TraitDef>
+
+ <TraitDef>
+<defName>MRT_Eartrait</defName>
+<commonality>0.001</commonality>
+    <degreeDatas>
+      <li>
+        <label>sensitive ears</label>
+        <description>{PAWN_nameDef} has ears that are sensitive to even small sounds.\n Being sensitive to sounds is always an advantage in life outside of its nest, but it also has the disadvantage of not being able to fall asleep deeply.</description>
+            <statOffsets>
+          <RestRateMultiplier>-0.20</RestRateMultiplier>
+          <MeleeDodgeChance>8</MeleeDodgeChance>
+          <MeleeHitChance>2</MeleeHitChance>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+</TraitDef>
+
+ <TraitDef>
+<defName>MRT_Prototype</defName>
+<commonality>0.001</commonality>
+    <degreeDatas>
+      <li>
+        <label>prototype</label>
+        <description>{PAWN_nameDef} is an experimentally cultivated Maru.\nIt has significantly superior physical abilities than other floors, but its autoimmunity is very low due to its imperfect design.</description>
+        <statOffsets>
+          <ImmunityGainSpeed>-0.16</ImmunityGainSpeed>
+          <MeleeDodgeChance>15</MeleeDodgeChance>
+          <MoveSpeed>0.6</MoveSpeed>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+ </TraitDef>
+
+ <TraitDef>
+<defName>MRT_MountainA</defName>
+<commonality>0.001</commonality>
+    <degreeDatas>
+      <li>
+        <label>inquisitive mind</label>
+        <description>A fragment of a talent to accomplish a feat.</description>
+                 <statOffsets>
+          <GlobalLearningFactor>0.75</GlobalLearningFactor>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+ </TraitDef>
+
+ <TraitDef>
+<defName>MRT_MountainB</defName>
+<commonality>0.001</commonality>
+    <degreeDatas>
+      <li>
+        <label>sense of duty</label>
+        <description>A fragment of a talent to accomplish a feat.</description>
+                 <statOffsets>
+          <MentalBreakThreshold>-0.14</MentalBreakThreshold>
+          <WorkSpeedGlobal>0.40</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+ </TraitDef>
+
+ <TraitDef>
+<defName>MRT_MountainC</defName>
+<commonality>0.001</commonality>
+    <degreeDatas>
+      <li>
+        <label>philosophy</label>
+        <description>A fragment of a talent to accomplish a feat.</description>
+         <statOffsets>
+         <NegotiationAbility>1.5</NegotiationAbility>
+	 <SocialImpact>1.5</SocialImpact>
+         </statOffsets>
+      </li>
+    </degreeDatas>
+ </TraitDef>
+
+ <TraitDef>
+<defName>MRT_MountainD</defName>
+<commonality>0.001</commonality>
+    <degreeDatas>
+      <li>
+        <label>warp</label>
+        <description>A fragment of a talent to accomplish a feat.</description>
+                 <statOffsets>
+          <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+ </TraitDef>
+
+  <!--<TraitDef>
+    <defName>QuickSleeper</defName>
+    <degreeDatas>
+      <li>
+        <label>quick sleeper</label>
+        <description>{PAWN_nameDef} doesn't need as much sleep as the average person. Whether {PAWN_pronoun}'s sleeping on a bed or on the ground, {PAWN_pronoun} will be fully rested in about two thirds the usual time.</description>
+        <statOffsets>
+          <RestRateMultiplier>0.50</RestRateMultiplier>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+  </TraitDef>-->
+
+  <!--<TraitDef>
+    <defName>Maru_WarpedConstitution</defName>
+    <commonality>0.001</commonality>
+    <degreeDatas>
+      <li>
+        <label>Warped Constitution</label>
+        <description>{PAWN_nameDef} was born with an inherent warp.This "warp" refers to a distortion of essence, which implies a deformation in perception.\n\n It is said that the progenitors of the itinerant troupe, who pursued power through the distorted interpretation of Sarira, were a group of interpreters made up of such maru.\n\n A Maru with a warped Constitution can decipher the Slate of the Path without any inheritance.</description>
+      </li>
+    </degreeDatas>
+  </TraitDef>-->
+
+
+
+</Defs>

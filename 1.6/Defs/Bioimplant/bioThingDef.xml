@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>MR_SymbioticInfectionImplantItem</defName>
+    <label>Symbiotic Organism Culture</label>
+    <description>A special culture medium used for transplanting symbiotic organisms.\n\nThe symbiotic organism is a standard implant, adjusted through Sari’s knowledge. It primarily grants enhancements related to physical abilities, such as movement speed and reflexes, and positive mutations triggered by mutation inducers follow a similar theme. However, be warned that negative mutations can also manifest distinctly, as if the organism perceives the body as separate and attempts to conserve energy by deactivating certain body parts.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <graphicData>
+			<texPath>Things/Resource/MR_SymbioticInfectionBase</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <MarketValue>560</MarketValue>
+      <Mass>0.5</Mass>
+      <Flammability>0.2</Flammability>
+      <DeteriorationRate>2.0</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>MR_Category_Manufactured_Bio_Base</li> <!-- 혹은 ArtificialBodyPart -->
+    </thingCategories>
+    <techLevel>Spacer</techLevel>
+    <recipeMaker>
+	  <workAmount>2500</workAmount>
+      <researchPrerequisite>MaruNC</researchPrerequisite>
+      <recipeUsers>
+        <li>MR_Geneworkbench</li>
+      </recipeUsers>
+      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <effectWorking>Cook</effectWorking>
+      <soundWorking>Recipe_CookMeal</soundWorking>
+    </recipeMaker>
+    <costList>
+      <MR_Sarira>20</MR_Sarira>
+      <MR_CrystalFruit>5</MR_CrystalFruit>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>MR_LandCoralImplantItem</defName>
+    <label>Land Coral Culture</label>
+    <description>A special culture medium used for transplanting land coral.\n\nLand coral is a stable implant, adjusted through Sari’s knowledge, primarily enhancing bodily homeostasis, such as antibody production rate and temperature adaptability. It does not react to mutation inducers, and its impact on the body relative to its assimilation rate is significant.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <graphicData>
+			<texPath>Things/Resource/MR_LandCoralBase</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <MarketValue>900</MarketValue>
+      <Mass>0.5</Mass>
+      <Flammability>0.2</Flammability>
+      <DeteriorationRate>2.0</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>MR_Category_Manufactured_Bio_Base</li> <!-- 혹은 ArtificialBodyPart -->
+    </thingCategories>
+    <techLevel>Spacer</techLevel>
+    <recipeMaker>
+	  <workAmount>2500</workAmount>
+      <researchPrerequisite>MaruND</researchPrerequisite>
+      <recipeUsers>
+        <li>MR_Geneworkbench</li>
+      </recipeUsers>
+      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <effectWorking>Cook</effectWorking>
+      <soundWorking>Recipe_CookMeal</soundWorking>
+    </recipeMaker>
+    <costList>
+      <Jade>180</Jade>
+      <MR_CrystalFruit>2</MR_CrystalFruit>
+    </costList>
+  </ThingDef>
+  
+<!--약품-->
+
+  <ThingDef ParentName="MakeableDrugPillBase">
+    <defName>Drug_MutationInducer</defName>
+    <label>Mutation Inducer</label>
+    <description>Upon ingestion, induces unstable changes in the body’s base implant, causing physical mutations. The outcome is difficult to predict.\n\nThe higher the assimilation rate of the base implant, the greater the variety of mutations that may appear, and the higher the chance of positive mutations.</description>
+    <graphicData>
+			<texPath>Things/Resource/MR_MutationInducer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>800</WorkToMake>
+      <MarketValue>250</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <thingCategories>
+      <li>MR_Category_Manufactured_Bio_Drug</li> 
+    </thingCategories>
+    <techLevel>Spacer</techLevel>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <outcomeDoers>
+        <li Class="Maruingestible.IngestionOutcomeDoer_InduceMutation">
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+	  <workAmount>1500</workAmount>
+      <researchPrerequisite>MaruND</researchPrerequisite>
+      <recipeUsers>
+        <li>MR_Geneworkbench</li>
+      </recipeUsers>
+      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <effectWorking>Cook</effectWorking>
+      <soundWorking>Recipe_CookMeal</soundWorking>
+      <bulkRecipeCount>4</bulkRecipeCount>
+    </recipeMaker>
+    <costList>
+      <Neutroamine>2</Neutroamine>
+      <MR_Sarira>5</MR_Sarira>
+      <MR_CrystalFruit>5</MR_CrystalFruit>
+    </costList>
+	<comps>
+  <li Class="CompProperties_Drug">
+    <addictiveness>0</addictiveness> 
+    <listOrder>200</listOrder>
+  </li>
+</comps>
+  </ThingDef>
+
+  <ThingDef ParentName="MakeableDrugPillBase">
+    <defName>Drug_ImmunityActivator</defName>
+    <label>Immunity Activator</label>
+    <description>Upon ingestion, induces a powerful immune response, eliminating all base implants and related mutations within the body.</description>
+    <graphicData>
+			<texPath>Things/Resource/MR_ImmunityActivator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>800</WorkToMake>
+      <MarketValue>250</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <thingCategories>
+      <li>MR_Category_Manufactured_Bio_Drug</li> 
+    </thingCategories>
+    <techLevel>Spacer</techLevel>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <outcomeDoers>
+        <li Class="Maruingestible.IngestionOutcomeDoer_ActivateImmunity"/>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+	  <workAmount>1500</workAmount>
+      <researchPrerequisite>MaruND</researchPrerequisite>
+      <recipeUsers>
+        <li>MR_Geneworkbench</li>
+      </recipeUsers>
+      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <effectWorking>Cook</effectWorking>
+      <soundWorking>Recipe_CookMeal</soundWorking>
+      <bulkRecipeCount>4</bulkRecipeCount>
+    </recipeMaker>
+	 <costList>
+      <Neutroamine>2</Neutroamine>
+      <MR_Sarira>5</MR_Sarira>
+      <MR_CrystalFruit>5</MR_CrystalFruit>
+    </costList>
+	<comps>
+  <li Class="CompProperties_Drug">
+    <addictiveness>0</addictiveness>
+    <listOrder>200</listOrder> 
+  </li>
+</comps>
+  </ThingDef>
+
+  <ThingDef ParentName="MakeableDrugPillBase">
+    <defName>Drug_ImmunitySuppressor</defName>
+    <label>Immunity Suppressor</label>
+    <description>Upon ingestion, temporarily suppresses the body’s implant rejection response, increasing the assimilation rate of the base implant.</description>
+    <graphicData>
+			<texPath>Things/Resource/MR_ImmunitySuppressor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>800</WorkToMake>
+      <MarketValue>250</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <thingCategories>
+      <li>MR_Category_Manufactured_Bio_Drug</li> 
+    </thingCategories>
+    <techLevel>Spacer</techLevel>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <outcomeDoers>
+        <li Class="Maruingestible.IngestionOutcomeDoer_SuppressImmunity">
+          <severityIncrease>0.1</severityIncrease> 
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+	  <workAmount>1500</workAmount>
+      <researchPrerequisite>MaruND</researchPrerequisite>
+      <recipeUsers>
+        <li>MR_Geneworkbench</li>
+      </recipeUsers>
+      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <effectWorking>Cook</effectWorking>
+      <soundWorking>Recipe_CookMeal</soundWorking>
+      <bulkRecipeCount>4</bulkRecipeCount>
+    </recipeMaker>
+	<costList>
+      <Neutroamine>2</Neutroamine>
+      <MR_Sarira>5</MR_Sarira>
+      <MR_CrystalFruit>5</MR_CrystalFruit>
+    </costList>
+	<comps>
+  <li Class="CompProperties_Drug">
+    <addictiveness>0</addictiveness>
+    <listOrder>200</listOrder>
+    <!-- <overdoseSeverityOffset>0.1~0.2</overdoseSeverityOffset> --> <!-- 과다복용 관련 -->
+  </li>
+</comps>
+  </ThingDef>
+  
+</Defs>
