@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingCategoryDef Inherit="false">
+		<defName>MRTrace</defName>
+		<label>Maru animal traces</label>
+	</ThingCategoryDef>
+
+
+ <ThingDef Name="HuntingPlantBaseNonEdible" Abstract="True">
+    <category>Plant</category>
+    <thingClass>MaruPlant.TracePlant</thingClass>
+    <altitudeLayer>LowPlant</altitudeLayer>
+    <useHitPoints>True</useHitPoints>
+    <statBases>
+      <Flammability>0</Flammability>
+      <BeautyOutdoors>0</BeautyOutdoors>
+    </statBases>
+    <tickerType>Long</tickerType>
+    <selectable>True</selectable>
+    <neverMultiSelect>false</neverMultiSelect>
+    <drawerType>MapMeshOnly</drawerType>
+    <pathCostIgnoreRepeat>false</pathCostIgnoreRepeat>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutPlant</shaderType>
+    </graphicData>
+    <plant>
+      <fertilityMin>0.0</fertilityMin>
+      <fertilitySensitivity>0.0</fertilitySensitivity>
+      <soundHarvesting>Harvest_Standard</soundHarvesting>
+      <soundHarvestFinish>Harvest_Standard_Finish</soundHarvestFinish>
+      <harvestWork>200</harvestWork>
+      <visualSizeRange>1.00~1.00</visualSizeRange>
+      <topWindExposure>0.1</topWindExposure>
+    </plant>
+    <thingCategories>
+      <li>MRTrace</li>
+    </thingCategories>
+  </ThingDef>
+  
+  
+   <ThingDef ParentName="HuntingPlantBaseNonEdible" Name="HuntingTraceBase" Abstract="True">
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Nutrition>0.0</Nutrition>
+      <Mass>150</Mass>
+    </statBases>
+    <altitudeLayer>Building</altitudeLayer>
+    <selectable>true</selectable>
+    <fillPercent>0.25</fillPercent>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <rotatable>false</rotatable>
+    <graphicData>
+    </graphicData>
+    <passability>PassThroughOnly</passability>
+    <pathCost>20</pathCost>
+    <blockWind>false</blockWind>
+    <plant>
+	<neverBlightable>true</neverBlightable>
+	<growDays>0.001</growDays>
+      <lifespanDaysPerGrowDays>0.0</lifespanDaysPerGrowDays>
+      <fertilitySensitivity>0.0</fertilitySensitivity>
+      <soundHarvesting>Harvest_Tree</soundHarvesting>
+      <soundHarvestFinish>Harvest_Tree_Finish</soundHarvestFinish>
+      <mustBeWildToSow>true</mustBeWildToSow>
+      <harvestWork>800</harvestWork>
+      <harvestYield>1</harvestYield>
+      <harvestTag>Standard</harvestTag>
+      <harvestMinGrowth>0.01</harvestMinGrowth>
+      <harvestFailable>false</harvestFailable>
+      <blockAdjacentSow>true</blockAdjacentSow>
+      <visualSizeRange>1.0</visualSizeRange>
+      <topWindExposure>0.0</topWindExposure>
+      <wildClusterRadius>8</wildClusterRadius>
+      <wildClusterWeight>24</wildClusterWeight>
+      <wildOrder>1</wildOrder>
+      <interferesWithRoof>false</interferesWithRoof>
+    </plant>
+  </ThingDef>
+  
+ <ThingDef ParentName="HuntingTraceBase">
+    <defName>MRT_TraceC</defName>
+    <label>suspicious bush</label>
+    <description>test</description>
+    <graphicData>
+      <texPath>Things/Hunting/MR_HuntC</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Beauty>0</Beauty>
+      <BeautyOutdoors>0</BeautyOutdoors>
+    </statBases>
+    <plant>
+      <leaflessGraphicPath>Things/Hunting/MR_HuntC</leaflessGraphicPath>
+      <harvestWork>800</harvestWork>
+      <harvestYield>1</harvestYield>
+      <wildClusterRadius>17</wildClusterRadius>
+      <wildClusterWeight>25</wildClusterWeight>
+      <visualSizeRange>1.2~1.2</visualSizeRange>
+      <harvestedThingDef>MRT_TracingC</harvestedThingDef>
+      <burnedThingDef>BurnedTree</burnedThingDef>
+    </plant>
+  </ThingDef>
+  
+</Defs>

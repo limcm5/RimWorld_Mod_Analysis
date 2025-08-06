@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+ <RecipeDef Name="MR_HRecipeBaseC" Abstract="True">
+    <workSpeedStat>HuntingStealth</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+    <targetCountAdjustment>1</targetCountAdjustment>
+    <recipeUsers>
+      <li>MRT_TracingC</li>
+    </recipeUsers>
+  </RecipeDef>
+  
+ <!-- <skillRequirements>
+				<Crafting>7</Crafting>
+				<Artistic>5</Artistic>
+			</skillRequirements> -->
+  <!--푸주칼-->
+  
+    <RecipeDef ParentName="MR_HRecipeBaseC">
+    <jobString>동물 추적 중.</jobString>
+    <workAmount>500</workAmount>
+    <defName>MRHT_LittleC</defName>
+    <label>소형동물 추적</label>
+    <description>작은 동물들을 추적합니다.</description>
+    <ingredients>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MR_C_AO</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MR_C_BO>1</MR_C_BO>
+    </products>
+  </RecipeDef>
+  
+</Defs>

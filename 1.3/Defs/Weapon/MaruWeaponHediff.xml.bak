@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--푸주칼 경화-->
+  <HediffDef>
+    <defName>MRH_Hardening</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Hardening</label>
+    <labelNoun>Hardening</labelNoun>
+    <description>The area around the wound hardens and becomes weak against impact.</description>
+    <defaultLabelColor>(0.5,0.5,0.7)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-20</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>MR_MoteMaruHardening</stateEffecter>
+        <severityIndices>0~5</severityIndices>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0</minSeverity>
+        <statFactors>
+          <ArmorRating_Blunt>0.9</ArmorRating_Blunt>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <!--푸주칼 결정화-->
+
+  <HediffDef>
+    <defName>MRH_Crystal</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>crystallization</label>
+    <labelNoun>crystallization</labelNoun>
+    <description>The area around the wound hardens and breaks.</description>
+    <defaultLabelColor>(0.4,0.4,0.8)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-20</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>MR_MoteMaruCrystal</stateEffecter>
+        <severityIndices>0~5</severityIndices>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0</minSeverity>
+        <statFactors>
+          <IncomingDamageFactor>1.25</IncomingDamageFactor>
+          <ArmorRating_Blunt>0.9</ArmorRating_Blunt>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <!--푸주칼 공포-->
+
+  <HediffDef>
+    <defName>MRH_Fear</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>fear</label>
+    <labelNoun>fear</labelNoun>
+    <description>It is a physiological fear inherent in living things that cannot be completely overcome by will alone.</description>
+    <defaultLabelColor>(0.8,0.2,0.6)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-20</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0</minSeverity>
+        <statFactors>
+          <PainShockThreshold>0.75</PainShockThreshold>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!--작살 둔화-->
+  
+  <HediffDef>
+<defName>MRH_Anti-Gravity</defName>
+<label>Weightless</label>
+<description>The body is light. Not metaphorically, physically.</description> <hediffClass>HediffWithComps</hediffClass>
+<defaultLabelColor>(0.7, 1.0, 0.7)</defaultLabelColor>
+<makesSickThought>false</makesSickThought> 
+<scenarioCanAdd>false</scenarioCanAdd>
+<comps>
+<li Class="HediffCompProperties_Immunizable">
+<severityPerDayNotImmune>-0.5</severityPerDayNotImmune>
+</li>
+</comps>
+
+<stages>
+<li>
+<label>feet feel lighter</label>
+<minSeverity>0.01</minSeverity> 
+<capMods>
+<li>
+<capacity>Moving</capacity> 
+<offset>-0.1</offset>
+</li>
+</capMods>
+</li>
+
+<li>
+<label>body becomes lighter</label>
+<minSeverity>0.20</minSeverity> 
+<capMods>
+<li>
+<capacity>Moving</capacity> 
+<offset>-0.15</offset>
+</li>
+</capMods>
+</li>
+
+<li>
+<label>lack of friction</label> 
+<minSeverity>0.40</minSeverity> 
+<vomitMtbDays>5</vomitMtbDays>  
+<capMods>
+<li>
+<capacity>Moving</capacity>
+<offset>-0.25</offset>
+<setMax>0.80</setMax>
+</li>
+</capMods>
+</li>
+
+<li>
+<label>Feet out of reach</label> 
+<minSeverity>0.60</minSeverity> 
+<vomitMtbDays>1</vomitMtbDays>
+<capMods>
+<li>
+<capacity>Moving</capacity> 
+<offset>-0.25</offset>
+<setMax>0.50</setMax>
+</li>
+</capMods>
+</li>
+
+<li>
+<label>abandoned by gravity</label> 
+<minSeverity>0.80</minSeverity> 
+<vomitMtbDays>0.5</vomitMtbDays> 
+<capMods>
+<li>
+<capacity>Moving</capacity>
+<offset>-0.50</offset>
+<setMax>0.18</setMax>
+</li>
+</capMods>
+</li>
+
+</stages>
+</HediffDef>
+
+
+
+
+<HediffDef>
+<defName>MRH_Fly</defName>
+<hediffClass>HediffWithComps</hediffClass>
+<label>floating</label>
+<labelNoun>floating</labelNoun>
+<description>The body floats in the air.</description>
+<defaultLabelColor>(0.7,0.2,0.5)</defaultLabelColor>
+<scenarioCanAdd>false</scenarioCanAdd>
+<maxSeverity>1.0</maxSeverity>
+<isBad>false</isBad>
+<comps>
+<li Class="HediffCompProperties_SeverityPerDay">
+<severityPerDay>-100</severityPerDay>
+</li>
+</comps>
+<stages>
+<li>
+<minSeverity>0</minSeverity>
+<statFactors> 
+<MoveSpeed>0.01</MoveSpeed>
+</statFactors>
+</li>
+</stages>
+</HediffDef>
+
+
+
+<HediffDef>
+<defName>MRH_Blood</defName>
+<hediffClass>HediffWithComps</hediffClass>
+<label>blood reflux</label>
+<labelNoun>blood reflux</labelNoun>
+<description>There is something wrong with the blood flow.</description>
+<defaultLabelColor>(0.7,0.2,0.5)</defaultLabelColor>
+<scenarioCanAdd>false</scenarioCanAdd>
+<maxSeverity>1.0</maxSeverity>
+<isBad>True</isBad>
+<comps>
+<li Class="HediffCompProperties_SeverityPerDay">
+<severityPerDay>-10</severityPerDay>
+</li>
+</comps>
+<stages>
+<li>
+<minSeverity>0</minSeverity>
+<capMods>
+            <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.2</offset>
+            </li>
+</capMods>
+<totalBleedFactor>1.4</totalBleedFactor>
+</li>
+</stages>
+</HediffDef>
+  
+  <HediffDef>
+    <defName>MRH_Hunting</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>low damage</label>
+    <labelNoun>low damage</labelNoun>
+    <description>Using a weapon optimized for hunting, it made clean and deep wounds. You will be able to get more loot without harming meat and hides.</description>
+    <defaultLabelColor>(0.9,0.9,1.0)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-50</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>MR_MoteMaruHunting</stateEffecter>
+        <severityIndices>0~5</severityIndices>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0</minSeverity>
+        <statFactors>
+	  <MeatAmount>1.2</MeatAmount>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  
+</Defs>

@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- 봉화 -->
+  
+  <ThingDef ParentName="BuildingBase">
+		<defName>MR_Turretbeacon</defName>
+		<label>Beacon</label>
+		<size>(3, 2)</size>
+		<description>A beacon for burning white branches.\n\n The beacon used by the Maru has various shapes and uses depending on the need, but in this case it serves as a signal post for sniping.\n\n Although it only functions as a single pipe, anyone who has visited the city of Maru will see a fragment of it.</description>
+		<descriptionHyperlinks>
+      <ThingDef>MR_whitetwigs</ThingDef>
+		</descriptionHyperlinks>
+		<thingClass>Building_TurretGun</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+				<texPath>Things/Building/Production/Marubeacon</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+				<drawSize>(8,8)</drawSize>
+			<damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+			<shadowData>
+				<volume>(0.54,0.25,0.54)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Production/Marubeacon</uiIconPath>
+		<uiIconScale>0.90</uiIconScale>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>true</rotatable>
+        <selectable>true</selectable>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>220</MaxHitPoints>
+			<Flammability>0.2</Flammability>
+			<WorkToBuild>9000</WorkToBuild>
+			<Mass>220</Mass>
+			<Beauty>-30</Beauty>
+			<TerrorSource MayRequire="Ludeon.RimWorld.Ideology">15</TerrorSource>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Refuelable">
+				<fuelLabel>Burning white twigs</fuelLabel>
+				<fuelGizmoLabel>Number of possible burns</fuelGizmoLabel>
+				<outOfFuelMessage>Cannot shoot: Needs new white twigs</outOfFuelMessage>
+				<fuelFilter><thingDefs><li>MR_whitetwigs</li></thingDefs></fuelFilter>
+				<fuelCapacity>10</fuelCapacity>       <!-- 8 bursts -->
+				<fuelMultiplier>10</fuelMultiplier>
+				<initialFuelPercent>1</initialFuelPercent>
+				<autoRefuelPercent>0.5</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<minimumFueledThreshold>1</minimumFueledThreshold>
+				<factorByDifficulty>true</factorByDifficulty>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<fuelIconPath>Things/Resource/MR_whitest</fuelIconPath>
+			</li>
+		</comps>
+		<passability>PassThroughOnly</passability>
+		<pathCost>80</pathCost>
+		<fillPercent>0.55</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<stuffCategories>
+         <li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>80</costStuffCount>
+		<costList>
+			<Steel>80</Steel>
+			<ComponentIndustrial>4</ComponentIndustrial>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+		<building>
+			<ai_combatDangerous>false</ai_combatDangerous>
+			<turretGunDef>Gun_BeaconArrowA</turretGunDef>
+			<turretBurstCooldownTime>20</turretBurstCooldownTime>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+			<li>PlaceWorker_TurretTop</li>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		  </placeWorkers>
+		<designationHotKey>Misc2</designationHotKey>
+		<researchPrerequisites>
+			<li>MaruRB4</li>
+		</researchPrerequisites>
+		<damageMultipliers>
+			<li>
+			  <damageDef>Thump</damageDef>
+			  <multiplier>0.05</multiplier>
+			</li>
+		  </damageMultipliers>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseWeaponTurret">
+		<defName>Gun_BeaconArrowA</defName>
+		<label>Beacon</label>
+		<description>The smoke.</description>
+		<graphicData>
+			<texPath>Things/Inv/MR_Invisible</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<AccuracyTouch>1.0</AccuracyTouch>
+			<AccuracyShort>1.0</AccuracyShort>
+			<AccuracyMedium>1.0</AccuracyMedium>
+			<AccuracyLong>1.0</AccuracyLong>
+			<RangedWeapon_Cooldown>5</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>5</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<verbs>
+	   	    <li>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>Bullet_beaconarrowB</defaultProjectile>
+				<warmupTime>0</warmupTime>
+				<minRange>10</minRange>
+				<forcedMissRadius>1</forcedMissRadius>
+				<range>80</range>
+				<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+				<burstShotCount>1</burstShotCount>
+				<consumeFuelPerShot>1</consumeFuelPerShot>
+				<requireLineOfSight>false</requireLineOfSight>
+			</li>
+			<!--<li>
+				<label>Beacon arrow</label>
+				<verbClass>Verb_Spawn</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<warmupTime>4.25</warmupTime>
+				<spawnDef>MR_SKYIncoming_Ready</spawnDef>
+				<range>50</range>
+				<burstShotCount>1</burstShotCount>
+				<onlyManualCast>true</onlyManualCast>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<consumeFuelPerShot>1</consumeFuelPerShot>
+				<targetable>true</targetable>
+				<nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+                <requireLineOfSight>false</requireLineOfSight>
+			</li>-->
+		</verbs>
+	</ThingDef>
+  
+  <ThingDef ParentName="SkyfallerBase">
+		<defName>MR_SKYArrow</defName>
+		<label>Maru Veteran shooter's arrow</label>
+		<size>(1, 1)</size>
+		<graphicData>
+			<texPath>Things/Weapons/MR_Skyarrow</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(1, 1)</drawSize>
+		</graphicData>
+		<skyfaller>
+			<shadowSize>(1, 1)</shadowSize>
+			<explosionRadius>2</explosionRadius>
+			<explosionDamage>MRD_veteranshooterarrow</explosionDamage>
+			<explosionDamageFactor>2</explosionDamageFactor>
+			<rotateGraphicTowardsDirection>true</rotateGraphicTowardsDirection>
+			<!--<anticipationSound>AT_MortarRound_Ambient_skyfall</anticipationSound>
+			<anticipationSoundTicks>360</anticipationSoundTicks>-->
+			<impactSound>MR_PulseT</impactSound>
+		</skyfaller>
+	</ThingDef>
+	
+    <ThingDef Name="MR_Athelp" Abstract="True">
+		<thingClass>ThingWithComps</thingClass>
+		<category>Item</category>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<altitudeLayer>Item</altitudeLayer>
+		<stackLimit>1</stackLimit>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<rotatable>false</rotatable>
+		<pathCost>14</pathCost>
+		<tickerType>Normal</tickerType>
+		<tradeability>None</tradeability>
+	</ThingDef>
+	
+	<ThingDef ParentName="MR_Athelp">
+		<defName>MR_SKYIncoming_Ready</defName>
+		<label>MR_SKYIncoming_Ready</label>
+		<graphicData>
+			<texPath>Things/Inv/MR_Invisible</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<comps>
+	    <li Class="marucsharp.MaruCompProperties_GiveHediffSeverity">
+        <hediff>MR_Hediff_c</hediff>
+        <range>5.5</range>
+        <severityPerSecond>60</severityPerSecond>
+        <drugExposure>false</drugExposure>
+        <allowMechs>false</allowMechs>
+		<whatStat>Mass</whatStat>
+        </li>
+			<li Class="CompProperties_Lifespan">
+				<lifespanTicks>90</lifespanTicks>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef>
+		<defName>MR_Hediff_c</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Hediff_Ready</label>
+		<description>explosion.</description>
+		<defaultLabelColor>(0.2,0.2,1.2)</defaultLabelColor>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>1140</disappearsAfterTicks>
+			</li>
+			<li Class="HediffCompProperties_Effecter">
+				<stateEffecter>MR_ArrowTarget</stateEffecter>
+				<severityIndices>0~1</severityIndices>
+			</li>
+			<li Class="MoharHediffs.HediffCompProperties_Spawner">
+				<thingToSpawn>MR_SKYArrow</thingToSpawn>
+				<spawnCount>1</spawnCount>
+				<minDaysB4Next>0.005</minDaysB4Next>
+				<maxDaysB4Next>0.006</maxDaysB4Next>
+				<randomGrace>0</randomGrace>
+				<spawnMaxAdjacent>3</spawnMaxAdjacent>
+				<spawnForbidden>false</spawnForbidden>
+				<spawnVerb>production</spawnVerb>
+			</li>
+		</comps>
+			<stages>
+				<li>
+					<becomeVisible>false</becomeVisible>
+				</li>
+			</stages>
+	</HediffDef>
+	
+	
+</Defs>

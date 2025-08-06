@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+<ThoughtDef>
+  <defName>Maru_OverPopulation</defName>
+  <workerClass>MaruThought.ThoughtWorker_OverPopulation_Maru</workerClass>
+  <stages>
+    <li>
+      <!--5명 이하-->
+      <label>stillness</label>
+      <description>The sound of the wind, the sound of breathing, the rumble of the ground, I can feel everything. It's a pleasant silence.</description>
+      <baseMoodEffect>2</baseMoodEffect>
+    </li>
+    <li>
+      <!--9명 이하-->
+      <label>comfort</label>
+      <description></description>
+      <baseMoodEffect>0</baseMoodEffect>
+    </li>
+    <li>
+      <!--16명 이하-->
+      <label>crowded</label>
+      <description>Lots of smells coming in. I know we need people here, but I'm dizzy.</description>
+      <baseMoodEffect>-3</baseMoodEffect>
+    </li>
+    <li>
+      <!--20명 이하-->
+      <label>feeling suffocated</label>
+      <description>I don't think that's a good idea.</description>
+      <baseMoodEffect>-6</baseMoodEffect>
+    </li>
+    <li>
+      <!--20명 이상-->
+      <label>on alert</label>
+      <description>For a person to trust a person, it takes distance.</description>
+      <baseMoodEffect>-9</baseMoodEffect>
+    </li>
+  </stages>
+</ThoughtDef>
+
+<MaruTerrainSkip.ObstaclePathInteractDef>
+    <defName>ObstacleSkip_Maru</defName>
+	<raceDefs>
+		<li>Maru</li> 
+	</raceDefs>
+	<ignoreTerrainCost>true</ignoreTerrainCost>
+	<ignoreObstacleCost>true</ignoreObstacleCost>
+  </MaruTerrainSkip.ObstaclePathInteractDef>
+  
+</Defs>

@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="MaruMotebase" Abstract="True">
+    <thingClass>MoteThrown</thingClass>
+    <label>Mote</label>
+    <category>Mote</category>
+    <graphicData>
+      <graphicClass>Graphic_Mote</graphicClass>
+      <shaderType>Mote</shaderType>
+    </graphicData>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>false</useHitPoints>
+    <isSaveable>false</isSaveable>
+    <rotatable>false</rotatable>
+  </ThingDef>
+
+  <!--복합궁 펄스 모트-->
+  
+  <ThingDef ParentName="MaruMotebase">
+    <defName>Mote_Pulse</defName>
+    <graphicData>
+      <texPath>Things/Weapons/marupulse</texPath>
+      <shaderType>Mote</shaderType>
+	  <drawSize>3.0</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <solidTime>0.2</solidTime>
+      <fadeInTime>0.05</fadeInTime>
+      <fadeOutTime>0.15</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+    <!--복합궁 펄스 모트2-->
+  
+  <ThingDef ParentName="MaruMotebase">
+    <defName>Mote_PulseT</defName>
+    <graphicData>
+      <texPath>Things/Weapons/marupulseT</texPath>
+      <shaderType>Mote</shaderType>
+	  <drawSize>1.5</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <solidTime>0.4</solidTime>
+      <fadeInTime>0.05</fadeInTime>
+      <fadeOutTime>0.35</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+      <!--복합궁 펄스 모트3-->
+  
+  <ThingDef ParentName="MaruMotebase">
+    <defName>Mote_PulseTT</defName>
+    <graphicData>
+      <texPath>Things/Weapons/marupulseTT</texPath>
+      <shaderType>Mote</shaderType>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <solidTime>0.08</solidTime>
+      <fadeInTime>0.05</fadeInTime>
+      <fadeOutTime>0.3</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+  <!--작살 반중력 모트-->
+
+  <ThingDef ParentName="MaruMotebase">
+    <defName>Mote_AntiG</defName>
+    <graphicData>
+      <texPath>Things/Weapons/Mote/AntiG</texPath>
+      <shaderType>Mote</shaderType>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <solidTime>0.4</solidTime>
+      <fadeInTime>0.05</fadeInTime>
+      <fadeOutTime>0.15</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <!--덫 모트-->
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_MaruTrap</defName>
+    <graphicData>
+      <texPath>Things/Weapons/Mote/MR_trapmote</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <solidTime>1200</solidTime>
+      <fadeOutTime>5</fadeOutTime>
+      <rotateTowardsTarget>true</rotateTowardsTarget>
+    </mote>
+  </ThingDef>
+
+  <EffecterDef>
+    <defName>MR_MoteMaruTrap</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>Mote_MaruTrap</moteDef>
+      </li>
+    </children>
+  </EffecterDef>
+  
+  <!--덫 모트2-->
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_MaruTrapA</defName>
+    <graphicData>
+      <texPath>Things/Weapons/Mote/MR_trapmoteM</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <solidTime>1200</solidTime>
+      <fadeOutTime>5</fadeOutTime>
+      <rotateTowardsTarget>true</rotateTowardsTarget>
+    </mote>
+  </ThingDef>
+
+  <EffecterDef>
+    <defName>MR_MoteMaruTrapA</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>Mote_MaruTrapA</moteDef>
+      </li>
+    </children>
+  </EffecterDef>
+  <!--투명 모트-->
+  
+  <ThingDef ParentName="MaruMotebase">
+    <defName>Mote_inv</defName>
+    <graphicData>
+      <texPath>Things/Inv/MR_Invisible</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <solidTime>0.1</solidTime>
+      <fadeInTime>0.05</fadeInTime>
+      <fadeOutTime>0.15</fadeOutTime>
+    </mote>
+  </ThingDef>
+ 
+ <!--화살-->
+ 
+  <!--<ThingDef ParentName="MoteBase">
+		<defName>Mote_MR_ArrowTarget</defName>
+		<graphicData>
+			<texPath>Things/Weapons/MR_Hunt</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<thingClass>MoteThrownAttached</thingClass>
+		<altitudeLayer>MetaOverlays</altitudeLayer>
+		<mote>
+      <solidTime>600</solidTime>
+      <fadeOutTime>5</fadeOutTime>
+    </mote>
+	</ThingDef>
+	
+	<EffecterDef>
+		<defName>MR_ArrowTarget</defName>
+<children>
+        <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>Mote_MR_ArrowTarget</moteDef>
+      </li> 
+    </children>
+	</EffecterDef>-->
+ 
+	
+ <!--화살-->
+ 
+	<!--<EffecterDef>
+    <defName>MR_ArrowTarget</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_ProgressBar</subEffecterClass>
+        <moteDef>Mote_MR_ArrowTarget</moteDef>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <ThingDef ParentName="MoteBase" Name="Mote_ProgressBar">
+    <defName>Mote_MR_ArrowTarget</defName>
+    <graphicData>
+      <texPath>Things/Weapons/MR_Hunt</texPath>
+    </graphicData>
+    <thingClass>MoteProgressBar</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <solidTime>600</solidTime>
+      <fadeOutTime>5</fadeOutTime>
+    </mote>
+  </ThingDef>-->
+	
+ <ThingDef ParentName="MoteBase">
+    <defName>Mote_MR_ArrowTarget</defName>
+    <graphicData>
+      <texPath>Things/Weapons/Mote/MR_Hunt</texPath>
+      <shaderType>Mote</shaderType>
+	  <drawSize>2.0</drawSize>
+    </graphicData>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <fadeInTime>1</fadeInTime>
+      <solidTime>1200</solidTime>
+      <fadeOutTime>5</fadeOutTime>
+      <rotateTowardsTarget>true</rotateTowardsTarget>
+    </mote>
+  </ThingDef>
+
+   <EffecterDef>
+    <defName>MR_ArrowTarget</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>Mote_MR_ArrowTarget</moteDef>
+      </li>
+    </children>
+  </EffecterDef>
+  
+ <ThingDef ParentName="MaruMotebase">
+    <defName>Mote_AntiInv</defName>
+    <graphicData>
+      <texPath>Things/Inv/MR_Invisible</texPath>
+      <shaderType>Mote</shaderType>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <solidTime>0.4</solidTime>
+      <fadeInTime>0.05</fadeInTime>
+      <fadeOutTime>0.15</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+  <!--무기디버프 모트-->
+  
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_MaruHardening</defName>
+    <graphicData>
+      <texPath>Things/Weapons/Mote/MR_Hard</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <drawSize>2.0</drawSize>
+    </graphicData>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <solidTime>1200</solidTime>
+      <fadeOutTime>5</fadeOutTime>
+      <rotateTowardsTarget>true</rotateTowardsTarget>
+    </mote>
+  </ThingDef>
+
+  <EffecterDef>
+    <defName>MR_MoteMaruHardening</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>Mote_MaruHardening</moteDef>
+      </li>
+    </children>
+  </EffecterDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_MaruCrystal</defName>
+    <graphicData>
+      <texPath>Things/Weapons/Mote/MR_HardB</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <drawSize>2.0</drawSize>
+    </graphicData>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <solidTime>1200</solidTime>
+      <fadeOutTime>5</fadeOutTime>
+      <rotateTowardsTarget>true</rotateTowardsTarget>
+    </mote>
+  </ThingDef>
+
+  <EffecterDef>
+    <defName>MR_MoteMaruCrystal</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>Mote_MaruCrystal</moteDef>
+      </li>
+    </children>
+  </EffecterDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_MaruHunting</defName>
+    <graphicData>
+      <texPath>Things/Weapons/Mote/MR_Hunting</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <drawSize>2.0</drawSize>
+    </graphicData>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <solidTime>1200</solidTime>
+      <fadeOutTime>5</fadeOutTime>
+      <rotateTowardsTarget>true</rotateTowardsTarget>
+    </mote>
+  </ThingDef>
+
+  <EffecterDef>
+    <defName>MR_MoteMaruHunting</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_InteractSymbol</subEffecterClass>
+        <moteDef>Mote_MaruHunting</moteDef>
+      </li>
+    </children>
+  </EffecterDef>
+</Defs>

@@ -1,0 +1,2721 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <AlienRace.BackstoryDef Name="MaruBackStory" Abstract="True">
+		<disallowedTraits>
+      <li>
+        <defName>SpeedOffset</defName>
+        <degree>-1</degree>
+        <chance>100</chance>
+      </li>
+      <li>
+        <defName>Brawler</defName>
+        <chance>100</chance>
+      </li>
+		</disallowedTraits>
+    <forcedHediffs>
+    </forcedHediffs>
+    <forcedTraits>
+    </forcedTraits>
+	<bodyTypeMale>Female</bodyTypeMale>
+	<bodyTypeFemale>Female</bodyTypeFemale>
+  </AlienRace.BackstoryDef>
+
+  <!--
+  [PAWN_nameDef]
+  [PAWN_pronoun]
+  
+  Shooting
+  Melee
+  Construction
+  Mining
+  Cooking
+  Growing
+  Animal
+  Crafting
+  Artistic
+  Medicine
+  Social
+  Intellectual
+ -->
+
+<!-- Maru 배양설표 -->
+
+  <!-- 유년기 -->
+
+  <!-- mother planet 백스 -->
+  
+<!-- Maru 배양설표 -->
+<AlienRace.BackstoryDef ParentName="MaruBackStory">
+		<defName>Maru_MH_CulturedBaby</defName>
+		<title>Maru culture snowleopard</title>
+		<titleShort>Cultured</titleShort>
+		<baseDescription>The first memory of [Pawn_nameDef] is inside the dark incubator. [PAWN_pronoun], thrown into the frozen motherhood without knowing anything, somehow managed to find a way to survive on its own.</baseDescription>
+		<slot>Childhood</slot>
+		<skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Melee</defName>
+        <amount>3</amount>
+      </li>
+			<li>
+				<defName>Social</defName>
+				<amount>-2</amount>
+			</li>
+      <li>
+        <defName>Artistic</defName>
+        <amount>-2</amount>
+      </li>
+      <li>
+        <defName>Medicine</defName>
+        <amount>1</amount>
+      </li>
+		</skillGains>
+    <forcedTraits>
+    <li>
+      <defName>Neurotic</defName>
+      <degree>1</degree>
+    </li>
+  </forcedTraits>
+		<workDisables>
+		</workDisables>
+		<spawnCategories>
+      <li>MR_MHchild</li>
+		</spawnCategories>
+	</AlienRace.BackstoryDef>
+
+  <!-- Maru mother planet 방랑자 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_Vagabond</defName>
+    <title>Maru homeworld wanderer</title>
+    <titleShort>Wanderer</titleShort>
+    <baseDescription>[PAWN_nameDef] has awakened amongst the blackened sotdae, the frozen planet of origin. Although he could not recall anything that had happened before, he knew only one thing: how to live optimistically in a desperate situation.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Animals</defName>
+        <amount>4</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>-1</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+      <li>
+        <defName>NaturalMood</defName>
+        <degree>2</degree>
+      </li>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <!-- Maru 책벌레 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_Bookworm</defName>
+    <title>Maru bookworm</title>
+    <titleShort>Bookworm</titleShort>
+    <baseDescription>Ever since she was weaned, [PAWN_nameDef] has been buried in a pile of paper. He's one of the few Maru on that barren planet from which he's accustomed to the smell of paper rather than blood.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Medicine</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>5</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>-3</amount>
+      </li>
+    </skillGains>
+    <forcedTraits></forcedTraits>
+    <workDisables></workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <!--  Maru Mountain ranger의 아이 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_KeepersChild</defName>
+    <title>Maru Mountain ranger's child</title>
+    <titleShort>Mountain ranger's child</titleShort>
+    <baseDescription>{PAWN_nameDef} was raised by a mountain ranger. Although he was closer to a good teacher than a good parent, {PAWN_pronoun} truly loved and respected {PAWN_pronoun}.\nEven after his heart grew up in a twisted way, forever and ever.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Melee</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Crafting</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Medicine</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>-1</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    <li>
+    <defName>Cannibal</defName>
+    </li>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <!-- Maru 공학도 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_LittleEngineer</defName>
+    <title>Maru engineering student</title>
+    <titleShort>engineering student</titleShort>
+    <baseDescription>[PAWN_nameDef] has been particularly interested in machines since childhood. The sense of accomplishment when I nailed broken pipes and tied them around to make something that worked for the first time had a huge impact on every choice [PAWN_pronoun] made after that.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Crafting</defName>
+        <amount>4</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>-2</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <!-- Maru 농사꾼의 아이 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_FarmersChild</defName>
+    <title>Maru farmer's child</title>
+    <titleShort>farmer's child</titleShort>
+    <baseDescription>There are three main things you need to do to farm on the planet where the Maru came from. The first is a transparent greenhouse where the temperature is maintained, the second is basic knowledge about farming, and the third is the power to find a warm place and stop the beasts that attack. Coincidentally, [PAWN_nameDef]'s parents had it all, and [PAWN_pronoun] wanted her to be a scumbag as well.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Plants</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Shooting</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>-1</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <!-- Maru 꼬마 요리사 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_LittleChef</defName>
+    <title>Maru little chef</title>
+    <titleShort>little chef</titleShort>
+    <baseDescription>In Maru society, cooking involves hunting. And the chef, who has the power to share food in the polar lands, symbolizes influence, or power, within the herd. Just as a human child imagined becoming president as a child, this young Maru dreamed of becoming a chef, wearing a paper apron and wielding a butcher's knife.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Cooking</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>-1</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <!-- Maru 병약한 아이 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_SickChild</defName>
+    <title>Maru sick child</title>
+    <titleShort>sick child</titleShort>
+    <baseDescription>On the barren Maru's native planet, sickly born children are abandoned. [PAWN_nameDef]'s parents also made choices no different than the rest of the Maru, and [PAWN_pronoun] was weak and had to become more ingenious to survive on the frozen planet.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Melee</defName>
+        <amount>-2</amount>
+      </li>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>6</amount>
+      </li>
+      <li>
+        <defName>Crafting</defName>
+        <amount>1</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+      <li>
+        <defName>Immunity</defName>
+        <degree>-1</degree>
+      </li>
+      <li>
+        <defName>Cannibal</defName>
+      </li>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <!-- Maru 꼬마 Hunter -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_LittleHunter</defName>
+    <title>Maru little hunter</title>
+    <titleShort>little hunter</titleShort>
+    <baseDescription>Occasionally, young Maru start hunting in earnest from an early age for their own survival. Of course, most of those Maru are orphans who have just woken up in an artificial incubator, but the case of [PAWN_nameDef] was a little different in that they were orphaned after losing their parents to a game.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Shooting</defName>
+        <amount>5</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>-4</amount>
+      </li>
+      <li>
+        <defName>Crafting</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <!-- Maru 별종 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_Abnormal</defName>
+    <title>Maru different kind</title>
+    <titleShort>different kind</titleShort>
+    <baseDescription>On the planet of origin of the Maru, who are desperate to live day by day, art is an act that is generally not understood, throwing away food for tomorrow for the sake of invisible happiness. However, this Maru has always been passionate about making things with her thick fingertips, and the finesse of her hands has resulted in many other things.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Artistic</defName>
+        <amount>4</amount>
+      </li>
+      <li>
+        <defName>Crafting</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>-2</amount>
+      </li>
+      <li>
+        <defName>Medicine</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <!-- Maru 캐러밴 부단장 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_ViceGeneral</defName>
+    <title>Maru Caravan Deputy Commander</title>
+    <titleShort>deputy chief</titleShort>
+    <baseDescription>[PAWN_nameDef] was the deputy commander of a four-person caravan. When the white bear, the leader, carried the pack, and the other two white foxes, the other subordinates, scouted the area, [PAWN_pronoun] rode on the bear's back and negotiated.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Cooking</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Animals</defName>
+        <amount>4</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>-2</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <!-- Maru 점주 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_Storekeeper</defName>
+    <title>Maru store owner</title>
+    <titleShort>store owner</titleShort>
+    <baseDescription>As he was about to run out of food while searching for his non-returning parents, [PAWN_nameDef] luckily found a building that was virtually intact inside. There were tons of preserved food in it, and it seemed that even [PAWN_pronoun]'s parents wouldn't have to go on a dangerous hunt. Although [PAWN_pronoun]'s parents still haven't returned, [PAWN_pronoun] laid out all sorts of junk he had picked up while walking around, waiting for the guests so that he could visit this place someday on the way.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Cooking</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Animals</defName>
+        <amount>4</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>-2</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <!-- Maru 프로토타입 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_prototype</defName>
+    <title>Maru prototype</title>
+    <titleShort>prototype</titleShort>
+    <baseDescription>[PAWN_nameDef] is Maru crawling out of the crumbling clean room. Although his physical abilities are superior to other Maru's, [PAWN_pronoun]'s immunity is only half that of a normal person.\n[PAWN_pronoun]'s [PAWN_possessive] body is fighting for survival every day.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Melee</defName>
+        <amount>4</amount>
+      </li>
+      <li>
+        <defName>Shooting</defName>
+        <amount>4</amount>
+      </li>
+      <li>
+        <defName>Animals</defName>
+        <amount>-4</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    <li>
+      <defName>MRT_Prototype</defName>
+      <chance>100</chance>
+    </li>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHprototype</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+   <!-- Maru 보관소의 학생 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_sarirastudent</defName>
+    <title>Maru student at the sari storage room</title>
+    <titleShort>student</titleShort>
+    <baseDescription>[PAWN_nameDef] spent most of her childhood taking succession lessons from her predecessor librarians. Learning how to sort books, put bookshelves in, and how to store saris, [PAWN_pronoun] feels boring, I felt the buds of subjectivity, which had never been seen before, clearly bloom in my heart.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Construction</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Crafting</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>4</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+   <!-- Maru 견습 Decipher -->
+    <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_apprenticedechiper</defName>
+    <title>Maru Apprenticeship Decipher</title>
+    <titleShort>Apprenticeship Decipher</titleShort>
+    <baseDescription>[PAWN_nameDef] is an Apprentice Decipher. In fact, I feel annoyed because there are more things to be hugged one after the other by being brought in for no reason or moving from one place to another rather than learning how to interpret it directly. But in the end, it doesn't change that you have to learn interpretation from them, so [PAWN_pronoun] is trying to bring it up as much as possible.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Cooking</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Crafting</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>5</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+   <!-- Maru 덫 Hunter -->
+     <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_traphunter</defName>
+    <title>Maru trap hunter</title>
+    <titleShort>trap hunter</titleShort>
+    <baseDescription>[PAWN_nameDef] is a trapper. It is recommended by other hunters because he is still young enough to hunt properly, but it is rare that he does as well as [PAWN_pronoun] and is recognized as a single hunter earlier.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Melee</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Shooting</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Mining</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Medicine</defName>
+        <amount>1</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+   <!-- Maru 종이냄새 나는 아이-->
+   
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_paperchild</defName>
+    <title>Maru child who smells like paper</title>
+    <titleShort>paper smell child</titleShort>
+    <baseDescription>[PAWN_nameDef] was somehow caught among archival analysts. Just like when infiltrating a group of wild animals, they bury their excrement to remove their vigilance. [PAWN_pronoun] also rubbed his body against old papers to hide in the gap and got caught. [PAWN_pronoun] and the group of analysts first met. I don't know what happened after that, but now [PAWN_pronoun] is really a part of them.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Construction</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>4</amount>
+      </li>
+      <li>
+        <defName>Mining</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>1</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+    <!-- Maru 연구소 잡부-->
+   
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_handyman</defName>
+    <title>Maru lab janitor</title>
+    <titleShort>Janitor</titleShort>
+    <baseDescription>[PAWN_nameDef] is a janitor who takes care of all kinds of miscellaneous tasks in the lab. It's not very complicated, but [PAWN_pronoun], which Maru prefers to do less chores, works day by day with only admiration for the Mountain ranger and Decipher. .</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Construction</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Mining</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Cooking</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Plants</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>1</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+      <!-- Maru 유적 거주자-->
+   
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_</defName>
+    <title>Maru ruin dweller</title>
+    <titleShort>ruin dweller</titleShort>
+    <baseDescription>[PAWN_nameDef] spent her childhood in deserted ruins. I don't remember why I was here or what kept me from going out, but at least the fact is that the ruins were kept until [PAWN_pronoun] decided to leave.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Construction</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Crafting</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Cooking</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Plants</defName>
+        <amount>5</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  <!-- Maru 솟대 지킴이
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_Sotdaekeeper</defName>
+    <title>Maru 솟대 지킴이</title>
+    <titleShort>솟대 지킴이</titleShort>
+    <baseDescription>[PAWN_nameDef]은 솟대에 대한 강한 애정을 품고 있습니다. 과거의 선조들이 남긴 유일한 예술품 이라는 게 첫 번째 이유고, 이 근처 산에서 그걸 처음 발견한 자신이 자랑스러운 게 두 번째 이유입니다. 첫 번째 이유는 스스로 생각한 건지조차 의심스럽지만, 아무튼 이 Maru가 남는 시간에는 항상 자신이 발견한 솟대 옆을 지키고 서 있다는 것만은 사실입니다.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Shooting</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Animals</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef> -->
+
+  <!-- Maru 정상배양	-->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MH_NormalCulture</defName>
+    <title>Maru normal culture</title>
+    <titleShort>normal cultured</titleShort>
+    <baseDescription>[PAWN_nameDef] grew up being infused with knowledge in a dark incubator. I didn't know much about the outside world, but maybe this one was better than freezing outside, starving, or being hunted to death.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Melee</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Animals</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Construction</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Cooking</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Crafting</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Artistic</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Mining</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Plants</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Medicine</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>1</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+      <li>MR_MHchild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <!-- 변방 백스 -->
+  
+  <!-- Maru 예언자 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MW_prophet</defName>
+    <title>Maru predictor</title>
+    <titleShort>predictor</titleShort>
+    <baseDescription>[PAWN_nameDef] awakened on a remote planet and blended into their society as a member of a tribe there, precisely as the object of their worship. Maru's distinctive appearance gave [PAWN_pronoun] religious persuasive power, and [PAWN_pronoun] herself crafted the most persuasive prophecies by adding observations to observations to satisfy them. And it was not until later that I learned that the prophets of this planet were abandoned when they reached adulthood.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Social</defName>
+        <amount>5</amount>
+      </li>
+      <li>
+        <defName>Animals</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables> 
+    </workDisables>
+    <spawnCategories>
+	  <li>MR_MWChild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <!-- Maru 가출 부족민 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MW_Runawaytribe</defName>
+    <title>Maru runaway tribesman</title>
+    <titleShort>runaway tribesman</titleShort>
+    <baseDescription>The tribe that existed on the planet [PAWN_nameDef] belonged to was very open, even considering that there were many humans from other planets who had undergone genetic modification. No, to be precise, they were more of an extreme environmentalist than a tribe. [PAWN_pronoun], which was discovered by a group of them when they were young and grew up eating all kinds of weeds, eventually ran away from home, but thanks to this, his knowledge of crops was almost expert level.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Plants</defName>
+        <amount>5</amount>
+      </li>
+      <li>
+        <defName>Animals</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+	  <li>MR_MWChild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <!-- Maru 똑똑한 아이 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MW_Smartkid</defName>
+    <title>Maru smart kid</title>
+    <titleShort>smart kid</titleShort>
+    <baseDescription>[PAWN_nameDef] grew up in a small tribe of Maru. [PAWN_pronoun], who lived with the tag of a genius since childhood, eventually lost interest in everything.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Animals</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Crafting</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Medicine</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+	  <li>MR_MWChild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <!-- Maru 꼬마설인 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MW_LittleYeti</defName>
+    <title>Maru little yeti</title>
+    <titleShort>little yeti</titleShort>
+    <baseDescription>[PAWN_nameDef] grew up in a small tribe of Maru. He was curious from a young age, so he ran through the snow and climbed up and down the mountain outside his residence, which sometimes caught the eyes of people at the bottom of the mountain and created a lot of rumors.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Mining</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Animals</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>-1</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+	  <li>MR_MWChild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <!-- Maru 후계자 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MW_successor</defName>
+    <title>Maru heir</title>
+    <titleShort>heir</titleShort>
+    <baseDescription>[PAWN_nameDef] grew up in a small tribe of Maru. [PAWN_pronoun], who excelled in classifying and gathering medicinal herbs, was soon the priest's successor and was able to put together various ritual knowledge.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Medicine</defName>
+        <amount>5</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>3</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+	  <li>MR_MWChild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <!-- Maru 수습 Hunter -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MW_ApprenticeHunter</defName>
+    <title>Maru apprentice hunter</title>
+    <titleShort>apprentice hunter</titleShort>
+    <baseDescription>[PAWN_nameDef] grew up in a small tribe of Maru. [PAWN_pronoun], who persistently pursued adults who went hunting with a pile of javelins, was recognized as an apprentice hunter by the adults who could not overcome his stubbornness and learned various skills.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>5</amount>
+      </li>
+      <li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Animals</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+	  <li>MR_MWChild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <!-- Maru 복수귀 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MW_Revenant</defName>
+    <title>Maru revenger</title>
+    <titleShort>revenger</titleShort>
+    <baseDescription>[PAWN_nameDef] grew up in a small tribe of Maru. However, one day, while [PAWN_pronoun] was out of town for a while, a lot of humans rushed to the village of Maru, and [PAWN_pronoun] managed to save his life, but there was no trace of anyone living there. This young Maru vowed vengeance on the humans under the mountain, and nothing else caught his eye.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>5</amount>
+      </li>
+      <li>
+        <defName>Melee</defName>
+        <amount>5</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>-5</amount>
+      </li>
+      <li>
+        <defName>Medicine</defName>
+        <amount>-2</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+      <li>
+        <defName>Bloodlust</defName>
+      </li>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+	  <li>MR_MWChild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <!-- Maru 산 밑 아이 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MW_Humanchild</defName>
+    <title>Maru child under the mountain</title>
+    <titleShort>child under the mountain</titleShort>
+    <baseDescription>This Maru was raised by human hands. Maru's beastlike appearance was considered an advantage by Maru's adoptive parents, and their love and care allowed [PAWN_pronoun] to kill Maru's nature and live alongside other humans.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>-1</amount>
+      </li>
+      <li>
+        <defName>Melee</defName>
+        <amount>-1</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Cooking</defName>
+        <amount>3</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+	  <li>MR_MWChild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <!-- 번화계 백스 -->
+  
+  <!-- Maru 장인의 제자 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_GW_MastersDisciple</defName>
+    <title>Maru artisan's disciple</title>
+    <titleShort>artisan's disciple</titleShort>
+    <baseDescription>[PAWN_nameDef] was adopted by a famous artisan on a bustling planet. Although it was difficult for me to do detailed work like a human due to my natural limitations, that is why I was raised with more education to promote as a craftsman.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Crafting</defName>
+        <amount>5</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>-1</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+	  <li>MR_GWChild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <!-- Maru 방랑자 -->
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_GW_Mastersdisciple</defName>
+    <title>Maru vagabond</title>
+    <titleShort>vagabond</titleShort>
+    <baseDescription>[PAWN_nameDef] woke up from the wreckage of an abandoned spaceship and wandered around the planet. If there's one thing I've learned at the end of a long wandering life, it's that raising your eyes and wagging your tail at someone who looks wealthy can keep you from starving yourself for the day's meals.</baseDescription>
+    <slot>Childhood</slot>
+    <skillGains>
+      <li>
+        <defName>Melee</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>5</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+    </forcedTraits>
+    <workDisables>
+    </workDisables>
+    <spawnCategories>
+	  <li>MR_GWChild</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <!-- 성년기 -->
+
+<!-- 1 -->
+<AlienRace.BackstoryDef ParentName="MaruBackStory">
+  <defName>Maru_HunterA</defName>
+  <title>Maru Hunter</title>
+  <titleShort>Hunter</titleShort>
+  <baseDescription>This Maru is a professional hunter whose job is to receive food from other Maru on a regular basis and to deal with threatening prey in the vicinity.</baseDescription>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <li>
+		<defName>Shooting</defName>
+		<amount>1</amount>
+    </li>
+	<li>
+        <defName>Melee</defName>
+        <amount>3</amount>
+    </li>
+  </skillGains>
+  <workDisables>
+  </workDisables>
+  <forcedHediffs>
+  </forcedHediffs>
+  <forcedTraits>
+    <li>
+      <defName>MRT_Eartrait</defName>
+      <chance>15</chance>
+    </li>
+  </forcedTraits>
+  <spawnCategories>
+          <li>MR_Hunter</li>
+  </spawnCategories>
+</AlienRace.BackstoryDef>
+
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_HunterB</defName>
+    <title>Maru Hunter</title>
+    <titleShort>Hunter</titleShort>
+    <baseDescription>Some Maru develop a deep craving for hunting as they grow up.\nThis Maru has a particularly strong tendency, leaving herds and wandering around the planet in search of more satisfying prey.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+	<li>
+        <defName>Shooting</defName>
+        <amount>2</amount>
+	</li>
+	<li>
+        <defName>Melee</defName>
+        <amount>4</amount>
+    </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <forcedTraits>
+      <li>
+        <defName>MRT_Eartrait</defName>
+        <chance>15</chance>
+      </li>
+    </forcedTraits>
+    <spawnCategories>
+      <li>MRALL</li>
+          <li>MR_Hunter</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_HunterC</defName>
+    <title>Maru Hunter</title>
+    <titleShort>Hunter</titleShort>
+    <baseDescription>{PAWN_nameDef} is obsessed with hunting pleasure.\nSetting traps, munching on jerky, and staying overnight in one place, chasing bloodstains to track their prey, and catching the breath of their exhausted prey, {PAWN_nameDef} The whole process is a pleasure for {PAWN_pronoun}.\n\nIs there any other Maru who raises the word vocation like this?</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+	<li>
+        <defName>Shooting</defName>
+        <amount>4</amount>
+	</li>
+	<li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+    </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <forcedTraits>
+      <li>
+        <defName>MRT_Eartrait</defName>
+        <chance>15</chance>
+      </li>
+    </forcedTraits>
+    <spawnCategories>
+      <li>MRALL</li>
+          <li>MR_Hunter</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+  <defName>Maru_HunterAC</defName>
+  <title>Maru Hunter</title>
+  <titleShort>Hunter</titleShort>
+  <baseDescription>This Maru is a professional hunter whose job is to receive food from other Maru on a regular basis and to deal with threatening prey in the vicinity.</baseDescription>
+  <slot>Adulthood</slot>
+  <skillGains>
+    <li>
+		<defName>Shooting</defName>
+		<amount>4</amount>
+    </li>
+	<li>
+        <defName>Melee</defName>
+        <amount>3</amount>
+    </li>	  
+	  <li>
+        <defName>Cooking</defName>
+        <amount>5</amount>
+      </li>
+  </skillGains>
+  <workDisables>
+  </workDisables>
+  <forcedHediffs>
+  </forcedHediffs>
+  <forcedTraits>
+    <li>
+      <defName>MRT_Eartrait</defName>
+      <chance>15</chance>
+    </li>
+  </forcedTraits>
+  <spawnCategories>
+          <li>MR_HunterC</li>
+  </spawnCategories>
+</AlienRace.BackstoryDef>
+
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_HunterBC</defName>
+    <title>Maru Hunter</title>
+    <titleShort>Hunter</titleShort>
+    <baseDescription>Some Maru develop a deep craving for hunting as they grow up.\nThis Maru has a particularly strong tendency, leaving herds and wandering around the planet in search of more satisfying prey.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+	<li>
+        <defName>Shooting</defName>
+        <amount>3</amount>
+	</li>
+	<li>
+        <defName>Melee</defName>
+        <amount>5</amount>
+    </li>
+	  <li>
+        <defName>Cooking</defName>
+        <amount>4</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <forcedTraits>
+      <li>
+        <defName>MRT_Eartrait</defName>
+        <chance>15</chance>
+      </li>
+    </forcedTraits>
+    <spawnCategories>
+      <li>MRALL</li>
+          <li>MR_HunterC</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_HunterCC</defName>
+    <title>Maru Hunter</title>
+    <titleShort>Hunter</titleShort>
+    <baseDescription>{PAWN_nameDef} is obsessed with hunting pleasure.\nSetting traps, munching on jerky, and staying overnight in one place, chasing bloodstains to track their prey, and catching the breath of their exhausted prey, {PAWN_nameDef} The whole process is a pleasure for {PAWN_pronoun}.\n\nIs there any other Maru who raises the word vocation like this?</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+	<li>
+        <defName>Shooting</defName>
+        <amount>5</amount>
+	</li>
+	<li>
+        <defName>Melee</defName>
+        <amount>4</amount>
+    </li>
+	  <li>
+        <defName>Cooking</defName>
+        <amount>3</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <forcedTraits>
+      <li>
+        <defName>MRT_Eartrait</defName>
+        <chance>15</chance>
+      </li>
+    </forcedTraits>
+    <spawnCategories>
+      <li>MRALL</li>
+          <li>MR_HunterC</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+   <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MountainStudentA</defName>
+    <title>Maru Disciple of the Mountain ranger</title>
+    <titleShort>Disciple</titleShort>
+    <baseDescription>{PAWN_nameDef} is a disciple of the Mountain Ranger.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+	<li>
+        <defName>Shooting</defName>
+        <amount>5</amount>
+	</li>
+      <li>
+        <defName>Social</defName>
+        <amount>1</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>6</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <forcedTraits>
+    </forcedTraits>
+    <spawnCategories>
+      <li>MRALL</li>
+        <li>MR_Claws</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MountainrangerA</defName>
+    <title>Maru Mountain ranger</title>
+    <titleShort>Mountain ranger</titleShort>
+    <baseDescription>{PAWN_nameDef} is a hermit in the Deep Mountains, Twisted Valley, also known as the End of the Earth. \nI came to this valley with a small number of volunteers to study various devices that succeeded in reproducing through the technology of their ancestors, but the principle of operation is still unknown. \n\n{PAWN_pronoun}'s childlike, innocent, and at the same time obsessive quest for exploration has always been the light that sheds light on the other Maru's, and the path that guides them. \nNo one knows if the future they will face is right. However, the fact that they, like bicycles, will only shake if they do not move forward is a fact shared by everyone here.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+	<li>
+        <defName>Shooting</defName> 
+        <amount>-2</amount>
+	</li>
+      <li>
+        <defName>Social</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>12</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <forcedTraits>
+      <li>
+        <defName>MRT_MountainA</defName>
+      </li>
+      <li>
+        <defName>MRT_Eartrait</defName>
+        <chance>10</chance>
+      </li>
+    </forcedTraits>
+    <spawnCategories>
+      <li>MRALL</li>
+        <li>MR_Mountain</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+<AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MountainrangerB</defName>
+    <title>Maru Mountain ranger</title>
+    <titleShort>Mountain ranger</titleShort>
+    <baseDescription>{PAWN_nameDef} is a hermit in the deep mountains, where the soil is weathered by a mixture of creatures and machines. \nIt's rather dangerous to move around in a group, so I'd carefully examine the ruins alone, like a blind man navigating the road. \n\nThe longer I spend alone, the more my emotions become dull, but watching the light coming through the cracks of the ruins split and color the affected areas of the ruins, along with fear, an unknown sense of exaltation and mission comes to mind.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+	<li>
+        <defName>Shooting</defName>
+        <amount>6</amount>
+	</li>
+	<li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+    </li>
+      <li>
+        <defName>Mining</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>-6</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>9</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <forcedTraits>
+      <li>
+        <defName>MRT_MountainB</defName>
+      </li>
+      <li>
+        <defName>MRT_Eartrait</defName>
+        <chance>10</chance>
+      </li>
+    </forcedTraits>
+    <spawnCategories>
+      <li>MRALL</li>
+        <li>MR_Mountain</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+<AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_MountainrangerC</defName>
+    <title>Maru Mountain ranger</title>
+    <titleShort>Mountain ranger</titleShort>
+    <baseDescription>{PAWN_nameDef} is a hermit in the deep mountains, where light and lenses confuse each other to form a mirage.\nAs he investigates and records the ruins with his followers, he has no clue as to when this investigation will end and meaningful results. I don't know if it will come out. However, the {PAWN_pronoun} thoughts, wills, and beliefs that made them come here, made disciples, and passed on through them over and over again, will create another great relic in this place.\n{PAWN_possessive} As a task for disciples to explore and overcome.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Mining</defName>
+        <amount>-3</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>10</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>6</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <forcedTraits>
+      <li>
+        <defName>MRT_MountainC</defName>
+      </li>
+      <li>
+        <defName>MRT_Eartrait</defName>
+        <chance>10</chance>
+      </li>
+    </forcedTraits>
+    <spawnCategories>
+      <li>MRALL</li>
+        <li>MR_Mountain</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+<AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_mountainrangerD</defName>
+    <title>Maru Mountain ranger</title>
+    <titleShort>Mountain ranger</titleShort>
+    <baseDescription>{PAWN_nameDef} is a hermit in the deep mountains, where all organic matter flows and squirms. \nIn a place where every stench, noise, and sinister form imaginable is infested, {PAWN_pronoun} wears itself out to pursue only the truth. \n{PAWN_possessive} An attachment to the faith may destroy itself, but it will never defeat {PAWN_objective}.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+	<li>
+        <defName>Melee</defName>
+        <amount>4</amount>
+    </li>
+      <li>
+        <defName>Medicine</defName>
+        <amount>8</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>-3</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>5</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <forcedTraits>
+      <li>
+        <defName>MRT_MountainD</defName>
+      </li>
+      <li>
+        <defName>MRT_Eartrait</defName>
+        <chance>10</chance>
+      </li>
+    </forcedTraits>
+    <spawnCategories>
+      <li>MRALL</li>
+        <li>MR_Mountain</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+<!--
+<AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_HunterC</defName>
+    <title>Maru Hunter</title>
+    <titleShort>Maru Hunter</titleShort>
+    <baseDescription> </baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+	<li>
+        <defName>Shooting</defName>
+        <amount>4</amount>
+	</li>
+	<li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+    </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MRALL</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+-->
+
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_whaler</defName>
+    <title>Maru whaler</title>
+    <titleShort>whaler</titleShort>
+    <baseDescription>The flying whale, called the three-eyed whale, was awe-inspiring to the Maru, like earthquakes and tsunamis.\nWhen she was a child, [PAWN_nameDef], who saw whales soar in the sky with blue etheric waves, was one day He wanted to drop the whale into his own hands, and he is now a professional whale hunter.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>4</amount>
+      </li>
+	   <li>
+        <defName>Social</defName>
+        <amount>2</amount>
+      </li>
+	   <li>
+        <defName>Animals</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_MH</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_chef</defName>
+    <title>Maru chef</title>
+    <titleShort>chef</titleShort>
+    <baseDescription>[PAWN_nameDef] is a chef in formal attire who prepares prey.\nCooking has always been reserved for the most influential Maru in the herd, and this Maru has proven himself through repeated hunting and has earned the title of Chef. has been</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Cooking</defName>
+        <amount>4</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_MH</li>
+      <li>MR_Cooker</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_merchantchief</defName>
+    <title>Maru caravan leader</title>
+    <titleShort>caravan leader</titleShort>
+    <baseDescription>This eccentric and prideful Maru left the group and decided to build her own caravan.\nAlthough I have to admit that there are more items for sale than items for sale due to the small population of the planet from which she came from, at least eat the leftover pieces of meat. It was more free than the days of arguing with other Maru over it.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>3</amount>
+      </li>
+	  <li>
+        <defName>Social</defName>
+        <amount>5</amount>
+      </li>
+	  <li>
+        <defName>Melee</defName>
+        <amount>1</amount>
+    </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_MH</li>
+      <li>MR_Merchant</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_artist</defName>
+    <title>Maru artist</title>
+    <titleShort>artist</titleShort>
+    <baseDescription>[PAWN_nameDef] is an artist.\nAlways sharing little by little with other Maru's food, [PAWN_pronoun], who makes art with all kinds of objects, is full of artistic talent, but has forgotten all about hunting.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>-2</amount>
+      </li>
+	  <li>
+        <defName>Artistic</defName>
+        <amount>5</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_MH</li>
+      <li>MR_Art</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_mechanic</defName>
+    <title>Maru mechanic</title>
+    <titleShort>mechanic</titleShort>
+    <baseDescription>[PAWN_nameDef] mainly researches and creates hunting tools that combine the characteristics of Maru and sari.\nHe made a great contribution to dropping flying whales from the object of worship to the position of their prey, and to this day, [PAWN_pronoun] The harpoons he made are favored by many Maru.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Crafting</defName>
+        <amount>4</amount>
+      </li>
+	  <li>
+        <defName>Construction</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_MH</li>
+      <li>MR_Mech</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_Sarirainterpreter</defName>
+    <title>Maru Sarira Decipher</title>
+    <titleShort>Sarira Decipher</titleShort>
+    <baseDescription>[PAWN_nameDef] interprets saris using numerous tools, and uses the techniques extracted from them to create numerous tools to interpret saris.\nThe discovery of technology through the interpretation of saris is that the Maru will one day be in the same position as their ancestors in the world. [PAWN_nameDef] firmly believes that</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Medicine</defName>
+        <amount>3</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>5</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <forcedTraits>
+      <li>
+        <defName>MRT_Eyetrait</defName>
+        <chance>20</chance>
+      </li>
+    </forcedTraits>
+    <spawnCategories>
+ <li>MR_Deshiper</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_biotechnician</defName>
+    <title>Maru biotechnologist</title>
+    <titleShort>biotechnologist</titleShort>
+    <baseDescription>[PAWN_nameDef] is a technician who organizes, applies, and improves all bio-related technologies found in saris.\nHe has cultivated numerous pet snow leopards, and has consistently suggested their genetic improvement plans, and most have been adopted and are today's aegyo. A snow leopard that calls out was born.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Medicine</defName>
+        <amount>5</amount>
+      </li>
+	  <li>
+        <defName>Intellectual</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <forcedTraits>
+      <li>
+        <defName>MRT_Eyetrait</defName>
+        <chance>10</chance>
+      </li>
+    </forcedTraits>
+    <spawnCategories>
+      <li>MR_MH</li>
+      <li>MR_Mech</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_Sariratechnician</defName>
+    <title>Maru sarira engineer</title>
+    <titleShort>sarira engineer</titleShort>
+    <baseDescription>The sarira engineers are Maru who invent several new technologies, paying attention to the characteristics of sarira itself.\n[PAWN_nameDef] has always been at odds with the sarira Deciphers, adopting orphaned Maru children to get more sarira, or , and also bought Maru, who were captured and enslaved by humans.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Medicine</defName>
+        <amount>3</amount>
+      </li>
+	  <li>
+        <defName>Crafting</defName>
+        <amount>3</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <forcedTraits>
+      <li>
+        <defName>MRT_Eyetrait</defName>
+        <chance>10</chance>
+      </li>
+    </forcedTraits>
+    <spawnCategories>
+      <li>MR_MH</li>
+      <li>MR_Mech</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_motherplanetfarmer</defName>
+    <title>Maru mother planet farmer</title>
+    <titleShort>mother planet farmer</titleShort>
+    <baseDescription>If we were to rank the most important things for farmers on the mother planet, the military ranks first, the second place, and the third in farming knowledge.\nOf course, he has more knowledge about farming than other Maru, but farmers from other planets It's not very rich in comparison.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Plants</defName>
+        <amount>5</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_MH</li>
+      <li>MR_Farm</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_archaeologist</defName>
+    <title>Maru archaeologist</title>
+    <titleShort>archaeologist</titleShort>
+    <baseDescription>[PAWN_nameDef]'s job is to dig through the rubble of buildings with strong claws and excavate relics of the past.\nActually, no one has recognized it as a job, but at least [PAWN_pronoun] thinks so.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Intellectual</defName>
+        <amount>4</amount>
+      </li>
+	  <li>
+        <defName>Artistic</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_MH</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_pontiff</defName>
+    <title>Maru pontiff</title>
+    <titleShort>pontiff</titleShort>
+    <baseDescription>[PAWN_nameDef] oversees all the ceremonies of the tribe.\nThe funeral and ancestral rites of numerous Maru, and even village festivals are all included in the role of [PAWN_possessive].\nIt is difficult to resist the urge to go hunting on your own. , [PAWN_pronoun] is working with its own sense of mission.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Social</defName>
+        <amount>5</amount>
+      </li>
+	  <li>
+        <defName>Cooking</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_MW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_Hunter_B</defName>
+    <title>Maru Hunter</title>
+    <titleShort>Hunter</titleShort>
+    <baseDescription>[PAWN_nameDef] is an excellent Hunter.\nProficient in sneakily and swiftly approaching their prey, and definitively suffocating her with a single blow, [PAWN_pronoun] never misses her prey.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>4</amount>
+      </li>
+	  <li>
+        <defName>Melee</defName>
+        <amount>3</amount>
+      </li>
+	  <li>
+        <defName>Social</defName>
+        <amount>-1</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_MW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_tracker</defName>
+    <title>Maru tracker</title>
+    <titleShort>tracker</titleShort>
+    <baseDescription>[PAWN_nameDef] is a tracer of the tribe.\nMainly, it is responsible for chasing down Maru who have sinned and fleeing or intermittent human raiders and eliminating them without anyone knowing. In normal times, it is also responsible for finding and protecting young Maru who have lost their way. there is.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>5</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_MW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_spook</defName>
+    <title>Maru cause</title>
+    <titleShort>cause</titleShort>
+    <baseDescription>No one knows the identity of [PAWN_nameDef].\nThere are rumors that he is Maru of nmother planet, there are rumors that he was raised by beasts, and there are even rumors that he is Maru who escaped from a human village under the mountain after sinning.\nAnd the most What's strange is that they don't seem to care too much about these rumors.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <defName>Social</defName>
+        <amount>-2</amount>
+      </li>
+	  <li>
+        <defName>Animals</defName>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <defName>Crafting</defName>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <defName>Artistic</defName>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <defName>Medicine</defName>
+        <amount>2</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_MW</li>
+	  <li>MR_Doctor</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_vagabond</defName>
+    <title>Maru vagabond</title>
+    <titleShort>vagabond</titleShort>
+    <baseDescription>[PAWN_nameDef] is wandering aimlessly around the planet.\n[PAWN_pronoun] himself doesn't know what values ​​he pursues to keep his feet moving, but one thing is certain: beyond that horizon, something new is always waiting for [PAWN_nameDef]. that there is.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Melee</defName>
+        <amount>5</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_MW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_trainer</defName>
+    <title>Maru breaker</title>
+    <titleShort>breaker</titleShort>
+    <baseDescription>Any vicious animal becomes like a kitten when it goes through the hands of [PAWN_nameDef].\n[PAWN_pronoun], who has managed to form a bond while maintaining the wildness of the animals, probably takes more effort than a professional Hunter to find food. may have built</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <defName>Animals</defName>
+        <amount>5</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_MW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_tribal</defName>
+    <title>Maru tribal</title>
+    <titleShort>tribal</titleShort>
+    <baseDescription>[PAWN_nameDef] is an ordinary tribal.\nKnowing some hunting skills, he can make daily meds, sew broken clothes, and do countless other things that don't even have to be expressed in words.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <defName>Animals</defName>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <defName>Plants</defName>
+        <amount>3</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_MW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_farmer</defName>
+    <title>Maru farmer</title>
+    <titleShort>farmer</titleShort>
+    <baseDescription>[PAWN_nameDef] are one of the few farmers in the tribe.\nOriginally, they are Maru who prefer hunting rather than farming, but unlike the mother planet, when winter comes, all living things stop working, so they often borrow the hands of farmers.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <defName>Plants</defName>
+        <amount>5</amount>
+      </li>
+	  <li>
+        <defName>Animals</defName>
+        <amount>1</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_MW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_blacksmith</defName>
+    <title>Maru blacksmith</title>
+    <titleShort>blacksmith</titleShort>
+    <baseDescription>[PAWN_nameDef] heats iron and smelts life.\nTo make it durable and long-lasting, not to be damaged in critical situations, and to be light enough to carry around everyday.\nFor these three purposes, the hammering continued day and night , has been the basis for numerous Maru hero stories.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Crafting</defName>
+        <amount>5</amount>
+      </li>
+	  <li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_MW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_Cleaner</defName>
+    <title>Maru Cleaner</title>
+    <titleShort>Cleaner</titleShort>
+    <baseDescription>[PAWN_nameDef] is a scavenger in the dark district.\nOnce a goal is set, he never misses it, and he was notorious for pursuing his prey as relentlessly as if he were hunting.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>5</amount>
+      </li>
+	  <li>
+        <defName>Melee</defName>
+        <amount>5</amount>
+      </li>
+	  <li>
+        <defName>Medicine</defName>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <defName>Crafting</defName>
+        <amount>-4</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_manager</defName>
+    <title>Maru manager</title>
+    <titleShort>manager</titleShort>
+    <baseDescription>After a lot of work, [PAWN_nameDef] has finally got her own restaurant.\nFor the dignity of being a manager, you may need to tie up its waving tail for a while, but now [PAWN_pronoun] is entangled in anything other than its own string. It will not be.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Social</defName>
+        <amount>4</amount>
+      </li>
+	  <li>
+        <defName>Intellectual</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_firstclasschef</defName>
+    <title>Maru first-class chef</title>
+    <titleShort>first-class chef</titleShort>
+    <baseDescription>[PAWN_nameDef] is a first-class chef.\n[PAWN_pronoun], who knows how to fully use Maru's sensitive senses in cooking, elevates the taste of food to the extreme, impressing many gourmets and inspiring artists.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>-3</amount>
+      </li>
+	  <li>
+        <defName>Cooking</defName>
+        <amount>6</amount>
+      </li>
+	  <li>
+        <defName>Intellectual</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_employee</defName>
+    <title>Maru Office worker</title>
+    <titleShort>Office worker</titleShort>
+    <baseDescription>[PAWN_nameDef] is an ordinary salesperson.\n[PAWN_pronoun], who can hypnotize and cook others to their liking, is clearly not an ordinary office worker, but I think so anyway.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Social</defName>
+        <amount>3</amount>
+      </li>
+	  <li>
+        <defName>Intellectual</defName>
+        <amount>1</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_sniper</defName>
+    <title>Maru sniper</title>
+    <titleShort>sniper</titleShort>
+    <baseDescription>[PAWN_nameDef] is a veteran sniper with superhuman eyesight.\nHe has made a name for himself as a sniper across numerous battlefields, and has earned dozens of nicknames with blue and grim reaper.\nSome places call him a soldier converted for war. There are horses, and in some places they say they are not human at all.\nActually, although they are not really human.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>6</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_zookeeper</defName>
+    <title>Maru zookeeper</title>
+    <titleShort>zookeeper</titleShort>
+    <baseDescription>[PAWN_nameDef] is an excellent keeper.\nAlthough it may be a disadvantage that it builds more bonds than necessary with the animals in charge, it becomes an irreplaceable manpower for some animals.\nSometimes outside the cage I've been told that the one inside is better than the one inside, but [PAWN_nameDef] still finds it rewarding to work as a zookeeper.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	   <li>
+        <defName>Animals</defName>
+        <amount>6</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_slave</defName>
+    <title>Maru sarira slave</title>
+    <titleShort>sarira slave</titleShort>
+    <baseDescription>[PAWN_nameDef] has never seen sunlight since becoming an adult.\nTied to a huge machine that looked like a mold, she was forcibly provided with food, clothing and shelter, and sarira was exploited in return.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>-1</amount>
+      </li>
+	  <li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <defName>Social</defName>
+        <amount>-1</amount>
+      </li>
+	  <li>
+        <defName>Plants</defName>
+        <amount>-2</amount>
+      </li>
+      <li>
+        <defName>Medicine</defName>
+        <amount>-2</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>-2</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_worker</defName>
+    <title>Maru worker</title>
+    <titleShort>worker</titleShort>
+    <baseDescription>[PAWN_nameDef], who always leaves the construction site early in the morning, is an exceptionally energetic Maru.\nIt may be because he does the same amount of work as an ordinary human with four times the strength of an ordinary human, but anyway, [PAWN_nameDef] is a very energetic person. Every day is fun.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>-2</amount>
+      </li>
+	  <li>
+        <defName>Melee</defName>
+        <amount>5</amount>
+      </li>
+	  <li>
+        <defName>Crafting</defName>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <defName>Mining</defName>
+        <amount>3</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_planetbroker</defName>
+    <title>Maru planet relay</title>
+    <titleShort>planet relay</titleShort>
+    <baseDescription>[PAWN_nameDef] is a planetary relay in charge of communication between planets and satellites.\nIn a workplace where only voices and voices come and go, [PAWN_nameDef] feels genuinely comfortable, free from species differences.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Social</defName>
+        <amount>6</amount>
+      </li>
+	  <li>
+        <defName>Intellectual</defName>
+        <amount>2</amount>
+      </li>
+	   <li>
+        <defName>Artistic</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_motherplanetexplorer</defName>
+    <title>Maru mother planet investigator</title>
+    <titleShort>mother planet investigator</titleShort>
+    <baseDescription>[PAWN_nameDef] has been studying Maru's mother planet for quite some time.\nThe sudden disappearance of ancestors, the rapidly changing climate, and the Maru that appeared there could not be clearly explained, but in order to find even the smallest clue, the mother planet I got on a transport ship headed for planet.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Intellectual</defName>
+        <amount>6</amount>
+      </li>
+	  <li>
+        <defName>Social</defName>
+        <amount>-1</amount>
+      </li>
+	  <li>
+        <defName>Construction</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_fashionmodel</defName>
+    <title>Maru fashion model</title>
+    <titleShort>fashion model</titleShort>
+    <baseDescription>[PAWN_nameDef] is a famous fashion model.\nSuperior proportions and a distinctive face are the basics, and the pure white hair, eyes that glow in the dark, and freely movable ears and tail are [PAWN_possessive], which further strengthens the expressive power of the model. It gave him personality.\n[PAWN_pronoun], which can freely handle impressions such as static elegance and beauty, and dynamic cuteness and fear, is often used in the social realm as well.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>-2</amount>
+      </li>
+	  <li>
+        <defName>Melee</defName>
+        <amount>-2</amount>
+      </li>
+	  <li>
+        <defName>Social</defName>
+        <amount>8</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_scientistassistant</defName>
+    <title>Maru scientist's assistant</title>
+    <titleShort>scientist's assistant</titleShort>
+    <baseDescription>[PAWN_nameDef] is an eccentric human scientist's assistant.\nActually, rather than an assistant, he's a lab mascot, and he doesn't really do anything except pouring coffee or organizing documents nicely.\nI'm bored with nothing to do In [PAWN_pronoun], which I did, I tried things like adding various spices or seasonings, organizing documents, and reviewing them once in a while to realize the ultimate in coffee drinking.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Intellectual</defName>
+        <amount>3</amount>
+      </li>
+	  <li>
+        <defName>Social</defName>
+        <amount>3</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_prostitute</defName>
+    <title>Maru prostitute</title>
+    <titleShort>prostitute</titleShort>
+    <baseDescription>[PAWN_nameDef] is a prostitute who works in the red light district.\nProstitution that has been along with the history of mankind has given jobs to non-human races, even decades after the prophet's death.\nMaru's distinctive appearance makes some enthusiasts It worked well for [PAWN_pronoun] and brought [PAWN_pronoun] moderate wealth, but the more money he had in his wallet, the more [PAWN_possessive] feelings slowly died. I collected the money and boarded a spaceship heading to a distant outlying planet.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>-2</amount>
+      </li>
+	  <li>
+        <defName>Melee</defName>
+        <amount>-2</amount>
+      </li>
+	  <li>
+        <defName>Social</defName>
+        <amount>8</amount>
+      </li>
+	  <li>
+        <defName>Cooking</defName>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <defName>Medicine</defName>
+        <amount>-2</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_craftsman</defName>
+    <title>Maru master</title>
+    <titleShort>master</titleShort>
+    <baseDescription>[PAWN_nameDef] creates new value from a variety of objects.\nThe magic that Maru uses with his thick fingertips cannot be imitated by anyone who dares to imitate him, and his ability was recognized and loved by everyone... is written in the notebook.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Crafting</defName>
+        <amount>4</amount>
+      </li>
+	  <li>
+        <defName>Social</defName>
+        <amount>-3</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_LiberationCorpsmember</defName>
+    <title>Maru liberation unit</title>
+    <titleShort>liberation unit</titleShort>
+    <baseDescription>[PAWN_nameDef] is a member of the Maru Liberation Corps that liberates the Maru captured and enslaved by pirates.\nAlthough there are no outstanding achievements yet, their pride and enthusiasm never fall behind other members.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>4</amount>
+      </li>
+	  <li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <defName>Social</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_mascot</defName>
+    <title>Maru mascot</title>
+    <titleShort>mascot</titleShort>
+    <baseDescription>[PAWN_nameDef] is the mascot of the caravan.\nBromide products and websites with pictures of [PAWN_possessive] in well-dressed are all over the internet, and [PAWN_pronoun] is satisfied with his job.\nBut, he is not well dressed. It's just a little stressful for her to have some bad pictures.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+	  <li>
+        <defName>Social</defName>
+        <amount>6</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_Captain</defName>
+    <title>Maru Captain</title>
+    <titleShort>Captain</titleShort>
+    <baseDescription>[PAWN_nameDef] is the captain of the pirates.\nThis Maru, notorious for his tenacity, has become even more vicious in line with the ever-changing ecology of the universe.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>5</amount>
+      </li>
+	  <li>
+        <defName>Melee</defName>
+        <amount>3</amount>
+      </li>
+	  <li>
+        <defName>Cooking</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_gangmember</defName>
+    <title>Maru gang member</title>
+    <titleShort>gang member</titleShort>
+    <baseDescription>[PAWN_nameDef] is a member of a criminal gang.\nAccording to the order of the organization, he handled a lot of things, and overcame numerous crises to have a personal business place, but I couldn't get used to the smell of human blood. Every time I smell it, bad memories flash before my eyes.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>3</amount>
+      </li>
+	  <li>
+        <defName>Melee</defName>
+        <amount>2</amount>
+      </li>
+	  <li>
+        <defName>Intellectual</defName>
+        <amount>2</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+<!--   <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_SpaceAntHive</defName>
+    <title>개미굴 Maru</title>
+    <titleShort>개미굴 Maru</titleShort>
+    <baseDescription>[PAWN_nameDef]은 우주 전쟁 개미들의 곁에서 생활했습니다.\n어째서 우주 전쟁 개미들이 [PAWN_nameDef]를 살려두었는지는 알 수 없지만, 우주 전쟁 개미들과 수많은 행성을 오가며 불바다를 뛰어놀았습니다.\n 우주 전쟁개미들은 [PAWN_nameDef]을 '오엨이'라고 불렀습니다.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Shooting</defName>
+        <amount>1</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs>
+    </forcedHediffs>
+    <spawnCategories>
+      <li>MR_GW</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef> -->
+  
+  <AlienRace.BackstoryDef ParentName="MaruBackStory">
+    <defName>Maru_Techadvais</defName>
+    <title>Maru technical advisor</title>
+    <titleShort>technical advisor</titleShort>
+    <baseDescription>[PAWN_nameDef] has been immersed in research for a long time and has accomplished remarkable achievements, and is currently serving as a technical advisor to the Maru.</baseDescription>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <li>
+        <defName>Crafting</defName>
+        <amount>8</amount>
+      </li>
+	  <li>
+        <defName>Construction</defName>
+        <amount>8</amount>
+      </li>
+      <li>
+        <defName>Intellectual</defName>
+        <amount>8</amount>
+      </li>
+    </skillGains>
+    <workDisables>
+    </workDisables>
+    <forcedHediffs Inherit="False">
+	 <li>MR_Tech1advAdvice</li>
+    </forcedHediffs>
+    <forcedTraits>
+      <li>
+        <defName>MRT_Eyetrait</defName>
+        <chance>50</chance>
+      </li>
+    </forcedTraits>
+    <spawnCategories>
+ <li>MR_Advisor</li>
+    </spawnCategories>
+  </AlienRace.BackstoryDef>
+  
+  
+</Defs>

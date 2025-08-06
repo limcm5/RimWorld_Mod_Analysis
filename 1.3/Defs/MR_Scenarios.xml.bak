@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ScenarioDef>
+		<defName>MR_Scenario</defName>
+		<label>partnership</label>
+    <description>Deciphers at the top of the mountain and hunters at the bottom of the mountain, these are the most important forces in Maru's society. The bond between the two powers, which has been in a relationship for a long time, has become a tradition beyond a simple profit-and-loss trade, and is now about to be rekindled by the two Marus.\n\nThis scenario begins with a single decipher waiting for a hired hunter. \n\n(Hunters join the settlement after 3 days.)</description>
+    <scenario>
+      <summary>It is the story of an decipher and a hired hunter who set out on the road to independence.</summary>
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>Maru_PlayerFaction</factionDef>
+      </playerFaction>
+      <parts>
+
+        <!-- Config pages -->
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <pawnCount>1</pawnCount>
+          <pawnChoiceCount>1</pawnChoiceCount>
+        </li>
+
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>Arrived earlier than expected. She will be here soon.</text>
+          <textKey>GameStartDialog</textKey>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+        
+        <!-- Player starting stuff spawn method-->
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+					<def>PlayerPawnsArriveMethod</def>
+				</li>
+
+        <!-- Player starting things -->
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>800</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MealSurvivalPack</thingDef>
+          <count>35</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineIndustrial</thingDef>
+          <count>20</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentIndustrial</thingDef>
+          <count>30</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MR_HA_O</thingDef>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MR_Decipherslifeclothes</thingDef>
+		  <stuff>Cloth</stuff>
+        </li>
+        <li Class="ScenPart_StartingAnimal">
+          <def>StartingAnimal</def>
+          <count>1</count>
+          <bondToRandomPlayerPawnChance>1.0</bondToRandomPlayerPawnChance>
+        </li>
+
+        <!-- Scatter some things near player start -->
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>Steel</thingDef>
+          <count>300</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>300</count>
+        </li>
+
+        <!-- Scatter some things anywhere -->
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>Steel</thingDef>
+          <count>800</count>
+        </li>
+
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MR_Sarira</thingDef>
+          <count>2</count>
+        </li>
+		
+        <li Class="ScenPart_CreateIncident">
+          <def>CreateIncident</def>
+          <incident>WandererJoin_CHunter_Scenario</incident>
+          <intervalDays>3</intervalDays>
+        </li>
+
+      </parts>
+    </scenario>
+  </ScenarioDef>
+
+<!--    <IncidentDef>
+      <defName>WandererJoin_CHunter</defName>
+      <label>사냥꾼 합류</label>
+      <category>Misc</category>
+      <targetTags>
+        <li>Map_PlayerHome</li>
+      </targetTags>
+      <workerClass>IncidentWorker_WandererJoin</workerClass>
+      <letterLabel>사냥꾼 합류: {PAWN_nameDef}</letterLabel>
+      <letterText>사냥꾼이 도착했습니다.</letterText>
+      <letterDef>PositiveEvent</letterDef>
+      <baseChance>1.5</baseChance>
+      <pawnKind>MRP_Hunter</pawnKind>
+      <populationEffect>IncreaseEasy</populationEffect>
+      <earliestDay>15</earliestDay>
+      <minRefireDays>9999</minRefireDays>
+    </IncidentDef>-->
+
+    <IncidentDef>
+      <defName>WandererJoin_CHunter_Scenario</defName>
+      <label>join hunter</label>
+      <category>Misc</category>
+      <targetTags>
+        <li>Map_PlayerHome</li>
+      </targetTags>
+      <workerClass>IncidentWorker_WandererJoin</workerClass>
+      <letterLabel>join hunter: {PAWN_nameDef}</letterLabel>
+      <letterText>the hunter has arrived.</letterText>
+      <letterDef>PositiveEvent</letterDef>
+      <baseChance>0</baseChance>
+      <pawnKind>MRP_CHunter</pawnKind>
+      <populationEffect>IncreaseEasy</populationEffect>
+      <earliestDay>9999999</earliestDay>
+      <minRefireDays>9999</minRefireDays>
+    </IncidentDef>
+	
+	    <IncidentDef>
+      <defName>WandererJoin_rentiq_Scenario</defName>
+      <label>join decipher</label>
+      <category>Misc</category>
+      <targetTags>
+        <li>Map_PlayerHome</li>
+      </targetTags>
+      <workerClass>IncidentWorker_WandererJoin</workerClass>
+      <letterLabel>join decipher: {PAWN_nameDef}</letterLabel>
+      <letterText>An decipher has heard of your fame and has joined the settlement.</letterText>
+      <letterDef>PositiveEvent</letterDef>
+      <baseChance>0</baseChance>
+      <pawnKind>MRP_Deciphers_light</pawnKind>
+      <populationEffect>IncreaseEasy</populationEffect>
+      <earliestDay>1</earliestDay>
+      <minRefireDays>1</minRefireDays>
+    </IncidentDef>
+
+	    <IncidentDef>
+      <defName>WandererJoin_rentiqB_Scenario</defName>
+      <label>join mountainranger</label>
+      <category>Misc</category>
+      <targetTags>
+        <li>Map_PlayerHome</li>
+      </targetTags>
+      <workerClass>IncidentWorker_WandererJoin</workerClass>
+      <letterLabel>join mountainranger: {PAWN_nameDef}</letterLabel>
+      <letterText>Motivated by your progress, the Mountain Keepers have joined the settlement.</letterText>
+      <letterDef>PositiveEvent</letterDef>
+      <baseChance>0</baseChance>
+      <pawnKind>MRP_MountainRanger_light</pawnKind>
+      <populationEffect>IncreaseEasy</populationEffect>
+      <earliestDay>1</earliestDay>
+      <minRefireDays>1</minRefireDays>
+    </IncidentDef>
+	
+</Defs>

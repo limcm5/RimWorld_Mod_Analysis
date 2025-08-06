@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+   <HediffGiverSetDef>
+    <defName>MR_standard</defName>
+    <hediffGivers>
+      <!-- Environmental -->
+      <li Class="HediffGiver_Hypothermia">
+        <hediff>MR_tailbiting</hediff>
+        <partsToAffect>
+          <li>MR_BigTail</li>
+        </partsToAffect>
+      </li>
+    </hediffGivers>
+  </HediffGiverSetDef>
+ 
+   <HediffDef>
+    <defName>MR_tailbiting</defName>
+    <label>Tail biting</label>
+    <description>tail biting.</description>
+    <defaultLabelColor>(0.8, 0.8, 1)</defaultLabelColor>
+    <lethalSeverity>1</lethalSeverity>
+    <taleOnVisible>HypothermiaRevealed</taleOnVisible>
+    <stages>
+      <li>
+        <label>shivering</label>
+        <becomeVisible>false</becomeVisible>
+      </li>
+      <li>
+        <label>shivering</label>
+        <becomeVisible>false</becomeVisible>
+        <minSeverity>0.04</minSeverity>
+      </li>
+      <li>
+        <label>minor</label>
+        <becomeVisible>false</becomeVisible>
+        <minSeverity>0.2</minSeverity>
+      </li>
+      <li>
+        <label>serious</label>
+        <becomeVisible>false</becomeVisible>
+        <minSeverity>0.35</minSeverity>
+      </li>
+      <li>
+        <label>extreme</label>
+        <becomeVisible>false</becomeVisible>
+        <minSeverity>0.62</minSeverity>
+      </li>
+    </stages>
+  </HediffDef>
+ 
+</Defs>
