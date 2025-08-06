@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<!-- Research Data -->
+  	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Research Data</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+
+<!-- Change research papers recipe -->
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/RecipeDef[defName="ResearchPapersRecipe"]/ingredients</xpath>
+			<value>
+				<ingredients>
+				  <li>
+					<filter>
+						<thingDefs>
+							<li>OrganicResearchSamples</li>
+							<li>MetallicResearchSamples</li>
+							<li>FabricResearchSamples</li>
+						</thingDefs>
+					</filter>
+					<count>1</count>
+				  </li>
+				  <li>
+					<filter>
+						<thingDefs>
+							<li>TheoryPapers</li>
+						</thingDefs>
+					</filter>
+					<count>1</count>
+				  </li>
+				</ingredients>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/RecipeDef[defName="ResearchPapersRecipe"]/fixedIngredientFilter</xpath>
+			<value>
+				<fixedIngredientFilter>
+						<thingDefs>
+							<li>OrganicResearchSamples</li>
+							<li>MetallicResearchSamples</li>
+							<li>FabricResearchSamples</li>
+							<li>TheoryPapers</li>
+						</thingDefs>
+				</fixedIngredientFilter>
+			</value>
+		</li>
+		
+<!-- Change research data recipe -->
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/RecipeDef[defName="ResearchDataRecipe"]/ingredients</xpath>
+			<value>
+				<ingredients>
+				  <li>
+					<filter>
+					  <thingDefs>
+						<li>CombinedResearchSamples</li>
+					  </thingDefs>
+					</filter>
+					<count>1</count>
+				  </li>
+				  <li>
+					<filter>
+					  <thingDefs>
+						<li>TheoryData</li>
+					  </thingDefs>
+					</filter>
+					<count>1</count>
+				  </li>
+				  <li>
+					<filter>
+					  <thingDefs>
+						<li>Steel</li>
+					  </thingDefs>
+					</filter>
+					<count>10</count>
+				  </li>
+				  <li>
+					<filter>
+					  <thingDefs>
+						<li>Silver</li>
+					  </thingDefs>
+					</filter>
+					<count>2</count>
+				  </li>
+				</ingredients>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/RecipeDef[defName="ResearchDataRecipe"]/fixedIngredientFilter</xpath>
+			<value>
+				<fixedIngredientFilter>
+				  <thingDefs>
+					<li>CombinedResearchSamples</li>
+					<li>TheoryData</li>
+					<li>Steel</li>
+					<li>Silver</li>
+				  </thingDefs>
+				</fixedIngredientFilter>
+			</value>
+		</li>
+		
+<!-- Change analyzer data recipe -->
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/RecipeDef[defName="AnalyzerDataRecipe"]/ingredients</xpath>
+			<value>
+				<ingredients>
+				  <li>
+					<filter>
+					  <thingDefs>
+						<li>CombinedResearchSamples</li>
+					  </thingDefs>
+					</filter>
+					<count>1</count>
+				  </li>
+				  <li>
+					<filter>
+					  <thingDefs>
+						<li>ComponentResearchSamples</li>
+					  </thingDefs>
+					</filter>
+					<count>1</count>
+				  </li>
+				  <li>
+					<filter>
+					  <thingDefs>
+						<li>TheoryData</li>
+					  </thingDefs>
+					</filter>
+					<count>1</count>
+				  </li>
+				  <li>
+					<filter>
+					  <thingDefs>
+						<li>Steel</li>
+					  </thingDefs>
+					</filter>
+					<count>10</count>
+				  </li>
+				  <li>
+					<filter>
+					  <thingDefs>
+						<li>Gold</li>
+					  </thingDefs>
+					</filter>
+					<count>1</count>
+				  </li>
+				</ingredients>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/RecipeDef[defName="AnalyzerDataRecipe"]/fixedIngredientFilter</xpath>
+			<value>
+				<fixedIngredientFilter>
+				  <thingDefs>
+					<li>CombinedResearchSamples</li>
+					<li>ComponentResearchSamples</li>
+					<li>TheoryData</li>
+					<li>Steel</li>
+					<li>Gold</li>
+				  </thingDefs>
+				</fixedIngredientFilter>
+			</value>
+		</li>
+				
+		</operations>
+		</match>
+	</Operation>
+
+</Patch>

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!-- AbilityGroupe = Ritual Cooldown -->
+	<AbilityGroupDef>
+		<defName>TheoryResearchAdvAbility</defName>
+		<cooldownTicks>50000</cooldownTicks>
+		<ritualRoleIds>
+			<li>TheoryResearcher</li>
+		</ritualRoleIds>
+	</AbilityGroupDef>
+
+<!-- Precept - Hidden and alway on ResearchSampleBench -->	
+	<PreceptDef>
+		<defName>TheoryResearchAdvPrecept</defName>
+		<label>Theory Research (Advanced).</label>
+		
+		<iconPath>Icons/TheoryAdvance_Icon</iconPath>
+		<ritualPatternBase>TheoryResearchAdvPattern</ritualPatternBase>
+		<useCooldownFromAbilityGroupDef>TheoryResearchAdvAbility</useCooldownFromAbilityGroupDef>
+		<issue>Ritual</issue>
+		<preceptClass>Precept_Ritual</preceptClass>
+		<visible>false</visible>
+		<classic>true</classic>
+		<showRitualFloatMenuOption>false</showRitualFloatMenuOption>
+		<useRepeatPenalty>false</useRepeatPenalty>
+		<usesIdeoVisualEffects>false</usesIdeoVisualEffects>
+		<mergeRitualGizmosFromAllIdeos>true</mergeRitualGizmosFromAllIdeos>
+		<countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+		<selectionWeight>1.0</selectionWeight>
+		<notifyPlayerOnOpportunity>true</notifyPlayerOnOpportunity>
+	</PreceptDef>
+	
+<!-- Ritual Target Filter - Where to start the ritual -->		
+  	<RitualObligationTargetFilterDef>
+		<defName>TheoryResearchAdvFilter</defName>
+		<workerClass>TPRitualAttachableOutcomes.RitualObligationTargetWorker_Custom</workerClass>
+		<modExtensions>
+			<li Class="TPRitualAttachableOutcomes.TargetFilter_ModExtension">
+				<extraCandidates>
+					<li>HiTechResearchBench</li>
+				</extraCandidates>
+			</li>
+		</modExtensions>
+	</RitualObligationTargetFilterDef>
+		
+<!-- Ritual Pattern -->
+	<RitualPatternDef>
+		<defName>TheoryResearchAdvPattern</defName>
+<!-- 		<ritualExpectedDesc>Simple theory research is available.</ritualExpectedDesc>
+		<ritualExpectedDescNoAdjective>Simple theory research is available.</ritualExpectedDescNoAdjective> -->
+		<descOverride>Do advanced Theory Research to develop research theories to make theory data, which you can combine with samples at the sample bench to create research data required for doing advanced research.</descOverride>
+		<ritualOnlyForIdeoMembers>false</ritualOnlyForIdeoMembers>
+		<ritualObligationTargetFilter>TheoryResearchAdvFilter</ritualObligationTargetFilter>
+<!--  		<ritualObligationTriggers>
+			<li Class="RitualObligationTrigger_DateProperties">
+				<mustBePlayerIdeo>true</mustBePlayerIdeo>
+			</li>
+		</ritualObligationTriggers> -->
+		<ritualBehavior>TheoryResearchAdvBehavior</ritualBehavior>
+		<ritualOutcomeEffect>TheoryResearchAdvOutcome</ritualOutcomeEffect>
+		<playsIdeoMusic>false</playsIdeoMusic>
+		<alwaysStartAnytime>true</alwaysStartAnytime>
+		<allowOtherInstances>false</allowOtherInstances>
+	</RitualPatternDef>
+ 
+<!-- Ritual Behavior --> 
+	<RitualBehaviorDef>
+		<defName>TheoryResearchAdvBehavior</defName>
+		<durationTicks>4500</durationTicks>
+  		<spectatorsLabel>-</spectatorsLabel>
+		<spectatorGerund>-</spectatorGerund>
+		
+ 		<roles>
+			<li Class="RitualRoleColonist">
+				<label>Researcher</label>
+				<id>TheoryResearcher</id>
+				<required>true</required>
+				<requiredWorkType>Research</requiredWorkType>
+				<usedSkill>Intellectual</usedSkill>
+				<substitutable>true</substitutable>
+				<maxCount>1</maxCount>
+				<countsAsParticipant>false</countsAsParticipant>
+				<allowChild>false</allowChild>
+				<mustBeAbleToReachTarget>true</mustBeAbleToReachTarget>
+				<blocksSocialInteraction>true</blocksSocialInteraction>
+			</li>
+ 			<li Class="RitualRoleColonist">
+				<label>Assistant</label>
+				<id>TheoryAssistant</id>
+				<required>false</required>
+				<requiredWorkType>Research</requiredWorkType>
+				<usedSkill>Intellectual</usedSkill>
+				<substitutable>true</substitutable>
+				<maxCount>1</maxCount>
+				<countsAsParticipant>false</countsAsParticipant>
+				<allowChild>false</allowChild>
+				<mustBeAbleToReachTarget>true</mustBeAbleToReachTarget>
+				<blocksSocialInteraction>true</blocksSocialInteraction>
+			</li>
+		</roles>
+
+<!-- Custom C# Class - Made by: Elouan. -->		
+		<spectatorFilter Class = "CustomSpectatorFilter.RitualSpectatorFilter_Custom">
+			<description>Spectators cannot contribute.</description>
+			<minSkills>
+		   <!-- <li> 
+					<key>Intellectual</key> <value>30</value> 
+				</li> -->
+                <!-- You can add few Skills requirement with this template, It work like a "and"--> 
+			</minSkills> <!-- If you keep minSkills blank, the class will reject every spectators -->
+		</spectatorFilter>
+		
+		<stages>
+			<li>
+ 			<defaultDuty>Spectate</defaultDuty>
+			<allowedSpectateSidesOverride>Vertical</allowedSpectateSidesOverride>
+			<spectateDistanceOverride>1</spectateDistanceOverride>
+				<spectatorsRequired>false</spectatorsRequired>
+				<endTriggers>
+					<li Class="StageEndTrigger_DurationPercentage">
+						<percentage>1</percentage>
+					</li>
+				</endTriggers>
+				<roleBehaviors>
+					<li>
+						<roleId>TheoryResearcher</roleId>
+						<dutyDef>SpeakOnCell_Leader</dutyDef>
+						<speakerInteraction>Speech_Leader</speakerInteraction>
+						<customPositions>
+							<li Class="RitualPosition_OnInteractionCell" />
+						</customPositions>
+					</li>
+					<li>
+						<roleId>TheoryAssistant</roleId>
+						<dutyDef>SpeakOnCell_Leader</dutyDef>
+						<speakerInteraction>Speech_Leader</speakerInteraction>
+						<customPositions>
+							<li Class="RitualPosition_BesideThing" />
+						</customPositions>
+					</li>
+				</roleBehaviors>
+				<visualEffectDef>Speech</visualEffectDef>
+			</li>
+		</stages>
+	</RitualBehaviorDef>
+  
+<!-- Ritual Outcome --> 
+	<RitualOutcomeEffectDef>
+		<defName>TheoryResearchAdvOutcome</defName>
+		<workerClass>TPRitualAttachableOutcomes.RitualOutcomeEffectWorker_FromQuality_TP_Custom</workerClass>
+		<allowAttachableOutcome>false</allowAttachableOutcome>
+		<givesDevelopmentPoints>false</givesDevelopmentPoints>
+		<comps>
+			<li Class="RitualOutcomeComp_BuildingOfDefUsed">
+				<def>ResearchSampleBench</def>
+				<qualityOffset>0.05</qualityOffset>
+			</li>
+  			<li Class="RitualOutcomeComp_BuildingOfDefUsed">
+				<def>MultiAnalyzer</def>
+				<qualityOffset>0.15</qualityOffset>
+			</li>
+			<li Class="RitualOutcomeComp_Indoors">
+				<label>indoors</label>
+				<qualityOffset>0.10</qualityOffset>
+			</li>
+			<li Class="RitualOutcomeComp_RoomStat">
+				<label>room cleanliness</label>
+				<statDef>Cleanliness</statDef>
+				<curve>
+					<points>
+						<li>0,  0</li>
+						<li>0.6, 0.15</li>
+					</points>
+				</curve>
+			</li>
+			<li Class="RitualOutcomeComp_PawnSkill">
+				<label>{PAWN_labelShort}'s INT skill (Max:20)</label>
+				<labelAbstract>researcher's INT skill (Max:20)</labelAbstract>
+				<roleId>TheoryResearcher</roleId>
+				<skillDef>Intellectual</skillDef>
+				<curve>
+					<points>
+						<li>(0, 0.0)</li>
+						<li>(20, 0.35)</li>
+					</points>
+				</curve>
+			</li>
+ 			<li Class="RitualOutcomeComp_PawnSkill">
+				<label>{PAWN_labelShort}'s INT skill (Max:20)</label>
+				<labelAbstract>assistant's INT skill (Max:20)</labelAbstract>
+				<roleId>TheoryAssistant</roleId>
+				<skillDef>Intellectual</skillDef>
+				<curve>
+					<points>
+						<li>(0, 0.0)</li>
+						<li>(20, 0.20)</li>
+					</points>
+				</curve>
+			</li>
+		</comps>
+		<outcomeChances>
+		    <li>
+				<label>Failed</label>
+				<chance>0.15</chance>
+				<memory>FailedTheory</memory>
+				<description>The {0} failed! \n\n0 Theory papers were made.</description>
+				<positivityIndex>-1</positivityIndex>
+		    </li>
+		    <li>
+				<label>Satisfying</label>
+				<chance>0.55</chance>
+				<memory>SatisfyingTheory</memory>
+				<description>The {0} was Satisfying! \n\n1 Theory paper was made.</description>
+				<positivityIndex>0</positivityIndex>
+		    </li>
+		    <li>
+				<label>Outstanding</label>
+				<chance>0.25</chance>
+				<memory>OutstandingTheory</memory>
+				<description>The {0} was Outstanding! \n\n2 Theory papers were made. \nYou gained theory inspiration, +15% to research for 12 hours.</description>
+				<positivityIndex>1</positivityIndex>
+		    </li>
+		    <li>
+				<label>Brilliant</label>
+				<chance>0.05</chance>
+				<memory>BrilliantTheory</memory>
+				<description>The {0} was Brilliant! \n\n3 Theory papers were made. \nYou gained theory inspiration, +15% to research for 12 hours.</description>
+				<positivityIndex>2</positivityIndex>
+		    </li>
+		</outcomeChances>
+		<modExtensions>
+			<li Class="TPRitualAttachableOutcomes.RitualAttachableOutcomeEffectDef_TP_Custom">
+				<node>
+					<li Class="TPRitualAttachableOutcomes.RitualAttachableOutcomeEffectDef_TP_Custom_Node">
+						<triggerPositivityIndex>
+							<li>0</li>
+						</triggerPositivityIndex>
+						<item>TheoryData</item>
+						<baseAmount>1</baseAmount>
+						<amountPerPawn>0</amountPerPawn>
+						<spawnNearRitual>true</spawnNearRitual>
+						<instaDrop>true</instaDrop>
+						<forbid>false</forbid>
+						<roofPunch>true</roofPunch>
+					</li>
+					<li Class="TPRitualAttachableOutcomes.RitualAttachableOutcomeEffectDef_TP_Custom_Node">
+						<triggerPositivityIndex>
+							<li>1</li>
+						</triggerPositivityIndex>
+						<item>TheoryData</item>
+						<baseAmount>2</baseAmount>
+						<amountPerPawn>0</amountPerPawn>
+						<spawnNearRitual>true</spawnNearRitual>
+						<instaDrop>true</instaDrop>
+						<forbid>false</forbid>
+						<roofPunch>true</roofPunch>
+					</li>
+					<li Class="TPRitualAttachableOutcomes.RitualAttachableOutcomeEffectDef_TP_Custom_Node">
+						<triggerPositivityIndex>
+							<li>2</li>
+						</triggerPositivityIndex>
+						<item>TheoryData</item>
+						<baseAmount>3</baseAmount>
+						<amountPerPawn>0</amountPerPawn>
+						<spawnNearRitual>true</spawnNearRitual>
+						<instaDrop>true</instaDrop>
+						<forbid>false</forbid>
+						<roofPunch>true</roofPunch>
+					</li>
+					<li Class="TPRitualAttachableOutcomes.RitualAttachableOutcomeEffectDef_TP_Custom_Node">
+						<triggerPositivityIndex>
+							<li>1</li>
+							<li>2</li>
+						</triggerPositivityIndex>
+						<appliesTo>
+							<li>TheoryResearcher</li>
+							<li>TheoryAssistant</li>
+						</appliesTo>
+						<hediffToAdd>
+							<li>TheoryInspirationHediff</li>
+						</hediffToAdd>
+					</li>
+				</node>
+			</li>
+		</modExtensions>
+	</RitualOutcomeEffectDef>
+	  
+</Defs>

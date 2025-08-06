@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <ModMetaData>
+	<name>Research Data Theory</name>
+	<author>kongkim</author>
+	<url></url>
+    <supportedVersions>
+		<li>1.5</li>
+		<li>1.6</li>
+	</supportedVersions>
+	<packageId>kongkim.ResearchDataTheory</packageId>
+	<description>Research Data Theory is a small add-on mod for the Research Data mod that makes your research a bit more player interactive as you need to perform theory research (Ritual) each day to make Theory papers and data.</description>
+        <modDependencies>
+			<li>
+				<packageId>thesepeople.RitualAttachableOutcomes</packageId>
+				<displayName>Custom Ritual Framework</displayName>
+				<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2561617361</steamWorkshopUrl>
+			</li>			
+			<li>
+				<packageId>kongkim.ResearchData</packageId>
+				<displayName>Research Data</displayName>
+				<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3001121619</steamWorkshopUrl>
+			</li>
+		</modDependencies>
+	<loadAfter>
+		<li>thesepeople.RitualAttachableOutcomes</li>
+		<li>kongkim.ResearchData</li>
+	</loadAfter>
+ </ModMetaData>

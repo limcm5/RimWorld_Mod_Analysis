@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+<!-- Hediff Research Bonus --> 
+  	<HediffDef>
+		<defName>TheoryInspirationHediff</defName>
+		<label>Theory inspiration</label>
+		<description>You had a outstanding or brilliant research theory.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>30000</disappearsAfterTicks>
+			<showRemainingTime>true</showRemainingTime>
+		</li>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<ResearchSpeedFactor>0.15</ResearchSpeedFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	  
+</Defs>

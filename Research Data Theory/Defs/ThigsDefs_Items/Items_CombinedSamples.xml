@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--=============== Combined Research Samples ====================-->
+   <ThingDef ParentName="ResourceBase">
+    <defName>CombinedResearchSamples</defName>
+    <label>Combined Research Samples</label>
+	<description>Combined research samples are collected from organic, metallic, and fabric samples, and are used to assemble research and analyzer data.</description>
+    <graphicData>
+      <texPath>ResearchSamplesCombined</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Standard_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <techLevel>Industrial</techLevel>
+	<stackLimit>25</stackLimit>	
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <MarketValue>30</MarketValue>
+      <Mass>0.6</Mass>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>1.5</DeteriorationRate>
+    </statBases>
+    <burnableByRecipe>true</burnableByRecipe>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <thingCategories>
+      <li>Samples</li>
+    </thingCategories>
+  </ThingDef>
+  
+</Defs>

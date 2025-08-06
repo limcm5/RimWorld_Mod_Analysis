@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+<!-- Ritual Outcome Thoughts -->    
+ 	<ThoughtDef>
+		<defName>FailedTheory</defName>
+		<thoughtClass>Thought_AttendedRitual</thoughtClass>
+		<durationDays>1</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+		    <li>
+				<label>failed theory research</label>
+				<description>I was all out of research theories.</description>
+				<baseMoodEffect>-4</baseMoodEffect>
+		    </li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>SatisfyingTheory</defName>
+		<thoughtClass>Thought_AttendedRitual</thoughtClass>
+		<durationDays>1</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+		    <li>
+				<label>satisfying theory research</label>
+				<description>I came up with a research theory.</description>
+				<baseMoodEffect>1</baseMoodEffect>
+		    </li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>OutstandingTheory</defName>
+		<thoughtClass>Thought_AttendedRitual</thoughtClass>
+		<durationDays>2</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+		    <li>
+				<label>outstanding theory research</label>
+				<description>I came up with multiple research theories.</description>
+				<baseMoodEffect>3</baseMoodEffect>
+		    </li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>BrilliantTheory</defName>
+		<thoughtClass>Thought_AttendedRitual</thoughtClass>
+		<durationDays>2</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+		    <li>
+				<label>brilliant theory research</label>
+				<description>I had waves of brilliant research theories.</description>
+				<baseMoodEffect>6</baseMoodEffect>
+		    </li>
+		</stages>
+	</ThoughtDef>
+  
+</Defs>

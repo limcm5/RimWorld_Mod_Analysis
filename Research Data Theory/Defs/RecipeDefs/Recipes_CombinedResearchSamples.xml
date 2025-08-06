@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+<!--=============== Combined Research Samples ====================-->
+  <RecipeDef>
+    <defName>CombinedResearchSamplesRecipe</defName>
+    <label>Combined Research Samples</label>
+    <description>Combined organic, metallic, and fabric research samples into one, that are used to assemble research and analyzer data.</description>
+    <jobString>Combineding Research Samples.</jobString>
+    <workAmount>1000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Interact_Research</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>OrganicResearchSamples</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MetallicResearchSamples</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FabricResearchSamples</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>OrganicResearchSamples</li>
+        <li>MetallicResearchSamples</li>
+        <li>FabricResearchSamples</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+	<researchPrerequisites>
+      <li>MicroelectronicsBasics</li>
+    </researchPrerequisites>
+    <products>
+      <CombinedResearchSamples>2</CombinedResearchSamples>
+    </products>
+	<recipeUsers>
+		<li>ResearchSampleBench</li>
+	</recipeUsers>
+	<workSkill>Intellectual</workSkill>
+	<skillRequirements>
+		<Intellectual>3</Intellectual>
+    </skillRequirements>
+  </RecipeDef> 
+ 	
+</Defs>

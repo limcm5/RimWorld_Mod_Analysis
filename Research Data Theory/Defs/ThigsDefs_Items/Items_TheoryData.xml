@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--=============== Theory Papers ====================-->
+   <ThingDef ParentName="ResourceBase">
+    <defName>TheoryPapers</defName>
+    <label>Theory Papers</label>
+    <description>Theory papers are used at the sample bench to turn theories into research papers that let you do simple research. \n\nTheory papers can be made at the simple research bench every 20 hours, doing theory researching.</description>
+    <graphicData>
+      <texPath>TheoryPapers</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Standard_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <techLevel>Neolithic</techLevel>
+    <thingSetMakerTags>
+      <li>RewardStandardMidFreq</li>
+    </thingSetMakerTags>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <MarketValue>15</MarketValue>
+      <Mass>0.024</Mass>
+      <Flammability>2.0</Flammability>
+      <DeteriorationRate>6</DeteriorationRate>
+    </statBases>
+    <burnableByRecipe>true</burnableByRecipe>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <thingCategories>
+      <li>Research</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <!--=============== Theory Data ====================-->
+   <ThingDef ParentName="ResourceBase">
+    <defName>TheoryData</defName>
+    <label>Theory Data</label>
+    <description>Theory data are used at the sample bench to turn advanced theories into research data that let you do high-tech research. \n\nTheory data can be made at the high-tech research bench every 20 hours, doing advanced theory researching.</description>
+    <graphicData>
+      <texPath>TheoryData</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+	<soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <techLevel>Industrial</techLevel>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <MarketValue>35</MarketValue>
+      <Mass>0.6</Mass>
+      <Flammability>0.6</Flammability>
+      <DeteriorationRate>2.0</DeteriorationRate>
+    </statBases>
+    <burnableByRecipe>true</burnableByRecipe>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <thingCategories>
+      <li>Research</li>
+    </thingCategories>
+  </ThingDef>
+   
+</Defs>
